@@ -125,7 +125,6 @@ class _Roulette(ABC):
     @abstractmethod
     def _circle_offset(self) -> float:
         """Return rolling circle offset from fixed circle"""
-        return self.R + self.r
 
     @abstractmethod
     def _calculate_x(self, theta: float) -> float:
