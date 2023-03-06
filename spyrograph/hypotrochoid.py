@@ -11,8 +11,8 @@ class Hypotrochoid:
         self.d = d
         self.thetas = thetas 
     
-        self.x = [calculate_x(R, r, d, theta) for theta in self.thetas]
-        self.y = [calculate_y(R, r, d, theta) for theta in self.thetas]
+        self.x = [self.calculate_x(theta) for theta in self.thetas]
+        self.y = [self.calculate_y(theta) for theta in self.thetas]
         self.coords = list(zip(self.x, self.y, self.thetas))
 
     def trace(self, screen_size: Tuple[int, int] = (1000, 1000), exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False) -> None:
@@ -78,10 +78,10 @@ class Hypotrochoid:
         if exit_on_click:
             turtle.exitonclick()
 
-def calculate_x(R: float, r: float, d: float, theta: float) -> float:
-    """Return calculated x-value from parametrized equation"""
-    return (R - r)*math.cos(theta) + d*math.cos(((R-r)/r)*theta)
+    def _calculate_x(self, theta: float) -> float:
+        """Return calculated x-value from parametrized equation"""
+        return (self.R - self.r)*math.cos(theta) + self.d*math.cos(((self.R-self.r)/self.r)*theta)
 
-def calculate_y(R: float, r: float, d: float, theta: float) -> float:
-    """Return calculated y-value from parametrized equation"""
-    return (R - r)*math.sin(theta) + d*math.sin(((R-r)/r)*theta)
+    def _calculate_y(self, theta: float) -> float:
+        """Return calculated y-value from parametrized equation"""
+        return (self.R - self.r)*math.sin(theta) + self.d*math.sin(((self.R-r)/self.r)*theta)
