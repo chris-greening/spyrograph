@@ -16,7 +16,23 @@ class Hypotrochoid:
         self.coords = list(zip(self.x, self.y, self.thetas))
 
     def trace(self, screen_size: Tuple[int, int] = (1000, 1000), exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False, frame_pause: float = 0) -> None:
-        """Turtle draw the hypotrochoid"""
+        """Trace the hypotrochoid using turtle
+
+        Parameters
+        ----------
+        screen_size: Tuple[int, int]
+            Length and width of the output screen
+        exit_on_click: bool = False
+            Pause the final animation until the user clicks to exit the window
+        color: str = "black"
+            Color of the primary tracing
+        hide_turtle: bool = True
+            Hide the turtle icon while tracing
+        show_circles: bool = False
+            Show the inner and outer circles that compose the trace
+        frame_pause: float = 0
+            Time in seconds to pause each individual frame for
+        """
         screen = turtle.Screen()
         screen.setup(*screen_size)
         turtle.tracer(False)
