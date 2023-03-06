@@ -17,7 +17,7 @@ class _Roulette(ABC):
         self.coords = list(zip(self.x, self.y, self.thetas))
 
     def trace(self, screen_size: Tuple[int, int] = (1000, 1000), exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False, frame_pause: float = 0, screen: "turtle.Screen" = None) -> "turtle.Screen":
-        """Trace the hypotrochoid using turtle
+        """Trace the roulette shape using turtle
 
         Parameters
         ----------
