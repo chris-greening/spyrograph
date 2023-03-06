@@ -3,7 +3,7 @@ import math
 from ._roulette import _Roulette
 
 class Epitrochoid(_Roulette):
-    """Model of a hypotrochoid"""
+    """Model of a epitrochoid"""
     def __init__(self, R, r, d, thetas) -> None:
         self.R = R
         self.r = r

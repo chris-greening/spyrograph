@@ -5,7 +5,6 @@ import time
 from abc import ABC, abstractmethod
 
 class _Roulette(ABC):
-    """Model of a hypotrochoid"""
     def __init__(self, R, r, d, thetas) -> None:
         self.R = R
         self.r = r
