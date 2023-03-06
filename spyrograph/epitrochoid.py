@@ -3,7 +3,9 @@ import turtle
 from typing import Tuple, Union
 import time
 
-class Epitrochoid:
+from ._roulette import _Roulette
+
+class Epitrochoid(_Roulette):
     """Model of a hypotrochoid"""
     def __init__(self, R, r, d, thetas) -> None:
         self.R = R
@@ -14,63 +16,6 @@ class Epitrochoid:
         self.x = [self._calculate_x(theta) for theta in self.thetas]
         self.y = [self._calculate_y(theta) for theta in self.thetas]
         self.coords = list(zip(self.x, self.y, self.thetas))
-
-    def trace(self, screen_size: Tuple[int, int] = (1000, 1000), exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False, frame_pause: float = 0, screen: "turtle.Screen" = None) -> "turtle.Screen":
-        """Trace the hypotrochoid using turtle
-
-        Parameters
-        ----------
-        screen_size: Tuple[int, int]
-            Length and width of the output screen
-        exit_on_click: bool = False
-            Pause the final animation until the user clicks to exit the window
-        color: str = "black"
-            Color of the primary tracing
-        hide_turtle: bool = True
-            Hide the turtle icon while tracing
-        show_circles: bool = False
-            Show the inner and outer circles that compose the trace
-        frame_pause: float = 0
-            Time in seconds to pause each individual frame for
-        """
-        if screen is None:
-            screen = turtle.Screen()
-            screen.setup(*screen_size)
-        turtle.tracer(False)
-
-        shape_turtle = turtle.Turtle()
-        small_circle_turtle = turtle.Turtle()
-        large_circle_turtle = turtle.Turtle()
-        small_circle_turtle.hideturtle()
-        large_circle_turtle.hideturtle()
-        if hide_turtle:
-            shape_turtle.hideturtle()
-        if show_circles:
-            self._trace_fixed_circle(large_circle_turtle)
-        
-        first = True 
-        shape_turtle.up()
-        shape_turtle.color(color)
-        for x, y, theta in self.coords:
-            shape_turtle.goto(x, y)
-            if show_circles:
-                self._trace_outer_circle(small_circle_turtle, shape_turtle, x, y, theta)
-            if first:
-                first = False
-                shape_turtle.down()
-            turtle.update()
-            time.sleep(frame_pause)
-        if exit_on_click:
-            turtle.exitonclick()
-        return screen
-
-    def _trace_fixed_circle(self, large_circle_turtle: "turtle.Turtle") -> None:
-        """Trace the outer circle of the animation"""
-        large_circle_turtle.up()
-        large_circle_turtle.seth(0)
-        large_circle_turtle.goto(0,-self.R)
-        large_circle_turtle.down()
-        large_circle_turtle.circle(self.R,steps=200)
 
     def _trace_rolling_circle(
             self, small_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle",

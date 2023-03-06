@@ -28,9 +28,9 @@ r = 25*1.45
 epitrochoid = Hypocycloid(R, r, thetas)
 epitrochoid.trace(screen = screen, color = "blue")
 
-R = 50*.75
-d = 12.5*.75
+R = 50*1.45
+d = 12.5*1.45
 thetas = np.arange(0,360,5)
-r = 25*.75
+r = 25*1.45
 epicycloid = Epicycloid(R, r, thetas)
 epicycloid.trace(exit_on_click=True, screen = screen, color = "green")
