@@ -30,11 +30,7 @@ class Hypotrochoid:
             shape_turtle.hideturtle()
 
         if show_circles:
-            large_circle_turtle.up()
-            large_circle_turtle.seth(0)
-            large_circle_turtle.goto(0,-self.R)
-            large_circle_turtle.down()
-            large_circle_turtle.circle(self.R,steps=200)
+            self._trace_outer_circle(large_circle_turtle)
         
         first = True 
         shape_turtle.up()
@@ -53,6 +49,14 @@ class Hypotrochoid:
             time.sleep(frame_pause)
         if exit_on_click:
             turtle.exitonclick()
+
+    def _trace_outer_circle(self, large_circle_turtle: "turtle.Turtle") -> None:
+        """Trace the outer circle of the animation"""
+        large_circle_turtle.up()
+        large_circle_turtle.seth(0)
+        large_circle_turtle.goto(0,-self.R)
+        large_circle_turtle.down()
+        large_circle_turtle.circle(self.R,steps=200)
 
     def _trace_inner_circle(
             self, small_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle",
