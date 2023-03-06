@@ -1,7 +1,4 @@
 import math
-import turtle
-from typing import Tuple, Union
-import time
 
 from ._roulette import _Roulette
 
