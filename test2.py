@@ -9,11 +9,19 @@ from spyrograph import Hypotrochoid, Epitrochoid
 
 R = 300
 d = 50
-thetas = np.arange(0,7,.05)
+thetas = np.arange(0,360,.05)
 r = 100
 
 # hypotrochoid = Hypotrochoid(R, r, d, thetas)
 # hypotrochoid.trace(exit_on_click=True)
 
 epitrochoid = Epitrochoid(R, r, d, thetas)
-epitrochoid.trace(exit_on_click=True, show_circles=True)
+screen = epitrochoid.trace()
+
+R = 300
+d = 50
+thetas = np.arange(0,7,.05)
+r = 100
+
+hypotrochoid = Hypotrochoid(R, r, d, thetas)
+hypotrochoid.trace(exit_on_click=True,  screen = screen, color="red")

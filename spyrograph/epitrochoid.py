@@ -15,7 +15,7 @@ class Epitrochoid:
         self.y = [self._calculate_y(theta) for theta in self.thetas]
         self.coords = list(zip(self.x, self.y, self.thetas))
 
-    def trace(self, screen_size: Tuple[int, int] = (1000, 1000), exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False, frame_pause: float = 0) -> None:
+    def trace(self, screen_size: Tuple[int, int] = (1000, 1000), exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False, frame_pause: float = 0, screen: "turtle.Screen" = None) -> "turtle.Screen":
         """Trace the hypotrochoid using turtle
 
         Parameters
@@ -33,8 +33,9 @@ class Epitrochoid:
         frame_pause: float = 0
             Time in seconds to pause each individual frame for
         """
-        screen = turtle.Screen()
-        screen.setup(*screen_size)
+        if screen is None:
+            screen = turtle.Screen()
+            screen.setup(*screen_size)
         turtle.tracer(False)
 
         shape_turtle = turtle.Turtle()
@@ -61,6 +62,7 @@ class Epitrochoid:
             time.sleep(frame_pause)
         if exit_on_click:
             turtle.exitonclick()
+        return screen
 
     def _trace_inner_circle(self, large_circle_turtle: "turtle.Turtle") -> None:
         """Trace the outer circle of the animation"""
