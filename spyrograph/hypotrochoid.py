@@ -1,6 +1,6 @@
 import math
 import turtle
-from typing import Tuple
+from typing import Tuple, Union
 import time
 
 class Hypotrochoid:
@@ -44,33 +44,8 @@ class Hypotrochoid:
 
             # Draw small circle
             if show_circles:
-                # Reset 
-                small_circle_turtle.clear()
-                small_circle_turtle.seth(0)
-                small_circle_turtle.up()
+                self._trace_inner_circle(small_circle_turtle, shape_turtle, x, y, theta)
 
-                # Draw red dot 
-                small_circle_turtle.goto(x, y)
-                small_circle_turtle.dot(10, "red")
-
-                # Draw circle
-                small_circle_turtle.seth(0)
-                small_circle_y=(self.R - self.r)*math.sin(theta) - self.r
-                small_circle_x=(self.R - self.r)*math.cos(theta)
-                small_circle_turtle.goto(small_circle_x, small_circle_y)
-                small_circle_turtle.down()
-                small_circle_turtle.color("black")
-                small_circle_turtle.circle(self.r,steps=200)
-
-                # Draw center blue dot
-                small_circle_turtle.up()
-                small_circle_turtle.goto(small_circle_x, small_circle_y + self.r)
-                small_circle_turtle.dot(10, "blue")
-
-                #Draw line
-                small_circle_turtle.down()
-                small_circle_turtle.seth(small_circle_turtle.towards(shape_turtle))
-                small_circle_turtle.fd(self.d)
             if first:
                 first = False
                 shape_turtle.down()
@@ -78,6 +53,38 @@ class Hypotrochoid:
             time.sleep(frame_pause)
         if exit_on_click:
             turtle.exitonclick()
+
+    def _trace_inner_circle(
+            self, small_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle",
+            x: Union[float, int], y: Union[float, int], theta: Union[float, int]
+        ) -> None:
+        """Trace the inner circle of the animation"""
+        small_circle_turtle.clear()
+        small_circle_turtle.seth(0)
+        small_circle_turtle.up()
+
+        # Draw red dot
+        small_circle_turtle.goto(x, y)
+        small_circle_turtle.dot(10, "red")
+
+        # Draw circle
+        small_circle_turtle.seth(0)
+        small_circle_y=(self.R - self.r)*math.sin(theta) - self.r
+        small_circle_x=(self.R - self.r)*math.cos(theta)
+        small_circle_turtle.goto(small_circle_x, small_circle_y)
+        small_circle_turtle.down()
+        small_circle_turtle.color("black")
+        small_circle_turtle.circle(self.r,steps=200)
+
+        # Draw center blue dot
+        small_circle_turtle.up()
+        small_circle_turtle.goto(small_circle_x, small_circle_y + self.r)
+        small_circle_turtle.dot(10, "blue")
+
+        #Draw line
+        small_circle_turtle.down()
+        small_circle_turtle.seth(small_circle_turtle.towards(shape_turtle))
+        small_circle_turtle.fd(self.d)
 
     def _calculate_x(self, theta: float) -> float:
         """Return calculated x-value from parametrized equation"""
