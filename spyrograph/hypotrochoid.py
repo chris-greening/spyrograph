@@ -15,7 +15,7 @@ class Hypotrochoid:
         self.y = [self._calculate_y(theta) for theta in self.thetas]
         self.coords = list(zip(self.x, self.y, self.thetas))
 
-    def trace(self, screen_size: Tuple[int, int] = (1000, 1000), exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False) -> None:
+    def trace(self, screen_size: Tuple[int, int] = (1000, 1000), exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False, frame_pause: float = 0) -> None:
         """Turtle draw the hypotrochoid"""
         screen = turtle.Screen()
         screen.setup(*screen_size)
@@ -75,6 +75,7 @@ class Hypotrochoid:
                 first = False
                 shape_turtle.down()
             turtle.update()
+            time.sleep(frame_pause)
         if exit_on_click:
             turtle.exitonclick()
 
