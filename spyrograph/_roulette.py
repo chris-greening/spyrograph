@@ -33,6 +33,11 @@ class _Roulette(ABC):
             Show the inner and outer circles that compose the trace
         frame_pause: float = 0
             Time in seconds to pause each individual frame for
+
+        Returns
+        -------
+        screen: turtle.Screen
+            Screen that the turtle is drawn on
         """
         if screen is None:
             screen = turtle.Screen()
@@ -40,14 +45,14 @@ class _Roulette(ABC):
         turtle.tracer(False)
 
         shape_turtle = turtle.Turtle()
-        small_circle_turtle = turtle.Turtle()
-        large_circle_turtle = turtle.Turtle()
-        small_circle_turtle.hideturtle()
-        large_circle_turtle.hideturtle()
+        rolling_circle_turtle = turtle.Turtle()
+        fixed_circle_turtle = turtle.Turtle()
+        rolling_circle_turtle.hideturtle()
+        fixed_circle_turtle.hideturtle()
         if hide_turtle:
             shape_turtle.hideturtle()
         if show_circles:
-            self._trace_fixed_circle(large_circle_turtle)
+            self._trace_fixed_circle(fixed_circle_turtle)
         
         first = True 
         shape_turtle.up()
@@ -55,7 +60,7 @@ class _Roulette(ABC):
         for x, y, theta in self.coords:
             shape_turtle.goto(x, y)
             if show_circles:
-                self._trace_outer_circle(small_circle_turtle, shape_turtle, x, y, theta)
+                self._trace_outer_circle(rolling_circle_turtle, shape_turtle, x, y, theta)
             if first:
                 first = False
                 shape_turtle.down()
@@ -65,45 +70,59 @@ class _Roulette(ABC):
             turtle.exitonclick()
         return screen
 
-    def _trace_fixed_circle(self, large_circle_turtle: "turtle.Turtle") -> None:
+    def _trace_fixed_circle(self, fixed_circle_turtle: "turtle.Turtle") -> None:
         """Trace the outer circle of the animation"""
-        large_circle_turtle.up()
-        large_circle_turtle.seth(0)
-        large_circle_turtle.goto(0,-self.R)
-        large_circle_turtle.down()
-        large_circle_turtle.circle(self.R,steps=200)
+        fixed_circle_turtle.up()
+        fixed_circle_turtle.seth(0)
+        fixed_circle_turtle.goto(0,-self.R)
+        fixed_circle_turtle.down()
+        fixed_circle_turtle.circle(self.R,steps=200)
 
     def _trace_rolling_circle(
-            self, small_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle",
+            self, rolling_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle",
             x: Union[float, int], y: Union[float, int], theta: Union[float, int]
         ) -> None:
         """Trace the inner circle of the animation"""
-        small_circle_turtle.clear()
-        small_circle_turtle.seth(0)
-        small_circle_turtle.up()
+        self._rolling_circle_init(rolling_circle_turtle)
+        self._draw_trace_dot(rolling_circle_turtle, x, y)
+        self._draw_rolling_circle_dot(rolling_circle_turtle, theta)
+        rolling_circle_x, rolling_circle_y = self._draw_rolling_circle_focus()
+        self._draw_rolling_circle_focus(rolling_circle_turtle, rolling_circle_x, rolling_circle_y)
+        self._connect_focus_to_trace_dots(rolling_circle_turtle, shape_turtle)
 
-        # Draw red dot
-        small_circle_turtle.goto(x, y)
-        small_circle_turtle.dot(10, "red")
+    def _connect_focus_to_trace_dots(self, rolling_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle") -> None:
+        """Draw line from focus to the trace that's drawing the shape"""
+        rolling_circle_turtle.down()
+        rolling_circle_turtle.seth(rolling_circle_turtle.towards(shape_turtle))
+        rolling_circle_turtle.fd(self.d)
 
-        # Draw circle
-        small_circle_turtle.seth(0)
-        small_circle_y=self._circle_offset()*math.sin(theta) - self.r
-        small_circle_x=self._circle_offset()*math.cos(theta)
-        small_circle_turtle.goto(small_circle_x, small_circle_y)
-        small_circle_turtle.down()
-        small_circle_turtle.color("black")
-        small_circle_turtle.circle(self.r,steps=200)
+    def _draw_rolling_circle_focus_dot(self, rolling_circle_turtle: "turtle.Turtle", rolling_circle_x: Union[float, int], rolling_circle_y: Union[float, int]) -> None:
+        """Draw the center of the rolling circle"""
+        rolling_circle_turtle.up()
+        rolling_circle_turtle.goto(rolling_circle_x, rolling_circle_y + self.r)
+        rolling_circle_turtle.dot(10, "blue")
 
-        # Draw center blue dot
-        small_circle_turtle.up()
-        small_circle_turtle.goto(small_circle_x, small_circle_y + self.r)
-        small_circle_turtle.dot(10, "blue")
+    def _draw_rolling_circle(self, rolling_circle_turtle: "turtle.Turtle", theta) -> None:
+        """Draw the rolling circle on the screen"""
+        rolling_circle_turtle.seth(0)
+        rolling_circle_y=self._circle_offset()*math.sin(theta) - self.r
+        rolling_circle_x=self._circle_offset()*math.cos(theta)
+        rolling_circle_turtle.goto(rolling_circle_x, rolling_circle_y)
+        rolling_circle_turtle.down()
+        rolling_circle_turtle.color("black")
+        rolling_circle_turtle.circle(self.r,steps=200)
+        return rolling_circle_x, rolling_circle_y
 
-        #Draw line
-        small_circle_turtle.down()
-        small_circle_turtle.seth(small_circle_turtle.towards(shape_turtle))
-        small_circle_turtle.fd(self.d)
+    def _draw_trace_dot(self, rolling_circle_turtle: "turtle.Turtle", x: Union[int, float], y: Union[int, float]) -> None:
+        """Draw rolling circle outer trace"""
+        rolling_circle_turtle.goto(x, y)
+        rolling_circle_turtle.dot(10, "red")
+
+    def _rolling_circle_init(self, rolling_circle_turtle: "turtle.Turtle") -> None:
+        """Set iteration's initial conditions for rolling circle"""
+        rolling_circle_turtle.clear()
+        rolling_circle_turtle.seth(0)
+        rolling_circle_turtle.up()
 
     @abstractmethod
     def _circle_offset(self) -> float:
