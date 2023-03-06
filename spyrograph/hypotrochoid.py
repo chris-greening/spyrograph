@@ -11,8 +11,8 @@ class Hypotrochoid:
         self.d = d
         self.thetas = thetas 
     
-        self.x = [self.calculate_x(theta) for theta in self.thetas]
-        self.y = [self.calculate_y(theta) for theta in self.thetas]
+        self.x = [self._calculate_x(theta) for theta in self.thetas]
+        self.y = [self._calculate_y(theta) for theta in self.thetas]
         self.coords = list(zip(self.x, self.y, self.thetas))
 
     def trace(self, screen_size: Tuple[int, int] = (1000, 1000), exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False) -> None:
