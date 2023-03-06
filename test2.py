@@ -1,36 +1,16 @@
 import numpy as np
 
-from spyrograph import Hypotrochoid, Epitrochoid, Hypocycloid, Epicycloid
+from spyrograph import Hypotrochoid, Epitrochoid, Hypocycloid, Epicycloid, Deltoid
 
 # R = 573/2
 # d = 600/2
 # thetas = np.arange(0,365, .2)
 # r = 791/2
 
-R = 200
-d = 50
-thetas = np.arange(0,360,5)
-r = 100
-epitrochoid = Epitrochoid(R, r, d, thetas)
-screen = epitrochoid.trace()
+R = 100
+d = 400/1.2
+thetas = np.arange(0,30,1)
+r = d
 
-R = 300*1.12
-d = 50*1.12
-thetas = np.arange(0,360,2)
-r = 150*1.12
-hypotrochoid = Hypotrochoid(R, r, d, thetas)
-screen = hypotrochoid.trace(screen = screen, color="red")
-
-R = 50*1.45
-d = 12.5*1.45
-thetas = np.arange(0,360,5)
-r = 25*1.45
-epitrochoid = Hypocycloid(R, r, thetas)
-epitrochoid.trace(screen = screen, color = "blue")
-
-R = 50*1.45
-d = 12.5*1.45
-thetas = np.arange(0,360,5)
-r = 25*1.45
-epicycloid = Epicycloid(R, r, thetas)
-epicycloid.trace(exit_on_click=True, screen = screen, color = "green")
+deltoid = Deltoid(R, thetas)
+deltoid.trace(exit_on_click=True, show_circles=True)

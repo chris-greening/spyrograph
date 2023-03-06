@@ -59,7 +59,7 @@ class _Roulette(ABC):
         for x, y, theta in self.coords:
             shape_turtle.goto(x, y)
             if show_circles:
-                self._trace_outer_circle(rolling_circle_turtle, shape_turtle, x, y, theta)
+                self._trace_rolling_circle(rolling_circle_turtle, shape_turtle, x, y, theta)
             if first:
                 first = False
                 shape_turtle.down()
@@ -84,8 +84,7 @@ class _Roulette(ABC):
         """Trace the inner circle of the animation"""
         self._rolling_circle_init(rolling_circle_turtle)
         self._draw_trace_dot(rolling_circle_turtle, x, y)
-        self._draw_rolling_circle_dot(rolling_circle_turtle, theta)
-        rolling_circle_x, rolling_circle_y = self._draw_rolling_circle_focus()
+        rolling_circle_x, rolling_circle_y = self._draw_rolling_circle(rolling_circle_turtle, theta)
         self._draw_rolling_circle_focus(rolling_circle_turtle, rolling_circle_x, rolling_circle_y)
         self._connect_focus_to_trace_dots(rolling_circle_turtle, shape_turtle)
 
@@ -95,13 +94,13 @@ class _Roulette(ABC):
         rolling_circle_turtle.seth(rolling_circle_turtle.towards(shape_turtle))
         rolling_circle_turtle.fd(self.d)
 
-    def _draw_rolling_circle_focus_dot(self, rolling_circle_turtle: "turtle.Turtle", rolling_circle_x: Union[float, int], rolling_circle_y: Union[float, int]) -> None:
+    def _draw_rolling_circle_focus(self, rolling_circle_turtle: "turtle.Turtle", rolling_circle_x: Union[float, int], rolling_circle_y: Union[float, int]) -> None:
         """Draw the center of the rolling circle"""
         rolling_circle_turtle.up()
         rolling_circle_turtle.goto(rolling_circle_x, rolling_circle_y + self.r)
         rolling_circle_turtle.dot(10, "blue")
 
-    def _draw_rolling_circle(self, rolling_circle_turtle: "turtle.Turtle", theta) -> None:
+    def _draw_rolling_circle(self, rolling_circle_turtle: "turtle.Turtle", theta: Union[int, float]) -> None:
         """Draw the rolling circle on the screen"""
         rolling_circle_turtle.seth(0)
         rolling_circle_y=self._circle_offset()*math.sin(theta) - self.r
