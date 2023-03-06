@@ -46,7 +46,7 @@ class Epitrochoid:
         if hide_turtle:
             shape_turtle.hideturtle()
         if show_circles:
-            self._trace_inner_circle(large_circle_turtle)
+            self._trace_fixed_circle(large_circle_turtle)
         
         first = True 
         shape_turtle.up()
@@ -64,7 +64,7 @@ class Epitrochoid:
             turtle.exitonclick()
         return screen
 
-    def _trace_inner_circle(self, large_circle_turtle: "turtle.Turtle") -> None:
+    def _trace_fixed_circle(self, large_circle_turtle: "turtle.Turtle") -> None:
         """Trace the outer circle of the animation"""
         large_circle_turtle.up()
         large_circle_turtle.seth(0)
