@@ -7,21 +7,23 @@ from spyrograph import Hypotrochoid, Epitrochoid
 # thetas = np.arange(0,365, .2)
 # r = 791/2
 
-R = 300
+R = 200
 d = 50
-thetas = np.arange(0,360,.05)
+thetas = np.arange(0,360,5)
 r = 100
-
-# hypotrochoid = Hypotrochoid(R, r, d, thetas)
-# hypotrochoid.trace(exit_on_click=True)
-
 epitrochoid = Epitrochoid(R, r, d, thetas)
 screen = epitrochoid.trace()
 
-R = 300
-d = 50
-thetas = np.arange(0,7,.05)
-r = 100
-
+R = 300*1.12
+d = 50*1.12
+thetas = np.arange(0,360,2)
+r = 150*1.12
 hypotrochoid = Hypotrochoid(R, r, d, thetas)
-hypotrochoid.trace(exit_on_click=True,  screen = screen, color="red")
+screen = hypotrochoid.trace(screen = screen, color="red")
+
+R = 50*1.45
+d = 12.5*1.45
+thetas = np.arange(0,360,5)
+r = 25*1.45
+epitrochoid = Epitrochoid(R, r, d, thetas)
+epitrochoid.trace(exit_on_click=True, screen = screen, color = "blue")
