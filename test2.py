@@ -1,6 +1,6 @@
 import numpy as np
 
-from spyrograph import Hypotrochoid, Epitrochoid
+from spyrograph import Hypotrochoid, Epitrochoid, Hypocycloid
 
 # R = 573/2
 # d = 600/2
@@ -25,5 +25,5 @@ R = 50*1.45
 d = 12.5*1.45
 thetas = np.arange(0,360,5)
 r = 25*1.45
-epitrochoid = Epitrochoid(R, r, d, thetas)
+epitrochoid = Hypocycloid(R, r, thetas)
 epitrochoid.trace(exit_on_click=True, screen = screen, color = "blue")
