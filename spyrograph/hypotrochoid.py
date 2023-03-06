@@ -38,6 +38,7 @@ class Hypotrochoid:
         
         first = True 
         shape_turtle.up()
+        shape_turtle.color(color)
         for x, y, theta in self.coords:
             shape_turtle.goto(x, y)
 
