@@ -72,7 +72,7 @@ class Epitrochoid:
         large_circle_turtle.down()
         large_circle_turtle.circle(self.R,steps=200)
 
-    def _trace_outer_circle(
+    def _trace_rolling_circle(
             self, small_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle",
             x: Union[float, int], y: Union[float, int], theta: Union[float, int]
         ) -> None:
