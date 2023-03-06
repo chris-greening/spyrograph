@@ -84,4 +84,4 @@ class Hypotrochoid:
 
     def _calculate_y(self, theta: float) -> float:
         """Return calculated y-value from parametrized equation"""
-        return (self.R - self.r)*math.sin(theta) + self.d*math.sin(((self.R-r)/self.r)*theta)
+        return (self.R - self.r)*math.sin(theta) + self.d*math.sin(((self.R-self.r)/self.r)*theta)
