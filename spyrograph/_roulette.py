@@ -73,7 +73,6 @@ class _Roulette(ABC):
         large_circle_turtle.down()
         large_circle_turtle.circle(self.R,steps=200)
 
-    @abstractmethod
     def _trace_rolling_circle(
             self, small_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle",
             x: Union[float, int], y: Union[float, int], theta: Union[float, int]
@@ -89,8 +88,8 @@ class _Roulette(ABC):
 
         # Draw circle
         small_circle_turtle.seth(0)
-        small_circle_y=(self.R + self.r)*math.sin(theta) - self.r
-        small_circle_x=(self.R + self.r)*math.cos(theta)
+        small_circle_y=self._circle_offset()*math.sin(theta) - self.r
+        small_circle_x=self._circle_offset()*math.cos(theta)
         small_circle_turtle.goto(small_circle_x, small_circle_y)
         small_circle_turtle.down()
         small_circle_turtle.color("black")
@@ -105,6 +104,11 @@ class _Roulette(ABC):
         small_circle_turtle.down()
         small_circle_turtle.seth(small_circle_turtle.towards(shape_turtle))
         small_circle_turtle.fd(self.d)
+
+    @abstractmethod
+    def _circle_offset(self) -> float:
+        """Return rolling circle offset from fixed circle"""
+        return self.R + self.r
 
     @abstractmethod
     def _calculate_x(self, theta: float) -> float:
