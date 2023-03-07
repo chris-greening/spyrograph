@@ -1,4 +1,4 @@
-from .epitrochoid import Epitrochoid
+from spyrograph.epitrochoid import Epitrochoid
 
 class Epicycloid(Epitrochoid):
     def __init__(self, R, r, thetas) -> None:

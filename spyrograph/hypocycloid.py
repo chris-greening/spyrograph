@@ -1,4 +1,4 @@
-from .hypotrochoid import Hypotrochoid
+from spyrograph.hypotrochoid import Hypotrochoid
 
 class Hypocycloid(Hypotrochoid):
     def __init__(self, R, r, thetas) -> None:

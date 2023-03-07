@@ -1,6 +1,6 @@
 import math
 
-from ._roulette import _Roulette
+from spyrograph._roulette import _Roulette
 
 class Epitrochoid(_Roulette):
     """Model of a epitrochoid"""
