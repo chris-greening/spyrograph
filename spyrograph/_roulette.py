@@ -1,3 +1,8 @@
+"""Abstract base class for generalizing the epitrochoid and hypotrochoid
+shape's methods i.e. tracing, calculating, etc. The child classes define 
+the parametric equations
+"""
+
 import math
 import turtle
 from typing import Tuple, List
@@ -7,7 +12,7 @@ from abc import ABC, abstractmethod
 
 class _Roulette(ABC):
     def __init__(self, R: Number, r: Number, d: Number, thetas: List[Number]) -> None:
-        self.R = R
+        self.aR = R
         self.r = r
         self.d = d
         self.thetas = thetas 
