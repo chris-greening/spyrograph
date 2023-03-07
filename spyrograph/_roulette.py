@@ -1,11 +1,12 @@
 import math
 import turtle
-from typing import Tuple, Union
+from typing import Tuple, List
+from numbers import Number
 import time
 from abc import ABC, abstractmethod
 
 class _Roulette(ABC):
-    def __init__(self, R, r, d, thetas) -> None:
+    def __init__(self, R: Number, r: Number, d: Number, thetas: List[Number]) -> None:
         self.R = R
         self.r = r
         self.d = d
@@ -15,7 +16,7 @@ class _Roulette(ABC):
         self.y = [self._calculate_y(theta) for theta in self.thetas]
         self.coords = list(zip(self.x, self.y, self.thetas))
 
-    def trace(self, screen_size: Tuple[int, int] = (1000, 1000), exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False, frame_pause: float = 0, screen: "turtle.Screen" = None) -> "turtle.Screen":
+    def trace(self, screen_size: Tuple[Number, Number] = (1000, 1000), exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False, frame_pause: Number = 0, screen: "turtle.Screen" = None) -> "turtle.Screen":
         """Trace the roulette shape using turtle
 
         Parameters
@@ -94,13 +95,13 @@ class _Roulette(ABC):
         rolling_circle_turtle.seth(rolling_circle_turtle.towards(shape_turtle))
         rolling_circle_turtle.fd(self.d)
 
-    def _draw_rolling_circle_focus(self, rolling_circle_turtle: "turtle.Turtle", rolling_circle_x: Union[float, int], rolling_circle_y: Union[float, int]) -> None:
+    def _draw_rolling_circle_focus(self, rolling_circle_turtle: "turtle.Turtle", rolling_circle_x: Number, rolling_circle_y: Number) -> None:
         """Draw the center of the rolling circle"""
         rolling_circle_turtle.up()
         rolling_circle_turtle.goto(rolling_circle_x, rolling_circle_y + self.r)
         rolling_circle_turtle.dot(10, "blue")
 
-    def _draw_rolling_circle(self, rolling_circle_turtle: "turtle.Turtle", theta: Union[int, float]) -> None:
+    def _draw_rolling_circle(self, rolling_circle_turtle: "turtle.Turtle", theta: Number) -> None:
         """Draw the rolling circle on the screen"""
         rolling_circle_turtle.seth(0)
         rolling_circle_y=self._circle_offset()*math.sin(theta) - self.r
@@ -111,7 +112,7 @@ class _Roulette(ABC):
         rolling_circle_turtle.circle(self.r,steps=200)
         return rolling_circle_x, rolling_circle_y
 
-    def _draw_trace_dot(self, rolling_circle_turtle: "turtle.Turtle", x: Union[int, float], y: Union[int, float]) -> None:
+    def _draw_trace_dot(self, rolling_circle_turtle: "turtle.Turtle", x: Number, y: Number) -> None:
         """Draw rolling circle outer trace"""
         rolling_circle_turtle.goto(x, y)
         rolling_circle_turtle.dot(10, "red")
@@ -127,9 +128,9 @@ class _Roulette(ABC):
         """Return rolling circle offset from fixed circle"""
 
     @abstractmethod
-    def _calculate_x(self, theta: float) -> float:
+    def _calculate_x(self, theta: Number) -> float:
         """Return calculated x-value from parametrized equation"""
 
     @abstractmethod
-    def _calculate_y(self, theta: float) -> float:
+    def _calculate_y(self, theta: Number) -> float:
         """Return calculated y-value from parametrized equation"""

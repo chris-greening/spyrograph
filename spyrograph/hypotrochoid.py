@@ -1,10 +1,12 @@
 import math
+from typing import List
+from numbers import Number
 
 from spyrograph._roulette import _Roulette
 
 class Hypotrochoid(_Roulette):
     """Model of a hypotrochoid"""
-    def __init__(self, R, r, d, thetas) -> None:
+    def __init__(self, R: Number, r: Number, d: Number, thetas: List[Number]) -> None:
         self.R = R
         self.r = r
         self.d = d
