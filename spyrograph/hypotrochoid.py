@@ -1,3 +1,7 @@
+"""Model of a hypotrochoid. A hypotrochoid is a geometric shape drawn from a line
+attached to a circle rolling around the interior of a fixed circle
+"""
+
 import math
 from typing import List
 from numbers import Number

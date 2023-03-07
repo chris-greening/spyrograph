@@ -1,3 +1,7 @@
+"""Model of an epitrochoid. An epitrochoid is a geometric shape drawn from a line
+attached to a circle rolling around the exterior of a fixed circle
+"""
+
 import math
 from typing import List
 from numbers import Number

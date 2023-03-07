@@ -1,3 +1,7 @@
+"""Model of a hypocycloid. Specific case of a hypotrochoid where the distance
+from the rolling circle is equal to the radius of the rolling circle
+"""
+
 from typing import List
 from numbers import Number
 
