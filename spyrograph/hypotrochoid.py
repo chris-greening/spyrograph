@@ -30,4 +30,4 @@ class Hypotrochoid(_Roulette):
 
     def _calculate_y(self, theta: float) -> float:
         """Return calculated y-value from parametrized equation"""
-        return self._circle_offset()*math.sin(theta) + self.d*math.sin((self._circle_offset()/self.r)*theta)
+        return self._circle_offset()*math.sin(theta) - self.d*math.sin((self._circle_offset()/self.r)*theta)
