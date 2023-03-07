@@ -85,7 +85,7 @@ class _Roulette(ABC):
 
     def _trace_rolling_circle(
             self, rolling_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle",
-            x: Union[float, int], y: Union[float, int], theta: Union[float, int]
+            x: Number, y: Number, theta: Number
         ) -> None:
         """Trace the inner circle of the animation"""
         self._rolling_circle_init(rolling_circle_turtle)
