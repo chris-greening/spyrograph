@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="spyrograph",
-    version="0.1.0",
+    version="0.2.0",
     author="Chris Greening",
     author_email="chris@christophergreening.com",
     description="Library for drawing spirographs in Python",
