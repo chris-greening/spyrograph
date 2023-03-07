@@ -26,7 +26,7 @@ class _Roulette(ABC):
 
         Parameters
         ----------
-        screen_size: Tuple[int, int]
+        screen_size: Tuple[Number, Number]
             Length and width of the output screen
         exit_on_click: bool = False
             Pause the final animation until the user clicks to exit the window
@@ -36,7 +36,7 @@ class _Roulette(ABC):
             Hide the turtle icon while tracing
         show_circles: bool = False
             Show the inner and outer circles that compose the trace
-        frame_pause: float = 0
+        frame_pause: Number = 0
             Time in seconds to pause each individual frame for
 
         Returns
