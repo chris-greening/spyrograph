@@ -13,8 +13,6 @@ _spyrograph_ is a lightweight Python package that provides an expressive and fle
 
 ## :computer: Installation <a name="installation"></a>
 
-### Minimum Python version
-
 ### pip
 Install from PyPI using
 ```shell
