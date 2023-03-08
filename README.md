@@ -1,5 +1,9 @@
 # _spyrograph_: elegant mathematics and geometries
 
+<p align="center">
+  <img src="media/sample_drawing.gif" alt="Sample hypotrochoid drawing showing a circle rolling around the interior of another circle drawing a geometric shape">
+</p>
+
 ## What is it?
 _spyrograph_ is a lightweight Python package that provides an expressive and flexible set of tools for drawing beautiful mathematically driven art
 
