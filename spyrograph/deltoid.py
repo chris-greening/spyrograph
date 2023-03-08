@@ -1,3 +1,5 @@
+from numbers import Number
+
 from spyrograph.hypocycloid import Hypocycloid
 
 class Deltoid(Hypocycloid):
