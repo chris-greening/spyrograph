@@ -1,4 +1,5 @@
 from numbers import Number
+from typing import List
 
 from spyrograph.hypocycloid import Hypocycloid
 
