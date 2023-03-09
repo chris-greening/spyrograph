@@ -59,6 +59,9 @@ class _Roulette(ABC):
         fixed_circle_turtle = turtle.Turtle()
         rolling_circle_turtle.hideturtle()
         fixed_circle_turtle.hideturtle()
+        shape_turtle.color(color)
+        rolling_circle_turtle.color(circle_color)
+        fixed_circle_turtle.color(circle_color)
         if hide_turtle:
             shape_turtle.hideturtle()
         if show_circles:
@@ -66,9 +69,6 @@ class _Roulette(ABC):
         
         first = True 
         shape_turtle.up()
-        shape_turtle.color(color)
-        rolling_circle_turtle.color(circle_color)
-        fixed_circle_turtle.color(circle_color)
         for x, y, theta in self.coords:
             shape_turtle.goto(x, y)
             if show_circles:
@@ -120,7 +120,6 @@ class _Roulette(ABC):
         rolling_circle_x=self._circle_offset()*math.cos(theta)
         rolling_circle_turtle.goto(rolling_circle_x, rolling_circle_y)
         rolling_circle_turtle.down()
-        rolling_circle_turtle.color("black")
         rolling_circle_turtle.circle(self.r,steps=200)
         return rolling_circle_x, rolling_circle_y
 
