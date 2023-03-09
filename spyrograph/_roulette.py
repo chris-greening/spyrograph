@@ -21,7 +21,7 @@ class _Roulette(ABC):
         self.y = [self._calculate_y(theta) for theta in self.thetas]
         self.coords = list(zip(self.x, self.y, self.thetas))
 
-    def trace(self, screen_size: Tuple[Number, Number] = (1000, 1000), screen_color: str = "white", exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False, frame_pause: Number = 0, screen: "turtle.Screen" = None) -> "turtle.Screen":
+    def trace(self, screen_size: Tuple[Number, Number] = (1000, 1000), screen_color: str = "white", exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False, frame_pause: Number = 0, screen: "turtle.Screen" = None, circle_color: str = "black") -> "turtle.Screen":
         """Trace the roulette shape using turtle
 
         Parameters
@@ -40,6 +40,8 @@ class _Roulette(ABC):
             Show the inner and outer circles that compose the trace
         frame_pause: Number = 0
             Time in seconds to pause each individual frame for
+        circle_color: str = "white"
+            Color of the circles
 
         Returns
         -------
@@ -65,6 +67,8 @@ class _Roulette(ABC):
         first = True 
         shape_turtle.up()
         shape_turtle.color(color)
+        rolling_circle_turtle.color(circle_color)
+        fixed_circle_turtle.color(circle_color)
         for x, y, theta in self.coords:
             shape_turtle.goto(x, y)
             if show_circles:
