@@ -21,13 +21,15 @@ class _Roulette(ABC):
         self.y = [self._calculate_y(theta) for theta in self.thetas]
         self.coords = list(zip(self.x, self.y, self.thetas))
 
-    def trace(self, screen_size: Tuple[Number, Number] = (1000, 1000), exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False, frame_pause: Number = 0, screen: "turtle.Screen" = None) -> "turtle.Screen":
+    def trace(self, screen_size: Tuple[Number, Number] = (1000, 1000), screen_color: str = "white", exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False, frame_pause: Number = 0, screen: "turtle.Screen" = None) -> "turtle.Screen":
         """Trace the roulette shape using turtle
 
         Parameters
         ----------
         screen_size: Tuple[Number, Number]
             Length and width of the output screen
+        screen_color: str
+            Color of the background screen
         exit_on_click: bool = False
             Pause the final animation until the user clicks to exit the window
         color: str = "black"
@@ -47,6 +49,7 @@ class _Roulette(ABC):
         if screen is None:
             screen = turtle.Screen()
             screen.setup(*screen_size)
+            screen.bgcolor(screen_color)
         turtle.tracer(False)
 
         shape_turtle = turtle.Turtle()
