@@ -7,6 +7,8 @@
 ## What is it?
 _spyrograph_ is a lightweight Python package that provides an expressive and flexible set of tools for drawing beautiful mathematically driven art
 
+[Official website](https://chris-greening.github.io/spyrograph/)
+
 ## Table of Contents
 * [Installation](#installation)
 * [Contributing](#contributing)
