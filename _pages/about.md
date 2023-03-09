@@ -4,7 +4,7 @@ title: "About"
 excerpt: "spyrograph is a lightweight Python package that provides an expressive and flexible set of tools for drawing beautiful mathematically driven art"
 ---
 
-![Geographic shape hypotrochoid](images/logo.PNG)
+![Geographic shape hypotrochoid](https://github.com/chris-greening/spyrograph/blob/gh-pages/images/logo.PNG?raw=true)
 
 ## What is it?
 
