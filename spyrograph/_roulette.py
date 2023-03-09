@@ -12,7 +12,7 @@ from abc import ABC, abstractmethod
 
 class _Roulette(ABC):
     def __init__(self, R: Number, r: Number, d: Number, thetas: List[Number]) -> None:
-        self.aR = R
+        self.R = R
         self.r = r
         self.d = d
         self.thetas = thetas 
