@@ -15,6 +15,11 @@ try:
 except ImportError:
     plt = None
 
+try:
+    import pandas as pd
+except ImportError:
+    pd = None
+
 class _Roulette(ABC):
     def __init__(self, R: Number, r: Number, d: Number, thetas: List[Number]) -> None:
         self.R = R
@@ -99,6 +104,18 @@ class _Roulette(ABC):
         if exit_on_click:
             turtle.exitonclick()
         return screen
+
+    @property
+    def df(self) -> "pd.DataFrame":
+        """Return DataFrame of all relevant information pertaining to the parametrized shape"""
+        if pd is None:
+            raise ImportError("pandas is required but is not installed on your machine, please install and try again")
+        df = pd.DataFrame({
+            "x": self.x,
+            "y": self.y,
+            "theta": self.theta
+        })
+        return df
 
     def _trace_fixed_circle(self, fixed_circle_turtle: "turtle.Turtle") -> None:
         """Trace the outer circle of the animation"""
