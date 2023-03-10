@@ -26,12 +26,12 @@ class _Roulette(ABC):
         self.y = [self._calculate_y(theta) for theta in self.thetas]
         self.coords = list(zip(self.x, self.y, self.thetas))
 
-    def plot(self) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
+    def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
         """Return matplotlib figure and axis objects after plotting the figure"""
         if plt is None:
             raise ImportError("matplotlib is required but is not installed on your machine, please install and try again")
         fig, ax = plt.subplots()
-        ax.plot(self.x, self.y)
+        ax.plot(self.x, self.y, **kwargs)
         plt.show()
         return fig, ax
 
