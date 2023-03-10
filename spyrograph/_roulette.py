@@ -26,6 +26,9 @@ class _Roulette(ABC):
         self.y = [self._calculate_y(theta) for theta in self.thetas]
         self.coords = list(zip(self.x, self.y, self.thetas))
 
+    def plot(self) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
+        pass 
+
     def trace(self, screen_size: Tuple[Number, Number] = (1000, 1000), screen_color: str = "white", exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False, frame_pause: Number = 0, screen: "turtle.Screen" = None, circle_color: str = "black") -> "turtle.Screen":
         """Trace the roulette shape using turtle
 
