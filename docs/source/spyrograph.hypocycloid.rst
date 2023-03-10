@@ -5,3 +5,4 @@ spyrograph.hypocycloid module
    :members:
    :undoc-members:
    :show-inheritance:
+   :inherited-members:
