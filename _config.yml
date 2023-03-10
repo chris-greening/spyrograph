@@ -54,7 +54,7 @@ author:
 analytics:
   provider               : "google" # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id           : ""
+    tracking_id           : "G-4ZYC1JYYJ3"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

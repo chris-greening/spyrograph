@@ -6,3 +6,8 @@ vendor
 
 spyrograph/
 test.py
+
+build/
+dist/
+docs/
+*.egg-info/
