@@ -12,11 +12,20 @@ spyrograph is a lightweight Python package that provides an expressive and flexi
    :toctree: _autosummary
    :recursive:
 
-   spyrograph
-
 .. toctree::
    :maxdepth: 6
 
+Hypotrochoid
+------------
+* :doc:`Hypotrochoid <source/spyrograph.hypotrochoid>`
+* :doc:`Hypocycloid <source/spyrograph.hypocycloid>`
+* :doc:`Deltoid <source/spyrograph.deltoid>`
+* :doc:`Astroid <source/spyrograph.astroid>`
+
+Epitrochoid
+-----------
+* :doc:`Epitrochoid <source/spyrograph.epitrochoid>`
+* :doc:`Epicycloid <source/spyrograph.epicycloid>`
 
 Indices and tables
 ==================
