@@ -7,6 +7,10 @@
 ## What is it?
 _spyrograph_ is a lightweight Python package that provides an expressive and flexible set of tools for drawing beautiful mathematically driven art
 
+[![Issues](https://img.shields.io/github/issues/chris-greening/spyrograph)](https://github.com/chris-greening/spyrograph/issues)
+[![License](https://img.shields.io/github/license/chris-greening/spyrograph)](LICENSE)
+[![Version](https://img.shields.io/pypi/v/spyrograph?color=brightgreen)](https://pypi.org/project/spyrograph/)
+
 [Official website](https://chris-greening.github.io/spyrograph/)
 
 [Official docs](https://spyrograph.readthedocs.io/en/latest/)
