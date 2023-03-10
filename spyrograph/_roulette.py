@@ -28,6 +28,8 @@ class _Roulette(ABC):
 
     def plot(self) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
         """Return matplotlib figure and axis objects after plotting the figure"""
+        if plt is None:
+            raise ImportError("matplotlib is required but is not installed on your machine, please install and try again")
 
     def trace(self, screen_size: Tuple[Number, Number] = (1000, 1000), screen_color: str = "white", exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False, frame_pause: Number = 0, screen: "turtle.Screen" = None, circle_color: str = "black") -> "turtle.Screen":
         """Trace the roulette shape using turtle
