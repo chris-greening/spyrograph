@@ -10,6 +10,11 @@ from numbers import Number
 import time
 from abc import ABC, abstractmethod
 
+try:
+    import matplotlib.pyplot as plt
+except ImportError:
+    plt = None
+
 class _Roulette(ABC):
     def __init__(self, R: Number, r: Number, d: Number, thetas: List[Number]) -> None:
         self.R = R
@@ -20,6 +25,19 @@ class _Roulette(ABC):
         self.x = [self._calculate_x(theta) for theta in self.thetas]
         self.y = [self._calculate_y(theta) for theta in self.thetas]
         self.coords = list(zip(self.x, self.y, self.thetas))
+
+    def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
+        """Return matplotlib figure and axis objects after plotting the figure
+        
+        See available matplotlib.pyplot.plot configurations 
+        (https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html)
+        """
+        if plt is None:
+            raise ImportError("matplotlib is required but is not installed on your machine, please install and try again")
+        fig, ax = plt.subplots()
+        ax.plot(self.x, self.y, **kwargs)
+        plt.show()
+        return fig, ax
 
     def trace(self, screen_size: Tuple[Number, Number] = (1000, 1000), screen_color: str = "white", exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False, frame_pause: Number = 0, screen: "turtle.Screen" = None, circle_color: str = "black") -> "turtle.Screen":
         """Trace the roulette shape using turtle
