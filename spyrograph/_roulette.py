@@ -15,6 +15,11 @@ try:
 except ImportError:
     plt = None
 
+try:
+    import pandas as pd
+except ImportError:
+    pd = None
+
 class _Roulette(ABC):
     def __init__(self, R: Number, r: Number, d: Number, thetas: List[Number]) -> None:
         self.R = R
