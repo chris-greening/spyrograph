@@ -7,3 +7,5 @@ main:
     url: "/blog/"
   - title : "License"
     url: "/license/"
+  - title : "Docs"
+    url: "https://spyrograph.readthedocs.io/en/latest/"
