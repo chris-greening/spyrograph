@@ -81,7 +81,7 @@ class _Roulette(ABC):
         shape_turtle, rolling_circle_turtle, fixed_circle_turtle = turtles
 
         if show_circles:
-            self._trace_fixed_circle(fixed_circle_turtle)
+            self._draw_circle(fixed_circle_turtle, 0, -self.R, self.R)
         
         first = True 
         shape_turtle.up()
@@ -131,14 +131,6 @@ class _Roulette(ABC):
 
         return shape_turtle, rolling_circle_turtle, fixed_circle_turtle
 
-    def _trace_fixed_circle(self, t: "turtle.Turtle") -> None:
-        """Trace the outer circle of the animation"""
-        t.up()
-        t.seth(0)
-        t.goto(0,-self.R)
-        t.down()
-        t.circle(self.R,steps=200)
-
     def _trace_rolling_circle(
             self, rolling_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle",
             x: Number, y: Number, theta: Number
@@ -156,14 +148,19 @@ class _Roulette(ABC):
         rolling_circle_turtle.seth(rolling_circle_turtle.towards(shape_turtle))
         rolling_circle_turtle.fd(self.d)
 
+    def _draw_circle(self, t: "turtle.Turtle", x: float, y: float, radius: float) -> None:
+        """Draw circle"""
+        t.up()
+        t.seth(0)
+        t.goto(x, y)
+        t.down()
+        t.circle(radius, steps=200)
+
     def _draw_rolling_circle(self, t: "turtle.Turtle", theta: Number) -> None:
         """Draw the rolling circle on the screen"""
-        t.seth(0)
         rolling_circle_y=self._circle_offset()*math.sin(theta) - self.r
         rolling_circle_x=self._circle_offset()*math.cos(theta)
-        t.goto(rolling_circle_x, rolling_circle_y)
-        t.down()
-        t.circle(self.r,steps=200)
+        self._draw_circle(t, rolling_circle_x, rolling_circle_y, self.r)
         return rolling_circle_x, rolling_circle_y
 
     def _draw_dot(self, t: "turtle.Turtle", x: Number, y: Number, color: str) -> None:
