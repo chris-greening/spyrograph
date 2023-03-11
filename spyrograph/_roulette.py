@@ -99,7 +99,13 @@ class _Roulette(ABC):
         for x, y, theta in self.coords:
             shape_turtle.goto(x, y)
             if show_circles:
-                self._trace_rolling_circle(rolling_circle_turtle, shape_turtle, x, y, theta)
+                self._trace_rolling_circle(
+                    rolling_circle_turtle,
+                    shape_turtle,
+                    x,
+                    y,
+                    theta
+                )
             if first:
                 first = False
                 shape_turtle.down()
