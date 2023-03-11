@@ -11,21 +11,21 @@ excerpt: Elegant mathematics and beautiful geometries
 feature_row:
   - image_path: images/partial_circle.PNG
     image_size: 100px
-    alt: "powerful and lightweight"
-    title: "Test test test test"
-    excerpt: "Test test test test test test test test test"
+    alt: ""
+    title: "Expressive and consistent syntax"
+    excerpt: ""
     url: ""
     btn_label: "Learn More"
   - image_path: images/partial_circle.PNG
-    alt: "download Instagram content"
-    title: "Test test test test"
-    excerpt: "Test test test test test test test test test"
+    alt: ""
+    title: "Clear visualizations and animations"
+    excerpt: ""
     url: ""
     btn_label: "Learn More"
   - image_path: images/partial_circle.PNG
     alt: "100% free"
-    title: "Test test test test"
-    excerpt: "Test test test test test test test test test"
+    title: "Completely free to use"
+    excerpt: ""
     url: "/license/"
     btn_label: "Learn More"
 github:
