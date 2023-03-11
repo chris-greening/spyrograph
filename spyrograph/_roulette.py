@@ -37,6 +37,7 @@ class _Roulette(ABC):
         See available matplotlib.pyplot.plot configurations
         (https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html)
         """
+        # pylint: disable=line-too-long
         if plt is None:
             raise ImportError("matplotlib is required but is not installed on your machine, please install and try again")
         fig, ax = plt.subplots()
