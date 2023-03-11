@@ -15,8 +15,10 @@ class Epitrochoid(_Roulette):
 
     def _calculate_x(self, theta: Number) -> Number:
         """Return calculated x-value from parametrized equation"""
+        # pylint: disable=line-too-long
         return self._circle_offset()*math.cos(theta) - self.d*math.cos((self._circle_offset()/self.r)*theta)
 
     def _calculate_y(self, theta: Number) -> Number:
         """Return calculated y-value from parametrized equation"""
+        # pylint: disable=line-too-long\
         return self._circle_offset()*math.sin(theta) - self.d*math.sin((self._circle_offset()/self.r)*theta)
