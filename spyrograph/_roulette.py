@@ -71,10 +71,7 @@ class _Roulette(ABC):
         screen: turtle.Screen
             Screen that the turtle is drawn on
         """
-        if screen is None:
-            screen = turtle.Screen()
-            screen.setup(*screen_size)
-            screen.bgcolor(screen_color)
+        screen = self._init_screen(screen, screen_size, screen_color)
         turtle.tracer(False)
 
         turtles = self._init_turtles(color, circle_color, hide_turtle)
@@ -114,6 +111,14 @@ class _Roulette(ABC):
             "theta": self.theta
         })
         return df
+
+    def _init_screen(self, screen: "turtle.Screen", screen_size: Tuple[Number, Number], screen_color: str) -> "turtle.Screen":
+        """Return initialized turtle.Screen"""
+        if screen is None:
+            screen = turtle.Screen()
+            screen.setup(*screen_size)
+            screen.bgcolor(screen_color)
+        return screen
 
     def _init_turtles(self, color: str, circle_color: str, hide_turtle: bool) -> Tuple["turtle.Turtle", "turtle.Turtle", "turtle.Turtle"]:
         # Return a shape turtle, rolling circle turtle, and fixed circle turtle
