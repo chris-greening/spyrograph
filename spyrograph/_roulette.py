@@ -158,10 +158,10 @@ class _Roulette(ABC):
         rolling_circle_turtle.circle(self.r,steps=200)
         return rolling_circle_x, rolling_circle_y
 
-    def _draw_trace_dot(self, rolling_circle_turtle: "turtle.Turtle", x: Number, y: Number) -> None:
+    def _draw_trace_dot(self, turtle: "turtle.Turtle", x: Number, y: Number, color: str) -> None:
         """Draw rolling circle outer trace"""
-        rolling_circle_turtle.goto(x, y)
-        rolling_circle_turtle.dot(10, "red")
+        turtle.goto(x, y)
+        turtle.dot(10, color)
 
     def _rolling_circle_init(self, rolling_circle_turtle: "turtle.Turtle") -> None:
         """Set iteration's initial conditions for rolling circle"""
