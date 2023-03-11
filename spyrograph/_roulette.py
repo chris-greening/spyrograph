@@ -136,33 +136,33 @@ class _Roulette(ABC):
         self._draw_dot(rolling_circle_turtle, rolling_circle_x, rolling_circle_y + self.r, "blue")
         self._connect_focus_to_trace_dots(rolling_circle_turtle, shape_turtle)
 
-    def _connect_focus_to_trace_dots(self, rolling_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle") -> None:
+    def _connect_focus_to_trace_dots(self, source_turtle: "turtle.Turtle", target_turtle: "turtle.Turtle") -> None:
         """Draw line from focus to the trace that's drawing the shape"""
         rolling_circle_turtle.down()
         rolling_circle_turtle.seth(rolling_circle_turtle.towards(shape_turtle))
         rolling_circle_turtle.fd(self.d)
 
-    def _draw_rolling_circle(self, rolling_circle_turtle: "turtle.Turtle", theta: Number) -> None:
+    def _draw_rolling_circle(self, t: "turtle.Turtle", theta: Number) -> None:
         """Draw the rolling circle on the screen"""
-        rolling_circle_turtle.seth(0)
+        t.seth(0)
         rolling_circle_y=self._circle_offset()*math.sin(theta) - self.r
         rolling_circle_x=self._circle_offset()*math.cos(theta)
-        rolling_circle_turtle.goto(rolling_circle_x, rolling_circle_y)
-        rolling_circle_turtle.down()
-        rolling_circle_turtle.circle(self.r,steps=200)
+        t.goto(rolling_circle_x, rolling_circle_y)
+        t.down()
+        t.circle(self.r,steps=200)
         return rolling_circle_x, rolling_circle_y
 
-    def _draw_dot(self, turtle: "turtle.Turtle", x: Number, y: Number, color: str) -> None:
+    def _draw_dot(self, t: "turtle.Turtle", x: Number, y: Number, color: str) -> None:
         """Draw rolling circle outer trace"""
-        turtle.up()
-        turtle.goto(x, y)
-        turtle.dot(10, color)
+        t.up()
+        t.goto(x, y)
+        t.dot(10, color)
 
-    def _rolling_circle_init(self, rolling_circle_turtle: "turtle.Turtle") -> None:
+    def _rolling_circle_init(self, t: "turtle.Turtle") -> None:
         """Set iteration's initial conditions for rolling circle"""
-        rolling_circle_turtle.clear()
-        rolling_circle_turtle.seth(0)
-        rolling_circle_turtle.up()
+        t.clear()
+        t.seth(0)
+        t.up()
 
     @abstractmethod
     def _circle_offset(self) -> float:
