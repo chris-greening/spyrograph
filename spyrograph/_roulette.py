@@ -127,7 +127,10 @@ class _Roulette(ABC):
         })
         return df
 
-    def _init_screen(self, screen: "turtle.Screen", screen_size: Tuple[Number, Number], screen_color: str) -> "turtle.Screen":
+    def _init_screen(
+            self, screen: "turtle.Screen", screen_size: Tuple[Number, Number],
+            screen_color: str
+        ) -> "turtle.Screen":
         """Return initialized turtle.Screen"""
         if screen is None:
             screen = turtle.Screen()
@@ -135,7 +138,9 @@ class _Roulette(ABC):
             screen.bgcolor(screen_color)
         return screen
 
-    def _init_turtles(self, color: str, circle_color: str, hide_turtle: bool) -> Tuple["turtle.Turtle", "turtle.Turtle", "turtle.Turtle"]:
+    def _init_turtles(
+            self, color: str, circle_color: str, hide_turtle: bool
+        ) -> Tuple["turtle.Turtle", "turtle.Turtle", "turtle.Turtle"]:
         # Return a shape turtle, rolling circle turtle, and fixed circle turtle
 
         # Instantiate turtle
@@ -172,13 +177,18 @@ class _Roulette(ABC):
         )
         self._connect_focus_to_trace_dots(rolling_circle_turtle, shape_turtle)
 
-    def _connect_focus_to_trace_dots(self, rolling_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle") -> None:
+    def _connect_focus_to_trace_dots(
+            self, rolling_circle_turtle: "turtle.Turtle",
+            shape_turtle: "turtle.Turtle"
+        ) -> None:
         """Draw line from focus to the trace that's drawing the shape"""
         rolling_circle_turtle.down()
         rolling_circle_turtle.seth(rolling_circle_turtle.towards(shape_turtle))
         rolling_circle_turtle.fd(self.d)
 
-    def _draw_circle(self, t: "turtle.Turtle", x: float, y: float, radius: float) -> None:
+    def _draw_circle(
+            self, t: "turtle.Turtle", x: float, y: float, radius: float
+        ) -> None:
         """Draw circle"""
         t.up()
         t.seth(0)
@@ -198,7 +208,9 @@ class _Roulette(ABC):
         )
         return rolling_circle_x, rolling_circle_y
 
-    def _draw_dot(self, t: "turtle.Turtle", x: Number, y: Number, color: str) -> None:
+    def _draw_dot(
+            self, t: "turtle.Turtle", x: Number, y: Number, color: str
+        ) -> None:
         """Draw rolling circle outer trace"""
         t.up()
         t.goto(x, y)
