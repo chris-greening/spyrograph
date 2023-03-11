@@ -175,12 +175,12 @@ class _Roulette(ABC):
 
     def _draw_rolling_circle(self, t: "turtle.Turtle", theta: Number) -> None:
         """Draw the rolling circle on the screen"""
-        rolling_circle_y=self._circle_offset()*math.sin(theta) - self.r
-        rolling_circle_x=self._circle_offset()*math.cos(theta)
+        x=self._circle_offset()*math.cos(theta)
+        y=self._circle_offset()*math.sin(theta) - self.r
         self._draw_circle(
             t=t, 
-            x=rolling_circle_x, 
-            y=rolling_circle_y, 
+            x=x, 
+            y=y, 
             radius=self.r
         )
         return rolling_circle_x, rolling_circle_y
