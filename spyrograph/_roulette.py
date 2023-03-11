@@ -133,7 +133,7 @@ class _Roulette(ABC):
         self._rolling_circle_init(rolling_circle_turtle)
         self._draw_dot(rolling_circle_turtle, x, y, "red")
         rolling_circle_x, rolling_circle_y = self._draw_rolling_circle(rolling_circle_turtle, theta)
-        self._draw_dot(rolling_circle_turtle, rolling_circle_x, rolling_circle_y, "blue")
+        self._draw_dot(rolling_circle_turtle, rolling_circle_x, rolling_circle_y + self.r, "blue")
         self._connect_focus_to_trace_dots(rolling_circle_turtle, shape_turtle)
 
     def _connect_focus_to_trace_dots(self, rolling_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle") -> None:
@@ -160,6 +160,7 @@ class _Roulette(ABC):
 
     def _draw_dot(self, turtle: "turtle.Turtle", x: Number, y: Number, color: str) -> None:
         """Draw rolling circle outer trace"""
+        turtle.up()
         turtle.goto(x, y)
         turtle.dot(10, color)
 
