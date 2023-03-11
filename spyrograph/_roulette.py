@@ -1,5 +1,5 @@
 """Abstract base class for generalizing the epitrochoid and hypotrochoid
-shape's methods i.e. tracing, calculating, etc. The child classes define 
+shape's methods i.e. tracing, calculating, etc. The child classes define
 the parametric equations
 """
 
@@ -25,16 +25,16 @@ class _Roulette(ABC):
         self.R = R
         self.r = r
         self.d = d
-        self.thetas = thetas 
-    
+        self.thetas = thetas
+
         self.x = [self._calculate_x(theta) for theta in self.thetas]
         self.y = [self._calculate_y(theta) for theta in self.thetas]
         self.coords = list(zip(self.x, self.y, self.thetas))
 
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
         """Return matplotlib figure and axis objects after plotting the figure
-        
-        See available matplotlib.pyplot.plot configurations 
+
+        See available matplotlib.pyplot.plot configurations
         (https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html)
         """
         if plt is None:
@@ -81,13 +81,13 @@ class _Roulette(ABC):
 
         if show_circles:
             self._draw_circle(
-                t=fixed_circle_turtle, 
-                x=0, 
-                y=-self.R, 
+                t=fixed_circle_turtle,
+                x=0,
+                y=-self.R,
                 radius=self.R
             )
-        
-        first = True 
+
+        first = True
         shape_turtle.up()
         for x, y, theta in self.coords:
             shape_turtle.goto(x, y)
@@ -124,7 +124,7 @@ class _Roulette(ABC):
 
     def _init_turtles(self, color: str, circle_color: str, hide_turtle: bool) -> Tuple["turtle.Turtle", "turtle.Turtle", "turtle.Turtle"]:
         # Return a shape turtle, rolling circle turtle, and fixed circle turtle
-        
+
         # Instantiate turtle
         shape_turtle = turtle.Turtle()
         rolling_circle_turtle = turtle.Turtle()
@@ -152,9 +152,9 @@ class _Roulette(ABC):
         self._draw_dot(rolling_circle_turtle, x, y, "red")
         rolling_circle_x, rolling_circle_y = self._draw_rolling_circle(rolling_circle_turtle, theta)
         self._draw_dot(
-            t=rolling_circle_turtle, 
-            x=rolling_circle_x, 
-            y=rolling_circle_y + self.r, 
+            t=rolling_circle_turtle,
+            x=rolling_circle_x,
+            y=rolling_circle_y + self.r,
             color="blue"
         )
         self._connect_focus_to_trace_dots(rolling_circle_turtle, shape_turtle)
@@ -178,9 +178,9 @@ class _Roulette(ABC):
         x=self._circle_offset()*math.cos(theta)
         y=self._circle_offset()*math.sin(theta) - self.r
         self._draw_circle(
-            t=t, 
-            x=x, 
-            y=y, 
+            t=t,
+            x=x,
+            y=y,
             radius=self.r
         )
         return rolling_circle_x, rolling_circle_y
