@@ -1,3 +1,8 @@
+---
+permalink: /license/
+title: License
+---
+
 MIT License
 
 Copyright (c) 2023 Christopher Greening
