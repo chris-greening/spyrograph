@@ -9,20 +9,20 @@ header:
 excerpt: Elegant mathematics and beautiful geometries
 
 feature_row:
-  - image_path: images/circle.PNG
+  - image_path: images/partial_circle.PNG
     image_size: 100px
     alt: "powerful and lightweight"
     title: "Test test test test"
     excerpt: "Test test test test test test test test test"
     url: ""
     btn_label: "Learn More"
-  - image_path: images/circle.png
+  - image_path: images/partial_circle.png
     alt: "download Instagram content"
     title: "Test test test test"
     excerpt: "Test test test test test test test test test"
     url: ""
     btn_label: "Learn More"
-  - image_path: images/circle.PNG
+  - image_path: images/partial_circle.PNG
     alt: "100% free"
     title: "Test test test test"
     excerpt: "Test test test test test test test test test"
