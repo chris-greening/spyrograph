@@ -77,11 +77,9 @@ class _Roulette(ABC):
             screen.bgcolor(screen_color)
         turtle.tracer(False)
 
-        turtles = self._init_turtles(color, circle_color)
+        turtles = self._init_turtles(color, circle_color, hide_turtle)
         shape_turtle, rolling_circle_turtle, fixed_circle_turtle = turtles
 
-        if hide_turtle:
-            shape_turtle.hideturtle()
         if show_circles:
             self._trace_fixed_circle(fixed_circle_turtle)
         
@@ -112,7 +110,7 @@ class _Roulette(ABC):
         })
         return df
 
-    def _init_turtles(self, color: str, circle_color: str) -> Tuple["turtle.Turtle", "turtle.Turtle", "turtle.Turtle"]:
+    def _init_turtles(self, color: str, circle_color: str, hide_turtle: bool) -> Tuple["turtle.Turtle", "turtle.Turtle", "turtle.Turtle"]:
         # Return a shape turtle, rolling circle turtle, and fixed circle turtle
         
         # Instantiate turtle
@@ -121,6 +119,8 @@ class _Roulette(ABC):
         fixed_circle_turtle = turtle.Turtle()
 
         # Hide circle turtles
+        if hide_turtle:
+            shape_turtle.hideturtle()
         rolling_circle_turtle.hideturtle()
         fixed_circle_turtle.hideturtle()
 
