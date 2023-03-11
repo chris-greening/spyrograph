@@ -24,7 +24,7 @@ feature_row:
     btn_label: "Learn More"
   - image_path: images/partial_circle.PNG
     alt: "100% free"
-    title: "Completely free to use"
+    title: "Completely free and open source"
     excerpt: ""
     url: "/license/"
     btn_label: "Learn More"
