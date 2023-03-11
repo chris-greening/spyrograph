@@ -63,6 +63,8 @@ class _Roulette(ABC):
             Show the inner and outer circles that compose the trace
         frame_pause: Number = 0
             Time in seconds to pause each individual frame for
+        screen: turle.Screen
+            Existing turtle screen
         circle_color: str = "white"
             Color of the circles
 
