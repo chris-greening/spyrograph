@@ -1,5 +1,5 @@
 """Abstract base class for generalizing the epitrochoid and hypotrochoid
-shape's methods i.e. tracing, calculating, etc. The child classes define 
+shape's methods i.e. tracing, calculating, etc. The child classes define
 the parametric equations
 """
 
@@ -25,18 +25,19 @@ class _Roulette(ABC):
         self.R = R
         self.r = r
         self.d = d
-        self.thetas = thetas 
-    
+        self.thetas = thetas
+
         self.x = [self._calculate_x(theta) for theta in self.thetas]
         self.y = [self._calculate_y(theta) for theta in self.thetas]
         self.coords = list(zip(self.x, self.y, self.thetas))
 
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
         """Return matplotlib figure and axis objects after plotting the figure
-        
-        See available matplotlib.pyplot.plot configurations 
+
+        See available matplotlib.pyplot.plot configurations
         (https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html)
         """
+        # pylint: disable=line-too-long
         if plt is None:
             raise ImportError("matplotlib is required but is not installed on your machine, please install and try again")
         fig, ax = plt.subplots()
@@ -44,7 +45,13 @@ class _Roulette(ABC):
         plt.show()
         return fig, ax
 
-    def trace(self, screen_size: Tuple[Number, Number] = (1000, 1000), screen_color: str = "white", exit_on_click: bool = False, color: str = "black", hide_turtle: bool = True, show_circles: bool = False, frame_pause: Number = 0, screen: "turtle.Screen" = None, circle_color: str = "black") -> "turtle.Screen":
+    def trace(
+            self, screen_size: Tuple[Number, Number] = (1000, 1000),
+            screen_color: str = "white", exit_on_click: bool = False,
+            color: str = "black", hide_turtle: bool = True,
+            show_circles: bool = False, frame_pause: Number = 0,
+            screen: "turtle.Screen" = None, circle_color: str = "black"
+        ) -> "turtle.Screen":
         """Trace the roulette shape using turtle
 
         Parameters
@@ -73,6 +80,7 @@ class _Roulette(ABC):
         screen: turtle.Screen
             Screen that the turtle is drawn on
         """
+        # pylint: disable=no-member,too-many-locals
         screen = self._init_screen(screen, screen_size, screen_color)
         turtle.tracer(False)
 
@@ -81,18 +89,24 @@ class _Roulette(ABC):
 
         if show_circles:
             self._draw_circle(
-                t=fixed_circle_turtle, 
-                x=0, 
-                y=-self.R, 
+                t=fixed_circle_turtle,
+                x=0,
+                y=-self.R,
                 radius=self.R
             )
-        
-        first = True 
+
+        first = True
         shape_turtle.up()
         for x, y, theta in self.coords:
             shape_turtle.goto(x, y)
             if show_circles:
-                self._trace_rolling_circle(rolling_circle_turtle, shape_turtle, x, y, theta)
+                self._trace_rolling_circle(
+                    rolling_circle_turtle,
+                    shape_turtle,
+                    x,
+                    y,
+                    theta
+                )
             if first:
                 first = False
                 shape_turtle.down()
@@ -105,16 +119,20 @@ class _Roulette(ABC):
     @property
     def df(self) -> "pd.DataFrame":
         """Return DataFrame of all relevant information pertaining to the parametrized shape"""
+        #pylint: disable=line-too-long
         if pd is None:
             raise ImportError("pandas is required but is not installed on your machine, please install and try again")
         df = pd.DataFrame({
             "x": self.x,
             "y": self.y,
-            "theta": self.theta
+            "theta": self.thetas
         })
         return df
 
-    def _init_screen(self, screen: "turtle.Screen", screen_size: Tuple[Number, Number], screen_color: str) -> "turtle.Screen":
+    def _init_screen(
+            self, screen: "turtle.Screen", screen_size: Tuple[Number, Number],
+            screen_color: str
+        ) -> "turtle.Screen":
         """Return initialized turtle.Screen"""
         if screen is None:
             screen = turtle.Screen()
@@ -122,9 +140,11 @@ class _Roulette(ABC):
             screen.bgcolor(screen_color)
         return screen
 
-    def _init_turtles(self, color: str, circle_color: str, hide_turtle: bool) -> Tuple["turtle.Turtle", "turtle.Turtle", "turtle.Turtle"]:
+    def _init_turtles(
+            self, color: str, circle_color: str, hide_turtle: bool
+        ) -> Tuple["turtle.Turtle", "turtle.Turtle", "turtle.Turtle"]:
         # Return a shape turtle, rolling circle turtle, and fixed circle turtle
-        
+
         # Instantiate turtle
         shape_turtle = turtle.Turtle()
         rolling_circle_turtle = turtle.Turtle()
@@ -152,20 +172,25 @@ class _Roulette(ABC):
         self._draw_dot(rolling_circle_turtle, x, y, "red")
         rolling_circle_x, rolling_circle_y = self._draw_rolling_circle(rolling_circle_turtle, theta)
         self._draw_dot(
-            t=rolling_circle_turtle, 
-            x=rolling_circle_x, 
-            y=rolling_circle_y + self.r, 
+            t=rolling_circle_turtle,
+            x=rolling_circle_x,
+            y=rolling_circle_y + self.r,
             color="blue"
         )
         self._connect_focus_to_trace_dots(rolling_circle_turtle, shape_turtle)
 
-    def _connect_focus_to_trace_dots(self, rolling_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle") -> None:
+    def _connect_focus_to_trace_dots(
+            self, rolling_circle_turtle: "turtle.Turtle",
+            shape_turtle: "turtle.Turtle"
+        ) -> None:
         """Draw line from focus to the trace that's drawing the shape"""
         rolling_circle_turtle.down()
         rolling_circle_turtle.seth(rolling_circle_turtle.towards(shape_turtle))
         rolling_circle_turtle.fd(self.d)
 
-    def _draw_circle(self, t: "turtle.Turtle", x: float, y: float, radius: float) -> None:
+    def _draw_circle(
+            self, t: "turtle.Turtle", x: float, y: float, radius: float
+        ) -> None:
         """Draw circle"""
         t.up()
         t.seth(0)
@@ -178,14 +203,16 @@ class _Roulette(ABC):
         x=self._circle_offset()*math.cos(theta)
         y=self._circle_offset()*math.sin(theta) - self.r
         self._draw_circle(
-            t=t, 
-            x=x, 
-            y=y, 
+            t=t,
+            x=x,
+            y=y,
             radius=self.r
         )
-        return rolling_circle_x, rolling_circle_y
+        return x, y
 
-    def _draw_dot(self, t: "turtle.Turtle", x: Number, y: Number, color: str) -> None:
+    def _draw_dot(
+            self, t: "turtle.Turtle", x: Number, y: Number, color: str
+        ) -> None:
         """Draw rolling circle outer trace"""
         t.up()
         t.goto(x, y)

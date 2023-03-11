@@ -8,5 +8,9 @@ from numbers import Number
 from spyrograph.hypotrochoid import Hypotrochoid
 
 class Hypocycloid(Hypotrochoid):
+    """Model of a hypocycloid which is a special case of a hypotrochoid where
+    the circle is rolling around the inside of the fixed circle and has 1/3
+    the radius of the fixed circle
+    """
     def __init__(self, R: Number, r: Number, thetas: List[Number]) -> None:
         super().__init__(R, r, r, thetas)
