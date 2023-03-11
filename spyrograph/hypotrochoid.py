@@ -10,9 +10,6 @@ from spyrograph._roulette import _Roulette
 
 class Hypotrochoid(_Roulette):
     """Model of a hypotrochoid"""
-    def __init__(self, R: Number, r: Number, d: Number, thetas: List[Number]) -> None:
-        super().__init__(R, r, d, thetas)
-
     def _circle_offset(self) -> float:
         """Return rolling circle offset from fixed circle"""
         return self.R - self.r
