@@ -77,19 +77,8 @@ class _Roulette(ABC):
             screen.bgcolor(screen_color)
         turtle.tracer(False)
 
-        # Instantiate turtle
-        shape_turtle = turtle.Turtle()
-        rolling_circle_turtle = turtle.Turtle()
-        fixed_circle_turtle = turtle.Turtle()
+        shape_turtle, rolling_circle_turtle, fixed_circle_turtle = self._init_turtles()
 
-        # Hide circle turtles
-        rolling_circle_turtle.hideturtle()
-        fixed_circle_turtle.hideturtle()
-
-        # Set turtle color
-        shape_turtle.color(color)
-        rolling_circle_turtle.color(circle_color)
-        fixed_circle_turtle.color(circle_color)
         if hide_turtle:
             shape_turtle.hideturtle()
         if show_circles:
@@ -121,6 +110,25 @@ class _Roulette(ABC):
             "theta": self.theta
         })
         return df
+
+    def _init_turtles(self, color: str, circle_color: str) -> Tuple["turtle.Turtle", "turtle.Turtle", "turtle.Turtle"]:
+        # Return a shape turtle, rolling circle turtle, and fixed circle turtle
+        
+        # Instantiate turtle
+        shape_turtle = turtle.Turtle()
+        rolling_circle_turtle = turtle.Turtle()
+        fixed_circle_turtle = turtle.Turtle()
+
+        # Hide circle turtles
+        rolling_circle_turtle.hideturtle()
+        fixed_circle_turtle.hideturtle()
+
+        # Set turtle color
+        shape_turtle.color(color)
+        rolling_circle_turtle.color(circle_color)
+        fixed_circle_turtle.color(circle_color)
+
+        return shape_turtle, rolling_circle_turtle, fixed_circle_turtle
 
     def _trace_fixed_circle(self, fixed_circle_turtle: "turtle.Turtle") -> None:
         """Trace the outer circle of the animation"""
