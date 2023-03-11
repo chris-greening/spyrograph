@@ -142,12 +142,6 @@ class _Roulette(ABC):
         rolling_circle_turtle.seth(rolling_circle_turtle.towards(shape_turtle))
         rolling_circle_turtle.fd(self.d)
 
-    def _draw_rolling_circle_focus(self, rolling_circle_turtle: "turtle.Turtle", rolling_circle_x: Number, rolling_circle_y: Number) -> None:
-        """Draw the center of the rolling circle"""
-        rolling_circle_turtle.up()
-        rolling_circle_turtle.goto(rolling_circle_x, rolling_circle_y + self.r)
-        rolling_circle_turtle.dot(10, "blue")
-
     def _draw_rolling_circle(self, rolling_circle_turtle: "turtle.Turtle", theta: Number) -> None:
         """Draw the rolling circle on the screen"""
         rolling_circle_turtle.seth(0)
