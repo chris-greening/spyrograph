@@ -131,13 +131,13 @@ class _Roulette(ABC):
 
         return shape_turtle, rolling_circle_turtle, fixed_circle_turtle
 
-    def _trace_fixed_circle(self, fixed_circle_turtle: "turtle.Turtle") -> None:
+    def _trace_fixed_circle(self, t: "turtle.Turtle") -> None:
         """Trace the outer circle of the animation"""
-        fixed_circle_turtle.up()
-        fixed_circle_turtle.seth(0)
-        fixed_circle_turtle.goto(0,-self.R)
-        fixed_circle_turtle.down()
-        fixed_circle_turtle.circle(self.R,steps=200)
+        t.up()
+        t.seth(0)
+        t.goto(0,-self.R)
+        t.down()
+        t.circle(self.R,steps=200)
 
     def _trace_rolling_circle(
             self, rolling_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle",
