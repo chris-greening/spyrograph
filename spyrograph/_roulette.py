@@ -207,7 +207,7 @@ class _Roulette(ABC):
             y=y,
             radius=self.r
         )
-        return rolling_circle_x, rolling_circle_y
+        return x, y
 
     def _draw_dot(
             self, t: "turtle.Turtle", x: Number, y: Number, color: str
