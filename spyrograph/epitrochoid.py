@@ -11,14 +11,8 @@ from spyrograph._roulette import _Roulette
 class Epitrochoid(_Roulette):
     """Model of a epitrochoid"""
     def __init__(self, R: Number, r: Number, d: Number, thetas: List[Number]) -> None:
-        self.R = R
-        self.r = r
-        self.d = d
-        self.thetas = thetas 
-    
-        self.x = [self._calculate_x(theta) for theta in self.thetas]
-        self.y = [self._calculate_y(theta) for theta in self.thetas]
-        self.coords = list(zip(self.x, self.y, self.thetas))
+        super().__init__(R, r, d, thetas)
+
 
     def _circle_offset(self) -> float:
         """Return rolling circle offset from fixed circle"""
