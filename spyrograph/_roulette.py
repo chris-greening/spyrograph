@@ -80,6 +80,7 @@ class _Roulette(ABC):
         screen: turtle.Screen
             Screen that the turtle is drawn on
         """
+        # pylint: disable=no-member,too-many-locals
         screen = self._init_screen(screen, screen_size, screen_color)
         turtle.tracer(False)
 
