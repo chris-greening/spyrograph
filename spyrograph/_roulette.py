@@ -81,7 +81,12 @@ class _Roulette(ABC):
         shape_turtle, rolling_circle_turtle, fixed_circle_turtle = turtles
 
         if show_circles:
-            self._draw_circle(fixed_circle_turtle, 0, -self.R, self.R)
+            self._draw_circle(
+                t=fixed_circle_turtle, 
+                x=0, 
+                y=-self.R, 
+                radius=self.R
+            )
         
         first = True 
         shape_turtle.up()
@@ -160,7 +165,12 @@ class _Roulette(ABC):
         """Draw the rolling circle on the screen"""
         rolling_circle_y=self._circle_offset()*math.sin(theta) - self.r
         rolling_circle_x=self._circle_offset()*math.cos(theta)
-        self._draw_circle(t, rolling_circle_x, rolling_circle_y, self.r)
+        self._draw_circle(
+            t=t, 
+            x=rolling_circle_x, 
+            y=rolling_circle_y, 
+            radius=self.r
+        )
         return rolling_circle_x, rolling_circle_y
 
     def _draw_dot(self, t: "turtle.Turtle", x: Number, y: Number, color: str) -> None:
