@@ -124,7 +124,7 @@ class _Roulette(ABC):
         df = pd.DataFrame({
             "x": self.x,
             "y": self.y,
-            "theta": self.theta
+            "theta": self.thetas
         })
         return df
 
