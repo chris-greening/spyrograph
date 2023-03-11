@@ -77,11 +77,16 @@ class _Roulette(ABC):
             screen.bgcolor(screen_color)
         turtle.tracer(False)
 
+        # Instantiate turtle
         shape_turtle = turtle.Turtle()
         rolling_circle_turtle = turtle.Turtle()
         fixed_circle_turtle = turtle.Turtle()
+
+        # Hide circle turtles
         rolling_circle_turtle.hideturtle()
         fixed_circle_turtle.hideturtle()
+
+        # Set turtle color
         shape_turtle.color(color)
         rolling_circle_turtle.color(circle_color)
         fixed_circle_turtle.color(circle_color)
