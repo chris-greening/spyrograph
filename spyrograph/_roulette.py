@@ -77,7 +77,8 @@ class _Roulette(ABC):
             screen.bgcolor(screen_color)
         turtle.tracer(False)
 
-        shape_turtle, rolling_circle_turtle, fixed_circle_turtle = self._init_turtles()
+        turtles = self._init_turtles(color, circle_color)
+        shape_turtle, rolling_circle_turtle, fixed_circle_turtle = turtles
 
         if hide_turtle:
             shape_turtle.hideturtle()
@@ -149,7 +150,7 @@ class _Roulette(ABC):
         self._draw_dot(rolling_circle_turtle, rolling_circle_x, rolling_circle_y + self.r, "blue")
         self._connect_focus_to_trace_dots(rolling_circle_turtle, shape_turtle)
 
-    def _connect_focus_to_trace_dots(self, source_turtle: "turtle.Turtle", target_turtle: "turtle.Turtle") -> None:
+    def _connect_focus_to_trace_dots(self, rolling_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle") -> None:
         """Draw line from focus to the trace that's drawing the shape"""
         rolling_circle_turtle.down()
         rolling_circle_turtle.seth(rolling_circle_turtle.towards(shape_turtle))
