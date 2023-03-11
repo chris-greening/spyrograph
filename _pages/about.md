@@ -19,6 +19,14 @@ import spyrograph
   <img src="https://github.com/chris-greening/spyrograph/blob/gh-pages/images/circle_spinning.gif?raw=true" alt="Sample hypotrochoid drawing showing a circle rolling around the interior of another circle drawing a geometric shape" width="410px">
 </p>
 
+## Key Features
+- Expressive and consistent syntax 
+- Robust underlying mathematics
+- No third-party installations required
+- Clear visualizations and animations
+- Flexible to a wide range of usecases
+- Lightweight, just plug and play
+
 ## The philosophy
 
 {% highlight python %}
