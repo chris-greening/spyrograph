@@ -118,6 +118,7 @@ class _Roulette(ABC):
     @property
     def df(self) -> "pd.DataFrame":
         """Return DataFrame of all relevant information pertaining to the parametrized shape"""
+        #pylint: disable=line-too-long
         if pd is None:
             raise ImportError("pandas is required but is not installed on your machine, please install and try again")
         df = pd.DataFrame({
