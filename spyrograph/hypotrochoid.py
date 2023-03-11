@@ -3,7 +3,6 @@ attached to a circle rolling around the interior of a fixed circle
 """
 
 import math
-from typing import List
 from numbers import Number
 
 from spyrograph._roulette import _Roulette
