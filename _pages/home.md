@@ -16,7 +16,7 @@ feature_row:
     excerpt: "Test test test test test test test test test"
     url: ""
     btn_label: "Learn More"
-  - image_path: images/partial_circle.png
+  - image_path: images/partial_circle.PNG
     alt: "download Instagram content"
     title: "Test test test test"
     excerpt: "Test test test test test test test test test"
