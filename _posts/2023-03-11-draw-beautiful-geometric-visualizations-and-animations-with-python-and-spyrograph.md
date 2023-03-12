@@ -75,6 +75,8 @@ hypotrochoid.trace()
 
 With just our input parameters and a couple lines of code, we can get on our way tracing our curves and generating stunning visualizations letting `spyrograph` abstract away the underlying math and implementation details
 
+
+
 ## Animating and visualizing beautiful geometries
 
 ## Conclusion
