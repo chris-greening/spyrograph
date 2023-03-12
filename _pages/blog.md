@@ -6,6 +6,6 @@ excerpt: "spyrograph is a lightweight Python package that provides an expressive
 
 <h2> Blog posts </h2>
 
-{% for post in site.posts limit:3 %}
+{% for post in site.posts %}
   {% include archive-single.html %}
 {% endfor %}
