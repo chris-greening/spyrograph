@@ -93,7 +93,14 @@ hypotrochoid.trace()
 
 With just our input parameters and a couple lines of code, we can get on our way tracing our curves and generating stunning visualizations letting `spyrograph` abstract away the underlying math and implementation details
 
-On top of hypotrochoids and epitrochoids, we also define special cases of these curves such as `Hypocycloid`'s, `Epicycloid`'s, `Deltoid`'s, and `Astroid`'s for explicit clarity on different models we're exploring
+On top of hypotrochoids and epitrochoids, we also define special cases of these curves such as the
+
+- `Hypocycloid`,
+- `Epicycloid`
+- `Deltoid`
+- and the `Astroid`
+
+for explicit, object-oriented models that are clean, flexible, and ready for programming against
 
 ## Conclusion
 
