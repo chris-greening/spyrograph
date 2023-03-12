@@ -8,7 +8,7 @@ header:
 
 In the world of mathematics there is a limitless supply of patterns, visualizations, and concepts just waiting to be explored
 
-Some of those concepts are known as hypotrochoids and epitrochoids - beautiful patterns traced from a circle rolling around the inside or outside of a fixed circle
+Some of those concepts are known as hypotrochoids and epitrochoids - beautiful patterns traced from a circle rolling around another fixed circle
 
 <p align="center">
   <img src="{{ site.url }}{{ site.baseurl }}/images/logo.PNG" alt="Pattern drawn from a hypotrochoid" width="450px">
