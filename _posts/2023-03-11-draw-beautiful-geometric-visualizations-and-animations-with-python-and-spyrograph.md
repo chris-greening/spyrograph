@@ -51,7 +51,9 @@ $ y(\theta) = (R + r)sin\theta - d sin(\frac{R + r}{r}\theta) $
 
 Given this information, we can draw our curves using the output $(x,y)$ coordinates calculated by the parametric equations
 
-
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/plot.PNG" alt="Drawing of a hypotrochoid plot" width="450px">
+</p>
 
 ## Using `spyrograph` for effortless modeling
 
