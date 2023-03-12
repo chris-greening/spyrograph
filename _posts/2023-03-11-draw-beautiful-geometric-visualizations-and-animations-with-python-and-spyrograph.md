@@ -18,7 +18,7 @@ Let's dive in and explore how `spyrograph` helps us analyze and explore these si
 
 ## What are hypotrochoids and epitrochoids?
 
-Simply put, hypotrochoids and epitrochoids are curves formed by tracing a point extending from the center of a circle as it rolls around the inside (for the hypotrochoid) or the outside (for the epitrochoid) of a fixed circle
+Simply put, hypotrochoids and epitrochoids are curves formed by tracing a point extending from the center of a circle as it rolls around the inside (for a hypotrochoid) or the outside (for an epitrochoid) of a fixed circle
 
 <p align="center">
   <img src="{{ site.url }}{{ site.baseurl }}/images/simple_epitrochoid.gif" alt="Circle rolling around the exterior of a fixed circle and drawing a looping pattern" width="450px">
@@ -56,6 +56,24 @@ Given this information, we can draw our curves using the output $$(x,y)$$ coordi
 </p>
 
 ## Using `spyrograph` for effortless modeling
+
+The purpose of `spyrograph` is to take the above equations and build them into an expressive, easy-to-use set of tools for quickly modelling, exploring, and visualizing the behavior of these curves in Python
+
+{% highlight python %}
+from spyrograph import Hypotrochoid
+import numpy as np
+
+hypotrochoid = Hypotrochoid(
+  R=200,
+  r=107,
+  d=199,
+  thetas=np.arange(0, 180, .1)
+)
+hypotrochoid.trace()
+
+{% endhighlight %}
+
+With just our input parameters and a couple lines of code, we can get on our way tracing our curves and generating stunning visualizations letting `spyrograph` abstract away the underlying math and implementation details
 
 ## Animating and visualizing beautiful geometries
 
