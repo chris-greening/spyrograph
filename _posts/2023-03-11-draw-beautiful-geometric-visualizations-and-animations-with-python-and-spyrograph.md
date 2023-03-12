@@ -3,10 +3,7 @@ title: "Draw beautiful geometric visualizations with Python and spyrograph"
 date: 2023-03-11 11:02:31 -0500
 categories: Python
 header:
-  overlay_image: /images/header_image.PNG
-toc: true
-toc_label: "Table of Contents"
-toc_sticky: true
+  overlay_image: /images/title_gif.gif
 ---
 
 In the world of mathematics there is a limitless supply of patterns, visualizations, and concepts just waiting to be explored
