@@ -74,12 +74,10 @@ hypotrochoid.trace()
 {% endhighlight %}
 
 <p align="center">
-  <img src="{{ site.url }}{{ site.baseurl }}/complex_hypotrochoid.png" alt="Drawing of a hypotrochoid plot shaped like a donut with many intersecting lines and patterns" width="450px">
+  <img src="{{ site.url }}{{ site.baseurl }}/complex_hypotrochoid.PNG" alt="Drawing of a hypotrochoid plot shaped like a donut with many intersecting lines and patterns" width="450px">
 </p>
 
 With just our input parameters and a couple lines of code, we can get on our way tracing our curves and generating stunning visualizations letting `spyrograph` abstract away the underlying math and implementation details
-
-
 
 ## Animating and visualizing beautiful geometries
 
