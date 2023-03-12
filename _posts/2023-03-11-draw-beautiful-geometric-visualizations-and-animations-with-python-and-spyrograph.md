@@ -71,7 +71,7 @@ No additional configurations or third-party libraries necessary to get started, 
 
 ## Using `spyrograph` for effortless modeling
 
-The purpose of `spyrograph` is to take the above equations and build them into an expressive, easy-to-use set of tools for quickly modelling, exploring, and visualizing the behavior of these curves in Python
+The purpose of `spyrograph` is to take the parametric equations  and build them into an expressive, easy-to-use set of tools for quickly modelling, exploring, and visualizing the behavior of these curves in Python
 
 {% highlight python %}
 from spyrograph import Hypotrochoid
@@ -92,6 +92,8 @@ hypotrochoid.trace()
 </p>
 
 With just our input parameters and a couple lines of code, we can get on our way tracing our curves and generating stunning visualizations letting `spyrograph` abstract away the underlying math and implementation details
+
+On top of hypotrochoids and epitrochoids, we also define special cases of these curves such as `Hypocycloid`'s, `Epicycloid`'s, `Deltoid`'s, and `Astroid`'s for explicit clarity on different models we're exploring
 
 ## Conclusion
 
