@@ -18,7 +18,7 @@ Let's dive in and explore how `spyrograph` helps us analyze and explore these si
 
 Simply put, hypotrochoids and epitrochoids are curves formed by tracing a point on a circle as it rolls around the inside (for the hypotrochoid) or the outside (for the epitrochoid) of a fixed circle
 
-The resulting curves can be incredibly intricate, elegant, and pleasing to the eye and have a surprisingly wide range of applications ranging from engineering to astronomy and even the patterns printed on banknotes, securities, and passports as a security measure against counterfeiting
+The resulting curves can be incredibly intricate, elegant, and pleasing to the eye and have a surprisingly wide range of applications ranging from engineering and astronomy to even patterns printed on banknotes and passports as security measures against counterfeiting
 
 ## Exploring the math behind these patterns
 
