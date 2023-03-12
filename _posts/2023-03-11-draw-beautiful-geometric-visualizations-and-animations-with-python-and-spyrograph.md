@@ -6,6 +6,7 @@ header:
   overlay_image: /images/header_image.PNG
 toc: true
 toc_label: "Table of Contents"
+toc_sticky: true
 ---
 
 In the world of mathematics there is a limitless supply of patterns, visualizations, and concepts just waiting to be explored
