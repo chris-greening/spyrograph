@@ -10,7 +10,7 @@ In the world of mathematics there is a limitless supply of patterns, visualizati
 
 Some of those concepts are known as hypotrochoids and epitrochoids - beautiful patterns traced from a circle rolling around the inside or outside of a fixed circle
 
-![Circle rolling around the exterior of a fixed circle and drawing a looping pattern]({{ site.url }}{{ site.baseurl }}/images/logo.PNG)
+![Pattern drawn from a hypotrochoid]({{ site.url }}{{ site.baseurl }}/images/logo.PNG)
 
 Let's dive in and explore how `spyrograph` helps us analyze and explore these simple mathematical concepts in just a few lines of code!
 
