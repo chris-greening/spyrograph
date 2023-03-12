@@ -32,27 +32,27 @@ Hypotrochoids and epitrochoids can be broken down to a few key inputs and a set 
 
 The inputs are:
 
-- $R$: the radius of the fixed circle
-- $r$: the radius of the rolling circle
-- $d$: the distance from the interior of the rolling circle
-- $\theta$: the angle formed by the horizontal and the center of the rolling circle
+- $$R$$: the radius of the fixed circle
+- $$r$$: the radius of the rolling circle
+- $$d$$: the distance from the interior of the rolling circle
+- $$\theta$$: the angle formed by the horizontal and the center of the rolling circle
 
 with the parametric equations defined as:
 
 ### Hypotrochoid
 
-$ x(\theta) = (R - r)cos\theta + d cos(\frac{R - r}{r}\theta) $
-$ y(\theta) = (R - r)sin\theta - d sin(\frac{R - r}{r}\theta) $
+$$ x(\theta) = (R - r)cos\theta + d cos(\frac{R - r}{r}\theta) $$
+$$ y(\theta) = (R - r)sin\theta - d sin(\frac{R - r}{r}\theta) $$
 
 ### Epitrochoid
 
-$ x(\theta) = (R + r)cos\theta - d cos(\frac{R + r}{r}\theta) $
-$ y(\theta) = (R + r)sin\theta - d sin(\frac{R + r}{r}\theta) $
+$$ x(\theta) = (R + r)cos\theta - d cos(\frac{R + r}{r}\theta) $$
+$$ y(\theta) = (R + r)sin\theta - d sin(\frac{R + r}{r}\theta) $$
 
-Given this information, we can draw our curves using the output $(x,y)$ coordinates calculated by the parametric equations
+Given this information, we can draw our curves using the output $$(x,y)$$ coordinates calculated by the parametric equations
 
 <p align="center">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/plot.PNG" alt="Drawing of a hypotrochoid plot" width="450px">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/plot.png" alt="Drawing of a hypotrochoid plot" width="450px">
 </p>
 
 ## Using `spyrograph` for effortless modeling
