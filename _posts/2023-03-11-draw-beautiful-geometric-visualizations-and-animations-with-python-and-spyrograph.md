@@ -8,7 +8,7 @@ header:
 
 In the world of mathematics there is a limitless supply of patterns, visualizations, and concepts just waiting to be explored
 
-Some of those concepts are known as hypotrochoids and epitrochoids - beautiful patterns traced from a circle rolling around another fixed circle
+Some of those concepts are known as hypotrochoids and epitrochoids - beautiful patterns traced by a point extending from a circle rolling around another fixed circle
 
 <p align="center">
   <img src="{{ site.url }}{{ site.baseurl }}/images/logo.PNG" alt="Pattern drawn from a hypotrochoid" width="450px">
@@ -18,7 +18,7 @@ Let's dive in and explore how `spyrograph` helps us analyze and explore these si
 
 ## What are hypotrochoids and epitrochoids?
 
-Simply put, hypotrochoids and epitrochoids are curves formed by tracing a point on a circle as it rolls around the inside (for the hypotrochoid) or the outside (for the epitrochoid) of a fixed circle
+Simply put, hypotrochoids and epitrochoids are curves formed by tracing a point extending from the center of a circle as it rolls around the inside (for the hypotrochoid) or the outside (for the epitrochoid) of a fixed circle
 
 <p align="center">
   <img src="{{ site.url }}{{ site.baseurl }}/images/simple_epitrochoid.gif" alt="Circle rolling around the exterior of a fixed circle and drawing a looping pattern" width="450px">
@@ -30,7 +30,7 @@ The resulting curves can be incredibly intricate, elegant, and pleasing to the e
 
 Hypotrochoids and epitrochoids can be broken down to a few key inputs and a set of parametric equations
 
-The parameters are:
+The inputs are:
 
 - $R$: the radius of the fixed circle
 - $r$: the radius of the rolling circle
@@ -48,6 +48,10 @@ $ y(\theta) = (R - r)sin\theta - d sin(\frac{R - r}{r}\theta) $
 
 $ x(\theta) = (R + r)cos\theta - d cos(\frac{R + r}{r}\theta) $
 $ y(\theta) = (R + r)sin\theta - d sin(\frac{R + r}{r}\theta) $
+
+Given this information, we can draw our curves using the output $(x,y)$ coordinates calculated by the parametric equations
+
+
 
 ## Using `spyrograph` for effortless modeling
 
