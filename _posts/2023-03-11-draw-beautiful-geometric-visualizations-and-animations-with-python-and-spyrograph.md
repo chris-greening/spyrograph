@@ -28,6 +28,27 @@ The resulting curves can be incredibly intricate, elegant, and pleasing to the e
 
 ## Exploring the math behind these patterns
 
+Hypotrochoids and epitrochoids can be broken down to a few key inputs and a set of parametric equations
+
+The parameters are:
+
+- $R$: the radius of the fixed circle
+- $r$: the radius of the rolling circle
+- $d$: the distance from the interior of the rolling circle
+- $\theta$: the angle formed by the horizontal and the center of the rolling circle
+
+with the parametric equations defined as:
+
+### Hypotrochoid
+
+$ x(\theta) = (R - r)cos\theta + d cos(\frac{R - r}{r}\theta) $
+$ y(\theta) = (R - r)sin\theta - d sin(\frac{R - r}{r}\theta) $
+
+### Epitrochoid
+
+$ x(\theta) = (R + r)cos\theta - d cos(\frac{R + r}{r}\theta) $
+$ y(\theta) = (R + r)sin\theta - d sin(\frac{R + r}{r}\theta) $
+
 ## Using `spyrograph` for effortless modeling
 
 ## Animating and visualizing beautiful geometries
