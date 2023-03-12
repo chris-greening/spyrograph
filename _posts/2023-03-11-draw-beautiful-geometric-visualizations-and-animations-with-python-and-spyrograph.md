@@ -64,14 +64,18 @@ from spyrograph import Hypotrochoid
 import numpy as np
 
 hypotrochoid = Hypotrochoid(
-  R=200,
-  r=107,
-  d=199,
-  thetas=np.arange(0, 180, .1)
+    R=423,
+    r=203,
+    d=101,
+    thetas=np.arange(0, 720, .1)
 )
 hypotrochoid.trace()
 
 {% endhighlight %}
+
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/complex_hypotrochoid.png" alt="Drawing of a hypotrochoid plot shaped like a donut with many intersecting lines and patterns" width="450px">
+</p>
 
 With just our input parameters and a couple lines of code, we can get on our way tracing our curves and generating stunning visualizations letting `spyrograph` abstract away the underlying math and implementation details
 
