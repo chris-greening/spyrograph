@@ -55,6 +55,18 @@ Given this information, we can draw our curves using the output $$(x,y)$$ coordi
   <img src="{{ site.url }}{{ site.baseurl }}/images/plot.png" alt="Drawing of a hypotrochoid plot" width="450px">
 </p>
 
+## Installing spyrograph
+
+Getting `spyrograph` installed and ready to go is as easy as installing the latest stable release from [PyPI](https://pypi.org/project/spyrograph/) or cloning the development version from the official [GitHub](https://github.com/chris-greening/spyrograph) repo
+
+### PyPI
+
+`pip3 install spyrograph`
+
+### GitHub
+
+`git clone https://github.com/chris-greening/spyrograph.git`
+
 ## Using `spyrograph` for effortless modeling
 
 The purpose of `spyrograph` is to take the above equations and build them into an expressive, easy-to-use set of tools for quickly modelling, exploring, and visualizing the behavior of these curves in Python
@@ -79,12 +91,11 @@ hypotrochoid.trace()
 
 With just our input parameters and a couple lines of code, we can get on our way tracing our curves and generating stunning visualizations letting `spyrograph` abstract away the underlying math and implementation details
 
-## Animating and visualizing beautiful geometries
-
 ## Conclusion
+
+And just like that we can draw beautiful, complex patterns and shapes by leveraging `spyrograph`'s clean syntax and flexible, readable code
+
+
 
 ## Additional references
 
-{% highlight python %}
-print()
-{% endhighlight %}
