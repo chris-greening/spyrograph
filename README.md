@@ -10,8 +10,8 @@ _spyrograph_ is a lightweight Python package that provides an expressive and fle
 [![Issues](https://img.shields.io/github/issues/chris-greening/spyrograph)](https://github.com/chris-greening/spyrograph/issues)
 [![License](https://img.shields.io/github/license/chris-greening/spyrograph)](LICENSE)
 [![Version](https://img.shields.io/pypi/v/spyrograph?color=brightgreen)](https://pypi.org/project/spyrograph/)
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/chrisgreening)
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/chrisgreening)
 
 [Official website](https://chris-greening.github.io/spyrograph/)
 
