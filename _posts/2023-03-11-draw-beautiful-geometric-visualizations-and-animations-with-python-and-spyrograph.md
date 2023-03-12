@@ -18,16 +18,7 @@ A particularly interesting set of concepts are known as **hypotrochoids** and **
 
 Let's dive in and explore how `spyrograph` helps us **analyze** and **explore** these interesting mathematical concepts in just a few lines of code!
 
-## Table of Contents
-
-- [What are hypotrochoids and epitrochoids?](#what-are-hypotrochoids-and-epitrochoids)
-- [Exploring the math behind these patterns](#exploring-the-math-behind-these-patterns)
-- [Installing spyrograph](#installing-spyrograph)
-- [Using `spyrograph` for effortless modeling](#using-spyrograph-for-effortless-modeling)
-- [Conclusion](#conclusion)
-- [Additional resources](#additional-resources)
-
-## What are hypotrochoids and epitrochoids? <a src="#what-are-hypotrochoids-and-epitrochoids"></a>
+## What are hypotrochoids and epitrochoids?
 
 Simply put, **hypotrochoids** and **epitrochoids** are curves formed by **tracing** a point extending from the center of a circle as it **rolls** around the **inside** (for a hypotrochoid) or the **outside** (for an epitrochoid) of a **fixed** circle
 
@@ -37,7 +28,7 @@ Simply put, **hypotrochoids** and **epitrochoids** are curves formed by **tracin
 
 The resulting curves can be incredibly intricate, elegant, and pleasing to the eye and have a surprisingly wide range of applications ranging from **engineering and astronomy** to even patterns printed on **banknotes and passports** as security measures against counterfeiting
 
-## Exploring the math behind these patterns <a src="#exploring-the-math-behind-these-patterns"></a>
+## Exploring the math behind these patterns
 
 Hypotrochoids and epitrochoids can be broken down to a few key inputs and a set of parametric equations
 
@@ -66,7 +57,7 @@ Given this information, we can draw our curves using the output $$(x,y)$$ coordi
   <img src="{{ site.url }}{{ site.baseurl }}/images/plot.png" alt="Drawing of a hypotrochoid plot" width="450px">
 </p>
 
-## Installing spyrograph <a src="#installing-spyrograph"></a>
+## Installing spyrograph
 
 Getting `spyrograph` **installed** and ready to go is as easy as installing the **latest stable release** from [PyPI](https://pypi.org/project/spyrograph/) or cloning the **development version** from the official [GitHub](https://github.com/chris-greening/spyrograph) repo
 
@@ -80,7 +71,7 @@ Getting `spyrograph` **installed** and ready to go is as easy as installing the 
 
 **No additional configurations** or third-party libraries necessary to get started; `spyrograph` leverages the **Python standard library** with optional support for [pandas](https://pandas.pydata.org/) and [matplotlib](https://matplotlib.org/)
 
-## Using `spyrograph` for effortless modeling <a src="#using-spyrograph-for-effortless-modeling"></a>
+## Using `spyrograph` for effortless modeling
 
 The purpose of `spyrograph` is to take the parametric equations  and build them into an **expressive, easy-to-use** set of tools for quickly **modelling, exploring, and visualizing** the behavior of these curves in Python
 
@@ -113,13 +104,13 @@ On top of hypotrochoids and epitrochoids, we also define special cases of these 
 
 for explicit, **object-oriented** models that are clean, flexible, and ready for programming against
 
-## Conclusion <a src="#conclusion"></a>
+## Conclusion
 
 And just like that we can draw **beautiful, complex patterns** and shapes letting `spyrograph` deal with all the math and visualization boilerplate
 
 Just plug-and-play your parameters and start exploring the beautifiul world of math!
 
-## Additional references <a src="#additional-resources"></a>
+## Additional references
 - [Hypotrochoid -- from Wolfram MathWorld](https://mathworld.wolfram.com/Hypotrochoid.html)
 - [Hypotrochoid - Wikipedia](https://en.wikipedia.org/wiki/Hypotrochoid)
 - [Roulette -- from Wolfram MathWorld](https://mathworld.wolfram.com/Roulette.html)
