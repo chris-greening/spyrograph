@@ -67,7 +67,7 @@ Getting `spyrograph` installed and ready to go is as easy as installing the late
 
 `git clone https://github.com/chris-greening/spyrograph.git`
 
-No additional configurations or third-party libraries necessary to get started, `spyrograph` leverages the Python standard library with optional support for [pandas](https://pandas.pydata.org/) and [matplotlib](https://matplotlib.org/)
+No additional configurations or third-party libraries necessary to get started; `spyrograph` leverages the Python standard library with optional support for [pandas](https://pandas.pydata.org/) and [matplotlib](https://matplotlib.org/)
 
 ## Using `spyrograph` for effortless modeling
 
@@ -95,7 +95,7 @@ With just our input parameters and a couple lines of code, we can get on our way
 
 On top of hypotrochoids and epitrochoids, we also define special cases of these curves such as the
 
-- `Hypocycloid`,
+- `Hypocycloid`
 - `Epicycloid`
 - `Deltoid`
 - and the `Astroid`
@@ -104,9 +104,12 @@ for explicit, object-oriented models that are clean, flexible, and ready for pro
 
 ## Conclusion
 
-And just like that we can draw beautiful, complex patterns and shapes by leveraging `spyrograph`'s clean syntax and flexible, readable code
+And just like that we can draw beautiful, complex patterns and shapes letting `spyrograph` deal with all the math and visualization boilerplate
 
-
+Just plug-and-play your parameters and start exploring the beautifiul world of math!
 
 ## Additional references
-
+- [Hypotrochoid -- from Wolfram MathWorld](https://mathworld.wolfram.com/Hypotrochoid.html)
+- [Hypotrochoid - Wikipedia](https://en.wikipedia.org/wiki/Hypotrochoid)
+- [Roulette -- from Wolfram MathWorld](https://mathworld.wolfram.com/Roulette.html)
+- [Parametric Equations](https://mathworld.wolfram.com/ParametricEquations.html#:~:text=Parametric%20equations%20are%20a%20set,(2))
