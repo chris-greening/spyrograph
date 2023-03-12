@@ -10,7 +10,9 @@ In the world of mathematics there is a limitless supply of patterns, visualizati
 
 Some of those concepts are known as hypotrochoids and epitrochoids - beautiful patterns traced from a circle rolling around the inside or outside of a fixed circle
 
-![Pattern drawn from a hypotrochoid]({{ site.url }}{{ site.baseurl }}/images/logo.PNG)
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/logo.PNG" alt="Pattern drawn from a hypotrochoid" width="300px">
+</p>
 
 Let's dive in and explore how `spyrograph` helps us analyze and explore these simple mathematical concepts in just a few lines of code!
 
@@ -18,7 +20,9 @@ Let's dive in and explore how `spyrograph` helps us analyze and explore these si
 
 Simply put, hypotrochoids and epitrochoids are curves formed by tracing a point on a circle as it rolls around the inside (for the hypotrochoid) or the outside (for the epitrochoid) of a fixed circle
 
-![Circle rolling around the exterior of a fixed circle and drawing a looping pattern]({{ site.url }}{{ site.baseurl }}/images/simple_epitrochoid.gif)
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/simple_epitrochoid.gif" alt="Circle rolling around the exterior of a fixed circle and drawing a looping pattern" width="300px">
+</p>
 
 The resulting curves can be incredibly intricate, elegant, and pleasing to the eye and have a surprisingly wide range of applications ranging from engineering and astronomy to even patterns printed on banknotes and passports as security measures against counterfeiting
 
