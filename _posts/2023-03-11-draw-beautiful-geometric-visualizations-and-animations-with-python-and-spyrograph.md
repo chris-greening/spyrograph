@@ -67,6 +67,8 @@ Getting `spyrograph` installed and ready to go is as easy as installing the late
 
 `git clone https://github.com/chris-greening/spyrograph.git`
 
+No additional configurations or third-party libraries necessary to get started, `spyrograph` leverages the Python standard library with optional support for `[pandas](https://pandas.pydata.org/)` and `[matplotlib](https://matplotlib.org/)`
+
 ## Using `spyrograph` for effortless modeling
 
 The purpose of `spyrograph` is to take the above equations and build them into an expressive, easy-to-use set of tools for quickly modelling, exploring, and visualizing the behavior of these curves in Python
