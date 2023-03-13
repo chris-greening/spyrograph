@@ -21,6 +21,7 @@ _spyrograph_ is a lightweight Python package that provides an expressive and fle
 ## Key Features
 - Expressive and consistent syntax 
 - Robust underlying mathematics
+- Beginner _and_ expert friendly
 - No third-party installations required
 - Clear visualizations and animations
 - Flexible to a wide range of usecases
