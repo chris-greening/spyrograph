@@ -22,8 +22,9 @@ except ImportError:
 
 class _Roulette(ABC):
     def __init__(
-            self, R: Number, r: Number, d: Number, thetas: List[Number],
-            theta_start: Number, theta_end: Number, theta_step: Number
+            self, R: Number, r: Number, d: Number, thetas: List[Number] = None,
+            theta_start: Number = None, theta_end: Number = None,
+            theta_step: Number = None
         ) -> None:
         self.R = R
         self.r = r
@@ -132,7 +133,7 @@ class _Roulette(ABC):
         })
         return df
 
-    def _reconcile_theta(self) -> "":
+    def _reconcile_theta(self, thetas, theta_start, theta_end, theta_step) -> "":
         pass
 
     def _init_screen(
