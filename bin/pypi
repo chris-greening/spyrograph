@@ -13,6 +13,12 @@ do
 	fi
 done
 
+cd docs
+sphinx-apidoc -o source/ ../spyrograph/ --separate
+make clean
+make html
+cd ..
+
 #Setup package and initiate upload to PyPI
 python3 setup.py sdist bdist_wheel
 twine upload dist/*
