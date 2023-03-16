@@ -12,7 +12,7 @@ class Ellipse(Hypotrochoid):
     rolling circle has 1/2 the radius of the fixed circle
     """
     def __init__(
-            self, R: Number, d: Number, thetas: List[Number],
+            self, R: Number, d: Number, thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
             theta_step: Number = None) -> None:
         super().__init__(R, R/2, d, thetas, theta_start, theta_stop, theta_step)
