@@ -21,7 +21,10 @@ except ImportError:
     pd = None
 
 class _Roulette(ABC):
-    def __init__(self, R: Number, r: Number, d: Number, thetas: List[Number], theta_start: Number, theta_end: Number, theta_step: Number) -> None:
+    def __init__(
+            self, R: Number, r: Number, d: Number, thetas: List[Number],
+            theta_start: Number, theta_end: Number, theta_step: Number
+        ) -> None:
         self.R = R
         self.r = r
         self.d = d
