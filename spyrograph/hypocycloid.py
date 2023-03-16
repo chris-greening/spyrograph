@@ -12,5 +12,9 @@ class Hypocycloid(Hypotrochoid):
     the circle is rolling around the inside of the fixed circle and has 1/3
     the radius of the fixed circle
     """
-    def __init__(self, R: Number, r: Number, thetas: List[Number]) -> None:
-        super().__init__(R, r, r, thetas)
+    def __init__(
+            self, R: Number, r: Number, thetas: List[Number],
+            theta_start: Number = None, theta_end: Number = None,
+            theta_step: Number = None
+        ) -> None:
+        super().__init__(R, r, r, thetas, theta_start, theta_end, theta_step)
