@@ -133,13 +133,15 @@ class _Roulette(ABC):
         })
         return df
 
-    def _reconcile_theta(
+    def _validate_theta(
             self, thetas: List[Number], theta_start: Number, theta_end: Number,
             theta_step: Number
         ) -> "":
         multiple_thetas = thetas and any((theta_start, theta_end, theta_step))
         if multiple_thetas:
             raise ValueError("Multiple definitions of theta were passed in as argument which is ambiguous - please define only one set of theta values.")
+        
+
 
     def _init_screen(
             self, screen: "turtle.Screen", screen_size: Tuple[Number, Number],
