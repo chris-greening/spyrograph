@@ -19,7 +19,8 @@ Hypotrochoid
 ------------
 * :doc:`Hypotrochoid <source/spyrograph.hypotrochoid>`
 * :doc:`Hypocycloid <source/spyrograph.hypocycloid>`
-* :doc:`Ellipse <source/spyrograph.ellipse>``
+* :doc:`Ellipse <source/spyrograph.ellipse>`
+* :doc:`Tusi couple <source/spyrograph.tusi_couple>``
 * :doc:`Deltoid <source/spyrograph.deltoid>`
 * :doc:`Astroid <source/spyrograph.astroid>`
 
