@@ -2,6 +2,7 @@
 rolling circle is 1/2 the radius of the fixed circle and the distance traced
 from the rolling circle is not equal to the radius of the rolling circle"""
 
+import math
 from numbers import Number
 from typing import List
 
@@ -16,3 +17,5 @@ class Ellipse(Hypotrochoid):
             theta_start: Number = None, theta_stop: Number = None,
             theta_step: Number = None) -> None:
         super().__init__(R, R/2, d, thetas, theta_start, theta_stop, theta_step)
+
+        self.eccentricity = (2*math.sqrt(self.d/self.r))/(1 + (self.d/self.r))
