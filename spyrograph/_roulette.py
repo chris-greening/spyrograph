@@ -133,7 +133,10 @@ class _Roulette(ABC):
         })
         return df
 
-    def _reconcile_theta(self, thetas, theta_start, theta_end, theta_step) -> "":
+    def _reconcile_theta(
+            self, thetas: List[Number], theta_start: Number, theta_end: Number,
+            theta_step: Number
+        ) -> "":
         pass
 
     def _init_screen(
