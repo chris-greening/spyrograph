@@ -5,3 +5,4 @@ spyrograph.tusi\_couple module
    :members:
    :undoc-members:
    :show-inheritance:
+   :inherited-members:
