@@ -137,11 +137,19 @@ class _Roulette(ABC):
             self, thetas: List[Number], theta_start: Number, theta_end: Number,
             theta_step: Number
         ) -> "":
-        multiple_thetas = thetas and any((theta_start, theta_end, theta_step))
+        theta_values = (theta_start, theta_end, theta_step)
+        multiple_thetas = thetas and any(theta_values)
         if multiple_thetas:
             raise ValueError("Multiple definitions of theta were passed in as argument which is ambiguous - please define only one set of theta values.")
-        
-
+        if not thetas:
+            thetas = []
+            theta = theta_start
+            if theta_step is None:
+                theta_step = .1
+            while theta < theta_end:
+                thetas.append(theta)
+                theta += theta_step
+        return thetas
 
     def _init_screen(
             self, screen: "turtle.Screen", screen_size: Tuple[Number, Number],
