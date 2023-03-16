@@ -13,7 +13,7 @@ class Epicycloid(Epitrochoid):
     radius of the fixed circle
     """
     def __init__(
-            self, R: Number, r: Number, thetas: List[Number],
+            self, R: Number, r: Number, thetas: List[Number] = None,
             theta_start: Number = None, theta_end: Number = None,
             theta_step: Number = None
         ) -> None:
