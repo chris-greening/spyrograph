@@ -33,4 +33,6 @@
    spyrograph.epitrochoid
    spyrograph.hypocycloid
    spyrograph.hypotrochoid
+   spyrograph.tusi_couple
+   spyrograph.ellipse
 
