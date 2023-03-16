@@ -29,7 +29,7 @@ class _Roulette(ABC):
         self.R = R
         self.r = r
         self.d = d
-        self.thetas = thetas
+        self.thetas = self._reconcile_theta(thetas, theta_start, theta_end, theta_step)
 
         self.x = [self._calculate_x(theta) for theta in self.thetas]
         self.y = [self._calculate_y(theta) for theta in self.thetas]
