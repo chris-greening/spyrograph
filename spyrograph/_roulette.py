@@ -138,6 +138,8 @@ class _Roulette(ABC):
             theta_step: Number
         ) -> "":
         multiple_thetas = thetas and any((theta_start, theta_end, theta_step))
+        if multiple_thetas:
+            raise ValueError("Multiple definitions of theta were passed in as argument which is ambiguous - please define only one set of theta values.")
 
     def _init_screen(
             self, screen: "turtle.Screen", screen_size: Tuple[Number, Number],
