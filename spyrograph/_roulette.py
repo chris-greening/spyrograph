@@ -137,7 +137,7 @@ class _Roulette(ABC):
             self, thetas: List[Number], theta_start: Number, theta_end: Number,
             theta_step: Number
         ) -> "":
-        pass
+        multiple_thetas = thetas and any((theta_start, theta_end, theta_step))
 
     def _init_screen(
             self, screen: "turtle.Screen", screen_size: Tuple[Number, Number],
