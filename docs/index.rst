@@ -19,6 +19,7 @@ Hypotrochoid
 ------------
 * :doc:`Hypotrochoid <source/spyrograph.hypotrochoid>`
 * :doc:`Hypocycloid <source/spyrograph.hypocycloid>`
+* :doc:`Ellipse <source/spyrograph.ellipse>``
 * :doc:`Deltoid <source/spyrograph.deltoid>`
 * :doc:`Astroid <source/spyrograph.astroid>`
 
