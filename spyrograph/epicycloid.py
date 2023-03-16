@@ -12,5 +12,9 @@ class Epicycloid(Epitrochoid):
     circle is rolling around the outside of the fixed circle and has 1/3 the
     radius of the fixed circle
     """
-    def __init__(self, R: Number, r: Number, thetas: List[Number]) -> None:
-        super().__init__(R, r, r, thetas)
+    def __init__(
+            self, R: Number, r: Number, thetas: List[Number] = None,
+            theta_start: Number = None, theta_stop: Number = None,
+            theta_step: Number = None
+        ) -> None:
+        super().__init__(R, r, r, thetas, theta_start, theta_stop, theta_step)
