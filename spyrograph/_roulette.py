@@ -132,6 +132,9 @@ class _Roulette(ABC):
         })
         return df
 
+    def _reconcile_theta(self) -> "":
+        pass
+
     def _init_screen(
             self, screen: "turtle.Screen", screen_size: Tuple[Number, Number],
             screen_color: str
