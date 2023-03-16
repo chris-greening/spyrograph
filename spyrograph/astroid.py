@@ -13,7 +13,7 @@ class Astroid(Hypocycloid):
     """
     def __init__(
             self, R: Number, thetas: List[Number] = None,
-            theta_start: Number = None, theta_end: Number = None,
+            theta_start: Number = None, theta_stop: Number = None,
             theta_step: Number = None
         ) -> None:
         super().__init__(R, R/4, thetas, theta_start, theta_end, theta_step)

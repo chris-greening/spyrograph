@@ -23,13 +23,13 @@ except ImportError:
 class _Roulette(ABC):
     def __init__(
             self, R: Number, r: Number, d: Number, thetas: List[Number] = None,
-            theta_start: Number = None, theta_end: Number = None,
+            theta_start: Number = None, theta_stop: Number = None,
             theta_step: Number = None
         ) -> None:
         self.R = R
         self.r = r
         self.d = d
-        self.thetas = self._validate_theta(thetas, theta_start, theta_end, theta_step)
+        self.thetas = self._validate_theta(thetas, theta_start, theta_stop, theta_step)
 
         self.x = [self._calculate_x(theta) for theta in self.thetas]
         self.y = [self._calculate_y(theta) for theta in self.thetas]
@@ -134,10 +134,10 @@ class _Roulette(ABC):
         return df
 
     def _validate_theta(
-            self, thetas: List[Number], theta_start: Number, theta_end: Number,
+            self, thetas: List[Number], theta_start: Number, theta_stop: Number,
             theta_step: Number
         ) -> "":
-        theta_values = (theta_start, theta_end, theta_step)
+        theta_values = (theta_start, theta_stop, theta_step)
         multiple_thetas = thetas and any(theta_values)
         if multiple_thetas:
             raise ValueError("Multiple definitions of theta were passed in as argument which is ambiguous - please define only one set of theta values.")
@@ -146,7 +146,7 @@ class _Roulette(ABC):
             theta = theta_start
             if theta_step is None:
                 theta_step = .1
-            while theta < theta_end:
+            while theta < theta_stop:
                 thetas.append(theta)
                 theta += theta_step
         return thetas
