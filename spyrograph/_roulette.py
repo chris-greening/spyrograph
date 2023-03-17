@@ -156,7 +156,7 @@ class _Roulette(ABC):
             if first:
                 first = False
                 shape_turtle.down()
-            turtle.update()
+        turtle.update()
         shape_turtle.color(color)
         return shape_turtle
 
