@@ -54,7 +54,8 @@ class _Roulette(ABC):
             screen_color: str = "white", exit_on_click: bool = False,
             color: str = "black", hide_turtle: bool = True,
             show_circles: bool = False, frame_pause: Number = 0,
-            screen: "turtle.Screen" = None, circle_color: str = "black"
+            screen: "turtle.Screen" = None, circle_color: str = "black",
+            show_full_path: bool = False
         ) -> "turtle.Screen":
         """Trace the roulette shape using turtle
 
