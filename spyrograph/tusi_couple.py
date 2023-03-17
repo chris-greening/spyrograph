@@ -2,7 +2,6 @@
 rolling circle is 1/2 the radius of the fixed circle and the distance traced
 from the rolling circle is not equal to the radius of the rolling circle"""
 
-import math
 from numbers import Number
 from typing import List
 

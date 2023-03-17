@@ -148,6 +148,7 @@ class _Roulette(ABC):
             full_path_color: str
         ) -> None:
         """Draw the full path prior to tracing"""
+        # pylint: disable=no-member, unused-variable
         first = True
         shape_turtle.up()
         shape_turtle.color(full_path_color)
@@ -164,6 +165,7 @@ class _Roulette(ABC):
             self, thetas: List[Number], theta_start: Number, theta_stop: Number,
             theta_step: Number
         ) -> "":
+        # pylint: disable=line-too-long
         theta_values = (theta_start, theta_stop, theta_step)
         multiple_thetas = thetas and any(theta_values)
         if multiple_thetas:
