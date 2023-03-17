@@ -55,7 +55,7 @@ class _Roulette(ABC):
             color: str = "black", hide_turtle: bool = True,
             show_circles: bool = False, frame_pause: Number = 0,
             screen: "turtle.Screen" = None, circle_color: str = "black",
-            show_full_path: bool = False
+            show_full_path: bool = False, full_path_color: str = "grey"
         ) -> "turtle.Screen":
         """Trace the roulette shape using turtle
 
@@ -79,6 +79,8 @@ class _Roulette(ABC):
             Existing turtle screen
         circle_color: str = "white"
             Color of the circles
+        show_full_path: bool = False
+            Show the full path prior to tracing
 
         Returns
         -------
@@ -95,12 +97,14 @@ class _Roulette(ABC):
         if show_full_path:
             first = True
             shape_turtle.up()
+            shape_turtle.color(full_path_color)
             for x, y, theta in self.coords:
                 shape_turtle.goto(x, y)
                 if first:
                     first = False
                     shape_turtle.down()
                 turtle.update()
+            shape_turtle.color(color)
         if show_circles:
             self._draw_circle(
                 t=fixed_circle_turtle,
