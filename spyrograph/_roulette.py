@@ -81,6 +81,8 @@ class _Roulette(ABC):
             Color of the circles
         show_full_path: bool = False
             Show the full path prior to tracing
+        full_path_color: str = "grey"
+            Color of the full path drawing
 
         Returns
         -------
