@@ -30,6 +30,7 @@ Epitrochoid
 * :doc:`Epicycloid <source/spyrograph.epicycloid>`
 * :doc:`Cardioid <source/spyrograph.cardioid>`
 * :doc:`Nephroid <source/spyrograph.nephroid>`
+* :doc:`Ranuncloid <source/spyrograph.ranuncloid>`
 
 Indices and tables
 ==================
