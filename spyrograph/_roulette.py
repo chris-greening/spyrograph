@@ -95,16 +95,11 @@ class _Roulette(ABC):
         shape_turtle, rolling_circle_turtle, fixed_circle_turtle = turtles
 
         if show_full_path:
-            first = True
-            shape_turtle.up()
-            shape_turtle.color(full_path_color)
-            for x, y, theta in self.coords:
-                shape_turtle.goto(x, y)
-                if first:
-                    first = False
-                    shape_turtle.down()
-                turtle.update()
-            shape_turtle.color(color)
+            shape_turtle = self._show_full_path(
+                shape_turtle=shape_turtle,
+                color=color,
+                full_path_color=full_path_color
+            )
         if show_circles:
             self._draw_circle(
                 t=fixed_circle_turtle,
@@ -145,6 +140,20 @@ class _Roulette(ABC):
             "theta": self.thetas
         })
         return df
+
+    def _show_full_path(self, shape_turtle: "turtle.Turtle", color: str, full_path_color: str) -> None:
+        """Draw the full path prior to tracing"""
+        first = True
+        shape_turtle.up()
+        shape_turtle.color(full_path_color)
+        for x, y, theta in self.coords:
+            shape_turtle.goto(x, y)
+            if first:
+                first = False
+                shape_turtle.down()
+            turtle.update()
+        shape_turtle.color(color)
+        return shape_turtle
 
     def _validate_theta(
             self, thetas: List[Number], theta_start: Number, theta_stop: Number,
