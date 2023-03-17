@@ -1,5 +1,5 @@
 """Model of a cardioid. A cardioid is a specific case of an epicycloid
-where the distance from the rolling circle is equal to its radius.
+where the fixed circle radius equals that of the rolling circle.
 """
 
 from typing import List
