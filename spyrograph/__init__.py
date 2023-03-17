@@ -8,3 +8,4 @@ from spyrograph.deltoid import Deltoid
 from spyrograph.astroid import Astroid
 from spyrograph.ellipse import Ellipse
 from spyrograph.tusi_couple import TusiCouple
+from spyrograph.cardioid import Cardioid
