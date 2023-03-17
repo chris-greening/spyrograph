@@ -16,4 +16,4 @@ class Astroid(Hypocycloid):
             theta_start: Number = None, theta_stop: Number = None,
             theta_step: Number = None
         ) -> None:
-        super().__init__(R, R/4, thetas, theta_start, theta_end, theta_step)
+        super().__init__(R, R/4, thetas, theta_start, theta_stop, theta_step)
