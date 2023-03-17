@@ -141,7 +141,10 @@ class _Roulette(ABC):
         })
         return df
 
-    def _show_full_path(self, shape_turtle: "turtle.Turtle", color: str, full_path_color: str) -> None:
+    def _show_full_path(
+            self, shape_turtle: "turtle.Turtle", color: str,
+            full_path_color: str
+        ) -> None:
         """Draw the full path prior to tracing"""
         first = True
         shape_turtle.up()
