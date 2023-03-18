@@ -18,3 +18,19 @@ class Hypocycloid(Hypotrochoid):
             theta_step: Number = None
         ) -> None:
         super().__init__(R, r, r, thetas, theta_start, theta_stop, theta_step)
+
+    @classmethod
+    def n_cusps(
+            cls, R: Number, n: int, thetas: List[Number] = None,
+            theta_start: Number = None, theta_stop: Number = None,
+            theta_step: Number = None
+        ) -> "Hypocycloid":
+        """Return a hypocycloid with n number of cusps"""
+        return cls(
+            R=R,
+            r=R/n,
+            thetas=thetas,
+            theta_start=theta_start,
+            theta_stop=theta_stop,
+            theta_step=theta_step
+        )
