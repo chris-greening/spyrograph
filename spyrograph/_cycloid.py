@@ -7,6 +7,7 @@ from numbers import Number
 from typing import List
 
 class _Cycloid(ABC):
+    # pylint: disable=too-few-public-methods
     @classmethod
     def n_cusps(
             cls, R: Number, n: int, thetas: List[Number] = None,
@@ -14,6 +15,7 @@ class _Cycloid(ABC):
             theta_step: Number = None
         ) -> "Cycloid":
         """Return a cycloid with n number of cusps"""
+        # pylint: disable=invalid-name
         return cls(
             R=R,
             r=R/n,
