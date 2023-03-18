@@ -3,6 +3,8 @@ shape's methods i.e. tracing, calculating, etc.
 """
 
 from abc import ABC
+from numbers import Number
+from typing import List
 
 class _Cycloid(ABC):
     @classmethod
