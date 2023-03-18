@@ -99,3 +99,7 @@ class _TestSpecial:
                 theta_stop=10,
                 theta_step=1
             )
+
+    def test_rolling_radius_equals_distance(self, instance):
+        """Test radius of rolling circle is equal to distance"""
+        assert instance.r == instance.d
