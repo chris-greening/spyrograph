@@ -8,5 +8,5 @@ from spyrograph.hypotrochoid.hypocycloid import Hypocycloid
 class TestHypotrochoid(_TestGeneral):
     class_name = Hypotrochoid
 
-class TestHypocycloid(_TestSpecific):
+class TestHypocycloid(_TestSpecial):
     class_name = Hypocycloid

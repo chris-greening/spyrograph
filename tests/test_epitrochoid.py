@@ -1,7 +1,11 @@
 import pytest
 
+from tests._roulette import _TestGeneral, _TestSpecial
 from spyrograph.epitrochoid.epitrochoid import Epitrochoid
 from spyrograph.epitrochoid.epicycloid import Epicycloid
-from spyrograph.epitrochoid.cardioid import Cardioid
-from spyrograph.epitrochoid.nephroid import Nephroid
-from spyrograph.epitrochoid.ranuncloid import Ranuncloid
+
+class TestHypotrochoid(_TestGeneral):
+    class_name = Epitrochoid
+
+class TestHypocycloid(_TestSpecial):
+    class_name = Epicycloid

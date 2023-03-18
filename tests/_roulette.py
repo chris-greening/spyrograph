@@ -3,6 +3,11 @@ import pytest
 import numpy as np
 
 class _TestGeneral:
+    @pytest.fixture()
+    def thetas(self) -> "np.array":
+        """Return a numpy array of theta values"""
+        return np.arange(0, np.pi*2, .1)
+
     def test_theta_range(self) -> None:
         """Test that passing theta start, stop, step creates an expected list of theta values"""
         obj = self.class_name(
@@ -39,6 +44,11 @@ class _TestGeneral:
             )
 
 class _TestSpecial:
+    @pytest.fixture()
+    def thetas(self) -> "np.array":
+        """Return a numpy array of theta values"""
+        return np.arange(0, np.pi*2, .1)
+
     def test_theta_range(self) -> None:
         """Test that passing theta start, stop, step creates an expected list of theta values"""
         obj = self.class_name(
