@@ -1,0 +1,17 @@
+Assuming you are referring to the Python library for drawing mathematical curves called Spyrograph, 
+the following is a sample requirements.txt file you can use to install the necessary dependencies.
+
+#Code
+numpy==1.22.2
+matplotlib==3.5.1
+
+You can copy and paste the above lines into a file named 'requirements.txt', and then install the 
+dependencies using 'pip' by running the following command in your terminal.
+
+#Code
+pip install -r requirements.txt
+
+This will install NumPy and Matplotlib, which are the required dependencies for Spyrograph.
+
+
+
