@@ -1,0 +1,16 @@
+Here are some steps you can follow to use Sphinx-AutoAPI or Sphinx-apidoc to generate documentation:
+
+1.Install the tool: Install either Sphinx-AutoAPI or Sphinx-apidoc, depending on your preference.
+
+2.Configure your project: Configure your project to include the necessary documentation settings. This may include specifying the location of your code files, defining the layout of your documentation, and specifying any custom templates or themes.
+
+3.Run the tool: Run the auto-documentation tool to generate the documentation for your project. The tool will automatically create a set of documentation files based on the contents of your code, including module and class documentation, function and method signatures, and docstrings.
+
+4.Customize the documentation: Once the documentation has been generated, you can customize it further by adding additional documentation, modifying the layout or styling, or adding custom pages.
+
+5.Update the documentation: As you make changes to your code, you can re-run the auto-documentation tool to update the documentation with the latest changes.
+
+By using an auto-documentation tool like Sphinx-AutoAPI or Sphinx-apidoc, you can eliminate the need for hardcoding documentation content and simplify the process of generating and maintaining documentation for your project.
+
+
+
