@@ -1,3 +1,5 @@
+"""Import all epitrochoids into toplevel API for easy importing"""
+
 from spyrograph.hypotrochoid.hypotrochoid import Hypotrochoid
 from spyrograph.hypotrochoid.hypocycloid import Hypocycloid
 from spyrograph.hypotrochoid.deltoid import Deltoid
