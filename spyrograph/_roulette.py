@@ -167,7 +167,7 @@ class _Roulette(ABC):
         ) -> "":
         # pylint: disable=line-too-long
         theta_values = (theta_start, theta_stop, theta_step)
-        multiple_thetas = thetas and any(theta_values)
+        multiple_thetas = thetas is not None and any(theta_values)
         if multiple_thetas:
             raise ValueError("Multiple definitions of theta were passed in as argument which is ambiguous - please define only one set of theta values.")
         if not thetas:
