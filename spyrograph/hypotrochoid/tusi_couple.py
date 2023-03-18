@@ -5,7 +5,7 @@ from the rolling circle is not equal to the radius of the rolling circle"""
 from numbers import Number
 from typing import List
 
-from spyrograph.hypotrochoid import Hypotrochoid
+from spyrograph.hypotrochoid.hypotrochoid import Hypotrochoid
 
 class TusiCouple(Hypotrochoid):
     """Model of a Tusi couple which is a special case of a hypotrochoid where
