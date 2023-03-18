@@ -17,20 +17,20 @@ spyrograph is a lightweight Python package that provides an expressive and flexi
 
 Hypotrochoid
 ------------
-* :doc:`Hypotrochoid <source/spyrograph.hypotrochoid>`
-* :doc:`Hypocycloid <source/spyrograph.hypocycloid>`
-* :doc:`Ellipse <source/spyrograph.ellipse>`
-* :doc:`Tusi couple <source/spyrograph.tusi_couple>`
-* :doc:`Deltoid <source/spyrograph.deltoid>`
-* :doc:`Astroid <source/spyrograph.astroid>`
+* :doc:`Hypotrochoid <source/spyrograph.hypotrochoid.hypotrochoid>`
+* :doc:`Hypocycloid <source/spyrograph.hypotrochoid.hypocycloid>`
+* :doc:`Ellipse <source/spyrograph.hypotrochoid.ellipse>`
+* :doc:`Tusi couple <source/spyrograph.hypotrochoid.tusi_couple>`
+* :doc:`Deltoid <source/spyrograph.hypotrochoid.deltoid>`
+* :doc:`Astroid <source/spyrograph.hypotrochoid.astroid>`
 
 Epitrochoid
 -----------
-* :doc:`Epitrochoid <source/spyrograph.epitrochoid>`
-* :doc:`Epicycloid <source/spyrograph.epicycloid>`
-* :doc:`Cardioid <source/spyrograph.cardioid>`
-* :doc:`Nephroid <source/spyrograph.nephroid>`
-* :doc:`Ranuncloid <source/spyrograph.ranuncloid>`
+* :doc:`Epitrochoid <source/spyrograph.epicycloid.epitrochoid>`
+* :doc:`Epicycloid <source/spyrograph.epicycloid.epicycloid>`
+* :doc:`Cardioid <source/spyrograph.epicycloid.cardioid>`
+* :doc:`Nephroid <source/spyrograph.epicycloid.nephroid>`
+* :doc:`Ranuncloid <source/spyrograph.epicycloid.ranuncloid>`
 
 Indices and tables
 ==================
