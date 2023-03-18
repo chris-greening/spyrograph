@@ -10,6 +10,8 @@ from numbers import Number
 import time
 from abc import ABC, abstractmethod
 
+import numpy as np
+
 try:
     import matplotlib.pyplot as plt
 except ImportError:
@@ -171,13 +173,9 @@ class _Roulette(ABC):
         if multiple_thetas:
             raise ValueError("Multiple definitions of theta were passed in as argument which is ambiguous - please define only one set of theta values.")
         if thetas is None:
-            thetas = []
-            theta = theta_start
             if theta_step is None:
                 theta_step = .1
-            while theta < theta_stop:
-                thetas.append(theta)
-                theta += theta_step
+            thetas = np.arange(theta_start, theta_stop, theta_step)
         return thetas
 
     def _init_screen(
