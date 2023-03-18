@@ -6,8 +6,9 @@ from typing import List
 from numbers import Number
 
 from spyrograph.epitrochoid.epitrochoid import Epitrochoid
+from spyrograph._cycloid import _Cycloid
 
-class Epicycloid(Epitrochoid):
+class Epicycloid(_Cycloid, Epitrochoid):
     """Model of a epicycloid which is a special case of a epitrochoid where the
     circle is rolling around the outside of the fixed circle and has 1/3 the
     radius of the fixed circle

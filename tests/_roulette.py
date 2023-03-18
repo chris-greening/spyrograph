@@ -121,3 +121,13 @@ class _TestSpecial:
     def test_rolling_radius_equals_distance(self, instance):
         """Test radius of rolling circle is equal to distance"""
         assert instance.r == instance.d
+
+    def test_n_cusps(self, thetas):
+        """Test the n cusps factory method"""
+        for n in range(2, 5):
+            obj = self.class_name.n_cusps(
+                R = 300,
+                n = n,
+                thetas = thetas
+            )
+            assert obj.r == obj.R/n

@@ -22,7 +22,7 @@ try:
 except ImportError:
     pd = None
 
-class _Roulette(ABC):
+class _Trochoid(ABC):
     def __init__(
             self, R: Number, r: Number, d: Number, thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
