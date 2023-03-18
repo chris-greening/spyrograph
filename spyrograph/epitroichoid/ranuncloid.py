@@ -5,7 +5,7 @@ where the fixed circle radius equals 1/5 of the rolling circle.
 from typing import List
 from numbers import Number
 
-from spyrograph.epicycloid import Epicycloid
+from spyrograph.epitrochoid.epicycloid import Epicycloid
 
 class Ranuncloid(Epicycloid):
     """Model of a ranuncloid which is a special case of an epicycloid where the
