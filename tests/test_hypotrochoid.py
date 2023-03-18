@@ -23,6 +23,28 @@ def hypotrochoid_obj(thetas: "np.array") -> "hypotrochoid.Hypotrochoid":
         thetas=thetas
     )
 
+def test_theta_range() -> None:
+    """Test that passing theta start, stop, step creates an expected list of theta values"""
+    hypotrochoid_obj = Hypotrochoid(
+        R = 300,
+        r = 200,
+        d = 100,
+        theta_start=1,
+        theta_stop=10,
+        theta_step=1
+    )
+    assert hypotrochoid_obj.thetas == list(range(1, 10, 1))
+
+def test_theta_range_default_step() -> None:
+    """Test that passing theta start, stop, step creates an expected list of theta values"""
+    hypotrochoid_obj = Hypotrochoid(
+        R = 300,
+        r = 200,
+        d = 100,
+        theta_start=0,
+        theta_stop=1
+    )
+
 def test_multiple_thetas_exception(thetas: "np.array") -> None:
     """Test that passing multiple definitions of setting theta raises a ValueError"""
     with pytest.raises(ValueError):
