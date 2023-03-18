@@ -1,18 +1,20 @@
+"""Setup script for publishing package to PyPI"""
+
 import setuptools
 
-with open("README.md", "r") as fh:
+with open("README.md", "r", encoding='UTF-8') as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="spyrograph",
-    version="0.11.2",
+    version="0.11.3",
     author="Chris Greening",
     author_email="chris@christophergreening.com",
     description="Library for drawing spirographs in Python",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/chris-greening/spyrograph",
-    packages=[],
+    packages=setuptools.find_packages(),
     install_requires=[],
     classifiers=[
         "Programming Language :: Python :: 3",

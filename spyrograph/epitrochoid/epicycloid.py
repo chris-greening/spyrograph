@@ -5,7 +5,7 @@ where the distance from the rolling circle is equal to its radius.
 from typing import List
 from numbers import Number
 
-from spyrograph.epitrochoid import Epitrochoid
+from spyrograph.epitrochoid.epitrochoid import Epitrochoid
 
 class Epicycloid(Epitrochoid):
     """Model of a epicycloid which is a special case of a epitrochoid where the

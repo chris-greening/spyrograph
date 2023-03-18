@@ -5,7 +5,7 @@ from the rolling circle is equal to the radius of the rolling circle
 from typing import List
 from numbers import Number
 
-from spyrograph.hypotrochoid import Hypotrochoid
+from spyrograph.hypotrochoid.hypotrochoid import Hypotrochoid
 
 class Hypocycloid(Hypotrochoid):
     """Model of a hypocycloid which is a special case of a hypotrochoid where
