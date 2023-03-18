@@ -15,7 +15,6 @@ class _Cycloid(ABC):
             theta_step: Number = None
         ) -> "Cycloid":
         """Return a cycloid with n number of cusps"""
-        # pylint: disable=invalid-name
         return cls(
             R=R,
             r=R/n,
