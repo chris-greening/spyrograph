@@ -26,11 +26,11 @@ Hypotrochoid
 
 Epitrochoid
 -----------
-* :doc:`Epitrochoid <source/spyrograph.epicycloid.epitrochoid>`
-* :doc:`Epicycloid <source/spyrograph.epicycloid.epicycloid>`
-* :doc:`Cardioid <source/spyrograph.epicycloid.cardioid>`
-* :doc:`Nephroid <source/spyrograph.epicycloid.nephroid>`
-* :doc:`Ranuncloid <source/spyrograph.epicycloid.ranuncloid>`
+* :doc:`Epitrochoid <source/spyrograph.epitrochoid.epitrochoid>`
+* :doc:`Epicycloid <source/spyrograph.epitrochoid.epicycloid>`
+* :doc:`Cardioid <source/spyrograph.epitrochoid.cardioid>`
+* :doc:`Nephroid <source/spyrograph.epitrochoid.nephroid>`
+* :doc:`Ranuncloid <source/spyrograph.epitrochoid.ranuncloid>`
 
 Indices and tables
 ==================
