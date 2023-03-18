@@ -5,9 +5,9 @@ attached to a circle rolling around the interior of a fixed circle
 import math
 from numbers import Number
 
-from spyrograph._roulette import _Roulette
+from spyrograph._trochoid import _Trochoid
 
-class Hypotrochoid(_Roulette):
+class Hypotrochoid(_Trochoid):
     """Model of a hypotrochoid"""
     def _circle_offset(self) -> Number:
         """Return rolling circle offset from fixed circle"""
