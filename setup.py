@@ -21,3 +21,4 @@ setuptools.setup(
     ],
     python_requires=">=3.7",
 )
+test
