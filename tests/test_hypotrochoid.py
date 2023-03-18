@@ -33,7 +33,7 @@ def test_theta_range() -> None:
         theta_stop=10,
         theta_step=1
     )
-    assert hypotrochoid_obj.thetas == list(range(1, 10, 1))
+    assert all(hypotrochoid_obj.thetas == np.arange(1,10,1))
 
 def test_theta_range_default_step() -> None:
     """Test that passing theta start, stop, step creates an expected list of theta values"""
