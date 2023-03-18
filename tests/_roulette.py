@@ -8,6 +8,16 @@ class _TestGeneral:
         """Return a numpy array of theta values"""
         return np.arange(0, np.pi*2, .1)
 
+    @pytest.fixture()
+    def instance(self, thetas):
+        """Return an instance of the shape"""
+        return self.class_name(
+            R = 300,
+            r = 200,
+            d = 100,
+            thetas=thetas
+        )
+
     def test_theta_range(self) -> None:
         """Test that passing theta start, stop, step creates an expected list of theta values"""
         obj = self.class_name(
@@ -48,6 +58,15 @@ class _TestSpecial:
     def thetas(self) -> "np.array":
         """Return a numpy array of theta values"""
         return np.arange(0, np.pi*2, .1)
+
+    @pytest.fixture()
+    def instance(self, thetas):
+        """Return an instance of the shape"""
+        return self.class_name(
+            R = 300,
+            r = 200,
+            thetas=thetas
+        )
 
     def test_theta_range(self) -> None:
         """Test that passing theta start, stop, step creates an expected list of theta values"""
