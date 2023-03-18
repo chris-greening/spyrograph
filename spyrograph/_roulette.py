@@ -170,7 +170,7 @@ class _Roulette(ABC):
         multiple_thetas = thetas is not None and any(theta_values)
         if multiple_thetas:
             raise ValueError("Multiple definitions of theta were passed in as argument which is ambiguous - please define only one set of theta values.")
-        if not thetas:
+        if thetas is None:
             thetas = []
             theta = theta_start
             if theta_step is None:
