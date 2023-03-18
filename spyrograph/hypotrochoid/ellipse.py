@@ -6,7 +6,7 @@ import math
 from numbers import Number
 from typing import List
 
-from spyrograph.hypotrochoid import Hypotrochoid
+from spyrograph.hypotrochoid.hypotrochoid import Hypotrochoid
 
 class Ellipse(Hypotrochoid):
     """Model of an ellipse which is a special case of a hypotrochoid where the
