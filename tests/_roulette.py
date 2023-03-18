@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 
 class _TestGeneral:
+    # Define this class attr in subclasses
+    class_name = None
     @pytest.fixture()
     def thetas(self) -> "np.array":
         """Return a numpy array of theta values"""
@@ -68,6 +70,8 @@ class _TestGeneral:
         assert all(instance.df["theta"].to_numpy() == instance.thetas)
 
 class _TestSpecial:
+    # Define this class attr in subclasses
+    class_name = None
     @pytest.fixture()
     def thetas(self) -> "np.array":
         """Return a numpy array of theta values"""
