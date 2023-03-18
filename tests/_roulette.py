@@ -1,6 +1,7 @@
 import pytest
 
 import numpy as np
+import pandas as pd
 
 class _TestGeneral:
     @pytest.fixture()
@@ -52,6 +53,15 @@ class _TestGeneral:
                 theta_stop=10,
                 theta_step=1
             )
+
+    def test_dataframe_property(self, instance) -> None:
+        """Test that DataFrame property is working as expected"""
+        assert isinstance(instance.df, pd.DataFrame)
+        assert list(instance.df.columns) == ["x", "y", "theta"]
+        assert all(instance.df["x"].to_numpy() == instance.x)
+        assert all(instance.df["y"].to_numpy() == instance.y)
+        assert all(instance.df["theta"].to_numpy() == instance.thetas)
+        
 
 class _TestSpecial:
     @pytest.fixture()
