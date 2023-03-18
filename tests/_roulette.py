@@ -54,6 +54,11 @@ class _TestGeneral:
                 theta_step=1
             )
 
+    def test_coords(self, instance) -> None:
+        """Test that coordinates attribute matches x, y, and theta values"""
+        assert instance.coords[0] == (instance.x[0], instance.y[0], instance.thetas[0])
+        assert instance.coords[-1] == (instance.x[-1], instance.y[-1], instance.thetas[-1])
+
     def test_dataframe_property(self, instance) -> None:
         """Test that DataFrame property is working as expected"""
         assert isinstance(instance.df, pd.DataFrame)
@@ -61,7 +66,6 @@ class _TestGeneral:
         assert all(instance.df["x"].to_numpy() == instance.x)
         assert all(instance.df["y"].to_numpy() == instance.y)
         assert all(instance.df["theta"].to_numpy() == instance.thetas)
-        
 
 class _TestSpecial:
     @pytest.fixture()
