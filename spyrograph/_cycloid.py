@@ -1,0 +1,22 @@
+"""Abstract base class for generalizing the hypocycloid and epicycloid
+shape's methods i.e. tracing, calculating, etc.
+"""
+
+from abc import ABC
+
+class _Cycloid(ABC):
+    @classmethod
+    def n_cusps(
+            cls, R: Number, n: int, thetas: List[Number] = None,
+            theta_start: Number = None, theta_stop: Number = None,
+            theta_step: Number = None
+        ) -> "Cycloid":
+        """Return a cycloid with n number of cusps"""
+        return cls(
+            R=R,
+            r=R/n,
+            thetas=thetas,
+            theta_start=theta_start,
+            theta_stop=theta_stop,
+            theta_step=theta_step
+        )
