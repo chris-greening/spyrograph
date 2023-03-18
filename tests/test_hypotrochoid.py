@@ -23,5 +23,15 @@ def hypotrochoid_obj(thetas: "np.array") -> "hypotrochoid.Hypotrochoid":
         thetas=thetas
     )
 
-def test_hypotrochoid_obj(hypotrochoid_obj) -> None:
-    assert isinstance(hypotrochoid_obj, Hypotrochoid)
+def test_multiple_thetas_exception(thetas: "np.array") -> None:
+    """Test that passing multiple definitions of setting theta raises a ValueError"""
+    with pytest.raises(ValueError):
+        hypotrochoid_obj = Hypotrochoid(
+            R = 300,
+            r = 200,
+            d = 100,
+            thetas=thetas,
+            theta_start=1,
+            theta_stop=10,
+            theta_step=1
+        )
