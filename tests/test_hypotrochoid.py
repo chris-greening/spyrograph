@@ -14,7 +14,7 @@ def thetas() -> "np.array":
     return np.arange(0, np.pi*2, .1)
 
 @pytest.fixture()
-def hypotrochoid_obj(thetas) -> "hypotrochoid.Hypotrochoid":
+def hypotrochoid_obj(thetas: "np.array") -> "hypotrochoid.Hypotrochoid":
     """Return an instantiated hypotrochoid for testing"""
     return Hypotrochoid(
         R=300,
@@ -23,3 +23,5 @@ def hypotrochoid_obj(thetas) -> "hypotrochoid.Hypotrochoid":
         thetas=thetas
     )
 
+def test_hypotrochoid_obj(hypotrochoid_obj) -> None:
+    assert isinstance(hypotrochoid_obj, Hypotrochoid)
