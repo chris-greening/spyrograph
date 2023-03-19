@@ -5,3 +5,4 @@ spyrograph.hypotrochoid.special.astroid module
    :members:
    :undoc-members:
    :show-inheritance:
+   :inherited-members:

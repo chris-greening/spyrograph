@@ -5,3 +5,4 @@ spyrograph.epitrochoid.special.nephroid module
    :members:
    :undoc-members:
    :show-inheritance:
+   :inherited-members:

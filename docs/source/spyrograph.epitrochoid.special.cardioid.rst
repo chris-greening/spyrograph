@@ -5,3 +5,4 @@ spyrograph.epitrochoid.special.cardioid module
    :members:
    :undoc-members:
    :show-inheritance:
+   :inherited-members:

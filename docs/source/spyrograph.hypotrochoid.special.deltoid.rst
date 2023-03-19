@@ -5,3 +5,4 @@ spyrograph.hypotrochoid.special.deltoid module
    :members:
    :undoc-members:
    :show-inheritance:
+   :inherited-members:
