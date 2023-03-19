@@ -115,6 +115,7 @@ class _Trochoid(ABC):
                 y=self.origin[1]-self.R,
                 radius=self.R
             )
+
         while True:
             first = True
             shape_turtle.up()
@@ -258,8 +259,8 @@ class _Trochoid(ABC):
 
     def _draw_rolling_circle(self, t: "turtle.Turtle", theta: Number) -> None:
         """Draw the rolling circle on the screen"""
-        x=self._circle_offset()*math.cos(theta)
-        y=self._circle_offset()*math.sin(theta) - self.r
+        x=self._circle_offset()*math.cos(theta) + self.origin[0]
+        y=self._circle_offset()*math.sin(theta) - self.r + self.origin[1]
         self._draw_circle(
             t=t,
             x=x,
