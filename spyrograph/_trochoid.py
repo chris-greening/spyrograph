@@ -26,7 +26,7 @@ class _Trochoid(ABC):
     def __init__(
             self, R: Number, r: Number, d: Number, thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
-            theta_step: Number = None, origin: Tuple = (0, 0)
+            theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
         ) -> None:
         self.R = R
         self.r = r
