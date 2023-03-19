@@ -57,7 +57,8 @@ class _Trochoid(ABC):
             color: str = "black", hide_turtle: bool = True,
             show_circles: bool = False, frame_pause: Number = 0,
             screen: "turtle.Screen" = None, circle_color: str = "black",
-            show_full_path: bool = False, full_path_color: str = "grey"
+            show_full_path: bool = False, full_path_color: str = "grey",
+            repeat: bool = False
         ) -> "turtle.Screen":
         """Trace the roulette shape using turtle
 
@@ -85,6 +86,9 @@ class _Trochoid(ABC):
             Show the full path prior to tracing
         full_path_color: str = "grey"
             Color of the full path drawing
+        repeat: bool = False
+            Infinitely repeat the animation so it starts over from the
+            beginning
 
         Returns
         -------
@@ -95,15 +99,11 @@ class _Trochoid(ABC):
         screen = self._init_screen(screen, screen_size, screen_color)
         turtle.tracer(False)
 
-        turtles = self._init_turtles(color, circle_color, hide_turtle)
-        shape_turtle, rolling_circle_turtle, fixed_circle_turtle = turtles
+        turtles = self._init_turtles(color, circle_color, full_path_color, hide_turtle)
+        shape_turtle, pre_draw_turtle, rolling_circle_turtle, fixed_circle_turtle = turtles
 
         if show_full_path:
-            shape_turtle = self._show_full_path(
-                shape_turtle=shape_turtle,
-                color=color,
-                full_path_color=full_path_color
-            )
+            self._show_full_path(pre_draw_turtle=pre_draw_turtle)
         if show_circles:
             self._draw_circle(
                 t=fixed_circle_turtle,
@@ -111,23 +111,27 @@ class _Trochoid(ABC):
                 y=-self.R,
                 radius=self.R
             )
-        first = True
-        shape_turtle.up()
-        for x, y, theta in self.coords:
-            shape_turtle.goto(x, y)
-            if show_circles:
-                self._trace_rolling_circle(
-                    rolling_circle_turtle,
-                    shape_turtle,
-                    x,
-                    y,
-                    theta
-                )
-            if first:
-                first = False
-                shape_turtle.down()
-            turtle.update()
-            time.sleep(frame_pause)
+        while True:
+            first = True
+            shape_turtle.up()
+            for x, y, theta in self.coords:
+                shape_turtle.goto(x, y)
+                if show_circles:
+                    self._trace_rolling_circle(
+                        rolling_circle_turtle,
+                        shape_turtle,
+                        x,
+                        y,
+                        theta
+                    )
+                if first:
+                    first = False
+                    shape_turtle.down()
+                turtle.update()
+                time.sleep(frame_pause)
+            if not repeat:
+                break
+            shape_turtle.clear()
         if exit_on_click:
             turtle.exitonclick()
         return screen
@@ -146,22 +150,19 @@ class _Trochoid(ABC):
         return df
 
     def _show_full_path(
-            self, shape_turtle: "turtle.Turtle", color: str,
-            full_path_color: str
+            self, pre_draw_turtle: "turtle.Turtle"
         ) -> None:
         """Draw the full path prior to tracing"""
         # pylint: disable=no-member, unused-variable
         first = True
-        shape_turtle.up()
-        shape_turtle.color(full_path_color)
+        pre_draw_turtle.up()
         for x, y, theta in self.coords:
-            shape_turtle.goto(x, y)
+            pre_draw_turtle.goto(x, y)
             if first:
                 first = False
-                shape_turtle.down()
+                pre_draw_turtle.down()
         turtle.update()
-        shape_turtle.color(color)
-        return shape_turtle
+        return pre_draw_turtle
 
     def _validate_theta(
             self, thetas: List[Number], theta_start: Number, theta_stop: Number,
@@ -190,27 +191,30 @@ class _Trochoid(ABC):
         return screen
 
     def _init_turtles(
-            self, color: str, circle_color: str, hide_turtle: bool
-        ) -> Tuple["turtle.Turtle", "turtle.Turtle", "turtle.Turtle"]:
+            self, color: str, circle_color: str, full_path_color: str, hide_turtle: bool
+        ) -> Tuple["turtle.Turtle", "turtle.Turtle", "turtle.Turtle", "turtle.Turtle"]:
         # Return a shape turtle, rolling circle turtle, and fixed circle turtle
 
         # Instantiate turtle
         shape_turtle = turtle.Turtle()
         rolling_circle_turtle = turtle.Turtle()
         fixed_circle_turtle = turtle.Turtle()
+        pre_draw_turtle = turtle.Turtle()
 
         # Hide circle turtles
         if hide_turtle:
             shape_turtle.hideturtle()
         rolling_circle_turtle.hideturtle()
         fixed_circle_turtle.hideturtle()
+        pre_draw_turtle.hideturtle()
 
         # Set turtle color
         shape_turtle.color(color)
         rolling_circle_turtle.color(circle_color)
         fixed_circle_turtle.color(circle_color)
+        pre_draw_turtle.color(full_path_color)
 
-        return shape_turtle, rolling_circle_turtle, fixed_circle_turtle
+        return shape_turtle, pre_draw_turtle, rolling_circle_turtle, fixed_circle_turtle
 
     def _trace_rolling_circle(
             self, rolling_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle",
