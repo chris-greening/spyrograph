@@ -32,9 +32,12 @@ class _Trochoid(ABC):
         self.r = r
         self.d = d
         self.thetas = self._validate_theta(thetas, theta_start, theta_stop, theta_step)
+        self.origin = origin
 
         self.x = np.array([self._calculate_x(theta) for theta in self.thetas])
         self.y = np.array([self._calculate_y(theta) for theta in self.thetas])
+        self.x += self.origin[0]
+        self.y += self.origin[1]
         self.coords = list(zip(self.x, self.y, self.thetas))
 
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
