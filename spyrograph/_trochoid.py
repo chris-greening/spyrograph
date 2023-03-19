@@ -151,7 +151,7 @@ class _Trochoid(ABC):
         return df
 
     def _show_full_path(
-            self, shape_turtle: "turtle.Turtle", color: str
+            self, shape_turtle: "turtle.Turtle"
         ) -> None:
         """Draw the full path prior to tracing"""
         # pylint: disable=no-member, unused-variable
@@ -163,7 +163,6 @@ class _Trochoid(ABC):
                 first = False
                 shape_turtle.down()
         turtle.update()
-        shape_turtle.color(color)
         return shape_turtle
 
     def _validate_theta(
