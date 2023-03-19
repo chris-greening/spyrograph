@@ -167,7 +167,7 @@ class _Trochoid(ABC):
     def _validate_theta(
             self, thetas: List[Number], theta_start: Number, theta_stop: Number,
             theta_step: Number
-        ) -> "":
+        ) -> "np.array":
         # pylint: disable=line-too-long
         theta_values = (theta_start, theta_stop, theta_step)
         multiple_thetas = thetas is not None and any(theta_values)
