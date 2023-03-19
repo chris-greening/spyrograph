@@ -203,6 +203,7 @@ class _Trochoid(ABC):
             shape_turtle.hideturtle()
         rolling_circle_turtle.hideturtle()
         fixed_circle_turtle.hideturtle()
+        pre_draw_turtle.hideturtle()
 
         # Set turtle color
         shape_turtle.color(color)
