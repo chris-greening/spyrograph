@@ -57,7 +57,8 @@ class _Trochoid(ABC):
             color: str = "black", hide_turtle: bool = True,
             show_circles: bool = False, frame_pause: Number = 0,
             screen: "turtle.Screen" = None, circle_color: str = "black",
-            show_full_path: bool = False, full_path_color: str = "grey"
+            show_full_path: bool = False, full_path_color: str = "grey",
+            repeat: bool = False
         ) -> "turtle.Screen":
         """Trace the roulette shape using turtle
 
@@ -111,23 +112,26 @@ class _Trochoid(ABC):
                 y=-self.R,
                 radius=self.R
             )
-        first = True
-        shape_turtle.up()
-        for x, y, theta in self.coords:
-            shape_turtle.goto(x, y)
-            if show_circles:
-                self._trace_rolling_circle(
-                    rolling_circle_turtle,
-                    shape_turtle,
-                    x,
-                    y,
-                    theta
-                )
-            if first:
-                first = False
-                shape_turtle.down()
-            turtle.update()
-            time.sleep(frame_pause)
+        while True:
+            first = True
+            shape_turtle.up()
+            for x, y, theta in self.coords:
+                shape_turtle.goto(x, y)
+                if show_circles:
+                    self._trace_rolling_circle(
+                        rolling_circle_turtle,
+                        shape_turtle,
+                        x,
+                        y,
+                        theta
+                    )
+                if first:
+                    first = False
+                    shape_turtle.down()
+                turtle.update()
+                time.sleep(frame_pause)
+            if not repeat:
+                break
         if exit_on_click:
             turtle.exitonclick()
         return screen
