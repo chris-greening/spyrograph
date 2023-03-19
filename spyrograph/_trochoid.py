@@ -28,6 +28,7 @@ class _Trochoid(ABC):
             theta_start: Number = None, theta_stop: Number = None,
             theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
         ) -> None:
+        # pylint: disable=too-many-instance-attributes
         self.R = R
         self.r = r
         self.d = d
