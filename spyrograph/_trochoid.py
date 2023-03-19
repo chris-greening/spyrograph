@@ -111,8 +111,8 @@ class _Trochoid(ABC):
         if show_circles:
             self._draw_circle(
                 t=fixed_circle_turtle,
-                x=0,
-                y=-self.R,
+                x=self.origin[0],
+                y=self.origin[1]-self.R,
                 radius=self.R
             )
         while True:
