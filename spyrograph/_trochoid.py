@@ -96,8 +96,8 @@ class _Trochoid(ABC):
         screen = self._init_screen(screen, screen_size, screen_color)
         turtle.tracer(False)
 
-        turtles = self._init_turtles(color, circle_color, hide_turtle)
-        shape_turtle, rolling_circle_turtle, fixed_circle_turtle = turtles
+        turtles = self._init_turtles(color, circle_color, full_path_color, hide_turtle)
+        shape_turtle, pre_draw_turtle, rolling_circle_turtle, fixed_circle_turtle = turtles
 
         if show_full_path:
             shape_turtle = self._show_full_path(
@@ -132,6 +132,7 @@ class _Trochoid(ABC):
                 time.sleep(frame_pause)
             if not repeat:
                 break
+            shape_turtle.clear()
         if exit_on_click:
             turtle.exitonclick()
         return screen
@@ -194,14 +195,15 @@ class _Trochoid(ABC):
         return screen
 
     def _init_turtles(
-            self, color: str, circle_color: str, hide_turtle: bool
-        ) -> Tuple["turtle.Turtle", "turtle.Turtle", "turtle.Turtle"]:
+            self, color: str, circle_color: str, full_path_color: str, hide_turtle: bool
+        ) -> Tuple["turtle.Turtle", "turtle.Turtle", "turtle.Turtle", "turtle.Turtle"]:
         # Return a shape turtle, rolling circle turtle, and fixed circle turtle
 
         # Instantiate turtle
         shape_turtle = turtle.Turtle()
         rolling_circle_turtle = turtle.Turtle()
         fixed_circle_turtle = turtle.Turtle()
+        pre_draw_turtle = turtle.Turtle()
 
         # Hide circle turtles
         if hide_turtle:
@@ -213,8 +215,9 @@ class _Trochoid(ABC):
         shape_turtle.color(color)
         rolling_circle_turtle.color(circle_color)
         fixed_circle_turtle.color(circle_color)
+        pre_draw_turtle.color(full_path_color)
 
-        return shape_turtle, rolling_circle_turtle, fixed_circle_turtle
+        return shape_turtle, pre_draw_turtle, rolling_circle_turtle, fixed_circle_turtle
 
     def _trace_rolling_circle(
             self, rolling_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle",
