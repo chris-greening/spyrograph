@@ -100,11 +100,7 @@ class _Trochoid(ABC):
         shape_turtle, pre_draw_turtle, rolling_circle_turtle, fixed_circle_turtle = turtles
 
         if show_full_path:
-            self._show_full_path(
-                pre_draw_turtle=pre_draw_turtle,
-                color=color,
-                full_path_color=full_path_color
-            )
+            self._show_full_path(pre_draw_turtle=pre_draw_turtle)
         if show_circles:
             self._draw_circle(
                 t=fixed_circle_turtle,
