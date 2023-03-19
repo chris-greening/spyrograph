@@ -4,7 +4,7 @@ shape's methods i.e. tracing, calculating, etc.
 
 from abc import ABC
 from numbers import Number
-from typing import List
+from typing import List, Tuple
 
 class _Cycloid(ABC):
     # pylint: disable=too-few-public-methods
