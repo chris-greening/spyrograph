@@ -29,6 +29,38 @@ class _Trochoid(ABC):
             theta_start: Number = None, theta_stop: Number = None,
             theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
         ) -> None:
+        """Model of a trochoid curve from given input parameters. A trochoid is
+        a curve drawn by tracing a point from a circle as it rolls around the
+        inside or outside of a fixed circle
+
+        Parameters
+        ----------
+        R : Number
+            Radius of the fixed circle
+        r : number
+            Radius of the rolling circle
+        d : Number
+            Distance of the trace point from the rolling circle
+        thetas : List[Number] = None
+            Input list of values for theta for inputting into parametric equations.
+            This argument cannot be set at the same time as theta_start,
+            theta_stop, theta_step
+        theta_start : Number = None
+            Starting theta value for creating a list of thetas (similar syntax
+            to built-in range or np.arange). This argument cannot be set at the
+            same time as thetas argument
+        theta_stop : Number = None
+            Stop theta value for creating a list of thetas, stop value is not
+            included in the final array (similar syntax to built-in range or
+            np.arange). This argument cannot be set at the same time as thetas
+            argument
+        theta_step : Number = None
+            Incremental step value for stepping from start to stop
+            (similar syntax to built-in range or np.arange). This argument
+            cannot be set at the same time as thetas argument
+        origin : Tuple[Number, Number] = (0, 0)
+            Custom origin to center the shapes at. Default is (0,0)
+        """
         self.R = R
         self.r = r
         self.d = d
