@@ -22,7 +22,7 @@ class _TestGeneral:
         )
 
     def test_custom_origin_offsets(self, thetas):
-        """Test custom origin offsets vertically"""
+        """Test custom origin offsets"""
         base_obj = self.class_name(
             R = 300,
             r = 200,
@@ -36,8 +36,9 @@ class _TestGeneral:
             thetas=thetas,
             origin = (54, 233)
         )
-        assert ((custom_origin_obj.x - base_obj.x) == 54).all()
-        assert ((custom_origin_obj.y - base_obj.y) == 233).all()
+        print((custom_origin_obj.x - base_obj.x) == 54.0)
+        assert ((custom_origin_obj.x - base_obj.x) == 54.0).all()
+        assert ((custom_origin_obj.y - base_obj.y) == 233.0).all()
 
     def test_theta_range(self) -> None:
         """Test that passing theta start, stop, step creates an expected list of theta values"""
