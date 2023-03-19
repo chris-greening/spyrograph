@@ -86,6 +86,9 @@ class _Trochoid(ABC):
             Show the full path prior to tracing
         full_path_color: str = "grey"
             Color of the full path drawing
+        repeat: bool = False
+            Infinitely repeat the animation so it starts over from the
+            beginning
 
         Returns
         -------
