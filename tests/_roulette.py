@@ -21,6 +21,24 @@ class _TestGeneral:
             thetas=thetas
         )
 
+    def test_custom_origin_offsets(self, thetas):
+        """Test custom origin offsets"""
+        base_obj = self.class_name(
+            R = 300,
+            r = 200,
+            d = 100,
+            thetas=thetas
+        )
+        custom_origin_obj = self.class_name(
+            R = 300,
+            r = 200,
+            d = 100,
+            thetas=thetas,
+            origin = (54, -233)
+        )
+        assert ((custom_origin_obj.x - base_obj.x).round() == 54.0).all()
+        assert ((custom_origin_obj.y - base_obj.y).round() == -233.0).all()
+
     def test_theta_range(self) -> None:
         """Test that passing theta start, stop, step creates an expected list of theta values"""
         obj = self.class_name(
@@ -86,6 +104,22 @@ class _TestSpecial:
             thetas=thetas
         )
 
+    def test_custom_origin_offsets(self, thetas):
+        """Test custom origin offsets vertically"""
+        base_obj = self.class_name(
+            R = 300,
+            r = 200,
+            thetas=thetas
+        )
+        custom_origin_obj = self.class_name(
+            R = 300,
+            r = 200,
+            thetas=thetas,
+            origin = (54, -233)
+        )
+        assert ((custom_origin_obj.x - base_obj.x).round() == 54).all()
+        assert ((custom_origin_obj.y - base_obj.y).round() == -233).all()
+
     def test_theta_range(self) -> None:
         """Test that passing theta start, stop, step creates an expected list of theta values"""
         obj = self.class_name(
@@ -131,3 +165,19 @@ class _TestSpecial:
                 thetas = thetas
             )
             assert obj.r == obj.R/n
+
+    def test_n_cusps_custom_origin(self, thetas):
+        """Test that custom origin is working with n cusp classmethod"""
+        base_obj = self.class_name.n_cusps(
+            R = 300,
+            n = 2,
+            thetas=thetas
+        )
+        custom_origin_obj = self.class_name.n_cusps(
+            R = 300,
+            n = 2,
+            thetas=thetas,
+            origin = (54, -233)
+        )
+        assert ((custom_origin_obj.x - base_obj.x).round() == 54.0).all()
+        assert ((custom_origin_obj.y - base_obj.y).round() == -233.0).all()

@@ -2,7 +2,7 @@
 from the rolling circle is equal to the radius of the rolling circle
 """
 
-from typing import List
+from typing import List, Tuple
 from numbers import Number
 
 from spyrograph.hypotrochoid.hypotrochoid import Hypotrochoid
@@ -16,6 +16,6 @@ class Hypocycloid(_Cycloid, Hypotrochoid):
     def __init__(
             self, R: Number, r: Number, thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
-            theta_step: Number = None
+            theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
         ) -> None:
-        super().__init__(R, r, r, thetas, theta_start, theta_stop, theta_step)
+        super().__init__(R, r, r, thetas, theta_start, theta_stop, theta_step, origin)

@@ -23,18 +23,22 @@ except ImportError:
     pd = None
 
 class _Trochoid(ABC):
+    # pylint: disable=too-many-instance-attributes
     def __init__(
             self, R: Number, r: Number, d: Number, thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
-            theta_step: Number = None
+            theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
         ) -> None:
         self.R = R
         self.r = r
         self.d = d
         self.thetas = self._validate_theta(thetas, theta_start, theta_stop, theta_step)
+        self.origin = origin
 
-        self.x = [self._calculate_x(theta) for theta in self.thetas]
-        self.y = [self._calculate_y(theta) for theta in self.thetas]
+        self.x = np.array([self._calculate_x(theta) for theta in self.thetas])
+        self.y = np.array([self._calculate_y(theta) for theta in self.thetas])
+        self.x += self.origin[0]
+        self.y += self.origin[1]
         self.coords = list(zip(self.x, self.y, self.thetas))
 
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
@@ -107,10 +111,11 @@ class _Trochoid(ABC):
         if show_circles:
             self._draw_circle(
                 t=fixed_circle_turtle,
-                x=0,
-                y=-self.R,
+                x=self.origin[0],
+                y=self.origin[1]-self.R,
                 radius=self.R
             )
+
         while True:
             first = True
             shape_turtle.up()
@@ -167,7 +172,7 @@ class _Trochoid(ABC):
     def _validate_theta(
             self, thetas: List[Number], theta_start: Number, theta_stop: Number,
             theta_step: Number
-        ) -> "":
+        ) -> "np.array":
         # pylint: disable=line-too-long
         theta_values = (theta_start, theta_stop, theta_step)
         multiple_thetas = thetas is not None and any(theta_values)
@@ -177,6 +182,7 @@ class _Trochoid(ABC):
             if theta_step is None:
                 theta_step = .1
             thetas = np.arange(theta_start, theta_stop, theta_step)
+        thetas = np.array(thetas)
         return thetas
 
     def _init_screen(
@@ -253,8 +259,8 @@ class _Trochoid(ABC):
 
     def _draw_rolling_circle(self, t: "turtle.Turtle", theta: Number) -> None:
         """Draw the rolling circle on the screen"""
-        x=self._circle_offset()*math.cos(theta)
-        y=self._circle_offset()*math.sin(theta) - self.r
+        x=self._circle_offset()*math.cos(theta) + self.origin[0]
+        y=self._circle_offset()*math.sin(theta) - self.r + self.origin[1]
         self._draw_circle(
             t=t,
             x=x,
