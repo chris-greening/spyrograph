@@ -177,6 +177,7 @@ class _Trochoid(ABC):
             if theta_step is None:
                 theta_step = .1
             thetas = np.arange(theta_start, theta_stop, theta_step)
+        thetas = np.array(thetas)
         return thetas
 
     def _init_screen(
