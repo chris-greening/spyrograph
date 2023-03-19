@@ -12,7 +12,7 @@ class _Cycloid(ABC):
     def n_cusps(
             cls, R: Number, n: int, thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
-            theta_step: Number = None
+            theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
         ) -> "Cycloid":
         """Return a cycloid with n number of cusps"""
         return cls(
@@ -21,5 +21,6 @@ class _Cycloid(ABC):
             thetas=thetas,
             theta_start=theta_start,
             theta_stop=theta_stop,
-            theta_step=theta_step
+            theta_step=theta_step,
+            origin=origin
         )
