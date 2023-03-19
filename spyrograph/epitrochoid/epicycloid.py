@@ -2,7 +2,7 @@
 where the distance from the rolling circle is equal to its radius.
 """
 
-from typing import List
+from typing import List, Tuple
 from numbers import Number
 
 from spyrograph.epitrochoid.epitrochoid import Epitrochoid

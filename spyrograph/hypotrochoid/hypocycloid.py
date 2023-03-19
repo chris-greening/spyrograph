@@ -2,7 +2,7 @@
 from the rolling circle is equal to the radius of the rolling circle
 """
 
-from typing import List
+from typing import List, Tuple
 from numbers import Number
 
 from spyrograph.hypotrochoid.hypotrochoid import Hypotrochoid
