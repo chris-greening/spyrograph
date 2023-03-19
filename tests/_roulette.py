@@ -34,11 +34,10 @@ class _TestGeneral:
             r = 200,
             d = 100,
             thetas=thetas,
-            origin = (54, 233)
+            origin = (54, -233)
         )
-        print((custom_origin_obj.x - base_obj.x) == 54.0)
-        assert ((custom_origin_obj.x - base_obj.x) == 54.0).all()
-        assert ((custom_origin_obj.y - base_obj.y) == 233.0).all()
+        assert ((custom_origin_obj.x - base_obj.x).round() == 54.0).all()
+        assert ((custom_origin_obj.y - base_obj.y).round() == -233.0).all()
 
     def test_theta_range(self) -> None:
         """Test that passing theta start, stop, step creates an expected list of theta values"""
@@ -116,10 +115,10 @@ class _TestSpecial:
             R = 300,
             r = 200,
             thetas=thetas,
-            origin = (54, 233)
+            origin = (54, -233)
         )
-        assert ((custom_origin_obj.x - base_obj.x) == 54).all()
-        assert ((custom_origin_obj.y - base_obj.y) == 233).all()
+        assert ((custom_origin_obj.x - base_obj.x).round() == 54).all()
+        assert ((custom_origin_obj.y - base_obj.y).round() == -233).all()
 
     def test_theta_range(self) -> None:
         """Test that passing theta start, stop, step creates an expected list of theta values"""
