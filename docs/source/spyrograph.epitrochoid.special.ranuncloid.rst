@@ -5,3 +5,4 @@ spyrograph.epitrochoid.special.ranuncloid module
    :members:
    :undoc-members:
    :show-inheritance:
+   :inherited-members:
