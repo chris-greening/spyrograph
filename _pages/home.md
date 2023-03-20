@@ -34,6 +34,7 @@ github:
 
 {% include feature_row %}
 
+## Quickstart
 {% highlight python %}
 from spyrograph import Hypotrochoid
 
