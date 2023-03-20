@@ -64,4 +64,4 @@ import this
 from chris_greening import bio
 {% endhighlight %}
 
-Chris Greening is a software engineer from the New York metropolitan area
+Chris Greening is a software engineer from the New York metropolitan area with a wide range of engineering experience - he is especially fond of Python and R
