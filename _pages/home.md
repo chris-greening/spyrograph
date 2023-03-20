@@ -35,6 +35,9 @@ github:
 {% include feature_row %}
 
 ## Quickstart
+
+`spyrograph` is designed to be expressive and easy-to-use - simply `import spyrograph` and jump right into drawing elegant, complex shapes in just a few lines of code!
+
 {% highlight python %}
 from spyrograph import Hypotrochoid
 
