@@ -31,6 +31,7 @@ _spyrograph_ is a lightweight Python package that provides an expressive and fle
 
 ## Table of Contents
 * [Installation](#installation)
+* [Quickstart](#quickstart)
 * [Contributing](#contributing)
 * [Documentation](#documentation)
 * [License](#license)
@@ -49,6 +50,32 @@ $ pip3 install spyrograph
 or clone the development version from GitHub with
 ```shell
 $ git clone https://github.com/chris-greening/spyrograph.git
+```
+
+---
+
+## :seedling: Quickstart <a name="quickstart"></a>
+
+`spyrograph` is designed to be expressive and easy-to-use - simply `import spyrograph` and jump right into drawing elegant, complex shapes in just a few lines of code!
+
+```python
+from spyrograph import Hypotrochoid
+
+# Trace a hypotrochoid from 0 to 2pi where
+# the fixed circle radius is 300, rolling circle 
+# radius is 200, and the distance from the rolling 
+# circle is 100
+hypotrochoid = Hypotrochoid(
+    R=300,
+    r=200,
+    d=100,
+    thetas=np.arange(0, 2*np.pi, .1)
+)
+hypotrochoid.trace(
+    show_circles=True, 
+    frame_pause=.05, 
+    circle_color="grey"
+)
 ```
 
 ---
