@@ -20,9 +20,8 @@ import spyrograph
 </p>
 
 ## Key Features
-- Expressive and consistent syntax 
+- Expressive and consistent syntax
 - Robust underlying mathematics
-- No third-party installations required
 - Clear visualizations and animations
 - Flexible to a wide range of usecases
 - Lightweight, just plug and play

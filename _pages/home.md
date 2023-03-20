@@ -34,6 +34,26 @@ github:
 
 {% include feature_row %}
 
+{% highlight python %}
+from spyrograph import Hypotrochoid
+
+# Trace a hypotrochoid from 0 to 2pi where
+# the fixed circle radius is 300, rolling circle
+# radius is 200, and the distance from the rolling
+# circle is 100
+hypotrochoid = Hypotrochoid(
+    R=300,
+    r=200,
+    d=100,
+    thetas=np.arange(0, 2*np.pi, .1)
+)
+hypotrochoid.trace(
+    show_circles=True,
+    frame_pause=.05,
+    circle_color="grey"
+)
+{% endhighlight %}
+
 <p align="center">
   <img src="https://github.com/chris-greening/spyrograph/blob/gh-pages/images/circle_spinning.gif?raw=true" alt="Sample hypotrochoid drawing showing a circle rolling around the interior of another circle drawing a geometric shape" width="410px">
 </p>
