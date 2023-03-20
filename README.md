@@ -41,12 +41,12 @@ _spyrograph_ is a lightweight Python package that provides an expressive and fle
 ## :computer: Installation <a name="installation"></a>
 
 ### pip
-Install from PyPI using
+Install the latest stable release from PyPI using
 ```shell
 $ pip3 install spyrograph
 ```
 
-or clone from GitHub 
+or clone the development version from GitHub with
 ```shell
 $ git clone https://github.com/chris-greening/spyrograph.git
 ```
