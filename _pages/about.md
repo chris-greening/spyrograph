@@ -65,3 +65,5 @@ from chris_greening import bio
 {% endhighlight %}
 
 Chris Greening is a software engineer from the New York metropolitan area with a wide range of engineering experience - he is especially fond of Python and R
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/chrisgreening)
