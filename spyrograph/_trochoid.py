@@ -216,7 +216,6 @@ class _Trochoid(ABC):
             R, r, d, thetas, theta_start,
             theta_stop, theta_step, origin
         )
-        
 
     @property
     def df(self) -> "pd.DataFrame":
