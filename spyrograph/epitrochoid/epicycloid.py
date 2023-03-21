@@ -51,3 +51,4 @@ class Epicycloid(_Cycloid, Epitrochoid):
         origin : Tuple[Number, Number] = (0, 0)
             Custom origin to center the shapes at. Default is (0,0)
         """
+        # pylint: disable=pointless-string-statement
