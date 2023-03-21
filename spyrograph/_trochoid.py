@@ -226,8 +226,8 @@ class _Trochoid(ABC):
             Custom origin to center the shapes at. Default is (0,0)
         """
         inputs = collections.Counter([
-            isinstance(R, collections.abc.Iterable)
-            isinstance(r, collections.abc.Iterable)
+            isinstance(R, collections.abc.Iterable),
+            isinstance(r, collections.abc.Iterable),
             isinstance(d, collections.abc.Iterable)
         ])
         if inputs[True] > 1:
