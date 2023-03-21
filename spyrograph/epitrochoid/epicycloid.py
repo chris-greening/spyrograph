@@ -13,6 +13,7 @@ class Epicycloid(_Cycloid, Epitrochoid):
     circle is rolling around the outside of the fixed circle and has 1/3 the
     radius of the fixed circle
     """
+    # pylint: disable=pointless-string-statement
     def __init__(
             self, R: Number, r: Number, thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
@@ -51,4 +52,3 @@ class Epicycloid(_Cycloid, Epitrochoid):
         origin : Tuple[Number, Number] = (0, 0)
             Custom origin to center the shapes at. Default is (0,0)
         """
-        # pylint: disable=pointless-string-statement
