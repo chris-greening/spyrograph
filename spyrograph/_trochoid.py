@@ -232,9 +232,9 @@ class _Trochoid(ABC):
         ])
         if inputs[True] > 1:
             raise ValueError("More than one input variable was varied. Please only pass one list of varying inputs and try again.")
-        R_arr = self._set_int_to_list(R)
-        r_arr = self._set_int_to_list(r)
-        d_arr = self._set_int_to_list(d)
+        R_arr = cls._set_int_to_list(R)
+        r_arr = cls._set_int_to_list(r)
+        d_arr = cls._set_int_to_list(d)
 
         # TODO: this is fairly ugly, need to come up with better way of handling
         # this
@@ -248,7 +248,8 @@ class _Trochoid(ABC):
                     ))
         return shapes
 
-    def _set_int_to_list(self, input_val: Union[Number, List[Number]]) -> List[Number]:
+    @staticmethod
+    def _set_int_to_list(input_val: Union[Number, List[Number]]) -> List[Number]:
         """Return list of numbers from given input parameter"""
         if isinstance(input_val, numbers.Number):
             input_val = [input_val]
