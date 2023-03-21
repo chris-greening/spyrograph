@@ -186,6 +186,14 @@ class _Trochoid(ABC):
         })
         return df
 
+    @classmethod
+    def create_range(
+            cls, R: List[Number], r: List[Number], d: List[Number],
+            thetas: List[Number] = None, theta_start: Number = None,
+            theta_stop: Number = None, theta_step: Number = None,
+            origin: Tuple[Number, Number] = (0, 0)
+        ) -> List["_Trochoid"]:
+
     def _show_full_path(
             self, pre_draw_turtle: "turtle.Turtle"
         ) -> None:
