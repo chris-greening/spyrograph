@@ -232,7 +232,6 @@ class _Trochoid(ABC):
         ])
         if inputs[True] > 1:
             raise ValueError("More than one input variable was varied. Please only pass one list of varying inputs and try again.")
-
         R = self._set_int_to_list(R)
         r = self._set_int_to_list(r)
         d = self._set_int_to_list(d)
