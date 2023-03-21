@@ -251,7 +251,7 @@ class _Trochoid(ABC):
     @staticmethod
     def _set_int_to_list(input_val: Union[Number, List[Number]]) -> List[Number]:
         """Return list of numbers from given input parameter"""
-        if isinstance(input_val, numbers.Number):
+        if isinstance(input_val, Number):
             input_val = [input_val]
         return input_val
 
