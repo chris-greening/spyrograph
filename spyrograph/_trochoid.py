@@ -174,7 +174,11 @@ class _Trochoid(ABC):
         return screen
 
     @classmethod
-    def animate():
+    def animate(
+        cls, R: Number, r: Number, d: Number, thetas: List[Number] = None,
+        theta_start: Number = None, theta_stop: Number = None,
+        theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
+    ):
         pass
 
     @property
