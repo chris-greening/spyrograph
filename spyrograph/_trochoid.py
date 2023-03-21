@@ -236,6 +236,8 @@ class _Trochoid(ABC):
         r_arr = self._set_int_to_list(r)
         d_arr = self._set_int_to_list(d)
 
+        # TODO: this is fairly ugly, need to come up with better way of handling
+        # this
         shapes = []
         for R in R_arr:
             for r in r_arr:
