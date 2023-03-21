@@ -230,7 +230,8 @@ class _Trochoid(ABC):
             isinstance(r, collections.abc.Iterable),
             isinstance(d, collections.abc.Iterable)
         ])
-        
+        if inputs[True] > 1:
+            raise ValueError("More than one input variable was varied. Please only pass one list of varying inputs and try again.")
 
     def _show_full_path(
             self, pre_draw_turtle: "turtle.Turtle"
