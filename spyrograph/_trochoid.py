@@ -226,12 +226,20 @@ class _Trochoid(ABC):
             Custom origin to center the shapes at. Default is (0,0)
         """
         inputs = collections.Counter([
-            isinstance(R, collections.abc.Iterable),
-            isinstance(r, collections.abc.Iterable),
-            isinstance(d, collections.abc.Iterable)
+            R_is_iterable = isinstance(R, collections.abc.Iterable)
+            r_is_iterable = isinstance(r, collections.abc.Iterable)
+            d_is_iterable = isinstance(d, collections.abc.Iterable)
         ])
         if inputs[True] > 1:
             raise ValueError("More than one input variable was varied. Please only pass one list of varying inputs and try again.")
+
+        
+
+    def _set_int_to_list(self, input_val: Union[Number, List[Number]]) -> List[Number]:
+        """Return list of numbers from given input parameter"""
+        if isinstance(input_val, numbers.Number):
+            input_val = [input_val]
+        return input_val
 
     def _show_full_path(
             self, pre_draw_turtle: "turtle.Turtle"
