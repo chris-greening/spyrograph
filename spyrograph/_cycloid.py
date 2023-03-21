@@ -47,8 +47,7 @@ class _Cycloid(ABC):
         """
         inputs = collections.Counter([
             isinstance(R, collections.abc.Iterable),
-            isinstance(r, collections.abc.Iterable),
-            isinstance(d, collections.abc.Iterable)
+            isinstance(r, collections.abc.Iterable)
         ])
         if inputs[True] > 1:
             raise ValueError("More than one input variable was varied. Please only pass one list of varying inputs and try again.")
