@@ -5,10 +5,11 @@ the parametric equations
 
 import math
 import turtle
-from typing import Tuple, List
+from typing import Tuple, List, Union
 from numbers import Number
 import time
 from abc import ABC, abstractmethod
+import collections
 
 import numpy as np
 
@@ -185,6 +186,75 @@ class _Trochoid(ABC):
             "theta": self.thetas
         })
         return df
+
+    @classmethod
+    def create_range(
+            cls, R: Union[Number, List[Number]], r: Union[Number, List[Number]],
+            d: Union[Number, List[Number]], thetas: List[Number] = None,
+            theta_start: Number = None, theta_stop: Number = None,
+            theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
+        ) -> List["_Trochoid"]:
+        """Return a list of instantiated shapes where one of the input parameters
+        is a list of increments i.e. R, r, d and the rest are fixed
+
+        Parameters
+        ----------
+        R : Union[Number, List[Number]]
+            Radius of the fixed circle
+        r : Union[Number, List[Number]]
+            Radius of the rolling circle
+        d : Union[Number, List[Number]]
+            Distance of the trace point from the rolling circle
+        thetas : List[Number] = None
+            Input list of values for theta for inputting into parametric equations.
+            This argument cannot be set at the same time as theta_start,
+            theta_stop, theta_step
+        theta_start : Number = None
+            Starting theta value for creating a list of thetas (similar syntax
+            to built-in range or np.arange). This argument cannot be set at the
+            same time as thetas argument
+        theta_stop : Number = None
+            Stop theta value for creating a list of thetas, stop value is not
+            included in the final array (similar syntax to built-in range or
+            np.arange). This argument cannot be set at the same time as thetas
+            argument
+        theta_step : Number = None
+            Incremental step value for stepping from start to stop
+            (similar syntax to built-in range or np.arange). This argument
+            cannot be set at the same time as thetas argument
+        origin : Tuple[Number, Number] = (0, 0)
+            Custom origin to center the shapes at. Default is (0,0)
+        """
+        # pylint: disable=line-too-long,redefined-argument-from-local,invalid-name,fixme
+        inputs = collections.Counter([
+            isinstance(R, collections.abc.Iterable),
+            isinstance(r, collections.abc.Iterable),
+            isinstance(d, collections.abc.Iterable)
+        ])
+        if inputs[True] > 1:
+            raise ValueError("More than one input variable was varied. Please only pass one list of varying inputs and try again.")
+        R_arr = cls._set_int_to_list(R)
+        r_arr = cls._set_int_to_list(r)
+        d_arr = cls._set_int_to_list(d)
+
+        # TODO: this is fairly ugly, need to come up with better way of handling
+        # this
+        shapes = []
+        for R in R_arr:
+            for r in r_arr:
+                for d in d_arr:
+                    shapes.append(cls(
+                        R, r, d, thetas, theta_start, theta_stop, theta_step,
+                        origin
+                    ))
+        return shapes
+
+    @staticmethod
+    def _set_int_to_list(input_val: Union[Number, List[Number]]) -> List[Number]:
+        """Return list of numbers from given input parameter"""
+        if isinstance(input_val, Number):
+            input_val = [input_val]
+        return input_val
 
     def _show_full_path(
             self, pre_draw_turtle: "turtle.Turtle"
