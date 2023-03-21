@@ -225,7 +225,12 @@ class _Trochoid(ABC):
         origin : Tuple[Number, Number] = (0, 0)
             Custom origin to center the shapes at. Default is (0,0)
         """
-        inputs = [isinstance(R, collections.abc.Iterable)]
+        inputs = collections.Counter([
+            isinstance(R, collections.abc.Iterable),
+            isinstance(r, collections.abc.Iterable),
+            isinstance(d, collections.abc.Iterable)
+        ])
+        
 
     def _show_full_path(
             self, pre_draw_turtle: "turtle.Turtle"
