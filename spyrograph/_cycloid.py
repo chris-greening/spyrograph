@@ -45,7 +45,7 @@ class _Cycloid(ABC):
         origin : Tuple[Number, Number] = (0, 0)
             Custom origin to center the shapes at. Default is (0,0)
         """
-        # pylint: disable=line-too-long,redefined-argument-from-local
+        # pylint: disable=line-too-long,redefined-argument-from-local,invalid-name,no-member
         inputs = collections.Counter([
             isinstance(R, collections.abc.Iterable),
             isinstance(r, collections.abc.Iterable)
