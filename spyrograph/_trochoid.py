@@ -232,9 +232,18 @@ class _Trochoid(ABC):
         ])
         if inputs[True] > 1:
             raise ValueError("More than one input variable was varied. Please only pass one list of varying inputs and try again.")
-        R = self._set_int_to_list(R)
-        r = self._set_int_to_list(r)
-        d = self._set_int_to_list(d)
+        R_arr = self._set_int_to_list(R)
+        r_arr = self._set_int_to_list(r)
+        d_arr = self._set_int_to_list(d)
+
+        shapes = []
+        for R in R_arr:
+            for r in r_arr:
+                for d in d_arr:
+                    shapes.append(cls(
+                        R, r, d, thetas, theta_start, theta_stop, theta_step,
+                        origin
+                    ))
 
     def _set_int_to_list(self, input_val: Union[Number, List[Number]]) -> List[Number]:
         """Return list of numbers from given input parameter"""
