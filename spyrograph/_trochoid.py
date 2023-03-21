@@ -173,6 +173,10 @@ class _Trochoid(ABC):
             turtle.exitonclick()
         return screen
 
+    @classmethod
+    def animate():
+        pass
+
     @property
     def df(self) -> "pd.DataFrame":
         """Return DataFrame of all relevant information pertaining to the parametrized shape"""
