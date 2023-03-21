@@ -5,7 +5,7 @@ the parametric equations
 
 import math
 import turtle
-from typing import Tuple, List
+from typing import Tuple, List, Union
 from numbers import Number
 import time
 from abc import ABC, abstractmethod
@@ -188,10 +188,10 @@ class _Trochoid(ABC):
 
     @classmethod
     def create_range(
-            cls, R: List[Number], r: List[Number], d: List[Number],
-            thetas: List[Number] = None, theta_start: Number = None,
-            theta_stop: Number = None, theta_step: Number = None,
-            origin: Tuple[Number, Number] = (0, 0)
+            cls, R: Union[Number, List[Number]], r: Union[Number, List[Number]],
+            d: Union[Number, List[Number]], thetas: List[Number] = None,
+            theta_start: Number = None, theta_stop: Number = None,
+            theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
         ) -> List["_Trochoid"]:
         """Return a list of instantiated shapes where one of the input parameters
         is a list of increments i.e. R, r, d
