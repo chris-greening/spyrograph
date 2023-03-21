@@ -226,9 +226,9 @@ class _Trochoid(ABC):
             Custom origin to center the shapes at. Default is (0,0)
         """
         inputs = collections.Counter([
-            R_is_iterable = isinstance(R, collections.abc.Iterable)
-            r_is_iterable = isinstance(r, collections.abc.Iterable)
-            d_is_iterable = isinstance(d, collections.abc.Iterable)
+            isinstance(R, collections.abc.Iterable)
+            isinstance(r, collections.abc.Iterable)
+            isinstance(d, collections.abc.Iterable)
         ])
         if inputs[True] > 1:
             raise ValueError("More than one input variable was varied. Please only pass one list of varying inputs and try again.")
