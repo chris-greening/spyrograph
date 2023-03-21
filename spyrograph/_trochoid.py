@@ -175,10 +175,11 @@ class _Trochoid(ABC):
 
     @classmethod
     def animate(
-        cls, R: Number, r: Number, d: Number, thetas: List[Number] = None,
-        theta_start: Number = None, theta_stop: Number = None,
-        theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
-    ):
+            cls, R: List[Number], r: List[Number], d: List[Number],
+            thetas: List[Number] = None, theta_start: Number = None,
+            theta_stop: Number = None, theta_step: Number = None,
+            origin: Tuple[Number, Number] = (0, 0)
+        ):
         pass
 
     @property
