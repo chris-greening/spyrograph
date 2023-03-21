@@ -244,6 +244,7 @@ class _Trochoid(ABC):
                         R, r, d, thetas, theta_start, theta_stop, theta_step,
                         origin
                     ))
+        return shapes
 
     def _set_int_to_list(self, input_val: Union[Number, List[Number]]) -> List[Number]:
         """Return list of numbers from given input parameter"""
