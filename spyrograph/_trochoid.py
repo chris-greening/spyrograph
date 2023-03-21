@@ -179,7 +179,7 @@ class _Trochoid(ABC):
             thetas: List[Number] = None, theta_start: Number = None,
             theta_stop: Number = None, theta_step: Number = None,
             origin: Tuple[Number, Number] = (0, 0)
-        ):
+        ) -> List["_Trochoid"]:
         pass
 
     @property
