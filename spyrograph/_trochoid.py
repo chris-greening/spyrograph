@@ -174,6 +174,49 @@ class _Trochoid(ABC):
             turtle.exitonclick()
         return screen
 
+    @classmethod
+    def animate(
+            cls, R: Union[Number, List[Number]], r: Union[Number, List[Number]],
+            d: Union[Number, List[Number]], thetas: List[Number] = None,
+            theta_start: Number = None, theta_stop: Number = None,
+            theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
+        ) -> List["_Trochoid"]:
+        """Animate the shape where one of the input parameters
+        is a list of increments i.e. R, r, d and the rest are fixed
+
+        Parameters
+        ----------
+        R : Union[Number, List[Number]]
+            Radius of the fixed circle
+        r : Union[Number, List[Number]]
+            Radius of the rolling circle
+        d : Union[Number, List[Number]]
+            Distance of the trace point from the rolling circle
+        thetas : List[Number] = None
+            Input list of values for theta for inputting into parametric equations.
+            This argument cannot be set at the same time as theta_start,
+            theta_stop, theta_step
+        theta_start : Number = None
+            Starting theta value for creating a list of thetas (similar syntax
+            to built-in range or np.arange). This argument cannot be set at the
+            same time as thetas argument
+        theta_stop : Number = None
+            Stop theta value for creating a list of thetas, stop value is not
+            included in the final array (similar syntax to built-in range or
+            np.arange). This argument cannot be set at the same time as thetas
+            argument
+        theta_step : Number = None
+            Incremental step value for stepping from start to stop
+            (similar syntax to built-in range or np.arange). This argument
+            cannot be set at the same time as thetas argument
+        origin : Tuple[Number, Number] = (0, 0)
+            Custom origin to center the shapes at. Default is (0,0)
+        """
+        shapes_arr = cls.create_range(
+            R, r, d, thetas, theta_start,
+            theta_stop, theta_step, origin
+        )
+
     @property
     def df(self) -> "pd.DataFrame":
         """Return DataFrame of all relevant information pertaining to the parametrized shape"""
