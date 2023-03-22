@@ -21,6 +21,16 @@ class _TestGeneral:
             thetas=thetas
         )
 
+    def test_create_range_multiple_arguments_exception(self, thetas):
+        """Test that passing multiple parameters raises an error"""
+        with pytest.raises(ValueError):
+            arr = self.class_name.create_range(
+                R=list(range(10)),
+                r=list(range(10)),
+                d=10,
+                thetas=thetas
+            )
+
     def test_custom_origin_offsets(self, thetas):
         """Test custom origin offsets"""
         base_obj = self.class_name(
@@ -103,6 +113,15 @@ class _TestSpecial:
             r = 200,
             thetas=thetas
         )
+
+    def test_create_range_multiple_arguments_exception(self, thetas):
+        """Test that passing multiple parameters raises an error"""
+        with pytest.raises(ValueError):
+            arr = self.class_name.create_range(
+                R=list(range(10)),
+                r=list(range(10)),
+                thetas=thetas
+            )
 
     def test_custom_origin_offsets(self, thetas):
         """Test custom origin offsets vertically"""
