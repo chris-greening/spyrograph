@@ -346,7 +346,7 @@ class _Trochoid(ABC):
     def _init_turtles(
             self, color: str, circle_color: str, full_path_color: str, hide_turtle: bool
         ) -> Tuple["turtle.Turtle", "turtle.Turtle", "turtle.Turtle", "turtle.Turtle"]:
-        # Return a shape turtle, rolling circle turtle, and fixed circle turtle
+        """Return a shape turtle, rolling circle turtle, and fixed circle turtle"""
 
         # Instantiate turtle
         shape_turtle = turtle.Turtle()
