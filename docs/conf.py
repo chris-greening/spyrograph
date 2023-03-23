@@ -68,3 +68,9 @@ master_doc = 'index'
 html_static_path = ['_static']
 
 autodoc_default_flags = ['members', 'inherited-members']
+
+autodoc_default_options = {
+    'members': True,
+    'inherited-members': True,
+    'special-members': '__init__',
+}
