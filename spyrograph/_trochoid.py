@@ -165,7 +165,8 @@ class _Trochoid(ABC):
                 if first:
                     first = False
                     shape_turtle.down()
-                turtle.update()
+                if frame_pause > 0:
+                    turtle.update()
                 time.sleep(frame_pause)
             if not repeat:
                 break
