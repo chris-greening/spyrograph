@@ -6,7 +6,7 @@ header:
   overlay_image: images/header_image.PNG
   cta_label: "<i class='fa fa-download'></i> pip install spyrograph"
   cta_url: "https://pypi.org/project/spyrograph/"
-excerpt: Elegant mathematics and beautiful geometries
+excerpt: Elegant mathematics and beautiful geometries with easy-to-use, expressive Python code
 
 feature_row:
   - image_path: images/red.PNG
