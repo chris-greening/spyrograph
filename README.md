@@ -27,6 +27,10 @@ _spyrograph_ is a lightweight Python package that provides an expressive and fle
 - Flexible to a wide range of usecases
 - Lightweight, just plug and play
 
+<p align="center">
+  <img src="media/sample_drawing.gif" alt="Sample hypotrochoid drawing showing a circle rolling around the interior of another circle drawing a geometric shape">
+</p>
+
 ---
 
 ## Table of Contents
@@ -110,7 +114,3 @@ Reach out to me if you want to connect or have any questions and I will do my be
   * [Chris Greening](https://www.linkedin.com/in/chris-greening-646411139/)
 * Personal contact form: 
   * [www.christophergreening.com](https://www.christophergreening.com/contact)
-
-<p align="center">
-  <img src="media/sample_drawing.gif" alt="Sample hypotrochoid drawing showing a circle rolling around the interior of another circle drawing a geometric shape">
-</p>
