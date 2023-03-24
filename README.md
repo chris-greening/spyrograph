@@ -1,7 +1,7 @@
 # _spyrograph_: elegant mathematics and geometries
 
 <p align="center">
-  <img src="media/sample_drawing.gif" alt="Sample hypotrochoid drawing showing a circle rolling around the interior of another circle drawing a geometric shape">
+  <img src="media/rgb.gif" alt="Animation of three geometric, symmetrical shapes being drawn next to one another left to right. The shape on the left is red, the middle green, and the right is blue.">
 </p>
 
 ## What is it?
@@ -110,3 +110,7 @@ Reach out to me if you want to connect or have any questions and I will do my be
   * [Chris Greening](https://www.linkedin.com/in/chris-greening-646411139/)
 * Personal contact form: 
   * [www.christophergreening.com](https://www.christophergreening.com/contact)
+
+<p align="center">
+  <img src="media/sample_drawing.gif" alt="Sample hypotrochoid drawing showing a circle rolling around the interior of another circle drawing a geometric shape">
+</p>
