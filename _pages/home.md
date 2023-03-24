@@ -9,20 +9,20 @@ header:
 excerpt: Elegant mathematics and beautiful geometries
 
 feature_row:
-  - image_path: images/partial_circle.PNG
+  - image_path: images/red.PNG
     image_size: 100px
     alt: ""
     title: "Expressive and consistent syntax"
     excerpt: ""
     url: ""
     btn_label: "Learn More"
-  - image_path: images/partial_circle.PNG
+  - image_path: images/green.PNG
     alt: ""
     title: "Clear visualizations and animations"
     excerpt: ""
     url: ""
     btn_label: "Learn More"
-  - image_path: images/partial_circle.PNG
+  - image_path: images/blue.PNG
     alt: "100% free"
     title: "Completely free and open source"
     excerpt: ""
