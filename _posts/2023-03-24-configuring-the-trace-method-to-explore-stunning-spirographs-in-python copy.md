@@ -37,7 +37,7 @@ Let's say we want to create a range of hypotrochoids with varying radii of the f
 
 To do this we can use the `create_range` method as follows:
 
-```python
+{% highlight python %}
 from spyrograph import Hypotrochoid
 
 R_values = [50, 60, 70, 80]
@@ -46,7 +46,7 @@ d = 5
 theta_values = np.arange(0, 2 * np.pi, 0.01)
 
 hypotrochoids = Hypotrochoid.create_range(R=R_values, r=r, d=d, thetas=theta_values)
-```
+{% endhighlight %}
 
 Now, hypotrochoids contains a list of four Hypotrochoid objects with varying R values.
 We can then use the trace method to visualize these shapes:
