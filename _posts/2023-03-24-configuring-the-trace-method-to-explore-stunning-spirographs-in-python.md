@@ -49,6 +49,10 @@ hypotrochoid = Hypotrochoid(R=200, r=50, d=50, thetas=thetas)
 hypotrochoid.trace(exit_on_click=True)
 {% endhighlight %}
 
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/astroid.png" alt="Drawing of a hypotrochoid plot with 4 cusps">
+</p>
+
 This code snippet will create a hypotrochoid with the specified parameters and trace it on the turtle screen
 
 You can experiment with different values for `R`, `r`, `d`, and `thetas` to create a wide variety of patterns and shapes
@@ -73,6 +77,10 @@ hypotrochoid.trace(
     exit_on_click=True
 )
 {% endhighlight %}
+
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/trace_example.gif" alt="Drawing of a hypotrochoid plot with 4 cusps">
+</p>
 
 In this example, we have:
 
