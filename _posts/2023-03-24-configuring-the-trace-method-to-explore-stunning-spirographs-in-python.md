@@ -50,7 +50,7 @@ hypotrochoid.trace(exit_on_click=True)
 {% endhighlight %}
 
 <p align="center">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/astroid.png" alt="Drawing of a hypotrochoid plot with 4 cusps">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/astroid.PNG" alt="Drawing of a hypotrochoid plot with 4 cusps">
 </p>
 
 This code snippet will create a hypotrochoid with the specified parameters and trace it on the turtle screen
