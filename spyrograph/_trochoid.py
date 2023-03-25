@@ -91,7 +91,7 @@ class _Trochoid(ABC):
     def trace(
             self, screen_size: Tuple[Number, Number] = (1000, 1000),
             screen_color: str = "white", exit_on_click: bool = False,
-            color: str = "black", width: Number, hide_turtle: bool = True,
+            color: str = "black", width: Number = 1, hide_turtle: bool = True,
             show_circles: bool = False, frame_pause: Number = 0,
             screen: "turtle.Screen" = None, circle_color: str = "black",
             show_full_path: bool = False, full_path_color: str = "grey",
