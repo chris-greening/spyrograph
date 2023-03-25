@@ -37,6 +37,7 @@ _spyrograph_ is a lightweight Python package that provides an expressive and fle
 * [Installation](#installation)
 * [Quickstart](#quickstart)
 * [Contributing](#contributing)
+* [Blog posts](#blog-posts)
 * [Documentation](#documentation)
 * [License](#license)
 * [Support](#support)
@@ -90,6 +91,15 @@ All contributions, bug reports, bug fixes, documentation improvements, enhanceme
 Feel free to [open an Issue](https://github.com/chris-greening/spyrograph/issues/new/choose), check out existing [Issues](https://github.com/chris-greening/spyrograph/issues), or [start a discussion](https://github.com/chris-greening/spyrograph/discussions). 
 
 Beginners to open source are highly encouraged to participate and ask questions if you're unsure what to do/where to start
+
+---
+
+## :newspaper: Blog posts <a name="blog-posts"></a>
+Check out the [official website](https://chris-greening.github.io/spyrograph/) for the latest blog posts on the project!
+
+- [Draw beautiful geometric visualizations with Python and spyrograph](https://chris-greening.github.io/spyrograph/python/2023/03/11/draw-beautiful-geometric-visualizations-and-animations-with-python-and-spyrograph.html)
+- [Configuring the trace method to explore stunning spirographs in Python](https://chris-greening.github.io/spyrograph/python,/tutorial/2023/03/24/configuring-the-trace-method-to-explore-stunning-spirographs-in-python.html)
+- [Creating a range of hypotrochoids with the create_range method](https://chris-greening.github.io/spyrograph/python,/tutorial/2023/03/25/creating-a-range-of-hypotrochoids-with-the-create-range-method.html)
 
 ---
 
