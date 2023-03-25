@@ -91,7 +91,7 @@ class _Trochoid(ABC):
     def trace(
             self, screen_size: Tuple[Number, Number] = (1000, 1000),
             screen_color: str = "white", exit_on_click: bool = False,
-            color: str = "black", hide_turtle: bool = True,
+            color: str = "black", width: Number = 1, hide_turtle: bool = True,
             show_circles: bool = False, frame_pause: Number = 0,
             screen: "turtle.Screen" = None, circle_color: str = "black",
             show_full_path: bool = False, full_path_color: str = "grey",
@@ -109,6 +109,8 @@ class _Trochoid(ABC):
             Pause the final animation until the user clicks to exit the window
         color: str = "black"
             Color of the primary tracing
+        width: Number
+            Width of the turtle tracing
         hide_turtle: bool = True
             Hide the turtle icon while tracing
         show_circles: bool = False
@@ -136,7 +138,7 @@ class _Trochoid(ABC):
         screen = self._init_screen(screen, screen_size, screen_color)
         turtle.tracer(False)
 
-        turtles = self._init_turtles(color, circle_color, full_path_color, hide_turtle)
+        turtles = self._init_turtles(color, circle_color, full_path_color, hide_turtle, width)
         shape_turtle, pre_draw_turtle, rolling_circle_turtle, fixed_circle_turtle = turtles
 
         if show_full_path:
@@ -344,7 +346,8 @@ class _Trochoid(ABC):
         return screen
 
     def _init_turtles(
-            self, color: str, circle_color: str, full_path_color: str, hide_turtle: bool
+            self, color: str, circle_color: str, full_path_color: str,
+            hide_turtle: bool, width: Number
         ) -> Tuple["turtle.Turtle", "turtle.Turtle", "turtle.Turtle", "turtle.Turtle"]:
         """Return a shape turtle, rolling circle turtle, and fixed circle turtle"""
 
@@ -366,6 +369,9 @@ class _Trochoid(ABC):
         rolling_circle_turtle.color(circle_color)
         fixed_circle_turtle.color(circle_color)
         pre_draw_turtle.color(full_path_color)
+
+        # Set turtle width
+        shape_turtle.width(width)
 
         return shape_turtle, pre_draw_turtle, rolling_circle_turtle, fixed_circle_turtle
 
