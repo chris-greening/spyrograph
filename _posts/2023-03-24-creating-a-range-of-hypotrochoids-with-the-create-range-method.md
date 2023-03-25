@@ -33,27 +33,41 @@ The method returns a list of instantiated `Hypotrochoid` objects where one of th
 
 ## Using the `create_range` Method
 
-Let's say we want to create a range of hypotrochoids with **varying radii** of the **fixed** circle (`R`) while keeping the radii of the **rolling** circle (`r`) and the **distance** of the trace point from the rolling circle (`d`) constant
+Let's say we want to create a range of hypotrochoids with **varying radii** of the **rolling** circle (`r`) while keeping the radii of the **fixed** circle (`R`) and the **distance** of the trace point from the rolling circle (`d`) constant
 
 To do this we can use the `create_range` method as follows:
 
 {% highlight python %}
 from spyrograph import Hypotrochoid
+import numpy as np
 
-R_values = [50, 60, 70, 80]
-r = 10
-d = 5
-theta_values = np.arange(0, 2 * np.pi, 0.01)
-
-hypotrochoids = Hypotrochoid.create_range(R=R_values, r=r, d=d, thetas=theta_values)
+arr = Hypotrochoid.create_range(
+    R=600,
+    r=np.arange(295,300,.2),
+    d=51,
+    theta_start=0,
+    theta_stop=50*np.pi,
+    theta_step=.1
+)
 {% endhighlight %}
 
-Now, hypotrochoids contains a list of four Hypotrochoid objects with varying R values.
-We can then use the trace method to visualize these shapes:
+Now, hypotrochoids contains a list of `Hypotrochoid` objects with varying `r` values
+
+We can then use the `trace` method to visualize these shapes:
 
 {% highlight python %}
-for hypotrochoid in hypotrochoids:
-    hypotrochoid.trace(exit_on_click=True)
+for i, shape in enumerate(arr):
+    color = "#{:02x}{:02x}{:02x}".format(0, 0, 0 + abs(i)*10)
+    screen = shape.trace(screen=screen, screen_size=(1250,1000), color=color, screen_color="#252a34")
+    time.sleep(.01)
+    # screen.clear()
+    screen = shape.trace(
+        screen=screen,
+        screen_size=(1250,1000),
+        color="white",
+        screen_color="#252a34"
+    )
+turtle.exitonclick()
 {% endhighlight %}
 
 This will display the hypotrochoids one after the other on the same screen resulting in a more complex looking image
