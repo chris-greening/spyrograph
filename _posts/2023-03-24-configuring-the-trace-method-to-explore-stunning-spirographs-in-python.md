@@ -63,11 +63,14 @@ Here's an example of how to modify various aspects of the visualization:
 hypotrochoid.trace(
     screen_size=(800, 800),
     screen_color="black",
-    color="cyan",
+    color="red",
     show_circles=True,
+    show_full_path=True,
+    full_path_color="grey",
     circle_color="white",
     frame_pause=0.01,
-    repeat=True
+    repeat=True,
+    exit_on_click=True
 )
 {% endhighlight %}
 
