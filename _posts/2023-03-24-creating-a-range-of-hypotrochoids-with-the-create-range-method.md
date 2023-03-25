@@ -40,6 +40,7 @@ To do this we can use the `create_range` method as follows:
 {% highlight python %}
 from spyrograph import Hypotrochoid
 import numpy as np
+import turtle
 
 arr = Hypotrochoid.create_range(
     R=600,
