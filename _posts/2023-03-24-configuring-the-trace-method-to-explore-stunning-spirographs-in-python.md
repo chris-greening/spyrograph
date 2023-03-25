@@ -32,7 +32,9 @@ from spyrograph import Hypotrochoid
 
 ## Using the `trace` method
 
-The trace method is the centerpiece of the `spyrograph` package, allowing users to draw beautiful hypotrochoids and epitrochoids with ease. The method comes with a variety of customization options, enabling users to create unique patterns suited to their usecase
+The trace method is one of the centerpieces of the `spyrograph` package, allowing users to draw beautiful hypotrochoids and epitrochoids with ease
+
+The method comes with a variety of customization options, enabling users to create unique patterns suited to their usecase
 
 Here's a simple example to get us started:
 
@@ -47,11 +49,15 @@ hypotrochoid = Hypotrochoid(R=210, r=65, d=70, thetas=thetas)
 hypotrochoid.trace(exit_on_click=True)
 {% endhighlight %}
 
-This code snippet will create a hypotrochoid with the specified parameters and trace it on the turtle screen. You can experiment with different values for `R`, `r`, `d`, and `thetas` to create a wide variety of patterns and shapes
+This code snippet will create a hypotrochoid with the specified parameters and trace it on the turtle screen
+
+You can experiment with different values for `R`, `r`, `d`, and `thetas` to create a wide variety of patterns and shapes
 
 ## Customizing the visualization
 
-The `trace` method offers a wide range of customization options to suit our usecase as needed. Here's an example of how to modify various aspects of the visualization:
+The `trace` method offers a wide range of customization options to suit our usecase as needed
+
+Here's an example of how to modify various aspects of the visualization:
 
 {% highlight python %}
 hypotrochoid.trace(
@@ -77,6 +83,6 @@ In this example, we have:
 
 ## Conclusion
 
-The Spyrograph Python package empowers users to create and customize mesmerizing hypotrochoids and epitrochoids with just a few lines of code.
+The `spyrograph` Python package empowers users to create and customize mesmerizing hypotrochoids and epitrochoids with just a few lines of code
 
 By leveraging the `trace` method and its customization options, we can easily generate an array of captivating patterns and stunning art pieces
