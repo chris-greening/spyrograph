@@ -12,7 +12,7 @@ header:
 
 **Hypotrochoids** and **epitrochoids** are fascinating mathematical curves that create beautiful, mesmerizing patterns
 
-The `spyrograph` Python package, built on top of the `turtle` library, provides an **easy-to-use interface** to visualize these captivating curves
+The `spyrograph` Python package, built on top of the `turtle` library, provides an **easy-to-use interface** for visualizing these captivating curves
 
 In this blog post we'll explore how we can **customize** the `trace` method to create our own highly configurable **generative art** pieces
 
