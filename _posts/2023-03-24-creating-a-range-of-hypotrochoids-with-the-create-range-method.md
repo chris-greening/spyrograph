@@ -68,6 +68,10 @@ turtle.exitonclick()
 
 This will display the hypotrochoids one after the other on the same screen resulting in a more complex looking image
 
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/create_range_image_spirograph.gif" alt="White lines on a black background tracing looping geometric pattern">
+</p>
+
 ## Conclusion
 
 In this post, we explored the powerful `create_range` method provided by the `spyrograph` package, which allows us to generate a wide variety of beautiful hypotrochoids and epitrochoids with just a **few lines of code**
