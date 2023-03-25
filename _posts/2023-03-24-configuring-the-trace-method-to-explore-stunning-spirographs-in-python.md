@@ -91,3 +91,6 @@ In this example, we have:
 The `spyrograph` Python package empowers users to create and customize mesmerizing hypotrochoids and epitrochoids with just a few lines of code
 
 By leveraging the `trace` method and its customization options, we can easily generate an array of captivating patterns and stunning art pieces
+
+## Additional references
+- [spyrograph.Hypotrochoid docs](https://spyrograph.readthedocs.io/en/latest/source/spyrograph.hypotrochoid.html#trace)
