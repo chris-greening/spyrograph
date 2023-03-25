@@ -3,7 +3,7 @@ title: "Creating a range of hypotrochoids with the `create_range` method"
 date: 2023-03-24 23:35:00 -0500
 categories: Python, tutorial
 header:
-  overlay_image: /images/header_image.PNG
+  overlay_image: /images/rgb.gif
 ---
 
 # Creating a range of hypotrochoids with the `create_range` method
@@ -51,10 +51,10 @@ hypotrochoids = Hypotrochoid.create_range(R=R_values, r=r, d=d, thetas=theta_val
 Now, hypotrochoids contains a list of four Hypotrochoid objects with varying R values.
 We can then use the trace method to visualize these shapes:
 
-```python
+{% highlight python %}
 for hypotrochoid in hypotrochoids:
     hypotrochoid.trace(exit_on_click=True)
-```
+{% endhighlight %}
 
 This will display the hypotrochoids one after the other on the same screen resulting in a more complex looking image
 
