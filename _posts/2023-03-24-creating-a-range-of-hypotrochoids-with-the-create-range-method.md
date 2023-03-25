@@ -56,16 +56,12 @@ Now, hypotrochoids contains a list of `Hypotrochoid` objects with varying `r` va
 We can then use the `trace` method to visualize these shapes:
 
 {% highlight python %}
-for i, shape in enumerate(arr):
-    color = "#{:02x}{:02x}{:02x}".format(0, 0, 0 + abs(i)*10)
-    screen = shape.trace(screen=screen, screen_size=(1250,1000), color=color, screen_color="#252a34")
-    time.sleep(.01)
-    # screen.clear()
+screen = None
+for shape in arr:
     screen = shape.trace(
-        screen=screen,
-        screen_size=(1250,1000),
-        color="white",
-        screen_color="#252a34"
+      screen=screen,
+      color="white",
+      screen_color="black"
     )
 turtle.exitonclick()
 {% endhighlight %}
