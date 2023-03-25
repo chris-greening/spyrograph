@@ -8,7 +8,7 @@ header:
 
 # Creating a range of hypotrochoids with the `create_range` method
 
-When working with the `spyrograph` package, we often want to create a range of different shapes by varying one of the input parameters while keeping the others constant
+When working with the `spyrograph` package, we often want to create a **range of different shapes** by varying one of the input parameters while keeping the others constant
 
 This is where the `create_range` class method comes in handy!
 
@@ -16,20 +16,20 @@ In this blog post let's walk through how to use the `create_range` method to gen
 
 ## Understanding the `create_range` method
 
-The `create_range` method allows us to create a range of different hypotrochoids and epitrochoids by varying one of the input parameters (R, r, or d) while keeping the others constant
+The `create_range` method allows us to create a range of different hypotrochoids and epitrochoids by varying one of the input parameters (`R`, `r`, or `d`) while keeping the others constant
 
 This method accepts the following parameters:
 
-- `R`: The radius of the fixed circle, either a single number or a list of numbers.
-- `r`: The radius of the rolling circle, either a single number or a list of numbers.
-- `d`: The distance of the trace point from the rolling circle, either a single number or a list of numbers.
-- `thetas`: An optional list of values for theta for inputting into parametric equations.
+- `R`: The radius of the **fixed circle**, either a single number or a list of numbers.
+- `r`: The radius of the **rolling circle**, either a single number or a list of numbers.
+- `d`: The **distance** of the trace point from the rolling circle, either a single number or a list of numbers.
+- `thetas`: An optional list of values for **theta** for inputting into parametric equations.
 - `theta_start`: An optional starting theta value for creating a list of thetas.
 - `theta_stop`: An optional stop theta value for creating a list of thetas, where the stop value is not included in the final array.
 - `theta_step`: An optional incremental step value for stepping from start to stop.
 - `origin`: An optional custom origin to center the shapes at, with the default being (0, 0).
 
-The method returns a list of instantiated `Hypotrochoid` objects where one of the input parameters is a list of increments and the others are fixed
+The method returns a list of instantiated `Hypotrochoid` objects where one of the input parameters is a **list of increments** and the others are fixed
 
 ## Using the `create_range` Method
 
