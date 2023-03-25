@@ -42,7 +42,7 @@ Here's a simple example to get us started:
 import numpy as np
 
 # Instantiate our hypotrochoid
-thetas = np.arange(0, 2 * np.pi, 0.01)
+thetas = np.arange(0, 2 * np.pi, 0.05)
 hypotrochoid = Hypotrochoid(R=200, r=50, d=50, thetas=thetas)
 
 # Draw the hypotrochoid using the trace method
@@ -78,8 +78,10 @@ In this example, we have:
 
 - Set the screen size to 800x800 pixels
 - Changed the background color to black
-- Used cyan as the color of the primary tracing
+- Used red as the color of the primary tracing
 - Displayed the inner and outer circles that compose the trace
+- Show the full path that will be traced
+- Set the color of the pre-drawn path to grey
 - Set the color of the circles to white
 - Added a 0.01 second pause for each frame
 - Set the animation to repeat infinitely
