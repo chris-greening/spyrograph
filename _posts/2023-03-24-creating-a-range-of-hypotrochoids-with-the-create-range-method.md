@@ -46,7 +46,7 @@ arr = Hypotrochoid.create_range(
     r=np.arange(295,300,.2),
     d=51,
     theta_start=0,
-    theta_stop=50*np.pi,
+    theta_stop=35*np.pi,
     theta_step=.1
 )
 {% endhighlight %}
