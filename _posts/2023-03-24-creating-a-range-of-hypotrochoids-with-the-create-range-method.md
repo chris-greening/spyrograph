@@ -33,7 +33,7 @@ The method returns a list of instantiated `Hypotrochoid` objects where one of th
 
 ## Using the `create_range` Method
 
-Let's say we want to create a range of hypotrochoids with varying radii of the fixed circle (R) while keeping the radii of the rolling circle (r) and the distance of the trace point from the rolling circle (d) constant
+Let's say we want to create a range of hypotrochoids with **varying radii** of the **fixed** circle (`R`) while keeping the radii of the **rolling** circle (`r`) and the **distance** of the trace point from the rolling circle (`d`) constant
 
 To do this we can use the `create_range` method as follows:
 
@@ -60,8 +60,8 @@ This will display the hypotrochoids one after the other on the same screen resul
 
 ## Conclusion
 
-In this post, we explored the powerful `create_range` method provided by the `spyrograph` package, which allows us to generate a wide variety of beautiful hypotrochoids and epitrochoids with just a few lines of code
+In this post, we explored the powerful `create_range` method provided by the `spyrograph` package, which allows us to generate a wide variety of beautiful hypotrochoids and epitrochoids with just a **few lines of code**
 
-By specifying a range of values for R, r, or d, we can quickly create and visualize multiple shapes, making it an excellent tool for artists, educators, and anyone interested in exploring the fascinating world of spirograph patterns
+By specifying a range of values for `R`, `r`, or `d` we can quickly create and visualize **multiple shapes**, making it an excellent tool for **artists, educators, and anyone interested** in exploring the fascinating world of spirograph patterns
 
-With `spyrograph`, the possibilities for creating captivating designs are virtually endless - we hope this method inspires your creativity and leads to the discovery of stunning spirograph patterns unique to you!
+With `spyrograph`, the possibilities for creating captivating designs are **virtually endless** - we hope this method inspires your creativity and leads to the discovery of stunning spirograph patterns unique to you!
