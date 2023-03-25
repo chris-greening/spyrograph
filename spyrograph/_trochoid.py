@@ -369,6 +369,9 @@ class _Trochoid(ABC):
         fixed_circle_turtle.color(circle_color)
         pre_draw_turtle.color(full_path_color)
 
+        # Set turtle width
+        shape_turtle.width(width)
+
         return shape_turtle, pre_draw_turtle, rolling_circle_turtle, fixed_circle_turtle
 
     def _trace_rolling_circle(
