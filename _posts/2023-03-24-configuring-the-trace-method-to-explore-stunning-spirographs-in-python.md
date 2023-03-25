@@ -43,7 +43,7 @@ import numpy as np
 
 # Instantiate our hypotrochoid
 thetas = np.arange(0, 2 * np.pi, 0.01)
-hypotrochoid = Hypotrochoid(R=210, r=65, d=70, thetas=thetas)
+hypotrochoid = Hypotrochoid(R=200, r=50, d=50, thetas=thetas)
 
 # Draw the hypotrochoid using the trace method
 hypotrochoid.trace(exit_on_click=True)
