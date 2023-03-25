@@ -31,7 +31,7 @@ This method accepts the following parameters:
 
 The method returns a list of instantiated `Hypotrochoid` objects where one of the input parameters is a **list of increments** and the others are fixed
 
-## Using the `create_range` Method
+## Using the `create_range` method
 
 Let's say we want to create a range of hypotrochoids with **varying radii** of the **rolling** circle (`r`) while keeping the radii of the **fixed** circle (`R`) and the **distance** of the trace point from the rolling circle (`d`) constant
 
