@@ -6,7 +6,7 @@ header:
   overlay_image: /images/rgb.gif
 ---
 
-# Creating a range of hypotrochoids with the `create_range` method
+## Creating a range of hypotrochoids with the `create_range` method
 
 When working with the `spyrograph` package, we often want to create a **range of different shapes** by varying one of the input parameters while keeping the others constant
 
