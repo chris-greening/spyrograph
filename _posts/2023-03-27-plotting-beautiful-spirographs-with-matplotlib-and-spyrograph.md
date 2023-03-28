@@ -59,7 +59,7 @@ plt.show()
 
 In this example, we've specified the **color** of the hypotrochoid to be blue and the **line width** to be 1
 
-You can **customize the appearance** of the plot by passing additional keyword arguments that are accepted by the `matplotlib.pyplot.plot` function
+You can **customize the appearance** of the plot by passing additional keyword arguments that are accepted by the [`matplotlib.pyplot.plot`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html) function
 
 ## Conclusion
 
