@@ -69,8 +69,6 @@ google_site_verification: "yvxj77K-uBtgz-pwEYTF7Hw4JVPCyouENR7RLg3w0xk"
 #   - vendor/gems/
 #   - vendor/ruby/
 
-JEKYLL_ENV: production
-
 defaults: 
   # _posts
   - scope: 
