@@ -6,7 +6,7 @@ header:
   overlay_image: /images/rgb.gif
 ---
 
-## Introduction
+# Plotting beautiful spirographs with matplotlib and spyrograph
 In this blog post, we'll be exploring the `plot` method of the `Hypotrochoid` class in the `spyrograph` library
 
 This method allows users to create **beautiful visualizations** of **hypotrochoids** and **epitrochoids** using the popular `matplotlib` library
