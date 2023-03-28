@@ -3,7 +3,7 @@ title: "Plotting beautiful spirographs with matplotlib and spyrograph"
 date: 2023-03-27 10:51:00 -0500
 categories: Python, tutorial
 header:
-  overlay_image: /images/rgb.gif
+  overlay_image: /images/plot_hypotrochoid_red_matplotlib.PNG
 ---
 
 # Plotting beautiful spirographs with matplotlib and spyrograph
@@ -12,11 +12,15 @@ In this blog post, we'll be exploring the `plot` method of the `Hypotrochoid` cl
 
 This method allows users to create **beautiful visualizations** of **hypotrochoids** and **epitrochoids** using the popular `matplotlib` library
 
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/plot_hypotrochoid_black_matplotlib.PNG" alt="Black matplotlib tracing of a hypotrochoid">
+</p>
+
 We will walk through the process of creating a **hypotrochoid** and then use the `plot` method to visualize it
 
 ## Prerequisite imports
 
-Before we dive into **creating and plotting** a hypotrochoid, let's make sure we have `spyrograph` installed
+Before we dive into **creating and plotting** a hypotrochoid, let's make sure we have `spyrograph` and `matplotlib` installed
 
 {% highlight bash %}
 pip3 install spyrograph matplotlib
