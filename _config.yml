@@ -41,7 +41,7 @@ plugins:
 twitter:
   username         : &twitter "ChrisGreening"
 
-author: 
+author:
   name             : *name
   avatar           : "images/chris-greening.jpg"
   bio              : "Software engineer particularly fond of Python and R"
