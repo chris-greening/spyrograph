@@ -21,7 +21,7 @@ By using the `n_cusps` class method provided in the `Hypocycloid` and `Epicycloi
 Before we begin, let's make sure we have the `spyrograph` package **installed**:
 
 {% highlight bash %}
-pip install spyrograph
+pip3 install spyrograph
 {% endhighlight %}
 
 ## Creating a cycloid with a specified number of cusps
