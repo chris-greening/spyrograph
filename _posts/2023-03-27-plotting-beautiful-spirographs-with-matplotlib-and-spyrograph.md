@@ -32,10 +32,10 @@ Here's an example of creating a hypotrochoid:
 from spyrograph import Hypotrochoid
 
 hypotrochoid = Hypotrochoid(
-    R=10,
-    r=6,
-    d=5,
-    thetas=np.arange(0, 2 * np.pi, 0.01)
+    R=100,
+    r=51,
+    d=75,
+    thetas=np.arange(0, 20 * np.pi, 0.01)
 )
 {% endhighlight %}
 
@@ -47,8 +47,8 @@ This method will return a `matplotlib` **figure and axis** objects, which we can
 
 {% highlight python %}
 fig, ax = hypotrochoid.plot(
-    color="blue",
-    linewidth=1
+    color="red",
+    linewidth=2
 )
 plt.show()
 {% endhighlight %}
