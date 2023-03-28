@@ -53,6 +53,10 @@ fig, ax = hypotrochoid.plot(
 plt.show()
 {% endhighlight %}
 
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/plot_hypotrochoid_red_matplotlib.PNG" alt="Red matplotlib tracing of a hypotrochoid">
+</p>
+
 In this example, we've specified the **color** of the hypotrochoid to be blue and the **line width** to be 1
 
 You can **customize the appearance** of the plot by passing additional keyword arguments that are accepted by the `matplotlib.pyplot.plot` function
