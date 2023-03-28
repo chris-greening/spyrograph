@@ -62,4 +62,3 @@ The `plot` method in the `spyrograph` library makes it *incredibly* easy to crea
 With just a **few lines of code**, we can create stunning spirograph patterns that can be used for **artistic, educational, or scientific purposes**
 
 Start **experimenting** with different parameter values and see what amazing designs you can create!
-
