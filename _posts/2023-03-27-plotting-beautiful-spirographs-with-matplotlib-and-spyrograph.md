@@ -12,7 +12,7 @@ In this blog post, we'll be exploring the `plot` method of the `Hypotrochoid` cl
 
 This method allows users to create **beautiful visualizations** of **hypotrochoids** and **epitrochoids** using the popular `matplotlib` library
 
-We will walk through the process of creating a **hypotrochoid** and then using the `plot` method to visualize it
+We will walk through the process of creating a **hypotrochoid** and then use the `plot` method to visualize it
 
 ## Prerequisite imports
 
@@ -22,7 +22,7 @@ Before we dive into **creating and plotting** a hypotrochoid, let's make sure we
 pip3 install spyrograph matplotlib
 {% endhighlight %}
 
-## Creating a Hypotrochoid
+## Creating a hypotrochoid
 
 To create a hypotrochoid, we need to **specify the parameters** `R` (**radius** of the fixed circle), `r` (**radius** of the rolling circle), `d` (**distance** from the rolling circle), and `thetas` (a list of **theta values**)
 
@@ -31,15 +31,15 @@ Here's an example of creating a hypotrochoid:
 {% highlight python %}
 from spyrograph import Hypotrochoid
 
-R = 10
-r = 6
-d = 5
-thetas = np.arange(0, 2 * np.pi, 0.01)
-
-hypotrochoid = Hypotrochoid(R, r, d, thetas)
+hypotrochoid = Hypotrochoid(
+    R=10,
+    r=6,
+    d=5,
+    thetas=np.arange(0, 2 * np.pi, 0.01)
+)
 {% endhighlight %}
 
-## Plotting the `Hypotrochoid` with the `plot` method
+## Plotting the hypotrochoid
 
 Now that we have our **hypotrochoid**, we can use the `plot` method to **visualize** it
 
