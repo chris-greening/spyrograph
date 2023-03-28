@@ -7,6 +7,7 @@ header:
 ---
 
 # Plotting beautiful spirographs with matplotlib and spyrograph
+
 In this blog post, we'll be exploring the `plot` method of the `Hypotrochoid` class in the `spyrograph` library
 
 This method allows users to create **beautiful visualizations** of **hypotrochoids** and **epitrochoids** using the popular `matplotlib` library
@@ -22,6 +23,7 @@ pip3 install spyrograph matplotlib
 {% endhighlight %}
 
 ## Creating a Hypotrochoid
+
 To create a hypotrochoid, we need to **specify the parameters** `R` (**radius** of the fixed circle), `r` (**radius** of the rolling circle), `d` (**distance** from the rolling circle), and `thetas` (a list of **theta values**)
 
 Here's an example of creating a hypotrochoid:
