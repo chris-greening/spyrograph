@@ -49,6 +49,10 @@ Now that we have created a hypocycloid with 5 cusps, let's **trace** it using th
 hypocycloid.trace(exit_on_click=True)
 {% endhighlight %}
 
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/5cusp_shape.gif" alt="Tracing of a hypocycloid with 5 cusps being drawn">
+</p>
+
 The `trace` method will display an animation of the cycloid shape being drawn
 
 The `exit_on_click` argument ensures that the **animation window remains open** until you click on it
