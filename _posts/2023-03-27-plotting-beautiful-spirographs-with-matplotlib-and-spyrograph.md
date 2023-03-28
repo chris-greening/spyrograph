@@ -3,7 +3,7 @@ title: "Plotting beautiful spirographs with matplotlib and spyrograph"
 date: 2023-03-27 10:51:00 -0500
 categories: Python, tutorial
 header:
-  overlay_image: /images/plot_hypotrochoid_red_matplotlib.PNG
+  overlay_image: /images/rgb.gif
 ---
 
 # Plotting beautiful spirographs with matplotlib and spyrograph
