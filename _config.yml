@@ -55,6 +55,7 @@ analytics:
   provider: "google-gtag" # false (default), "google", "google-universal", "custom"
   google:
     tracking_id: "G-4ZYC1JYYJ3"
+    anonymize_ip: false
 
 google_site_verification: "yvxj77K-uBtgz-pwEYTF7Hw4JVPCyouENR7RLg3w0xk"
 # Exclude from processing.
