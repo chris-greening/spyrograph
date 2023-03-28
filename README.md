@@ -100,6 +100,8 @@ Check out the [official website](https://chris-greening.github.io/spyrograph/) f
 - [Draw beautiful geometric visualizations with Python and spyrograph](https://chris-greening.github.io/spyrograph/python/2023/03/11/draw-beautiful-geometric-visualizations-and-animations-with-python-and-spyrograph.html)
 - [Configuring the trace method to explore stunning spirographs in Python](https://chris-greening.github.io/spyrograph/python,/tutorial/2023/03/24/configuring-the-trace-method-to-explore-stunning-spirographs-in-python.html)
 - [Creating a range of hypotrochoids with the create_range method](https://chris-greening.github.io/spyrograph/python,/tutorial/2023/03/25/creating-a-range-of-hypotrochoids-with-the-create-range-method.html)
+- [Plotting beautiful spirographs with matplotlib and spyrograph](https://chris-greening.github.io/spyrograph/python,/tutorial/2023/03/27/plotting-beautiful-spirographs-with-matplotlib-and-spyrograph.html)
+- [Drawing cycloids with a specific number of cusps using spyrograph](https://chris-greening.github.io/spyrograph/python,/tutorial/2023/03/28/drawing-cycloids-with-a-specific-number-of-cusps-using-spyrograph.html)
 
 ---
 
