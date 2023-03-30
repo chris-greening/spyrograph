@@ -373,6 +373,18 @@ class _Trochoid(ABC):
         # Set turtle width
         shape_turtle.width(width)
 
+        # Store turtle's in namedtuple
+        TraceTurtles = collections.namedtuple(
+            "TraceTurtles",
+            [
+                "shape_turtle",
+                "pre_draw_turtle",
+                "rolling_circle_turtle",
+                "fixed_circle_turtle"
+            ]
+        )
+
+
         return shape_turtle, pre_draw_turtle, rolling_circle_turtle, fixed_circle_turtle
 
     def _trace_rolling_circle(
