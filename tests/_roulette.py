@@ -21,6 +21,14 @@ class _TestGeneral:
             thetas=thetas
         )
 
+    def test_create_range_single_input(self, thetas):
+        """Test single input for create range"""
+        R = 5
+        r = 3
+        d = 2
+        shapes = self.class_name.create_range(R, r, d, thetas)
+        assert len(shapes) == 1
+
     def test_set_int_to_list(self):
         """Test that setting int to list"""
         num_test = self.class_name._set_int_to_list(1)
