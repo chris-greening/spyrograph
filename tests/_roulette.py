@@ -28,6 +28,7 @@ class _TestGeneral:
         d = 2
         shapes = self.class_name.create_range(R, r, d, thetas)
         assert len(shapes) == 1
+        assert isinstance(shapes[0], self.class_name)
 
     def test_set_int_to_list(self):
         """Test that setting int to list"""
