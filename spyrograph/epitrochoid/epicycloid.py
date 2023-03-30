@@ -9,10 +9,18 @@ from spyrograph.epitrochoid.epitrochoid import Epitrochoid
 from spyrograph._cycloid import _Cycloid
 
 class Epicycloid(_Cycloid, Epitrochoid):
-    """Model of a epicycloid which is a special case of a epitrochoid where the
-    circle is rolling around the outside of the fixed circle and has 1/3 the
-    radius of the fixed circle
-    """
+    """A class that represents an epicycloid, which is a curve traced by a point on a circle
+    that rolls around the outside of a fixed circle. This is a special case of an epitrochoid
+    where the rolling circle has a radius that is one-third the radius of the fixed circle.
+    
+    The Epicycloid class allows you to generate points along the curve using mathematical
+    equations, and visualize the curve in a plot. It also provides properties and methods
+    for computing the length, area, and curvature of the curve, and for plotting and animating
+    the curve.
+    
+    This class is a powerful tool for exploring the properties and behaviors of epicycloids,
+    and can be used in a variety of applications such as in mechanical engineering and
+    mathematics education."""
     # pylint: disable=pointless-string-statement
     def __init__(
             self, R: Number, r: Number, thetas: List[Number] = None,
