@@ -21,6 +21,33 @@ class _TestGeneral:
             thetas=thetas
         )
 
+    def test_create_range_theta_inputs(self, thetas):
+        R = 5
+        r = 3
+        d = 2
+        shapes = self.class_name.create_range(R, r, d, thetas)
+        assert shapes[0].R == R
+        assert shapes[0].r == r
+        assert shapes[0].d == d
+
+    def test_create_range_custom_origin(self, thetas):
+        R = 5
+        r = 3
+        d = 1
+        shapes = self.class_name.create_range(R, r, d, thetas, origin=(100, 233))
+        assert shapes[0].origin == (100, 233)
+        assert shapes[0].origin[0] == 100
+        assert shapes[0].origin[1] == 233
+
+    def test_create_range_single_input(self, thetas):
+        """Test single input for create range"""
+        R = 5
+        r = 3
+        d = 2
+        shapes = self.class_name.create_range(R, r, d, thetas)
+        assert len(shapes) == 1
+        assert isinstance(shapes[0], self.class_name)
+
     def test_set_int_to_list(self):
         """Test that setting int to list"""
         num_test = self.class_name._set_int_to_list(1)
@@ -122,6 +149,29 @@ class _TestSpecial:
             r = 200,
             thetas=thetas
         )
+
+    def test_create_range_custom_origin(self, thetas):
+        R = 5
+        r = 3
+        shapes = self.class_name.create_range(R, r, thetas, origin=(100, 233))
+        assert shapes[0].origin == (100, 233)
+        assert shapes[0].origin[0] == 100
+        assert shapes[0].origin[1] == 233
+
+    def test_create_range_single_input(self, thetas):
+        """Test single input for create range"""
+        R = 5
+        r = 3
+        shapes = self.class_name.create_range(R, r, thetas)
+        assert len(shapes) == 1
+        assert isinstance(shapes[0], self.class_name)
+
+    def test_create_range_theta_inputs(self, thetas):
+        R = 5
+        r = 3
+        shapes = self.class_name.create_range(R, r, thetas)
+        assert shapes[0].R == R
+        assert shapes[0].r == r
 
     def test_create_range_multiple_arguments_exception(self, thetas):
         """Test that passing multiple parameters raises an error"""
