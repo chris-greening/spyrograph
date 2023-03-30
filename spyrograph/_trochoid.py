@@ -139,13 +139,12 @@ class _Trochoid(ABC):
         turtle.tracer(False)
 
         turtles = self._init_turtles(color, circle_color, full_path_color, hide_turtle, width)
-        shape_turtle, pre_draw_turtle, rolling_circle_turtle, fixed_circle_turtle = turtles
 
         if show_full_path:
-            self._show_full_path(pre_draw_turtle=pre_draw_turtle)
+            self._show_full_path(pre_draw_turtle=turtles.pre_draw_turtle)
         if show_circles:
             self._draw_circle(
-                t=fixed_circle_turtle,
+                t=turtles.fixed_circle_turtle,
                 x=self.origin[0],
                 y=self.origin[1]-self.R,
                 radius=self.R
@@ -153,27 +152,26 @@ class _Trochoid(ABC):
 
         while True:
             first = True
-            shape_turtle.up()
+            turtles.shape_turtle.up()
             for x, y, theta in self.coords:
-                shape_turtle.goto(x, y)
+                turtles.shape_turtle.goto(x, y)
                 if show_circles:
                     self._trace_rolling_circle(
-                        rolling_circle_turtle,
-                        shape_turtle,
+                        turtles,
                         x,
                         y,
                         theta
                     )
                 if first:
                     first = False
-                    shape_turtle.down()
+                    turtles.shape_turtle.down()
                 if frame_pause > 0:
                     turtle.update()
                 time.sleep(frame_pause)
             turtle.update()
             if not repeat:
                 break
-            shape_turtle.clear()
+            turtles.shape_turtle.clear()
         if exit_on_click:
             turtle.exitonclick()
         return screen
@@ -303,9 +301,7 @@ class _Trochoid(ABC):
             input_val = [input_val]
         return input_val
 
-    def _show_full_path(
-            self, pre_draw_turtle: "turtle.Turtle"
-        ) -> None:
+    def _show_full_path(self, pre_draw_turtle: "turtle.Turtle") -> None:
         """Draw the full path prior to tracing"""
         # pylint: disable=no-member, unused-variable
         first = True
@@ -373,32 +369,57 @@ class _Trochoid(ABC):
         # Set turtle width
         shape_turtle.width(width)
 
-        return shape_turtle, pre_draw_turtle, rolling_circle_turtle, fixed_circle_turtle
+        # Store turtle's in namedtuple
+        turtles = self._create_turtles_namedtuple(
+            shape_turtle,
+            rolling_circle_turtle,
+            fixed_circle_turtle,
+            pre_draw_turtle
+        )
+
+        return turtles
+
+    @staticmethod
+    def _create_turtles_namedtuple(shape_turtle, rolling_circle_turtle, fixed_circle_turtle, pre_draw_turtle) -> "collections.namedtuple":
+        """Return namedtuple containing turtles"""
+        TraceTurtles = collections.namedtuple(
+            "TraceTurtles",
+            [
+                "shape_turtle",
+                "pre_draw_turtle",
+                "rolling_circle_turtle",
+                "fixed_circle_turtle"
+            ]
+        )
+        turtles = TraceTurtles(
+            shape_turtle,
+            pre_draw_turtle,
+            rolling_circle_turtle,
+            fixed_circle_turtle
+        )
+        return turtles
 
     def _trace_rolling_circle(
-            self, rolling_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle",
+            self, turtle: "collections.namedtuple",
             x: Number, y: Number, theta: Number
         ) -> None:
         """Trace the inner circle of the animation"""
-        self._rolling_circle_init(rolling_circle_turtle)
-        self._draw_dot(rolling_circle_turtle, x, y, "red")
-        rolling_circle_x, rolling_circle_y = self._draw_rolling_circle(rolling_circle_turtle, theta)
+        self._rolling_circle_init(turtles.rolling_circle_turtle)
+        self._draw_dot(turtles.rolling_circle_turtle, x, y, "red")
+        rolling_circle_x, rolling_circle_y = self._draw_rolling_circle(turtles.rolling_circle_turtle, theta)
         self._draw_dot(
-            t=rolling_circle_turtle,
+            t=turtles.rolling_circle_turtle,
             x=rolling_circle_x,
             y=rolling_circle_y + self.r,
             color="blue"
         )
-        self._connect_focus_to_trace_dots(rolling_circle_turtle, shape_turtle)
+        self._connect_focus_to_trace_dots(turtles)
 
-    def _connect_focus_to_trace_dots(
-            self, rolling_circle_turtle: "turtle.Turtle",
-            shape_turtle: "turtle.Turtle"
-        ) -> None:
+    def _connect_focus_to_trace_dots(self, turtles: "collections.namedtuple") -> None:
         """Draw line from focus to the trace that's drawing the shape"""
-        rolling_circle_turtle.down()
-        rolling_circle_turtle.seth(rolling_circle_turtle.towards(shape_turtle))
-        rolling_circle_turtle.fd(self.d)
+        turtles.rolling_circle_turtle.down()
+        turtles.rolling_circle_turtle.seth(turtles.rolling_circle_turtle.towards(turtles.shape_turtle))
+        turtles.rolling_circle_turtle.fd(self.d)
 
     def _draw_circle(
             self, t: "turtle.Turtle", x: float, y: float, radius: float
