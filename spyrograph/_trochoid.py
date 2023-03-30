@@ -383,9 +383,14 @@ class _Trochoid(ABC):
                 "fixed_circle_turtle"
             ]
         )
+        trace_turtles = TraceTurtles(
+            shape_turtle,
+            pre_draw_turtle,
+            rolling_circle_turtle,
+            fixed_circle_turtle
+        )
 
-
-        return shape_turtle, pre_draw_turtle, rolling_circle_turtle, fixed_circle_turtle
+        return trace_turtles
 
     def _trace_rolling_circle(
             self, rolling_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle",
