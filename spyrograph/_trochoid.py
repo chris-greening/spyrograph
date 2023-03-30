@@ -370,7 +370,12 @@ class _Trochoid(ABC):
         shape_turtle.width(width)
 
         # Store turtle's in namedtuple
-        turtles = 
+        turtles = self._create_turtles_namedtuple(
+            shape_turtle,
+            rolling_circle_turtle,
+            fixed_circle_turtle,
+            pre_draw_turtle
+        )
 
         return turtles
 
