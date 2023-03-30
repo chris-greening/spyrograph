@@ -301,9 +301,7 @@ class _Trochoid(ABC):
             input_val = [input_val]
         return input_val
 
-    def _show_full_path(
-            self, pre_draw_turtle: "turtle.Turtle"
-        ) -> None:
+    def _show_full_path(self, pre_draw_turtle: "turtle.Turtle") -> None:
         """Draw the full path prior to tracing"""
         # pylint: disable=no-member, unused-variable
         first = True
