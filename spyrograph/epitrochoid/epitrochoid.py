@@ -8,7 +8,20 @@ from numbers import Number
 from spyrograph._trochoid import _Trochoid
 
 class Epitrochoid(_Trochoid):
-    """Model of a epitrochoid"""
+    """
+    Model of an epitrochoid, which is a geometric shape drawn by a line attached to a circle
+    as it rolls around the exterior of a fixed circle.
+
+    The Epitrochoid class provides methods for calculating the x- and y-values of the epitrochoid
+    at a given theta value using parametrized equations. The class takes in parameters such as the
+    radius of the fixed circle, the radius of the rolling circle, and the distance between their
+    centers, which affect the shape of the curve.
+
+    The Epitrochoid class is a useful tool for exploring the properties and behaviors of epitrochoids,
+    and can be used in a variety of applications such as in mechanical engineering and mathematics
+    education. If you need to work with epitrochoids for a project or research, the Epitrochoid class
+    provides a simple and intuitive interface to generate these curves and explore their properties.
+    """
     def _circle_offset(self) -> Number:
         """Return rolling circle offset from fixed circle"""
         return self.R + self.r
