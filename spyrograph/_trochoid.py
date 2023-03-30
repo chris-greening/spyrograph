@@ -157,8 +157,7 @@ class _Trochoid(ABC):
                 turtles.shape_turtle.goto(x, y)
                 if show_circles:
                     self._trace_rolling_circle(
-                        turtles.rolling_circle_turtle,
-                        turtles.shape_turtle,
+                        turtles,
                         x,
                         y,
                         theta
@@ -392,29 +391,26 @@ class _Trochoid(ABC):
         return turtles
 
     def _trace_rolling_circle(
-            self, rolling_circle_turtle: "turtle.Turtle", shape_turtle: "turtle.Turtle",
+            self, turtle: "collections.namedtuple",
             x: Number, y: Number, theta: Number
         ) -> None:
         """Trace the inner circle of the animation"""
-        self._rolling_circle_init(rolling_circle_turtle)
-        self._draw_dot(rolling_circle_turtle, x, y, "red")
-        rolling_circle_x, rolling_circle_y = self._draw_rolling_circle(rolling_circle_turtle, theta)
+        self._rolling_circle_init(turtles.rolling_circle_turtle)
+        self._draw_dot(turtles.rolling_circle_turtle, x, y, "red")
+        rolling_circle_x, rolling_circle_y = self._draw_rolling_circle(turtles.rolling_circle_turtle, theta)
         self._draw_dot(
-            t=rolling_circle_turtle,
+            t=turtles.rolling_circle_turtle,
             x=rolling_circle_x,
             y=rolling_circle_y + self.r,
             color="blue"
         )
-        self._connect_focus_to_trace_dots(rolling_circle_turtle, shape_turtle)
+        self._connect_focus_to_trace_dots(turtles)
 
-    def _connect_focus_to_trace_dots(
-            self, rolling_circle_turtle: "turtle.Turtle",
-            shape_turtle: "turtle.Turtle"
-        ) -> None:
+    def _connect_focus_to_trace_dots(self, turtles: "collections.namedtuple") -> None:
         """Draw line from focus to the trace that's drawing the shape"""
-        rolling_circle_turtle.down()
-        rolling_circle_turtle.seth(rolling_circle_turtle.towards(shape_turtle))
-        rolling_circle_turtle.fd(self.d)
+        turtles.rolling_circle_turtle.down()
+        turtles.rolling_circle_turtle.seth(turtles.rolling_circle_turtle.towards(turtles.shape_turtle))
+        turtles.rolling_circle_turtle.fd(self.d)
 
     def _draw_circle(
             self, t: "turtle.Turtle", x: float, y: float, radius: float
