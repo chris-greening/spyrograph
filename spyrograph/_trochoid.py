@@ -139,13 +139,12 @@ class _Trochoid(ABC):
         turtle.tracer(False)
 
         turtles = self._init_turtles(color, circle_color, full_path_color, hide_turtle, width)
-        shape_turtle, pre_draw_turtle, rolling_circle_turtle, fixed_circle_turtle = turtles
 
         if show_full_path:
-            self._show_full_path(pre_draw_turtle=pre_draw_turtle)
+            self._show_full_path(pre_draw_turtle=turtles.pre_draw_turtle)
         if show_circles:
             self._draw_circle(
-                t=fixed_circle_turtle,
+                t=turtles.fixed_circle_turtle,
                 x=self.origin[0],
                 y=self.origin[1]-self.R,
                 radius=self.R
@@ -153,27 +152,27 @@ class _Trochoid(ABC):
 
         while True:
             first = True
-            shape_turtle.up()
+            turtles.shape_turtle.up()
             for x, y, theta in self.coords:
-                shape_turtle.goto(x, y)
+                turtles.shape_turtle.goto(x, y)
                 if show_circles:
                     self._trace_rolling_circle(
-                        rolling_circle_turtle,
-                        shape_turtle,
+                        turtles.rolling_circle_turtle,
+                        turtles.shape_turtle,
                         x,
                         y,
                         theta
                     )
                 if first:
                     first = False
-                    shape_turtle.down()
+                    turtles.shape_turtle.down()
                 if frame_pause > 0:
                     turtle.update()
                 time.sleep(frame_pause)
             turtle.update()
             if not repeat:
                 break
-            shape_turtle.clear()
+            turtles.shape_turtle.clear()
         if exit_on_click:
             turtle.exitonclick()
         return screen
