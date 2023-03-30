@@ -370,6 +370,13 @@ class _Trochoid(ABC):
         shape_turtle.width(width)
 
         # Store turtle's in namedtuple
+        
+
+        return turtles
+
+    @staticmethod
+    def _create_turtles_namedtuple() -> "collections.namedtuple":
+        """Return namedtuple containing turtles"""
         TraceTurtles = collections.namedtuple(
             "TraceTurtles",
             [
@@ -385,7 +392,6 @@ class _Trochoid(ABC):
             rolling_circle_turtle,
             fixed_circle_turtle
         )
-
         return turtles
 
     def _trace_rolling_circle(
