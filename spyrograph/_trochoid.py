@@ -400,7 +400,7 @@ class _Trochoid(ABC):
         return turtles
 
     def _trace_rolling_circle(
-            self, turtle: "collections.namedtuple",
+            self, turtles: "collections.namedtuple",
             x: Number, y: Number, theta: Number
         ) -> None:
         """Trace the inner circle of the animation"""
