@@ -16,9 +16,8 @@ class Hypocycloid(_Cycloid, Hypotrochoid):
     of the rolling circle.
 
     The Hypocycloid class allows you to generate points along the curve using mathematical
-    equations and visualize the curve in a plot. It also provides properties and methods for
-    computing the length, area, and curvature of the curve, as well as for plotting and animating
-    the curve.
+    equations and visualize the curve in a plot. It also provides properties and methods 
+    for plotting and animating the curve.
 
     The Hypocycloid class is a useful tool for exploring the properties and behaviors of hypocycloids,
     and can be used in a variety of applications such as in mechanical engineering and mathematics
