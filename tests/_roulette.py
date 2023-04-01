@@ -30,8 +30,7 @@ class _TestGeneral:
         (1, 1, 0)
     ])
     def test_invalid_arguments_exception(self, R, r, d, thetas):
-        """Test that passing zero or negative value for R, r, or d raises an error"""
-        with pytest.raises(ValueError):
+        with pytest.raises(ValueError, match="Negative and/or zero input parameters were passed. Please only pass positive values"):
             self.class_name(
                 R=R,
                 r=r,
@@ -195,8 +194,7 @@ class _TestSpecial:
         (1, 0),
     ])
     def test_invalid_arguments_exception(self, R, r, thetas):
-        """Test that passing zero or negative value for R or r raises an error"""
-        with pytest.raises(ValueError):
+        with pytest.raises(ValueError, match="Negative and/or zero input parameters were passed. Please only pass positive values"):
             self.class_name(
                 R=R,
                 r=r,
