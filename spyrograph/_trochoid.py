@@ -121,10 +121,39 @@ class _Trochoid(ABC):
         return scaled_shape
 
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
-        """Return matplotlib figure and axis objects after plotting the figure
+        """
+        Plot the shape and return the associated matplotlib Figure and Axes objects.
 
-        See available matplotlib.pyplot.plot configurations
-        (https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html)
+        This method plots the shape using the `x` and `y` attributes of the object,
+        which are defined by the parametric equations from the given input parameters.
+        It returns the Figure and Axes objects of the created plot for further
+        customization if needed.
+
+        Parameters
+        ----------
+        **kwargs
+            Keyword arguments passed to the matplotlib.pyplot.plot function. For a
+            full list of available options, refer to:
+            https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html
+
+        Returns
+        -------
+        fig : matplotlib.matplotlib.Figure
+            The Figure object associated with the created plot.
+        ax : matplotlib.axes._axes.Axes
+            The Axes object associated with the created plot.
+
+        Raises
+        ------
+        ImportError
+            If matplotlib is not installed on the user's machine.
+
+        Examples
+        --------
+        >>> from spyrograph import Hypotrochoid
+        >>> import numpy as np
+        >>> shape = Hypotrochoid(R=300, r=200, d=200, thetas=np.arange(0, 2*np.pi, .01))
+        >>> fig, ax = shape.plot()
         """
         # pylint: disable=line-too-long
         if plt is None:
@@ -143,42 +172,52 @@ class _Trochoid(ABC):
             show_full_path: bool = False, full_path_color: str = "grey",
             repeat: bool = False
         ) -> "turtle.Screen":
-        """Trace the roulette shape using turtle
+        """
+        Trace the shape using the turtle graphics library and return the turtle.Screen object.
+
+        This method visually traces the shape using turtle graphics, allowing for various
+        customization options, such as colors, line width, and frame pause time.
 
         Parameters
         ----------
-        screen_size: Tuple[Number, Number]
-            Length and width of the output screen
-        screen_color: str
-            Color of the background screen
-        exit_on_click: bool = False
-            Pause the final animation until the user clicks to exit the window
-        color: str = "black"
-            Color of the primary tracing
-        width: Number
-            Width of the turtle tracing
-        hide_turtle: bool = True
-            Hide the turtle icon while tracing
-        show_circles: bool = False
-            Show the inner and outer circles that compose the trace
-        frame_pause: Number = 0
-            Time in seconds to pause each individual frame for
-        screen: turle.Screen
-            Existing turtle screen
-        circle_color: str = "white"
-            Color of the circles
-        show_full_path: bool = False
-            Show the full path prior to tracing
-        full_path_color: str = "grey"
-            Color of the full path drawing
-        repeat: bool = False
-            Infinitely repeat the animation so it starts over from the
-            beginning
+        screen_size : Tuple[Number, Number], optional
+            The length and width of the output screen, default is (1000, 1000).
+        screen_color : str, optional
+            The color of the background screen, default is "white".
+        exit_on_click : bool, optional
+            If True, pause the final animation until the user clicks to exit the window, default is False.
+        color : str, optional
+            The color of the primary tracing, default is "black".
+        width : Number, optional
+            The width of the turtle tracing, default is 1.
+        hide_turtle : bool, optional
+            If True, hide the turtle icon while tracing, default is True.
+        show_circles : bool, optional
+            If True, show the inner and outer circles that compose the trace, default is False.
+        frame_pause : Number, optional
+            The time in seconds to pause each individual frame, default is 0.
+        screen : turtle.Screen, optional
+            An existing turtle screen, default is None.
+        circle_color : str, optional
+            The color of the circles, default is "black".
+        show_full_path : bool, optional
+            If True, show the full path prior to tracing, default is False.
+        full_path_color : str, optional
+            The color of the full path drawing, default is "grey".
+        repeat : bool, optional
+            If True, infinitely repeat the animation so it starts over from the beginning, default is False.
 
         Returns
         -------
-        screen: turtle.Screen
-            Screen that the turtle is drawn on
+        screen : turtle.Screen
+            The screen that the turtle is drawn on.
+
+        Examples
+        --------
+        >>> from spyrograph import Hypotrochoid
+        >>> import numpy as np
+        >>> shape = Hypotrochoid(R=300, r=200, d=200, thetas=np.arange(0, 2*np.pi, .01))
+        >>> screen = shape.trace(show_circles=True, exit_on_click=True)
         """
         # pylint: disable=no-member,too-many-locals
         screen = self._init_screen(screen, screen_size, screen_color)
@@ -267,7 +306,38 @@ class _Trochoid(ABC):
 
     @property
     def df(self) -> "pd.DataFrame":
-        """Return DataFrame of all relevant information pertaining to the parametrized shape"""
+        """
+        Return a pandas DataFrame containing all relevant information pertaining to the parametrized shape.
+
+        This property creates a pandas DataFrame with columns for the x and y coordinates, as well as the
+        angular positions (theta) of the parametrized shape.
+
+        Raises
+        ------
+        ImportError
+            If pandas is not installed on the user's machine.
+
+        Returns
+        -------
+        df : pd.DataFrame
+            A DataFrame with columns 'x', 'y', and 'theta', containing the x and y coordinates and
+            angular positions of the parametrized shape.
+
+        Examples
+        --------
+        >>> from spyrograph import Hypotrochoid
+        >>> import numpy as np
+        >>> thetas = np.linspace(0, 2 * np.pi, num=1000)
+        >>> shape = Hypotrochoid(R=10, r=6, d=8, thetas=thetas)
+        >>> shape_df = shape.df
+        >>> shape_df.head()
+            x         y     theta
+        0  12.000  2.000000  0.000000
+        1  11.998  1.999217  0.006283
+        2  11.993  1.996869  0.012566
+        3  11.985  1.993056  0.018849
+        4  11.974  1.987778  0.025132
+        """
         #pylint: disable=line-too-long
         if pd is None:
             raise ImportError("pandas is required but is not installed on your machine, please install and try again")
@@ -285,36 +355,55 @@ class _Trochoid(ABC):
             theta_start: Number = None, theta_stop: Number = None,
             theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
         ) -> List["_Trochoid"]:
-        """Return a list of instantiated shapes where one of the input parameters
-        is a list of increments i.e. R, r, d and the rest are fixed
+        """
+        Return a list of instantiated shapes where one of the input parameters (R, r, or d) is a list of increments, and the rest are fixed.
 
         Parameters
         ----------
         R : Union[Number, List[Number]]
-            Radius of the fixed circle
+            Radius of the fixed circle.
         r : Union[Number, List[Number]]
-            Radius of the rolling circle
+            Radius of the rolling circle.
         d : Union[Number, List[Number]]
-            Distance of the trace point from the rolling circle
-        thetas : List[Number] = None
+            Distance of the trace point from the rolling circle.
+        thetas : List[Number], optional
             Input list of values for theta for inputting into parametric equations.
             This argument cannot be set at the same time as theta_start,
-            theta_stop, theta_step
-        theta_start : Number = None
+            theta_stop, theta_step.
+        theta_start : Number, optional
             Starting theta value for creating a list of thetas (similar syntax
             to built-in range or np.arange). This argument cannot be set at the
-            same time as thetas argument
-        theta_stop : Number = None
+            same time as thetas argument.
+        theta_stop : Number, optional
             Stop theta value for creating a list of thetas, stop value is not
             included in the final array (similar syntax to built-in range or
             np.arange). This argument cannot be set at the same time as thetas
-            argument
-        theta_step : Number = None
+            argument.
+        theta_step : Number, optional
             Incremental step value for stepping from start to stop
             (similar syntax to built-in range or np.arange). This argument
-            cannot be set at the same time as thetas argument
-        origin : Tuple[Number, Number] = (0, 0)
-            Custom origin to center the shapes at. Default is (0,0)
+            cannot be set at the same time as thetas argument.
+        origin : Tuple[Number, Number], optional, default (0, 0)
+            Custom origin to center the shapes at. Default is (0,0).
+
+        Returns
+        -------
+        shapes : List[_Trochoid]
+            A list of instantiated _Trochoid shapes with varying input parameters.
+
+        Raises
+        ------
+        ValueError
+            If more than one input variable (R, r, or d) is a list of varying inputs.
+
+        Examples
+        --------
+        >>> from spyrograph import Hypotrochoid
+        >>> import numpy as np
+        >>> thetas = np.linspace(0, 2 * np.pi, num=1000)
+        >>> shapes = Hypotrochoid.create_range(R=10, r=[4, 5, 6], d=8, thetas=thetas)
+        >>> len(shapes)
+        3
         """
         # pylint: disable=line-too-long,redefined-argument-from-local,invalid-name,fixme
         inputs = collections.Counter([
