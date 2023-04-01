@@ -20,6 +20,24 @@ class _TestGeneral:
             d = 100,
             thetas=thetas
         )
+    
+    @pytest.mark.parametrize("R, r, d", [
+        (-1, 1, 1),
+        (1, -1, 1),
+        (1, 1, -1),
+        (0, 1, 1),
+        (1, 0, 1),
+        (1, 1, 0)
+    ])
+    def test_invalid_arguments_exception(self, R, r, d, thetas):
+        """Test that passing zero or negative value for R, r, or d raises an error"""
+        with pytest.raises(ValueError):
+            self.class_name(
+                R=R,
+                r=r,
+                d=d,
+                thetas=thetas
+            )
 
     def test_scale_return_instance_is_same_class(self, instance):
         """Test that the return instance is from the same class"""
@@ -169,6 +187,21 @@ class _TestSpecial:
             r = 200,
             thetas=thetas
         )
+    
+    @pytest.mark.parametrize("R, r", [
+        (-1, 1),
+        (1, -1),
+        (0, 1),
+        (1, 0),
+    ])
+    def test_invalid_arguments_exception(self, R, r, thetas):
+        """Test that passing zero or negative value for R or r raises an error"""
+        with pytest.raises(ValueError):
+            self.class_name(
+                R=R,
+                r=r,
+                thetas=thetas
+            )
 
     def test_create_range_custom_origin(self, thetas):
         R = 5
