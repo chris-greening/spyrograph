@@ -6,7 +6,9 @@ from numbers import Number
 from typing import List, Tuple, Union
 import collections
 
-class _Cycloid:
+from spyrograph._trochoid import _Trochoid
+
+class _Cycloid(_Trochoid):
     # pylint: disable=too-few-public-methods
     @classmethod
     def create_range(
