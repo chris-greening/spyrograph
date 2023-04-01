@@ -112,7 +112,41 @@ class _Cycloid(_Trochoid):
             theta_start: Number = None, theta_stop: Number = None,
             theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
         ) -> "Cycloid":
-        """Return a cycloid with n number of cusps"""
+        """
+        Create and return a cycloid with a specified number of cusps.
+
+        Parameters
+        ----------
+        R : Number
+            Radius of the fixed circle.
+        n : int
+            Number of cusps to create in the cycloid.
+        thetas : List[Number], optional
+            List of theta values for inputting into parametric equations.
+        theta_start : Number, optional
+            Starting theta value for creating a list of thetas (similar syntax
+            to built-in range or np.arange).
+        theta_stop : Number, optional
+            Stop theta value for creating a list of thetas; the stop value is not
+            included in the final array (similar syntax to built-in range or
+            np.arange).
+        theta_step : Number, optional
+            Incremental step value for stepping from start to stop (similar syntax
+            to built-in range or np.arange).
+        origin : Tuple[Number, Number], optional, default: (0, 0)
+            Custom origin to center the shapes at. Default is (0, 0).
+
+        Returns
+        -------
+        Cycloid
+            A Cycloid object with the specified number of cusps.
+
+        Examples
+        --------
+        >>> from spyrograph import Cycloid
+        >>> cycloid = Cycloid.n_cusps(R=10, n=5)
+        >>> cycloid.trace(exit_on_click=True)
+        """
         return cls(
             R=R,
             r=R/n,
