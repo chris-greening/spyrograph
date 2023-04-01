@@ -151,7 +151,8 @@ class _Trochoid(ABC):
         Examples
         --------
         >>> from spyrograph import Hypotrochoid
-        >>> shape = Hypotrochoid(R=10, r=6, d=8)
+        >>> import numpy as np
+        >>> shape = Hypotrochoid(R=300, r=200, d=200, thetas=np.arange(0, 2*np.pi, .01))
         >>> fig, ax = shape.plot()
         """
         # pylint: disable=line-too-long
@@ -171,42 +172,52 @@ class _Trochoid(ABC):
             show_full_path: bool = False, full_path_color: str = "grey",
             repeat: bool = False
         ) -> "turtle.Screen":
-        """Trace the roulette shape using turtle
+        """
+        Trace the shape using the turtle graphics library and return the turtle.Screen object.
+
+        This method visually traces the shape using turtle graphics, allowing for various
+        customization options, such as colors, line width, and frame pause time.
 
         Parameters
         ----------
-        screen_size: Tuple[Number, Number]
-            Length and width of the output screen
-        screen_color: str
-            Color of the background screen
-        exit_on_click: bool = False
-            Pause the final animation until the user clicks to exit the window
-        color: str = "black"
-            Color of the primary tracing
-        width: Number
-            Width of the turtle tracing
-        hide_turtle: bool = True
-            Hide the turtle icon while tracing
-        show_circles: bool = False
-            Show the inner and outer circles that compose the trace
-        frame_pause: Number = 0
-            Time in seconds to pause each individual frame for
-        screen: turle.Screen
-            Existing turtle screen
-        circle_color: str = "white"
-            Color of the circles
-        show_full_path: bool = False
-            Show the full path prior to tracing
-        full_path_color: str = "grey"
-            Color of the full path drawing
-        repeat: bool = False
-            Infinitely repeat the animation so it starts over from the
-            beginning
+        screen_size : Tuple[Number, Number], optional
+            The length and width of the output screen, default is (1000, 1000).
+        screen_color : str, optional
+            The color of the background screen, default is "white".
+        exit_on_click : bool, optional
+            If True, pause the final animation until the user clicks to exit the window, default is False.
+        color : str, optional
+            The color of the primary tracing, default is "black".
+        width : Number, optional
+            The width of the turtle tracing, default is 1.
+        hide_turtle : bool, optional
+            If True, hide the turtle icon while tracing, default is True.
+        show_circles : bool, optional
+            If True, show the inner and outer circles that compose the trace, default is False.
+        frame_pause : Number, optional
+            The time in seconds to pause each individual frame, default is 0.
+        screen : turtle.Screen, optional
+            An existing turtle screen, default is None.
+        circle_color : str, optional
+            The color of the circles, default is "black".
+        show_full_path : bool, optional
+            If True, show the full path prior to tracing, default is False.
+        full_path_color : str, optional
+            The color of the full path drawing, default is "grey".
+        repeat : bool, optional
+            If True, infinitely repeat the animation so it starts over from the beginning, default is False.
 
         Returns
         -------
-        screen: turtle.Screen
-            Screen that the turtle is drawn on
+        screen : turtle.Screen
+            The screen that the turtle is drawn on.
+
+        Examples
+        --------
+        >>> from spyrograph import Hypotrochoid
+        >>> import numpy as np
+        >>> shape = Hypotrochoid(R=300, r=200, d=200, thetas=np.arange(0, 2*np.pi, .01))
+        >>> screen = shape.trace(show_circles=True, exit_on_click=True)
         """
         # pylint: disable=no-member,too-many-locals
         screen = self._init_screen(screen, screen_size, screen_color)
