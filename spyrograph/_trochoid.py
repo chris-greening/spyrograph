@@ -517,6 +517,7 @@ class _Trochoid(ABC):
 
     def __repr__(self) -> str:
         """Return formatted string with useful information about the current object"""
+        # pylint: disable=line-too-long
         if len(self.thetas) == 1:
             thetas_str = f"[{self.thetas[0]}]"
         elif len(self.thetas) == 2:
