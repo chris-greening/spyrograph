@@ -18,7 +18,19 @@ _spyrograph_ is a lightweight Python package that provides an expressive and fle
 
 [Official docs](https://spyrograph.readthedocs.io/en/latest/)
 
-## Key Features
+## Table of Contents
+* [Key features](#key-features)
+* [Installation](#installation)
+* [Quickstart](#quickstart)
+* [Contributing](#contributing)
+* [Blog posts](#blog-posts)
+* [Documentation](#documentation)
+* [License](#license)
+* [Support](#support)
+
+---
+
+## :key: Key features <a name="key-features"></a>
 - Expressive and consistent syntax
 - Robust underlying mathematics
 - Beginner _and_ expert friendly
@@ -30,17 +42,6 @@ _spyrograph_ is a lightweight Python package that provides an expressive and fle
 <p align="center">
   <img src="media/sample_drawing.gif" alt="Sample hypotrochoid drawing showing a circle rolling around the interior of another circle drawing a geometric shape">
 </p>
-
----
-
-## Table of Contents
-* [Installation](#installation)
-* [Quickstart](#quickstart)
-* [Contributing](#contributing)
-* [Blog posts](#blog-posts)
-* [Documentation](#documentation)
-* [License](#license)
-* [Support](#support)
 
 ---
 
