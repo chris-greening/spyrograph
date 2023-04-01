@@ -6,7 +6,7 @@ dill==0.3.6
 exceptiongroup==1.1.1
 fonttools
 iniconfig==2.0.0
-isort==5.12.0
+isort
 kiwisolver==1.4.4
 lazy-object-proxy==1.9.0
 matplotlib==3.7.1
