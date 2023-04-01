@@ -2,12 +2,11 @@
 shape's methods i.e. tracing, calculating, etc.
 """
 
-from abc import ABC
 from numbers import Number
 from typing import List, Tuple, Union
 import collections
 
-class _Cycloid(ABC):
+class _Cycloid:
     # pylint: disable=too-few-public-methods
     @classmethod
     def create_range(
