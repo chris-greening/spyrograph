@@ -36,6 +36,7 @@ Now that we have a `Hypocycloid`, we can easily scale it using the `scale` metho
 {% highlight python %}
 scaled_hypocycloid = hypocycloid.scale(factor=.5)
 The `scaled_hypocycloid` will now have its input parameters (`R`, `r`, and `d`) multiplied by the scaling factor
+{% endhighlight %}
 
 ## Using `scale` to `trace` a beautiful pattern
 Let's jump into a concrete example of using the `scale` method in action to `trace` a gradually smaller set of curves
