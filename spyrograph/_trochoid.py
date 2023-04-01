@@ -87,7 +87,7 @@ class _Trochoid(ABC):
             scaled_shape = self.__class__(
                 R=self.R*factor,
                 r=self.r*factor,
-                thetas=thetas
+                thetas=self.thetas
             )
         return scaled_shape
 
