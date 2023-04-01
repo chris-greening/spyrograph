@@ -68,12 +68,10 @@ class _Trochoid(ABC):
         self.thetas = self._validate_theta(thetas, theta_start, theta_stop, theta_step)
         self.origin = origin
    
-        while deci != False:
-            if self.R <= 0 or self.r <= 0 or self.d <= 0:
-                raise ValueEror("Negative and/or zero input parameters were passed. Please only pass positive values")
-                deci = True
-            else:
-                deci = False
+        if self.R <= 0 or self.r <= 0 or self.d <= 0:
+            raise ValueEror("Negative and/or zero input parameters were passed. Please only pass positive values")
+        else:
+            Pass
         self.x = np.array([self._calculate_x(theta) for theta in self.thetas])
         self.y = np.array([self._calculate_y(theta) for theta in self.thetas])
         self.x += self.origin[0]
