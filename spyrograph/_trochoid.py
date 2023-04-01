@@ -74,6 +74,9 @@ class _Trochoid(ABC):
         self.y += self.origin[1]
         self.coords = list(zip(self.x, self.y, self.thetas))
 
+    def scale(self):
+        pass
+
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
         """Return matplotlib figure and axis objects after plotting the figure
 
