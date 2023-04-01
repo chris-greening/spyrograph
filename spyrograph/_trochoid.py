@@ -74,8 +74,22 @@ class _Trochoid(ABC):
         self.y += self.origin[1]
         self.coords = list(zip(self.x, self.y, self.thetas))
 
-    def scale(self):
-        pass
+    def scale(self, factor: Number) -> Union["_Trochoid", "_Cycloid"]:
+        """Return shape but with input parameters scaled by a given input factor"""
+        try:
+            scaled_shape = self.__class__(
+                R=self.R*factor,
+                r=self.r*factor,
+                d=self.d*factor,
+                thetas=self.thetas
+            )
+        except TypeError:
+            scaled_shape = self.__class__(
+                R=self.R*factor,
+                r=self.r*factor,
+                thetas=thetas
+            )
+        return scaled_shape
 
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
         """Return matplotlib figure and axis objects after plotting the figure
