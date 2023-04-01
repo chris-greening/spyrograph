@@ -380,7 +380,7 @@ class _Trochoid(ABC):
             self, screen: "turtle.Screen", screen_size: Tuple[Number, Number],
             screen_color: str
         ) -> "turtle.Screen":
-        """Return initialized turtle.Screen"""
+        """Initializes the turtle screen with the given size and color"""
         if screen is None:
             screen = turtle.Screen()
             screen.setup(*screen_size)
