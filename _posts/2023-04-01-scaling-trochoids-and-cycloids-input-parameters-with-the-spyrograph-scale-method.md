@@ -10,19 +10,13 @@ header:
 
 In this blog post, we will explore the `scale` method in the `spyrograph` package which enables users to easily scale their trochoids and cycloids
 
-### Prerequisite imports
-
-Before diving into the `scale` method, let's make sure we have the required imports (in this example we'll work with `Hypocycloid` but this applies to all other shapes as well):
-
-```python
-import numpy as np
-from spyrograph import Hypotrochoid
-```
-
 ## Creating a `Hypocycloid`
 First, let's create a `Hypocycloid` with 10 cusps to work with:
 
 {% highlight python %}
+import numpy as np
+from spyrograph import Hypocycloid
+
 hypocycloid = Hypocycloid.n_cusps(
     R=300,
     n=10,
@@ -38,6 +32,8 @@ scaled_hypocycloid = hypocycloid.scale(factor=.5)
 {% endhighlight %}
 
 The `scaled_hypocycloid` will now have its input parameters (`R`, `r`, and `d`) multiplied by the scaling factor
+
+For example the radius of the big circle `R=300` will now be `R*.5=150`
 
 ## Using `scale` to `trace` a beautiful pattern
 Let's jump into a concrete example of using the `scale` method in action to `trace` a gradually smaller set of curves
