@@ -306,7 +306,38 @@ class _Trochoid(ABC):
 
     @property
     def df(self) -> "pd.DataFrame":
-        """Return DataFrame of all relevant information pertaining to the parametrized shape"""
+        """
+        Return a pandas DataFrame containing all relevant information pertaining to the parametrized shape.
+
+        This property creates a pandas DataFrame with columns for the x and y coordinates, as well as the
+        angular positions (theta) of the parametrized shape.
+
+        Raises
+        ------
+        ImportError
+            If pandas is not installed on the user's machine.
+
+        Returns
+        -------
+        df : pd.DataFrame
+            A DataFrame with columns 'x', 'y', and 'theta', containing the x and y coordinates and
+            angular positions of the parametrized shape.
+
+        Examples
+        --------
+        >>> from spyrograph import Hypotrochoid
+        >>> import numpy as np
+        >>> thetas = np.linspace(0, 2 * np.pi, num=1000)
+        >>> shape = Hypotrochoid(R=10, r=6, d=8, thetas=thetas)
+        >>> shape_df = shape.df
+        >>> shape_df.head()
+            x         y     theta
+        0  12.000  2.000000  0.000000
+        1  11.998  1.999217  0.006283
+        2  11.993  1.996869  0.012566
+        3  11.985  1.993056  0.018849
+        4  11.974  1.987778  0.025132
+        """
         #pylint: disable=line-too-long
         if pd is None:
             raise ImportError("pandas is required but is not installed on your machine, please install and try again")
