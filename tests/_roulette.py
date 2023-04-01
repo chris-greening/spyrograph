@@ -21,6 +21,26 @@ class _TestGeneral:
             thetas=thetas
         )
 
+    def test_scale_return_instance_is_same_class(self, instance):
+        """Test that the return instance is from the same class"""
+        scaled_instance = instance.scale(factor=2)
+        assert scaled_instance.__class__ is instance.__class__
+
+    def test_scale_factor_parameters(self, instance):
+        """Test that scaling is actually working as expected"""
+        larger_scaled_instance = instance.scale(factor=2)
+        smaller_scaled_instance = instance.scale(factor=.5)
+
+        assert larger_scaled_instance.R == instance.R*2
+        assert larger_scaled_instance.r == instance.r*2
+        assert larger_scaled_instance.d == instance.d*2
+        assert (larger_scaled_instance.thetas == instance.thetas).all()
+
+        assert smaller_scaled_instance.R == instance.R*.5
+        assert smaller_scaled_instance.r == instance.r*.5
+        assert smaller_scaled_instance.d == instance.d*.5
+        assert (smaller_scaled_instance.thetas == instance.thetas).all()
+
     def test_create_range_theta_inputs(self, thetas):
         R = 5
         r = 3
