@@ -525,4 +525,4 @@ class _Trochoid(ABC):
             thetas_str = f"[{self.thetas[0]}, {self.thetas[1]}, {self.thetas[2]}]"
         else:
             thetas_str = f"[{self.thetas[0]}, {self.thetas[1]}, ... {self.thetas[-1]}]"
-        return(f"{self.__class__}(R={self.R}, r={self.r}, d={self.d}, thetas={thetas_str}, origin=({self.origin[0]},{self.origin[1]}))")
+        return(f"{self.__class__.__name__}(R={self.R}, r={self.r}, d={self.d}, thetas={thetas_str}, origin=({self.origin[0]},{self.origin[1]}))")
