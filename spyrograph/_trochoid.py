@@ -67,7 +67,12 @@ class _Trochoid(ABC):
         self.d = d
         self.thetas = self._validate_theta(thetas, theta_start, theta_stop, theta_step)
         self.origin = origin
-
+   
+        while deci != False:
+            if self.R < 0 or self.r < 0 or self.d < 0:
+                deci = True
+            else:
+                deci = False
         self.x = np.array([self._calculate_x(theta) for theta in self.thetas])
         self.y = np.array([self._calculate_y(theta) for theta in self.thetas])
         self.x += self.origin[0]
