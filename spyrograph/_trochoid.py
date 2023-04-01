@@ -514,3 +514,16 @@ class _Trochoid(ABC):
     @abstractmethod
     def _calculate_y(self, theta: Number) -> float:
         """Return calculated y-value from parametrized equation"""
+
+    def __repr__(self) -> str:
+        """Return formatted string with useful information about the current object"""
+        # pylint: disable=line-too-long
+        if len(self.thetas) == 1:
+            thetas_str = f"[{self.thetas[0]}]"
+        elif len(self.thetas) == 2:
+            thetas_str = f"[{self.thetas[0]}, {self.thetas[1]}]"
+        elif len(self.thetas) == 3:
+            thetas_str = f"[{self.thetas[0]}, {self.thetas[1]}, {self.thetas[2]}]"
+        else:
+            thetas_str = f"[{self.thetas[0]}, {self.thetas[1]}, ... {self.thetas[-1]}]"
+        return(f"{self.__class__.__name__}(R={self.R}, r={self.r}, d={self.d}, thetas={thetas_str}, origin=({self.origin[0]},{self.origin[1]}))")

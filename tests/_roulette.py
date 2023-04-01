@@ -38,6 +38,16 @@ class _TestGeneral:
                 thetas=thetas
             )
 
+    def test_dunder_repr_doesnt_break_on_repr_call(self, instance):
+        repr_val = repr(instance)
+        assert isinstance(repr_val, str)
+
+    def test_dunder_repr_values(self, instance):
+        repr_val = repr(instance)
+        assert f"R={instance.R}" in repr_val
+        assert f"r={instance.r}" in repr_val
+        assert f"d={instance.d}" in repr_val
+
     def test_scale_return_instance_is_same_class(self, instance):
         """Test that the return instance is from the same class"""
         scaled_instance = instance.scale(factor=2)
