@@ -121,10 +121,38 @@ class _Trochoid(ABC):
         return scaled_shape
 
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
-        """Return matplotlib figure and axis objects after plotting the figure
+        """
+        Plot the shape and return the associated matplotlib Figure and Axes objects.
 
-        See available matplotlib.pyplot.plot configurations
-        (https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html)
+        This method plots the shape using the `x` and `y` attributes of the object,
+        which are defined by the parametric equations from the given input parameters.
+        It returns the Figure and Axes objects of the created plot for further
+        customization if needed.
+
+        Parameters
+        ----------
+        **kwargs
+            Keyword arguments passed to the matplotlib.pyplot.plot function. For a
+            full list of available options, refer to:
+            https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html
+
+        Returns
+        -------
+        fig : matplotlib.matplotlib.Figure
+            The Figure object associated with the created plot.
+        ax : matplotlib.axes._axes.Axes
+            The Axes object associated with the created plot.
+
+        Raises
+        ------
+        ImportError
+            If matplotlib is not installed on the user's machine.
+
+        Examples
+        --------
+        >>> from spyrograph import Hypotrochoid
+        >>> shape = Hypotrochoid(R=10, r=6, d=8)
+        >>> fig, ax = shape.plot()
         """
         # pylint: disable=line-too-long
         if plt is None:
