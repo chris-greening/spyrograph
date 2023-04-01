@@ -355,36 +355,55 @@ class _Trochoid(ABC):
             theta_start: Number = None, theta_stop: Number = None,
             theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
         ) -> List["_Trochoid"]:
-        """Return a list of instantiated shapes where one of the input parameters
-        is a list of increments i.e. R, r, d and the rest are fixed
+        """
+        Return a list of instantiated shapes where one of the input parameters (R, r, or d) is a list of increments, and the rest are fixed.
 
         Parameters
         ----------
         R : Union[Number, List[Number]]
-            Radius of the fixed circle
+            Radius of the fixed circle.
         r : Union[Number, List[Number]]
-            Radius of the rolling circle
+            Radius of the rolling circle.
         d : Union[Number, List[Number]]
-            Distance of the trace point from the rolling circle
-        thetas : List[Number] = None
+            Distance of the trace point from the rolling circle.
+        thetas : List[Number], optional
             Input list of values for theta for inputting into parametric equations.
             This argument cannot be set at the same time as theta_start,
-            theta_stop, theta_step
-        theta_start : Number = None
+            theta_stop, theta_step.
+        theta_start : Number, optional
             Starting theta value for creating a list of thetas (similar syntax
             to built-in range or np.arange). This argument cannot be set at the
-            same time as thetas argument
-        theta_stop : Number = None
+            same time as thetas argument.
+        theta_stop : Number, optional
             Stop theta value for creating a list of thetas, stop value is not
             included in the final array (similar syntax to built-in range or
             np.arange). This argument cannot be set at the same time as thetas
-            argument
-        theta_step : Number = None
+            argument.
+        theta_step : Number, optional
             Incremental step value for stepping from start to stop
             (similar syntax to built-in range or np.arange). This argument
-            cannot be set at the same time as thetas argument
-        origin : Tuple[Number, Number] = (0, 0)
-            Custom origin to center the shapes at. Default is (0,0)
+            cannot be set at the same time as thetas argument.
+        origin : Tuple[Number, Number], optional, default (0, 0)
+            Custom origin to center the shapes at. Default is (0,0).
+
+        Returns
+        -------
+        shapes : List[_Trochoid]
+            A list of instantiated _Trochoid shapes with varying input parameters.
+
+        Raises
+        ------
+        ValueError
+            If more than one input variable (R, r, or d) is a list of varying inputs.
+
+        Examples
+        --------
+        >>> from spyrograph import Hypotrochoid
+        >>> import numpy as np
+        >>> thetas = np.linspace(0, 2 * np.pi, num=1000)
+        >>> shapes = Hypotrochoid.create_range(R=10, r=[4, 5, 6], d=8, thetas=thetas)
+        >>> len(shapes)
+        3
         """
         # pylint: disable=line-too-long,redefined-argument-from-local,invalid-name,fixme
         inputs = collections.Counter([
