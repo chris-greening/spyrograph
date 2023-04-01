@@ -24,12 +24,20 @@ hypocycloid = Hypocycloid.n_cusps(
 )
 {% endhighlight %}
 
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/cusps_shape_for_scale.gif" alt="A circular shape with 20 cusps is drawn by a circle rolling around the interior of another fixed circle">
+</p>
+
 ## Scaling the `Hypocycloid` with the `scale` method
 Now that we have a `Hypocycloid`, we can easily scale it using the `scale` method:
 
 {% highlight python %}
 scaled_hypocycloid = hypocycloid.scale(factor=.5)
 {% endhighlight %}
+
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/web_shape_scale.PNG" alt="A circular shape with 20 cusps is drawn by a circle rolling around the interior of another fixed circle and then an identical shape that is half the size is drawn right in the center">
+</p>
 
 The `scaled_hypocycloid` will now have its input parameters (`R`, `r`, and `d`) multiplied by the scaling factor
 
