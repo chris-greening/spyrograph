@@ -69,7 +69,8 @@ class _Trochoid(ABC):
         self.origin = origin
    
         while deci != False:
-            if self.R < 0 or self.r < 0 or self.d < 0:
+            if self.R <= 0 or self.r <= 0 or self.d <= 0:
+                raise ValueEror("Negative and/or zero input parameters were passed. Please only pass positive values")
                 deci = True
             else:
                 deci = False
