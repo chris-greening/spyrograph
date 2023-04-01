@@ -102,6 +102,7 @@ Check out the [official website](https://chris-greening.github.io/spyrograph/) f
 - [Creating a range of hypotrochoids with the create_range method](https://chris-greening.github.io/spyrograph/python,/tutorial/2023/03/25/creating-a-range-of-hypotrochoids-with-the-create-range-method.html)
 - [Plotting beautiful spirographs with matplotlib and spyrograph](https://chris-greening.github.io/spyrograph/python,/tutorial/2023/03/27/plotting-beautiful-spirographs-with-matplotlib-and-spyrograph.html)
 - [Drawing cycloids with a specific number of cusps using spyrograph](https://chris-greening.github.io/spyrograph/python,/tutorial/2023/03/28/drawing-cycloids-with-a-specific-number-of-cusps-using-spyrograph.html)
+- [Scaling trochoid’s and cycloid’s input parameters with the spyrograph scale method](https://chris-greening.github.io/spyrograph/python,/tutorial/2023/04/01/scaling-trochoids-and-cycloids-input-parameters-with-the-spyrograph-scale-method.html)
 
 ---
 
