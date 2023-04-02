@@ -8,6 +8,7 @@ import collections
 import time
 
 from spyrograph._trochoid import _Trochoid
+from spyrograph._misc import _get_products_of_inputs, _validate_only_one_iterable
 
 class _Cycloid(_Trochoid):
     # pylint: disable=too-few-public-methods
