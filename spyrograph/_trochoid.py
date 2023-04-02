@@ -547,6 +547,8 @@ class _Trochoid(ABC):
                 theta_step = .1
             thetas = np.arange(theta_start, theta_stop, theta_step)
         thetas = np.array(thetas)
+        if multiple_thetas:
+            raise ValueError("An empty list of thetas was passed in as argument.")
         return thetas
 
     def _init_screen(
