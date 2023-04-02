@@ -305,7 +305,10 @@ class _Trochoid(ABC):
         )
         screen = None
         for shape in shapes_arr:
+            if screen is not None:
+                screen.clear()
             screen = shape.trace(screen = screen)
+            time.sleep(.05)
 
     @property
     def df(self) -> "pd.DataFrame":
