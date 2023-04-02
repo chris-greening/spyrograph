@@ -148,13 +148,15 @@ class _Trochoid(ABC):
                 R=self.R*factor,
                 r=self.r*factor,
                 d=self.d*factor,
-                thetas=self.thetas
+                thetas=self.thetas,
+                origin=self.origin
             )
         except TypeError:
             scaled_shape = self.__class__(
                 R=self.R*factor,
                 r=self.r*factor,
-                thetas=self.thetas
+                thetas=self.thetas,
+                origin=self.origin
             )
         return scaled_shape
 
