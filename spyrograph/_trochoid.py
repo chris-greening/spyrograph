@@ -79,7 +79,22 @@ class _Trochoid(ABC):
 
     def transform(self, x: Number = 0, y: Number = 0) -> "_Trochoid":
         """Return shape transformed to new origin"""
-
+        try:
+            transformed_shape = self.__class__(
+                R=self.R*factor,
+                r=self.r*factor,
+                d=self.d*factor,
+                thetas=self.thetas,
+                origin=(self.origin[0]+x, self.origin[1]+y)
+            )
+        except TypeError:
+            transformed_shape = self.__class__(
+                R=self.R*factor,
+                r=self.r*factor,
+                thetas=self.thetas,
+                origin=(self.origin[0]+x, self.origin[1]+y)
+            )
+        return transformed_shape
 
     def scale(self, factor: Number) -> Union["_Trochoid", "_Cycloid"]:
         """Return shape with input parameters scaled by a given input factor.
