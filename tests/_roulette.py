@@ -20,7 +20,7 @@ class _TestGeneral:
             d = 100,
             thetas=thetas
         )
-    
+
     @pytest.mark.parametrize("R, r, d", [
         (-1, 1, 1),
         (1, -1, 1),
@@ -41,6 +41,15 @@ class _TestGeneral:
     def test_dunder_repr_doesnt_break_on_repr_call(self, instance):
         repr_val = repr(instance)
         assert isinstance(repr_val, str)
+
+    def test_transform_shape(self, instance):
+        left_transformed_instance = instance.transform(x=-100)
+        up_transformed_instance = instance.transform(y=100)
+        up_and_left_transform_instance = instance.transform(x=100, y=-100)
+        assert instance.origin[0] - 100 == left_transformed_instance.origin[0]
+        assert instance.origin[1] + 100 == up_transformed_instance.origin[1]
+        assert instance.origin[0] + 100 == up_and_left_transform_instance.origin[0]
+        assert instance.origin[1] - 100 == up_and_left_transform_instance.origin[1]
 
     def test_dunder_repr_values(self, instance):
         repr_val = repr(instance)
