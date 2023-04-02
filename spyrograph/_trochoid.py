@@ -491,8 +491,8 @@ class _Trochoid(ABC):
         3
         """
         # pylint: disable=line-too-long,redefined-argument-from-local,invalid-name,fixme
-        cls._validate_only_one_iterable(R, r, d)
-        input_params = cls._get_products_of_inputs(R, r, d)
+        _validate_only_one_iterable(R, r, d)
+        input_params = _get_products_of_inputs(R, r, d)
 
         # TODO: this is fairly ugly, need to come up with better way of handling
         # this
@@ -687,7 +687,7 @@ class _Trochoid(ABC):
 
 def _get_products_of_inputs(self, *args) -> Tuple[Number]:
         """Return a list of tuples that contains all of the input arguments"""
-        list_of_lists = [self._set_int_to_list(el) for el in args]
+        list_of_lists = [_set_int_to_list(el) for el in args]
         product = itertools.product(*list_of_lists)
         return product
 
