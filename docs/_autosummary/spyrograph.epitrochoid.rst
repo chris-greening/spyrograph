@@ -1,7 +1,7 @@
-spyrograph.epitrochoid
+﻿spyrograph.epitrochoid
 ======================
 
-.. automodule:: spyrograph.epitrochoid.epitrochoid
+.. automodule:: spyrograph.epitrochoid
 
    
    
