@@ -504,26 +504,6 @@ class _Trochoid(ABC):
             ))
         return shapes
 
-    def _get_products_of_inputs(self, *args) -> Tuple[Number]:
-        """Return a list of tuples that contains all of the input arguments"""
-        list_of_lists = [self._set_int_to_list(el) for el in args]
-        product = itertools.product(*list_of_lists)
-        return product
-
-    @staticmethod
-    def _validate_only_one_iterable(*args) -> bool:
-        """Return validation check that only one argument passed to create_range is an iterable"""
-        inputs = collections.Counter([isinstance(el, collections.abc.Iterable) for el in args])
-        if inputs[True] > 1:
-            raise ValueError("More than one input variable was varied. Please only pass one list of varying inputs and try again.")
-
-    @staticmethod
-    def _set_int_to_list(input_val: Union[Number, List[Number]]) -> List[Number]:
-        """Return list of numbers from given input parameter"""
-        if isinstance(input_val, Number):
-            input_val = [input_val]
-        return input_val
-
     def _show_full_path(self, pre_draw_turtle: "turtle.Turtle") -> None:
         """Draw the full path prior to tracing"""
         # pylint: disable=no-member, unused-variable
@@ -704,3 +684,21 @@ class _Trochoid(ABC):
         else:
             thetas_str = f"[{self.thetas[0]}, {self.thetas[1]}, ... {self.thetas[-1]}]"
         return(f"{self.__class__.__name__}(R={self.R}, r={self.r}, d={self.d}, thetas={thetas_str}, origin=({self.origin[0]},{self.origin[1]}))")
+
+def _get_products_of_inputs(self, *args) -> Tuple[Number]:
+        """Return a list of tuples that contains all of the input arguments"""
+        list_of_lists = [self._set_int_to_list(el) for el in args]
+        product = itertools.product(*list_of_lists)
+        return product
+
+def _validate_only_one_iterable(*args) -> bool:
+    """Return validation check that only one argument passed to create_range is an iterable"""
+    inputs = collections.Counter([isinstance(el, collections.abc.Iterable) for el in args])
+    if inputs[True] > 1:
+        raise ValueError("More than one input variable was varied. Please only pass one list of varying inputs and try again.")
+
+def _set_int_to_list(input_val: Union[Number, List[Number]]) -> List[Number]:
+    """Return list of numbers from given input parameter"""
+    if isinstance(input_val, Number):
+        input_val = [input_val]
+    return input_val
