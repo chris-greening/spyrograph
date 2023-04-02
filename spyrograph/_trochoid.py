@@ -77,6 +77,9 @@ class _Trochoid(ABC):
         self.y += self.origin[1]
         self.coords = list(zip(self.x, self.y, self.thetas))
 
+    def transform(self, x: Number, y: Number) -> "_Trochoid":
+        """Return shape transformed to new origin"""
+
     def scale(self, factor: Number) -> Union["_Trochoid", "_Cycloid"]:
         """Return shape with input parameters scaled by a given input factor.
 
