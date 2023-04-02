@@ -564,7 +564,15 @@ class _Trochoid(ABC):
             self, color: str, circle_color: str, full_path_color: str,
             hide_turtle: bool, width: Number
         ) -> Tuple["turtle.Turtle", "turtle.Turtle", "turtle.Turtle", "turtle.Turtle"]:
-        """Return a shape turtle, rolling circle turtle, and fixed circle turtle"""
+        """
+        Initialize four turtle objects with the specified color, width, and visibility.
+
+        The returned tuple contains four turtles:
+        - shape_turtle: the main turtle shape.
+        - rolling_circle_turtle: a turtle used for drawing a rolling circle.
+        - fixed_circle_turtle: a turtle used for drawing a fixed circle.
+        - pre_draw_turtle: a turtle used for drawing the full path.
+        """
 
         # Instantiate turtle
         shape_turtle = turtle.Turtle()
