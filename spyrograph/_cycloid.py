@@ -172,12 +172,7 @@ class _Cycloid(_Trochoid):
             Custom origin to center the shapes at. Default is (0,0)
         """
         # pylint: disable=line-too-long,redefined-argument-from-local,invalid-name,no-member,fixme
-        inputs = collections.Counter([
-            isinstance(R, collections.abc.Iterable),
-            isinstance(r, collections.abc.Iterable)
-        ])
-        if inputs[True] > 1:
-            raise ValueError("More than one input variable was varied. Please only pass one list of varying inputs and try again.")
+        cls._validate_only_one_iterable(R, r)
         R_arr = cls._set_int_to_list(R)
         r_arr = cls._set_int_to_list(r)
 
