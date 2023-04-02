@@ -495,8 +495,6 @@ class _Trochoid(ABC):
         _validate_only_one_iterable(R, r, d)
         input_params = _get_products_of_inputs(R, r, d)
 
-        # TODO: this is fairly ugly, need to come up with better way of handling
-        # this
         shapes = []
         for R, r, d in input_params:
             shapes.append(cls(
