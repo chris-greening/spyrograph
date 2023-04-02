@@ -266,7 +266,11 @@ class _Trochoid(ABC):
             cls, R: Union[Number, List[Number]], r: Union[Number, List[Number]],
             d: Union[Number, List[Number]], thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
-            theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
+            theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0),
+            screen_size: Tuple[Number, Number] = (1000, 1000),
+            screen_color: str = "white", exit_on_click: bool = False,
+            color: str = "black", width: Number = 1,
+            frame_pause: Number = 0.1, screen: "turtle.Screen" = None
         ) -> List["_Trochoid"]:
         """Animate the shape where one of the input parameters
         is a list of increments i.e. R, r, d and the rest are fixed
@@ -303,12 +307,17 @@ class _Trochoid(ABC):
             R, r, d, thetas, theta_start,
             theta_stop, theta_step, origin
         )
-        screen = None
         for shape in shapes_arr:
             if screen is not None:
                 screen.clear()
-            screen = shape.trace(screen = screen)
-            time.sleep(.05)
+            screen = shape.trace(
+                screen = screen, screen_size = screen_size,
+                screen_color = screen_color,
+                color = color, width=width
+            )
+            time.sleep(frame_pause)
+        if exit_on_click:
+            turtle.exitonclick()
 
     @property
     def df(self) -> "pd.DataFrame":
