@@ -81,16 +81,16 @@ class _Trochoid(ABC):
         """Return shape transformed to new origin"""
         try:
             transformed_shape = self.__class__(
-                R=self.R*factor,
-                r=self.r*factor,
-                d=self.d*factor,
+                R=self.R,
+                r=self.r,
+                d=self.d,
                 thetas=self.thetas,
                 origin=(self.origin[0]+x, self.origin[1]+y)
             )
         except TypeError:
             transformed_shape = self.__class__(
-                R=self.R*factor,
-                r=self.r*factor,
+                R=self.R,
+                r=self.r,
                 thetas=self.thetas,
                 origin=(self.origin[0]+x, self.origin[1]+y)
             )
