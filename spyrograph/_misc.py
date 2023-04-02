@@ -1,4 +1,7 @@
-
+import itertools
+import collections
+from typing import Tuple, List, Union
+from numbers import Number
 
 def _get_products_of_inputs(self, *args) -> Tuple[Number]:
         """Return a list of tuples that contains all of the input arguments"""
