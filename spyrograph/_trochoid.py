@@ -492,9 +492,7 @@ class _Trochoid(ABC):
         """
         # pylint: disable=line-too-long,redefined-argument-from-local,invalid-name,fixme
         cls._validate_only_one_iterable(R, r, d)
-        R_arr = cls._set_int_to_list(R)
-        r_arr = cls._set_int_to_list(r)
-        d_arr = cls._set_int_to_list(d)
+        input_params = cls._get_products_of_inputs(R, r, d)
 
         # TODO: this is fairly ugly, need to come up with better way of handling
         # this
@@ -507,6 +505,12 @@ class _Trochoid(ABC):
                         origin
                     ))
         return shapes
+
+    def _get_products_of_inputs(self, *args) -> Tuple[Number]:
+        """Return a list of tuples that contains all of the input arguments"""
+        list_of_lists = [self._set_int_to_list(el) for el in args]
+        product = itertools.product(*list_of_lists)
+        return product
 
     @staticmethod
     def _validate_only_one_iterable(*args) -> bool:
