@@ -497,13 +497,11 @@ class _Trochoid(ABC):
         # TODO: this is fairly ugly, need to come up with better way of handling
         # this
         shapes = []
-        for R in R_arr:
-            for r in r_arr:
-                for d in d_arr:
-                    shapes.append(cls(
-                        R, r, d, thetas, theta_start, theta_stop, theta_step,
-                        origin
-                    ))
+        for R, r, d in input_params:
+            shapes.append(cls(
+                R, r, d, thetas, theta_start, theta_stop, theta_step,
+                origin
+            ))
         return shapes
 
     def _get_products_of_inputs(self, *args) -> Tuple[Number]:
