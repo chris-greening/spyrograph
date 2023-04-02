@@ -10,7 +10,6 @@ from numbers import Number
 import time
 from abc import ABC, abstractmethod
 import collections
-import itertools
 
 import numpy as np
 
