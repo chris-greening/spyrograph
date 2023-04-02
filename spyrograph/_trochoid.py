@@ -78,7 +78,26 @@ class _Trochoid(ABC):
         self.coords = list(zip(self.x, self.y, self.thetas))
 
     def transform(self, x: Number = 0, y: Number = 0) -> "_Trochoid":
-        """Return shape transformed to new origin"""
+        """
+        Return a new shape translated by the given x and y offsets.
+
+        Parameters
+        ----------
+        x : Number, optional, default=0
+            The x-offset to shift the shape by.
+        y : Number, optional, default=0
+            The y-offset to shift the shape by.
+
+        Returns
+        -------
+        _Trochoid
+            A new instance of the shape translated by the given x and y offsets.
+
+        Examples
+        --------
+        >>> shape = Trochoid(R=5, r=2, d=3, thetas=thetas)
+        >>> transformed_shape = shape.transform(x=10, y=5)
+        """
         try:
             transformed_shape = self.__class__(
                 R=self.R,
