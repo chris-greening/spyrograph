@@ -303,6 +303,9 @@ class _Trochoid(ABC):
             R, r, d, thetas, theta_start,
             theta_stop, theta_step, origin
         )
+        screen = None
+        for shape in shapes_arr:
+            screen = shape.trace(screen = screen)
 
     @property
     def df(self) -> "pd.DataFrame":
