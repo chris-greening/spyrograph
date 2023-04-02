@@ -272,6 +272,64 @@ class _Trochoid(ABC):
             color: str = "black", width: Number = 1,
             frame_pause: Number = 0.1, screen: "turtle.Screen" = None
         ) -> List["_Trochoid"]:
+        """
+        Animate a sequence of _Trochoid shapes with varying input parameters,
+        drawn one after the other.
+
+        Parameters
+        ----------
+        R : Union[Number, List[Number]]
+            Radius of the fixed circle.
+        r : Union[Number, List[Number]]
+            Radius of the rolling circle.
+        d : Union[Number, List[Number]]
+            Distance of the trace point from the rolling circle.
+        thetas : List[Number], optional
+            Input list of values for theta for inputting into parametric equations.
+            This argument cannot be set at the same time as theta_start,
+            theta_stop, theta_step.
+        theta_start : Number, optional
+            Starting theta value for creating a list of thetas (similar syntax
+            to built-in range or np.arange). This argument cannot be set at the
+            same time as thetas argument.
+        theta_stop : Number, optional
+            Stop theta value for creating a list of thetas, stop value is not
+            included in the final array (similar syntax to built-in range or
+            np.arange). This argument cannot be set at the same time as thetas
+            argument.
+        theta_step : Number, optional
+            Incremental step value for stepping from start to stop
+            (similar syntax to built-in range or np.arange). This argument
+            cannot be set at the same time as thetas argument.
+        origin : Tuple[Number, Number], optional, default (0, 0)
+            Custom origin to center the shapes at. Default is (0,0).
+        screen_size : Tuple[Number, Number], optional, default (1000, 1000)
+            Length and width of the output screen.
+        screen_color : str, optional, default "white"
+            Color of the background screen.
+        exit_on_click : bool, optional, default False
+            Pause the final animation until the user clicks to exit the window.
+        color : str, optional, default "black"
+            Color of the primary tracing.
+        width : Number, optional, default 1
+            Width of the turtle tracing.
+        frame_pause : Number, optional, default 0.1
+            Time in seconds to pause between each shape in the animation.
+        screen : turtle.Screen, optional
+            Existing turtle screen.
+
+        Returns
+        -------
+        shapes : List[_Trochoid]
+            A list of instantiated _Trochoid shapes with varying input parameters.
+
+        Examples
+        --------
+        >>> from spyrograph import Hypotrochoid
+        >>> import numpy as np
+        >>> thetas = np.linspace(0, 2 * np.pi, num=1000)
+        >>> shapes = Hypotrochoid.animate(R=10, r=[4, 5, 6], d=8, thetas=thetas)
+        """
         shapes_arr = cls.create_range(
             R, r, d, thetas, theta_start,
             theta_stop, theta_step, origin
