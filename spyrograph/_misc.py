@@ -3,7 +3,7 @@ import collections
 from typing import Tuple, List, Union
 from numbers import Number
 
-def _get_products_of_inputs(self, *args) -> Tuple[Number]:
+def _get_products_of_inputs(*args) -> Tuple[Number]:
         """Return a list of tuples that contains all of the input arguments"""
         list_of_lists = [_set_int_to_list(el) for el in args]
         product = list(itertools.product(*list_of_lists))
