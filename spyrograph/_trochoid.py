@@ -14,6 +14,8 @@ import itertools
 
 import numpy as np
 
+from spyrograph._misc import _get_products_of_inputs, _validate_only_one_iterable
+
 try:
     import matplotlib.pyplot as plt
 except ImportError:
