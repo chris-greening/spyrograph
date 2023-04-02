@@ -175,6 +175,7 @@ class _Cycloid(_Trochoid):
         # pylint: disable=line-too-long,redefined-argument-from-local,invalid-name,no-member,fixme
         _validate_only_one_iterable(R, r)
         input_params = _get_products_of_inputs(R, r)
+        print(input_params)
 
         # TODO: this is fairly ugly, need to come up with better way of handling
         # this

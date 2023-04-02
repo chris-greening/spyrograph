@@ -6,7 +6,7 @@ from numbers import Number
 def _get_products_of_inputs(self, *args) -> Tuple[Number]:
         """Return a list of tuples that contains all of the input arguments"""
         list_of_lists = [_set_int_to_list(el) for el in args]
-        product = itertools.product(*list_of_lists)
+        product = list(itertools.product(*list_of_lists))
         return product
 
 def _validate_only_one_iterable(*args) -> bool:
