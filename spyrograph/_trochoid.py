@@ -492,6 +492,7 @@ class _Trochoid(ABC):
         3
         """
         # pylint: disable=line-too-long,redefined-argument-from-local,invalid-name,fixme
+
         _validate_only_one_iterable(R, r, d)
         input_params = _get_products_of_inputs(R, r, d)
 
