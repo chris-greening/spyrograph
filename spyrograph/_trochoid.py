@@ -13,6 +13,8 @@ import collections
 
 import numpy as np
 
+from spyrograph._misc import _get_products_of_inputs, _validate_only_one_iterable
+
 try:
     import matplotlib.pyplot as plt
 except ImportError:
@@ -490,35 +492,16 @@ class _Trochoid(ABC):
         3
         """
         # pylint: disable=line-too-long,redefined-argument-from-local,invalid-name,fixme
-        inputs = collections.Counter([
-            isinstance(R, collections.abc.Iterable),
-            isinstance(r, collections.abc.Iterable),
-            isinstance(d, collections.abc.Iterable)
-        ])
-        if inputs[True] > 1:
-            raise ValueError("More than one input variable was varied. Please only pass one list of varying inputs and try again.")
-        R_arr = cls._set_int_to_list(R)
-        r_arr = cls._set_int_to_list(r)
-        d_arr = cls._set_int_to_list(d)
 
-        # TODO: this is fairly ugly, need to come up with better way of handling
-        # this
+        _validate_only_one_iterable(R, r, d)
+        input_params = _get_products_of_inputs(R, r, d)
+
         shapes = []
-        for R in R_arr:
-            for r in r_arr:
-                for d in d_arr:
-                    shapes.append(cls(
-                        R, r, d, thetas, theta_start, theta_stop, theta_step,
-                        origin
-                    ))
+        for R, r, d in input_params:
+            shapes.append(cls(
+                R, r, d, thetas, theta_start, theta_stop, theta_step, origin
+            ))
         return shapes
-
-    @staticmethod
-    def _set_int_to_list(input_val: Union[Number, List[Number]]) -> List[Number]:
-        """Return list of numbers from given input parameter"""
-        if isinstance(input_val, Number):
-            input_val = [input_val]
-        return input_val
 
     def _show_full_path(self, pre_draw_turtle: "turtle.Turtle") -> None:
         """Draw the full path prior to tracing"""

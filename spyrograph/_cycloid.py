@@ -8,6 +8,7 @@ import collections
 import time
 
 from spyrograph._trochoid import _Trochoid
+from spyrograph._misc import _get_products_of_inputs, _validate_only_one_iterable
 
 class _Cycloid(_Trochoid):
     # pylint: disable=too-few-public-methods
@@ -172,24 +173,14 @@ class _Cycloid(_Trochoid):
             Custom origin to center the shapes at. Default is (0,0)
         """
         # pylint: disable=line-too-long,redefined-argument-from-local,invalid-name,no-member,fixme
-        inputs = collections.Counter([
-            isinstance(R, collections.abc.Iterable),
-            isinstance(r, collections.abc.Iterable)
-        ])
-        if inputs[True] > 1:
-            raise ValueError("More than one input variable was varied. Please only pass one list of varying inputs and try again.")
-        R_arr = cls._set_int_to_list(R)
-        r_arr = cls._set_int_to_list(r)
+        _validate_only_one_iterable(R, r)
+        input_params = _get_products_of_inputs(R, r)
 
-        # TODO: this is fairly ugly, need to come up with better way of handling
-        # this
         shapes = []
-        for R in R_arr:
-            for r in r_arr:
-                shapes.append(cls(
-                    R, r, thetas, theta_start, theta_stop, theta_step,
-                    origin
-                ))
+        for R, r in input_params:
+            shapes.append(cls(
+                R, r, thetas, theta_start, theta_stop, theta_step, origin
+            ))
         return shapes
 
     @classmethod
