@@ -173,24 +173,14 @@ class _Cycloid(_Trochoid):
             Custom origin to center the shapes at. Default is (0,0)
         """
         # pylint: disable=line-too-long,redefined-argument-from-local,invalid-name,no-member,fixme
-        try:
-            length_args = (R, r, d)
-        except NameError:
-            length_args = (R, r)
-        _validate_only_one_iterable(*length_args)
-        input_params = _get_products_of_inputs(*length_args)
+        _validate_only_one_iterable(R, r)
+        input_params = _get_products_of_inputs(R, r)
 
         shapes = []
-        try:
-            for R, r, d in input_params:
-                shapes.append(cls(
-                    R, r, d, thetas, theta_start, theta_stop, theta_step, origin
-                ))
-        except ValueError:
-            for R, r in input_params:
-                shapes.append(cls(
-                    R, r, thetas, theta_start, theta_stop, theta_step, origin
-                ))
+        for R, r in input_params:
+            shapes.append(cls(
+                R, r, thetas, theta_start, theta_stop, theta_step, origin
+            ))
         return shapes
 
     @classmethod
