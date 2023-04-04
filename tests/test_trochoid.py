@@ -1,7 +1,7 @@
 import pytest
 
 from tests._trochoid import _TestGeneral
-from spyrograph.epitrochoid.hypotrochoid import Hypotrochoid
+from spyrograph.hypotrochoid.hypotrochoid import Hypotrochoid
 from spyrograph.epitrochoid.epitrochoid import Epitrochoid
 
 class TestHypotrochoid(_TestGeneral):
