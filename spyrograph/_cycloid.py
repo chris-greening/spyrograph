@@ -4,8 +4,8 @@ shape's methods i.e. tracing, calculating, etc.
 
 from numbers import Number
 from typing import List, Tuple, Union
-import collections
 import time
+import turtle
 
 from spyrograph._trochoid import _Trochoid
 from spyrograph._misc import _get_products_of_inputs, _validate_only_one_iterable
@@ -18,6 +18,7 @@ class _Cycloid(_Trochoid):
             theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
         ) -> None:
         super().__init__(R, r, r, thetas, theta_start, theta_stop, theta_step, origin)
+        # pylint: disable=pointless-string-statement
         """Instantiate a cycloid curve from given input parameters. A
         hypocycloid is a curve drawn by tracing a point from a circle as it
         rolls around the inside of a fixed circle where the distance
@@ -52,6 +53,7 @@ class _Cycloid(_Trochoid):
         """
 
     @classmethod
+    # pylint: disable=arguments-differ, too-many-locals
     def animate(
             cls, R: Union[Number, List[Number]], r: Union[Number, List[Number]],
             thetas: List[Number] = None,
@@ -134,9 +136,10 @@ class _Cycloid(_Trochoid):
             )
             time.sleep(frame_pause)
         if exit_on_click:
-            turtle.exitonclick()
+            turtle.Screen().exitonclick()
 
     @classmethod
+    # pylint: disable=arguments-differ
     def create_range(
             cls, R: Union[Number, List[Number]], r: Union[Number, List[Number]],
             thetas: List[Number] = None, theta_start: Number = None,
