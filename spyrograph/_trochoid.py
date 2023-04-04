@@ -449,7 +449,8 @@ class _Trochoid(ABC):
             theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
         ) -> List["_Trochoid"]:
         """
-        Return a list of instantiated shapes where one of the input parameters (R, r, or d) is a list of increments, and the rest are fixed.
+        Return a list of instantiated shapes where one of the input parameters
+        (R, r, or d) is a list of increments, and the rest are fixed.
 
         Parameters
         ----------
@@ -460,9 +461,9 @@ class _Trochoid(ABC):
         d : Union[Number, List[Number]]
             Distance of the trace point from the rolling circle.
         thetas : List[Number], optional
-            Input list of values for theta for inputting into parametric equations.
-            This argument cannot be set at the same time as theta_start,
-            theta_stop, theta_step.
+            Input list of values for theta for inputting into parametric
+            equations. This argument cannot be set at the same time as
+            theta_start, theta_stop, theta_step.
         theta_start : Number, optional
             Starting theta value for creating a list of thetas (similar syntax
             to built-in range or np.arange). This argument cannot be set at the
