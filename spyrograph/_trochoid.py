@@ -71,7 +71,10 @@ class _Trochoid(ABC):
         self.origin = origin
 
         if self.R <= 0 or self.r <= 0 or self.d <= 0:
-            raise ValueError("Negative and/or zero input parameters were passed. Please only pass positive values")
+            raise ValueError((
+                "Negative and/or zero input parameters were passed. "
+                "Please only pass positive values"
+            ))
 
         self.x = np.array([self._calculate_x(theta) for theta in self.thetas])
         self.y = np.array([self._calculate_y(theta) for theta in self.thetas])
