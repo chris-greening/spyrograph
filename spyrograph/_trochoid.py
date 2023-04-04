@@ -377,6 +377,7 @@ class _Trochoid(ABC):
         >>> thetas = np.linspace(0, 2 * np.pi, num=1000)
         >>> shapes = Hypotrochoid.animate(R=10, r=[4, 5, 6], d=8, thetas=thetas)
         """
+        # pylint: disable=too-many-locals
         shapes_arr = cls.create_range(
             R, r, d, thetas, theta_start,
             theta_stop, theta_step, origin
@@ -393,7 +394,7 @@ class _Trochoid(ABC):
             )
             time.sleep(frame_pause)
         if exit_on_click:
-            turtle.exitonclick()
+            turtle.Screen().exitonclick()
 
     @property
     def df(self) -> "pd.DataFrame":
