@@ -3,6 +3,9 @@ import pytest
 import numpy as np
 import pandas as pd
 
+from spyrograph._trochoid import _Trochoid
+from spyrograph._cycloid import _Cycloid
+
 class _TestGeneral:
     # Define this class attr in subclasses
     class_name = None
