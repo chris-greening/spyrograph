@@ -687,4 +687,4 @@ class _Trochoid(ABC):
             thetas_str = ', '.join(thetas_str_list)
         else:
             thetas_str = '{0}, {1}, ... {2}'.format(min(self.thetas), "{:.1f}".format(self.thetas[1]-self.thetas[0]), max(self.thetas))
-        return(f"{self.__class__.__name__}(R={self.R}, r={self.r}, d={self.d}, thetas={thetas_str}, origin=({self.origin[0]},{self.origin[1]}))")
+        return(f"{self.__class__.__name__}(R={self.R}, r={self.r}, d={self.d}, thetas=[{thetas_str}], origin=({self.origin[0]},{self.origin[1]}))")
