@@ -230,7 +230,8 @@ class _Trochoid(ABC):
         screen_color : str, optional
             The color of the background screen, default is "white".
         exit_on_click : bool, optional
-            If True, pause the final animation until the user clicks to exit the window, default is False.
+            If True, pause the final animation until the user clicks to exit 
+            the window, default is False.
         color : str, optional
             The color of the primary tracing, default is "black".
         width : Number, optional
