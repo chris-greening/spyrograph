@@ -601,8 +601,8 @@ class _Trochoid(ABC):
 
     @staticmethod
     def _create_turtles_namedtuple(
-            shape_turtle, rolling_circle_turtle, fixed_circle_turtle, 
-            pre_draw_turtle
+            shape_turtle: "turtle.Turtle", rolling_circle_turtle: "turtle.Turtle",
+            fixed_circle_turtle: "turtle.Turtle", pre_draw_turtle: "turtle.Turtle"
         ) -> "collections.namedtuple":
         """Return namedtuple containing turtles"""
         TraceTurtles = collections.namedtuple(
