@@ -88,9 +88,9 @@ class _TestGeneral:
             shapes = self.class_name.create_range(R, r, thetas)
         elif issubclass(self.class_name, _Trochoid):
             shapes = self.class_name.create_range(R, r, d, thetas)
+            assert shapes[0].d == d
         assert shapes[0].R == R
         assert shapes[0].r == r
-        assert shapes[0].d == d
 
     def test_empty_theta_exception_raise_for_thetas_arg(self):
         with pytest.raises(ValueError, match="An empty list of thetas was passed in as argument."):
@@ -169,14 +169,23 @@ class _TestGeneral:
 
     def test_theta_range(self) -> None:
         """Test that passing theta start, stop, step creates an expected list of theta values"""
-        obj = self.class_name(
-            R = 300,
-            r = 200,
-            d = 100,
-            theta_start=1,
-            theta_stop=10,
-            theta_step=1
-        )
+        if issubclass(self.class_name, _Cycloid):
+            obj = self.class_name(
+                R = 300,
+                r = 200,
+                theta_start=1,
+                theta_stop=10,
+                theta_step=1
+            )
+        elif issubclass(self.class_name, _Trochoid):
+            obj = self.class_name(
+                R = 300,
+                r = 200,
+                d = 100,
+                theta_start=1,
+                theta_stop=10,
+                theta_step=1
+            )
         assert all(obj.thetas == np.arange(1,10,1))
 
     def test_theta_range_default_step(self) -> None:
