@@ -34,14 +34,6 @@ class _TestSpecial:
                 thetas=thetas
             )
 
-    def test_create_range_single_input(self, thetas):
-        """Test single input for create range"""
-        R = 5
-        r = 3
-        shapes = self.class_name.create_range(R, r, thetas)
-        assert len(shapes) == 1
-        assert isinstance(shapes[0], self.class_name)
-
     def test_create_range_theta_inputs(self, thetas):
         R = 5
         r = 3

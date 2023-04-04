@@ -122,7 +122,10 @@ class _TestGeneral:
         R = 5
         r = 3
         d = 2
-        shapes = self.class_name.create_range(R, r, d, thetas)
+        if issubclass(self.class_name, _Cycloid):
+            shapes = self.class_name.create_range(R, r, thetas)
+        elif issubclass(self.class_name, _Trochoid):
+            shapes = self.class_name.create_range(R, r, d, thetas)
         assert len(shapes) == 1
         assert isinstance(shapes[0], self.class_name)
 
