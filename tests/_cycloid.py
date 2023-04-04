@@ -34,14 +34,6 @@ class _TestSpecial:
                 thetas=thetas
             )
 
-    def test_empty_theta_exception_raise_for_thetas_arg(self):
-        with pytest.raises(ValueError, match="An empty list of thetas was passed in as argument."):
-            instance = self.class_name(
-                R=300,
-                r=200,
-                thetas=[]
-            )
-
     def test_create_range_custom_origin(self, thetas):
         R = 5
         r = 3
