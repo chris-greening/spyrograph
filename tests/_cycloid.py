@@ -59,18 +59,6 @@ class _TestSpecial:
             theta_stop=1
         )
 
-    def test_multiple_thetas_exception(self, thetas: "np.array") -> None:
-        """Test that passing multiple definitions of setting theta raises a ValueError"""
-        with pytest.raises(ValueError):
-            obj = self.class_name(
-                R = 300,
-                r = 200,
-                thetas=thetas,
-                theta_start=1,
-                theta_stop=10,
-                theta_step=1
-            )
-
     def test_rolling_radius_equals_distance(self, instance):
         """Test radius of rolling circle is equal to distance"""
         assert instance.r == instance.d

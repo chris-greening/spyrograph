@@ -201,15 +201,25 @@ class _TestGeneral:
     def test_multiple_thetas_exception(self, thetas: "np.array") -> None:
         """Test that passing multiple definitions of setting theta raises a ValueError"""
         with pytest.raises(ValueError):
-            obj = self.class_name(
-                R = 300,
-                r = 200,
-                d = 100,
-                thetas=thetas,
-                theta_start=1,
-                theta_stop=10,
-                theta_step=1
-            )
+            if issubclass(self.class_name, _Cycloid):
+                obj = self.class_name(
+                    R = 300,
+                    r = 200,
+                    thetas=thetas,
+                    theta_start=1,
+                    theta_stop=10,
+                    theta_step=1
+                )
+            elif issubclass(self.class_name, _Trochoid):
+                obj = self.class_name(
+                    R = 300,
+                    r = 200,
+                    d = 100,
+                    thetas=thetas,
+                    theta_start=1,
+                    theta_stop=10,
+                    theta_step=1
+                )
 
     def test_coords(self, instance) -> None:
         """Test that coordinates attribute matches x, y, and theta values"""
