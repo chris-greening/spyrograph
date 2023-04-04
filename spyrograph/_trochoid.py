@@ -103,6 +103,7 @@ class _Trochoid(ABC):
         >>> shape = Trochoid(R=5, r=2, d=3, thetas=thetas)
         >>> transformed_shape = shape.transform(x=10, y=5)
         """
+        # pylint: disable=no-value-for-parameter
         try:
             transformed_shape = self.__class__(
                 R=self.R,
@@ -148,6 +149,7 @@ class _Trochoid(ABC):
         >>> scaled_hypotrochoid.d
         6
         """
+        # pylint: disable=no-value-for-parameter
         try:
             scaled_shape = self.__class__(
                 R=self.R*factor,
