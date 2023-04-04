@@ -132,12 +132,19 @@ class _TestGeneral:
     def test_create_range_multiple_arguments_exception(self, thetas):
         """Test that passing multiple parameters raises an error"""
         with pytest.raises(ValueError):
-            arr = self.class_name.create_range(
-                R=list(range(10)),
-                r=list(range(10)),
-                d=10,
-                thetas=thetas
-            )
+            if issubclass(self.class_name, _Cycloid):
+                arr = self.class_name.create_range(
+                    R=list(range(10)),
+                    r=list(range(10)),
+                    thetas=thetas
+                )
+            elif issubclass(self.class_name, _Trochoid):
+                arr = self.class_name.create_range(
+                    R=list(range(10)),
+                    r=list(range(10)),
+                    d=10,
+                    thetas=thetas
+                )
 
     def test_custom_origin_offsets(self, thetas):
         """Test custom origin offsets"""
