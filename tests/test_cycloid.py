@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from tests._roulette import _TestGeneral, _TestSpecial
+from tests._cycloid import _TestSpecial
 from spyrograph.hypotrochoid.hypotrochoid import Hypotrochoid
 from spyrograph.hypotrochoid.hypocycloid import Hypocycloid
 
