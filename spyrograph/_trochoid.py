@@ -629,7 +629,9 @@ class _Trochoid(ABC):
         """Trace the inner circle of the animation"""
         self._rolling_circle_init(turtles.rolling_circle_turtle)
         self._draw_dot(turtles.rolling_circle_turtle, x, y, "red")
-        rolling_circle_x, rolling_circle_y = self._draw_rolling_circle(turtles.rolling_circle_turtle, theta)
+        rolling_circle_x, rolling_circle_y = self._draw_rolling_circle(
+            turtles.rolling_circle_turtle, theta
+        )
         self._draw_dot(
             t=turtles.rolling_circle_turtle,
             x=rolling_circle_x,
@@ -641,7 +643,9 @@ class _Trochoid(ABC):
     def _connect_focus_to_trace_dots(self, turtles: "collections.namedtuple") -> None:
         """Draw line from focus to the trace that's drawing the shape"""
         turtles.rolling_circle_turtle.down()
-        turtles.rolling_circle_turtle.seth(turtles.rolling_circle_turtle.towards(turtles.shape_turtle))
+        turtles.rolling_circle_turtle.seth(
+            turtles.rolling_circle_turtle.towards(turtles.shape_turtle)
+        )
         turtles.rolling_circle_turtle.fd(self.d)
 
     def _draw_circle(
