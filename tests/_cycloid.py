@@ -50,15 +50,6 @@ class _TestSpecial:
         assert ((custom_origin_obj.x - base_obj.x).round() == 54).all()
         assert ((custom_origin_obj.y - base_obj.y).round() == -233).all()
 
-    def test_theta_range_default_step(self) -> None:
-        """Test that passing theta start, stop, step creates an expected list of theta values"""
-        obj = self.class_name(
-            R = 300,
-            r = 200,
-            theta_start=0,
-            theta_stop=1
-        )
-
     def test_rolling_radius_equals_distance(self, instance):
         """Test radius of rolling circle is equal to distance"""
         assert instance.r == instance.d

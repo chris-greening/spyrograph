@@ -190,13 +190,22 @@ class _TestGeneral:
 
     def test_theta_range_default_step(self) -> None:
         """Test that passing theta start, stop, step creates an expected list of theta values"""
-        obj = self.class_name(
-            R = 300,
-            r = 200,
-            d = 100,
-            theta_start=0,
-            theta_stop=1
-        )
+        if issubclass(self.class_name, _Cycloid):
+            obj = self.class_name(
+                R = 300,
+                r = 200,
+                theta_start=0,
+                theta_stop=1
+            )
+        elif issubclass(self.class_name, _Trochoid):
+            obj = self.class_name(
+                R = 300,
+                r = 200,
+                d = 100,
+                theta_start=0,
+                theta_stop=1
+            )
+        assert (obj.thetas[1] - obj.thetas[0]) == .1
 
     def test_multiple_thetas_exception(self, thetas: "np.array") -> None:
         """Test that passing multiple definitions of setting theta raises a ValueError"""
