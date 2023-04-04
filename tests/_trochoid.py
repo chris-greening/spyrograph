@@ -109,7 +109,10 @@ class _TestGeneral:
         R = 5
         r = 3
         d = 1
-        shapes = self.class_name.create_range(R, r, d, thetas, origin=(100, 233))
+        if issubclass(self.class_name, _Cycloid):
+            shapes = self.class_name.create_range(R, r, thetas, origin=(100, 233))
+        elif issubclass(self.class_name, _Trochoid):
+            shapes = self.class_name.create_range(R, r, d, thetas, origin=(100, 233))
         assert shapes[0].origin == (100, 233)
         assert shapes[0].origin[0] == 100
         assert shapes[0].origin[1] == 233

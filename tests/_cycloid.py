@@ -34,14 +34,6 @@ class _TestSpecial:
                 thetas=thetas
             )
 
-    def test_create_range_custom_origin(self, thetas):
-        R = 5
-        r = 3
-        shapes = self.class_name.create_range(R, r, thetas, origin=(100, 233))
-        assert shapes[0].origin == (100, 233)
-        assert shapes[0].origin[0] == 100
-        assert shapes[0].origin[1] == 233
-
     def test_create_range_single_input(self, thetas):
         """Test single input for create range"""
         R = 5
