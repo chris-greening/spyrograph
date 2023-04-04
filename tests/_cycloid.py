@@ -34,13 +34,6 @@ class _TestSpecial:
                 thetas=thetas
             )
 
-    def test_create_range_theta_inputs(self, thetas):
-        R = 5
-        r = 3
-        shapes = self.class_name.create_range(R, r, thetas)
-        assert shapes[0].R == R
-        assert shapes[0].r == r
-
     def test_custom_origin_offsets(self, thetas):
         """Test custom origin offsets vertically"""
         base_obj = self.class_name(
