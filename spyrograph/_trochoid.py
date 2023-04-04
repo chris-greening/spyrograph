@@ -701,7 +701,7 @@ class _Trochoid(ABC):
         # pylint: disable=line-too-long
         if len(self.thetas) < 4:
             thetas_str_list = map(str, self.thetas)
-            thetas_str = ', '.join(thetas_str_list)
+            thetas_str = f"[{', '.join(thetas_str_list)}]"
         else:
             thetas_str = f"[{self.thetas[0]}, {thetas[1]}, ... {thetas[-1]}]"
         return f"{self.__class__.__name__}(R={self.R}, r={self.r}, d={self.d}, thetas={thetas_str}, origin=({self.origin[0]},{self.origin[1]}))"
