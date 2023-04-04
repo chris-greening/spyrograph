@@ -34,22 +34,6 @@ class _TestSpecial:
                 thetas=thetas
             )
 
-    def test_custom_origin_offsets(self, thetas):
-        """Test custom origin offsets vertically"""
-        base_obj = self.class_name(
-            R = 300,
-            r = 200,
-            thetas=thetas
-        )
-        custom_origin_obj = self.class_name(
-            R = 300,
-            r = 200,
-            thetas=thetas,
-            origin = (54, -233)
-        )
-        assert ((custom_origin_obj.x - base_obj.x).round() == 54).all()
-        assert ((custom_origin_obj.y - base_obj.y).round() == -233).all()
-
     def test_rolling_radius_equals_distance(self, instance):
         """Test radius of rolling circle is equal to distance"""
         assert instance.r == instance.d

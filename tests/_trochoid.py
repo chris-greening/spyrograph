@@ -151,19 +151,32 @@ class _TestGeneral:
 
     def test_custom_origin_offsets(self, thetas):
         """Test custom origin offsets"""
-        base_obj = self.class_name(
-            R = 300,
-            r = 200,
-            d = 100,
-            thetas=thetas
-        )
-        custom_origin_obj = self.class_name(
-            R = 300,
-            r = 200,
-            d = 100,
-            thetas=thetas,
-            origin = (54, -233)
-        )
+        if issubclass(self.class_name, _Cycloid):
+            base_obj = self.class_name(
+                R = 300,
+                r = 200,
+                thetas=thetas
+            )
+            custom_origin_obj = self.class_name(
+                R = 300,
+                r = 200,
+                thetas=thetas,
+                origin = (54, -233)
+            )
+        elif issubclass(self.class_name, _Trochoid):
+            base_obj = self.class_name(
+                R = 300,
+                r = 200,
+                d = 100,
+                thetas=thetas
+            )
+            custom_origin_obj = self.class_name(
+                R = 300,
+                r = 200,
+                d = 100,
+                thetas=thetas,
+                origin = (54, -233)
+            )
         assert ((custom_origin_obj.x - base_obj.x).round() == 54.0).all()
         assert ((custom_origin_obj.y - base_obj.y).round() == -233.0).all()
 
