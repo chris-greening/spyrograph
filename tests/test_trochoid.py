@@ -1,6 +1,6 @@
 import pytest
 
-from tests._roulette import _TestGeneral, _TestSpecial
+from tests._trochoid import _TestGeneral
 from spyrograph.epitrochoid.epitrochoid import Epitrochoid
 from spyrograph.epitrochoid.epicycloid import Epicycloid
 
