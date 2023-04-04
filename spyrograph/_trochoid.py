@@ -251,7 +251,8 @@ class _Trochoid(ABC):
         full_path_color : str, optional
             The color of the full path drawing, default is "grey".
         repeat : bool, optional
-            If True, infinitely repeat the animation so it starts over from the beginning, default is False.
+            If True, infinitely repeat the animation so it starts over from the 
+            beginning, default is False.
 
         Returns
         -------
@@ -397,9 +398,11 @@ class _Trochoid(ABC):
     @property
     def df(self) -> "pd.DataFrame":
         """
-        Return a pandas DataFrame containing all relevant information pertaining to the parametrized shape.
+        Return a pandas DataFrame containing all relevant information
+        pertaining to the parametrized shape.
 
-        This property creates a pandas DataFrame with columns for the x and y coordinates, as well as the
+        This property creates a pandas DataFrame with columns for the x and y
+        coordinates, as well as the
         angular positions (theta) of the parametrized shape.
 
         Raises
