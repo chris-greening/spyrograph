@@ -3,7 +3,7 @@ where the distance from the rolling circle is equal to its radius.
 """
 
 from spyrograph.epitrochoid.epitrochoid import Epitrochoid
-from spyrograph._cycloid import _Cycloid
+from spyrograph.core._cycloid import _Cycloid
 
 class Epicycloid(_Cycloid, Epitrochoid):
     """
