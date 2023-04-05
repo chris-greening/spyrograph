@@ -45,11 +45,13 @@ class _TestGeneral:
         repr_val = repr(instance)
         assert isinstance(repr_val, str)
 
-    def test_transform_shape(self, instance):
+    def test_transform_shape_x_direction(self, instance):
         left_transformed_instance = instance.transform(x=-100)
+        assert instance.origin[0] - 100 == left_transformed_instance.origin[0]
+
+    def test_transform_shape(self, instance):
         up_transformed_instance = instance.transform(y=100)
         up_and_left_transform_instance = instance.transform(x=100, y=-100)
-        assert instance.origin[0] - 100 == left_transformed_instance.origin[0]
         assert instance.origin[1] + 100 == up_transformed_instance.origin[1]
         assert instance.origin[0] + 100 == up_and_left_transform_instance.origin[0]
         assert instance.origin[1] - 100 == up_and_left_transform_instance.origin[1]
