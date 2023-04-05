@@ -79,6 +79,13 @@ class _TestGeneral:
         scaled_instance = instance.scale(factor=2)
         assert scaled_instance.__class__ is instance.__class__
 
+    # @pytest.mark.parametrize("factor", [(-1, 0, 0.0)])
+    def test_scale_invalid_values_raises_exception(self, instance):
+        with pytest.raises(ValueError):
+            instance.scale(-1)
+            instance.scale(0)
+            instance.scale(0.0)
+
     def test_scale_factor_parameters_larger(self, instance):
         larger_scaled_instance = instance.scale(factor=2)
         assert larger_scaled_instance.R == instance.R*2
