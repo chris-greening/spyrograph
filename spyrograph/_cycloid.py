@@ -4,7 +4,6 @@ shape's methods i.e. tracing, calculating, etc.
 
 from numbers import Number
 from typing import List, Tuple, Union
-import time
 import turtle
 
 from spyrograph._trochoid import _Trochoid
