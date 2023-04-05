@@ -14,7 +14,7 @@ import collections
 import numpy as np
 
 from spyrograph.core._misc import (
-    _get_products_of_inputs, _validate_only_one_iterable, _draw_animation
+    _get_products_of_inputs, _validate_only_one_iterable, _draw_animation, _validate_theta
 )
 
 try:
@@ -69,7 +69,7 @@ class _Trochoid(ABC):
         self.R = R
         self.r = r
         self.d = d
-        self.thetas = self._validate_theta(thetas, theta_start, theta_stop, theta_step)
+        self.thetas = _validate_theta(thetas, theta_start, theta_stop, theta_step)
         self.origin = origin
 
         if self.R <= 0 or self.r <= 0 or self.d <= 0:
@@ -520,24 +520,6 @@ class _Trochoid(ABC):
                 pre_draw_turtle.down()
         turtle.update()
         return pre_draw_turtle
-
-    def _validate_theta(
-            self, thetas: List[Number], theta_start: Number, theta_stop: Number,
-            theta_step: Number
-        ) -> "np.array":
-        # pylint: disable=line-too-long
-        theta_values = (theta_start, theta_stop, theta_step)
-        multiple_thetas = thetas is not None and any(theta_values)
-        if multiple_thetas:
-            raise ValueError("Multiple definitions of theta were passed in as argument which is ambiguous - please define only one set of theta values.")
-        if thetas is None:
-            if theta_step is None:
-                theta_step = .1
-            thetas = np.arange(theta_start, theta_stop, theta_step)
-        thetas = np.array(thetas)
-        if len(thetas) == 0:
-            raise ValueError("An empty list of thetas was passed in as argument.")
-        return thetas
 
     def _init_screen(
             self, screen: "turtle.Screen", screen_size: Tuple[Number, Number],
