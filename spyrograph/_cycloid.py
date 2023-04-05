@@ -11,7 +11,7 @@ from spyrograph._misc import (
     _get_products_of_inputs, _validate_only_one_iterable, _draw_animation
 )
 class _Cycloid(_Trochoid):
-    # pylint: disable=too-few-public-methods
+    # pylint: disable=too-few-public-methods, duplicate-code
     def __init__(
             self, R: Number, r: Number, thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
