@@ -3,7 +3,7 @@ from the rolling circle is equal to the radius of the rolling circle
 """
 
 from spyrograph.hypotrochoid.hypotrochoid import Hypotrochoid
-from spyrograph._cycloid import _Cycloid
+from spyrograph.core._cycloid import _Cycloid
 
 class Hypocycloid(_Cycloid, Hypotrochoid):
     """

@@ -5,7 +5,7 @@ attached to a circle rolling around the exterior of a fixed circle
 import math
 from numbers import Number
 
-from spyrograph._trochoid import _Trochoid
+from spyrograph.core._trochoid import _Trochoid
 
 class Epitrochoid(_Trochoid):
     """
