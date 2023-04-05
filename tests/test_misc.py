@@ -24,6 +24,10 @@ def test_validate_only_one_iterable():
     with pytest.raises(ValueError):
         _validate_only_one_iterable(1,2,[1,2], [2,3])
 
-def test_validate_theta():
-    with pytest.raises(ValueError):
+def test_validate_theta_multiple_thetas_exception_raise():
+    with pytest.raises(ValueError, match="Multiple definitions of theta were passed in as argument which is ambiguous - please define only one set of theta values."):
         _validate_theta(thetas=[1,2,3], theta_start=1, theta_stop=3, theta_step=.1)
+
+def test_validate_theta_empty_list_exception_raise():
+    with pytest.raises(ValueError, match="An empty list of thetas was passed in as argument."):
+        _validate_theta(thetas=[], theta_start = None, theta_stop = None, theta_step = None)
