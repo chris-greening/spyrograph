@@ -525,11 +525,13 @@ class _Trochoid(ABC):
             self, thetas: List[Number], theta_start: Number, theta_stop: Number,
             theta_step: Number
         ) -> "np.array":
-        # pylint: disable=line-too-long
         theta_values = (theta_start, theta_stop, theta_step)
         multiple_thetas = thetas is not None and any(theta_values)
         if multiple_thetas:
-            raise ValueError("Multiple definitions of theta were passed in as argument which is ambiguous - please define only one set of theta values.")
+            raise ValueError((
+                "Multiple definitions of theta were passed in as argument "
+                "which is ambiguous - please define only one set of theta values."
+            ))
         if thetas is None:
             if theta_step is None:
                 theta_step = .1
