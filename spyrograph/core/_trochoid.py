@@ -521,26 +521,6 @@ class _Trochoid(ABC):
         turtle.update()
         return pre_draw_turtle
 
-    def _validate_theta(
-            self, thetas: List[Number], theta_start: Number, theta_stop: Number,
-            theta_step: Number
-        ) -> "np.array":
-        theta_values = (theta_start, theta_stop, theta_step)
-        multiple_thetas = thetas is not None and any(theta_values)
-        if multiple_thetas:
-            raise ValueError((
-                "Multiple definitions of theta were passed in as argument "
-                "which is ambiguous - please define only one set of theta values."
-            ))
-        if thetas is None:
-            if theta_step is None:
-                theta_step = .1
-            thetas = np.arange(theta_start, theta_stop, theta_step)
-        thetas = np.array(thetas)
-        if len(thetas) == 0:
-            raise ValueError("An empty list of thetas was passed in as argument.")
-        return thetas
-
     def _init_screen(
             self, screen: "turtle.Screen", screen_size: Tuple[Number, Number],
             screen_color: str
