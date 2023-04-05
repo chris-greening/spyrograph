@@ -8,18 +8,22 @@ from numbers import Number
 from spyrograph._trochoid import _Trochoid
 
 class Hypotrochoid(_Trochoid):
-    """Model of a hypotrochoid, which is a geometric curve traced by a point attached to a circle rolling
-    around the inside of a fixed circle. The point is at a specified distance from the center of the interior
-    circle.
-    
-    The Hypotrochoid class provides methods for calcualating the x- and y-values of the hypotrochoid at a given
-    theta value using parametrized equations. The class takes in parameters such as the radius of the fixed circle,
-    the radius of the rolling circle and the distance between the center of the interior circle and the aforementioned point.
-    
-    The Hypotrochoid class is a useful tool for exploring the properties and behaviors of hypotrochoids,
-    and can be used in a variety of applications such as in mechanical engineering and mathematics
-    education. If you need to work with hypotrochoids for a project or research, the Hypotrochoid class
-    provides a simple and intuitive interface to generate these curves and explore their properties."""
+    """Model of a hypotrochoid, which is a geometric curve traced by a point
+    attached to a circle rolling around the inside of a fixed circle. The point
+    is at a specified distance from the center of the interior circle.
+
+    The Hypotrochoid class provides methods for calcualating the x- and
+    y-values of the hypotrochoid at a given theta value using parametrized
+    equations. The class takes in parameters such as the radius of the fixed
+    circle, the radius of the rolling circle and the distance between the
+    center of the interior circle and the aforementioned point.
+
+    The Hypotrochoid class is a useful tool for exploring the properties and
+    behaviors of hypotrochoids, and can be used in a variety of applications
+    such as in mechanical engineering and mathematics education. If you need to
+    work with hypotrochoids for a project or research, the Hypotrochoid class
+    provides a simple and intuitive interface to generate these curves and
+    explore their properties."""
     def _circle_offset(self) -> Number:
         """Return rolling circle offset from fixed circle"""
         return self.R - self.r

@@ -4,12 +4,12 @@ shape's methods i.e. tracing, calculating, etc.
 
 from numbers import Number
 from typing import List, Tuple, Union
-import time
 import turtle
 
 from spyrograph._trochoid import _Trochoid
-from spyrograph._misc import _get_products_of_inputs, _validate_only_one_iterable
-
+from spyrograph._misc import (
+    _get_products_of_inputs, _validate_only_one_iterable, _draw_animation
+)
 class _Cycloid(_Trochoid):
     # pylint: disable=too-few-public-methods
     def __init__(
@@ -120,23 +120,16 @@ class _Cycloid(_Trochoid):
         >>> thetas = np.linspace(0, 2 * np.pi, num=1000)
         >>> shapes = Hypotrochoid.animate(R=10, r=[4, 5, 6], d=8, thetas=thetas)
         """
+        # pylint: disable=duplicate-code
         shapes_arr = cls.create_range(
             R, r, thetas, theta_start,
             theta_stop, theta_step, origin
         )
-        for shape in shapes_arr:
-            if screen is not None:
-                screen.clear()
-                screen.setup(*screen_size)
-                screen.bgcolor(screen_color)
-            screen = shape.trace(
-                screen = screen, screen_size = screen_size,
-                screen_color = screen_color,
-                color = color, width=width
-            )
-            time.sleep(frame_pause)
-        if exit_on_click:
-            turtle.Screen().exitonclick()
+        _draw_animation(
+            shapes_arr=shapes_arr, screen_size=screen_size,
+            screen_color=screen_color, exit_on_click=exit_on_click, color=color,
+            width=width, frame_pause=frame_pause, screen=screen
+        )
 
     @classmethod
     # pylint: disable=arguments-differ

@@ -13,7 +13,9 @@ import collections
 
 import numpy as np
 
-from spyrograph._misc import _get_products_of_inputs, _validate_only_one_iterable
+from spyrograph._misc import (
+    _get_products_of_inputs, _validate_only_one_iterable, _draw_animation
+)
 
 try:
     import matplotlib.pyplot as plt
@@ -71,7 +73,10 @@ class _Trochoid(ABC):
         self.origin = origin
 
         if self.R <= 0 or self.r <= 0 or self.d <= 0:
-            raise ValueError("Negative and/or zero input parameters were passed. Please only pass positive values")
+            raise ValueError((
+                "Negative and/or zero input parameters were passed. "
+                "Please only pass positive values"
+            ))
 
         self.x = np.array([self._calculate_x(theta) for theta in self.thetas])
         self.y = np.array([self._calculate_y(theta) for theta in self.thetas])
@@ -100,6 +105,7 @@ class _Trochoid(ABC):
         >>> shape = Trochoid(R=5, r=2, d=3, thetas=thetas)
         >>> transformed_shape = shape.transform(x=10, y=5)
         """
+        # pylint: disable=no-value-for-parameter
         try:
             transformed_shape = self.__class__(
                 R=self.R,
@@ -145,6 +151,7 @@ class _Trochoid(ABC):
         >>> scaled_hypotrochoid.d
         6
         """
+        # pylint: disable=no-value-for-parameter
         try:
             scaled_shape = self.__class__(
                 R=self.R*factor,
@@ -227,7 +234,8 @@ class _Trochoid(ABC):
         screen_color : str, optional
             The color of the background screen, default is "white".
         exit_on_click : bool, optional
-            If True, pause the final animation until the user clicks to exit the window, default is False.
+            If True, pause the final animation until the user clicks to exit 
+            the window, default is False.
         color : str, optional
             The color of the primary tracing, default is "black".
         width : Number, optional
@@ -247,7 +255,8 @@ class _Trochoid(ABC):
         full_path_color : str, optional
             The color of the full path drawing, default is "grey".
         repeat : bool, optional
-            If True, infinitely repeat the animation so it starts over from the beginning, default is False.
+            If True, infinitely repeat the animation so it starts over from the 
+            beginning, default is False.
 
         Returns
         -------
@@ -372,30 +381,25 @@ class _Trochoid(ABC):
         >>> thetas = np.linspace(0, 2 * np.pi, num=1000)
         >>> shapes = Hypotrochoid.animate(R=10, r=[4, 5, 6], d=8, thetas=thetas)
         """
+        # pylint: disable=too-many-locals
         shapes_arr = cls.create_range(
             R, r, d, thetas, theta_start,
             theta_stop, theta_step, origin
         )
-        for shape in shapes_arr:
-            if screen is not None:
-                screen.clear()
-                screen.setup(*screen_size)
-                screen.bgcolor(screen_color)
-            screen = shape.trace(
-                screen = screen, screen_size = screen_size,
-                screen_color = screen_color,
-                color = color, width=width
-            )
-            time.sleep(frame_pause)
-        if exit_on_click:
-            turtle.exitonclick()
+        _draw_animation(
+            shapes_arr=shapes_arr, screen_size=screen_size,
+            screen_color=screen_color, exit_on_click=exit_on_click, color=color,
+            width=width, frame_pause=frame_pause, screen=screen
+        )
 
     @property
     def df(self) -> "pd.DataFrame":
         """
-        Return a pandas DataFrame containing all relevant information pertaining to the parametrized shape.
+        Return a pandas DataFrame containing all relevant information
+        pertaining to the parametrized shape.
 
-        This property creates a pandas DataFrame with columns for the x and y coordinates, as well as the
+        This property creates a pandas DataFrame with columns for the x and y
+        coordinates, as well as the
         angular positions (theta) of the parametrized shape.
 
         Raises
@@ -442,7 +446,8 @@ class _Trochoid(ABC):
             theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
         ) -> List["_Trochoid"]:
         """
-        Return a list of instantiated shapes where one of the input parameters (R, r, or d) is a list of increments, and the rest are fixed.
+        Return a list of instantiated shapes where one of the input parameters
+        (R, r, or d) is a list of increments, and the rest are fixed.
 
         Parameters
         ----------
@@ -453,9 +458,9 @@ class _Trochoid(ABC):
         d : Union[Number, List[Number]]
             Distance of the trace point from the rolling circle.
         thetas : List[Number], optional
-            Input list of values for theta for inputting into parametric equations.
-            This argument cannot be set at the same time as theta_start,
-            theta_stop, theta_step.
+            Input list of values for theta for inputting into parametric
+            equations. This argument cannot be set at the same time as
+            theta_start, theta_stop, theta_step.
         theta_start : Number, optional
             Starting theta value for creating a list of thetas (similar syntax
             to built-in range or np.arange). This argument cannot be set at the
@@ -592,7 +597,10 @@ class _Trochoid(ABC):
         return turtles
 
     @staticmethod
-    def _create_turtles_namedtuple(shape_turtle, rolling_circle_turtle, fixed_circle_turtle, pre_draw_turtle) -> "collections.namedtuple":
+    def _create_turtles_namedtuple(
+            shape_turtle: "turtle.Turtle", rolling_circle_turtle: "turtle.Turtle",
+            fixed_circle_turtle: "turtle.Turtle", pre_draw_turtle: "turtle.Turtle"
+        ) -> "collections.namedtuple":
         """Return namedtuple containing turtles"""
         TraceTurtles = collections.namedtuple(
             "TraceTurtles",
@@ -618,7 +626,9 @@ class _Trochoid(ABC):
         """Trace the inner circle of the animation"""
         self._rolling_circle_init(turtles.rolling_circle_turtle)
         self._draw_dot(turtles.rolling_circle_turtle, x, y, "red")
-        rolling_circle_x, rolling_circle_y = self._draw_rolling_circle(turtles.rolling_circle_turtle, theta)
+        rolling_circle_x, rolling_circle_y = self._draw_rolling_circle(
+            turtles.rolling_circle_turtle, theta
+        )
         self._draw_dot(
             t=turtles.rolling_circle_turtle,
             x=rolling_circle_x,
@@ -630,7 +640,9 @@ class _Trochoid(ABC):
     def _connect_focus_to_trace_dots(self, turtles: "collections.namedtuple") -> None:
         """Draw line from focus to the trace that's drawing the shape"""
         turtles.rolling_circle_turtle.down()
-        turtles.rolling_circle_turtle.seth(turtles.rolling_circle_turtle.towards(turtles.shape_turtle))
+        turtles.rolling_circle_turtle.seth(
+            turtles.rolling_circle_turtle.towards(turtles.shape_turtle)
+        )
         turtles.rolling_circle_turtle.fd(self.d)
 
     def _draw_circle(
@@ -686,7 +698,7 @@ class _Trochoid(ABC):
         # pylint: disable=line-too-long
         if len(self.thetas) < 4:
             thetas_str_list = map(str, self.thetas)
-            thetas_str = ', '.join(thetas_str_list)
+            thetas_str = f"[{', '.join(thetas_str_list)}]"
         else:
-            thetas_str = '{0}, {1}, ... {2}'.format(min(self.thetas), "{:.1f}".format(self.thetas[1]-self.thetas[0]), max(self.thetas))
-        return(f"{self.__class__.__name__}(R={self.R}, r={self.r}, d={self.d}, thetas=[{thetas_str}], origin=({self.origin[0]},{self.origin[1]}))")
+            thetas_str = f"[{self.thetas[0]}, {self.thetas[1]}, ... {self.thetas[-1]}]"
+        return f"{self.__class__.__name__}(R={self.R}, r={self.r}, d={self.d}, thetas={thetas_str}, origin=({self.origin[0]},{self.origin[1]}))"

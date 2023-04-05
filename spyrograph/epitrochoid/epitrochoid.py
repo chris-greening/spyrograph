@@ -17,10 +17,12 @@ class Epitrochoid(_Trochoid):
     radius of the fixed circle, the radius of the rolling circle, and the distance between their
     centers, which affect the shape of the curve.
 
-    The Epitrochoid class is a useful tool for exploring the properties and behaviors of epitrochoids,
-    and can be used in a variety of applications such as in mechanical engineering and mathematics
-    education. If you need to work with epitrochoids for a project or research, the Epitrochoid class
-    provides a simple and intuitive interface to generate these curves and explore their properties.
+    The Epitrochoid class is a useful tool for exploring the properties and
+    behaviors of epitrochoids, and can be used in a variety of applications
+    such as in mechanical engineering and mathematics education. If you need to
+    work with epitrochoids for a project or research, the Epitrochoid class
+    provides a simple and intuitive interface to generate these curves and
+    explore their properties.
     """
     def _circle_offset(self) -> Number:
         """Return rolling circle offset from fixed circle"""
