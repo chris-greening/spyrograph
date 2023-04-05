@@ -1,3 +1,5 @@
+"""Miscellaneous helper functions"""
+
 import itertools
 import collections
 from typing import Tuple, List, Union
@@ -14,7 +16,7 @@ def _validate_only_one_iterable(*args) -> bool:
     inputs = collections.Counter([isinstance(el, collections.abc.Iterable) for el in args])
     if inputs[True] > 1:
         raise ValueError((
-            "More than one input variable was varied.
+            "More than one input variable was varied."
             "Please only pass one list of varying inputs and try again."
         ))
 
