@@ -4,6 +4,8 @@ import itertools
 import collections
 from typing import Tuple, List, Union
 from numbers import Number
+import turtle
+import time
 
 def _get_products_of_inputs(*args) -> Tuple[Number]:
     """Return a list of tuples that contains all of the input arguments"""
@@ -25,3 +27,23 @@ def _set_int_to_list(input_val: Union[Number, List[Number]]) -> List[Number]:
     if isinstance(input_val, Number):
         input_val = [input_val]
     return input_val
+
+def _draw_animation(
+        shapes_arr, screen_size: Tuple[Number, Number] = (1000, 1000),
+        screen_color: str = "white", exit_on_click: bool = False,
+        color: str = "black", width: Number = 1,
+        frame_pause: Number = 0.1, screen: "turtle.Screen" = None
+    ) -> None:
+    for shape in shapes_arr:
+        if screen is not None:
+            screen.clear()
+            screen.setup(*screen_size)
+            screen.bgcolor(screen_color)
+        screen = shape.trace(
+            screen = screen, screen_size = screen_size,
+            screen_color = screen_color,
+            color = color, width=width
+        )
+        time.sleep(frame_pause)
+    if exit_on_click:
+        turtle.Screen().exitonclick()

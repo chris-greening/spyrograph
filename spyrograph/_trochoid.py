@@ -384,19 +384,7 @@ class _Trochoid(ABC):
             R, r, d, thetas, theta_start,
             theta_stop, theta_step, origin
         )
-        for shape in shapes_arr:
-            if screen is not None:
-                screen.clear()
-                screen.setup(*screen_size)
-                screen.bgcolor(screen_color)
-            screen = shape.trace(
-                screen = screen, screen_size = screen_size,
-                screen_color = screen_color,
-                color = color, width=width
-            )
-            time.sleep(frame_pause)
-        if exit_on_click:
-            turtle.Screen().exitonclick()
+        cls.
 
     @property
     def df(self) -> "pd.DataFrame":
