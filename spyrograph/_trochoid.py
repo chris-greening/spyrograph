@@ -386,7 +386,11 @@ class _Trochoid(ABC):
             R, r, d, thetas, theta_start,
             theta_stop, theta_step, origin
         )
-        
+        _draw_animation(
+            shapes_arr=shapes_arr, screen_size=screen_size,
+            screen_color=screen_color, exit_on_click=exit_on_click, color=color,
+            width=width, frame_pause=frame_pause, screen=screen
+        )
 
     @property
     def df(self) -> "pd.DataFrame":
