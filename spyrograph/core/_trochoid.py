@@ -14,7 +14,7 @@ import collections
 import numpy as np
 
 from spyrograph.core._misc import (
-    _get_products_of_inputs, _validate_only_one_iterable, _draw_animation
+    _get_products_of_inputs, _validate_only_one_iterable, _draw_animation, _validate_theta
 )
 
 try:
@@ -69,7 +69,7 @@ class _Trochoid(ABC):
         self.R = R
         self.r = r
         self.d = d
-        self.thetas = self._validate_theta(thetas, theta_start, theta_stop, theta_step)
+        self.thetas = _validate_theta(thetas, theta_start, theta_stop, theta_step)
         self.origin = origin
 
         if self.R <= 0 or self.r <= 0 or self.d <= 0:
