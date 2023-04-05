@@ -7,6 +7,8 @@ from numbers import Number
 import turtle
 import time
 
+import numpy as np
+
 def _validate_theta(
             thetas: List[Number], theta_start: Number, theta_stop: Number,
             theta_step: Number
