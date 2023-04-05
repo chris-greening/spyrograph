@@ -13,7 +13,9 @@ import collections
 
 import numpy as np
 
-from spyrograph._misc import _get_products_of_inputs, _validate_only_one_iterable
+from spyrograph._misc import (
+    _get_products_of_inputs, _validate_only_one_iterable, _draw_animation
+)
 
 try:
     import matplotlib.pyplot as plt
@@ -384,7 +386,7 @@ class _Trochoid(ABC):
             R, r, d, thetas, theta_start,
             theta_stop, theta_step, origin
         )
-        cls.
+        
 
     @property
     def df(self) -> "pd.DataFrame":
