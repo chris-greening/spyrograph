@@ -391,6 +391,7 @@ class _Trochoid(ABC):
             screen_color=screen_color, exit_on_click=exit_on_click, color=color,
             width=width, frame_pause=frame_pause, screen=screen
         )
+        return shapes_arr
 
     @property
     def df(self) -> "pd.DataFrame":

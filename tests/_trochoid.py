@@ -45,12 +45,26 @@ class _TestGeneral:
         repr_val = repr(instance)
         assert isinstance(repr_val, str)
 
-    def test_transform_shape(self, instance):
+    def test_transform_float_offset(self, instance):
+        up_and_left_transform_instance = instance.transform(x=100.33, y=-100.69)
+        assert instance.origin[0] + 100.33 == up_and_left_transform_instance.origin[0]
+        assert instance.origin[1] - 100.69 == up_and_left_transform_instance.origin[1]
+
+    def test_transform_zero_offset(self, instance):
+        zero_transformed_instance = instance.transform(x=0, y=0)
+        assert instance.origin[0] == zero_transformed_instance.origin[0]
+        assert instance.origin[1] == zero_transformed_instance.origin[1]
+
+    def test_transform_shape_x_direction(self, instance):
         left_transformed_instance = instance.transform(x=-100)
-        up_transformed_instance = instance.transform(y=100)
-        up_and_left_transform_instance = instance.transform(x=100, y=-100)
         assert instance.origin[0] - 100 == left_transformed_instance.origin[0]
+
+    def test_transform_shape_y_direction(self, instance):
+        up_transformed_instance = instance.transform(y=100)
         assert instance.origin[1] + 100 == up_transformed_instance.origin[1]
+
+    def test_transform_shape_x_and_y_same_transform_call(self, instance):
+        up_and_left_transform_instance = instance.transform(x=100, y=-100)
         assert instance.origin[0] + 100 == up_and_left_transform_instance.origin[0]
         assert instance.origin[1] - 100 == up_and_left_transform_instance.origin[1]
 
@@ -65,16 +79,16 @@ class _TestGeneral:
         scaled_instance = instance.scale(factor=2)
         assert scaled_instance.__class__ is instance.__class__
 
-    def test_scale_factor_parameters(self, instance):
-        """Test that scaling is actually working as expected"""
+    def test_scale_factor_parameters_larger(self, instance):
         larger_scaled_instance = instance.scale(factor=2)
-        smaller_scaled_instance = instance.scale(factor=.5)
-
         assert larger_scaled_instance.R == instance.R*2
         assert larger_scaled_instance.r == instance.r*2
         assert larger_scaled_instance.d == instance.d*2
         assert (larger_scaled_instance.thetas == instance.thetas).all()
 
+    def test_scale_factor_parameters_smaller(self, instance):
+        """Test that scaling is actually working as expected"""
+        smaller_scaled_instance = instance.scale(factor=.5)
         assert smaller_scaled_instance.R == instance.R*.5
         assert smaller_scaled_instance.r == instance.r*.5
         assert smaller_scaled_instance.d == instance.d*.5
