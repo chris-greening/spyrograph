@@ -11,7 +11,7 @@ from spyrograph._misc import (
     _get_products_of_inputs, _validate_only_one_iterable, _draw_animation
 )
 class _Cycloid(_Trochoid):
-    # pylint: disable=too-few-public-methods, duplicate-code
+    # pylint: disable=too-few-public-methods
     def __init__(
             self, R: Number, r: Number, thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
@@ -120,6 +120,7 @@ class _Cycloid(_Trochoid):
         >>> thetas = np.linspace(0, 2 * np.pi, num=1000)
         >>> shapes = Hypotrochoid.animate(R=10, r=[4, 5, 6], d=8, thetas=thetas)
         """
+        # pylint: disable=duplicate-code
         shapes_arr = cls.create_range(
             R, r, thetas, theta_start,
             theta_stop, theta_step, origin
