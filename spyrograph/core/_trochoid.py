@@ -13,7 +13,7 @@ import collections
 
 import numpy as np
 
-from spyrograph._misc import (
+from spyrograph.core._misc import (
     _get_products_of_inputs, _validate_only_one_iterable, _draw_animation
 )
 

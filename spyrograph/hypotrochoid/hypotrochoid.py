@@ -5,7 +5,7 @@ attached to a circle rolling around the interior of a fixed circle
 import math
 from numbers import Number
 
-from spyrograph._trochoid import _Trochoid
+from spyrograph.core._trochoid import _Trochoid
 
 class Hypotrochoid(_Trochoid):
     """Model of a hypotrochoid, which is a geometric curve traced by a point
