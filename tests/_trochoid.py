@@ -69,16 +69,16 @@ class _TestGeneral:
         scaled_instance = instance.scale(factor=2)
         assert scaled_instance.__class__ is instance.__class__
 
-    def test_scale_factor_parameters(self, instance):
-        """Test that scaling is actually working as expected"""
+    def test_scale_factor_parameters_larger(self, instance):
         larger_scaled_instance = instance.scale(factor=2)
-        smaller_scaled_instance = instance.scale(factor=.5)
-
         assert larger_scaled_instance.R == instance.R*2
         assert larger_scaled_instance.r == instance.r*2
         assert larger_scaled_instance.d == instance.d*2
         assert (larger_scaled_instance.thetas == instance.thetas).all()
 
+    def test_scale_factor_parameters_smaller(self, instance):
+        """Test that scaling is actually working as expected"""
+        smaller_scaled_instance = instance.scale(factor=.5)
         assert smaller_scaled_instance.R == instance.R*.5
         assert smaller_scaled_instance.r == instance.r*.5
         assert smaller_scaled_instance.d == instance.d*.5
