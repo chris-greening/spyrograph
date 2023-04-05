@@ -1,4 +1,4 @@
-from spyrograph._misc import _set_int_to_list
+from spyrograph.core._misc import _set_int_to_list
 
 def test_set_int_to_list():
     """Test that setting int to list"""
