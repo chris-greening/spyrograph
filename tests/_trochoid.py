@@ -45,6 +45,11 @@ class _TestGeneral:
         repr_val = repr(instance)
         assert isinstance(repr_val, str)
 
+    def test_transform_float_offset(self, instance):
+        up_and_left_transform_instance = instance.transform(x=100.33, y=-100.69)
+        assert instance.origin[0] + 100.33 == up_and_left_transform_instance.origin[0]
+        assert instance.origin[1] - 100.69 == up_and_left_transform_instance.origin[1]
+
     def test_transform_zero_offset(self, instance):
         zero_transformed_instance = instance.transform(x=0, y=0)
         assert instance.origin[0] == zero_transformed_instance.origin[0]
