@@ -44,7 +44,12 @@ One of the most exciting aspects of using the animate method is the ability to c
 ### Varying the circle radii and tracing point distance
 The primary driving factors behind the generated patterns are the radii of the fixed and rolling circles (R and r, respectively) and the distance of the tracing point from the rolling circle (d). By altering these parameters, we can create a wide array of stunning spirograph designs. For example, we can experiment with different combinations of R, r, and d to find the perfect balance that produces intricate and mesmerizing patterns
 
-Varying the radius of the rolling circle:
+**Varying the radius of the fixed circle:**
+{% highlight python %}
+Hypotrochoid.animate(R=np.arange(201*3, 215*3, .1*3), r=179*3, d=79*3, thetas=np.arange(0,50, .1), frame_pause=.08)
+{% endhighlight %}
+
+**Varying the radius of the rolling circle:**
 {% highlight python %}
 Hypotrochoid.animate(R=307, r=np.arange(57, 60, .025), d=33, thetas=np.arange(0,100, .1), frame_pause=.08)
 {% endhighlight %}
