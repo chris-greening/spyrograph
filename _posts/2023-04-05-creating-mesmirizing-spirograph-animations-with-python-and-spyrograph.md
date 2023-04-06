@@ -208,12 +208,8 @@ When creating spirograph animations, small changes in parameters can lead to sig
 ### Practice, practice, practice
 Like any art form, mastering spirograph animation takes time and dedication. The more we practice, the better we'll become at recognizing patterns, combining parameters, and creating captivating designs. Let's keep experimenting, pushing our boundaries, and refining our skills to become true spirograph animation masters
 
-In summary, mastering spirograph animation techniques requires a solid understanding of the underlying principles, a willingness to experiment, and a commitment to continuous learning and improvement. With time, patience, and dedication, we can unlock our creative potential and create truly mesmerizing spirograph animations
-
 ### Embracing serendipity
 While planning and experimentation are essential, part of the beauty of spirograph art lies in the unexpected. As we experiment with different parameter combinations, we may stumble upon captivating designs purely by chance. Embrace these serendipitous moments, as they can lead to truly unique and memorable spirograph animations
-
-In conclusion, the art of combining spirograph parameters is a delicate balance between planning, experimentation, and serendipity. By carefully considering the interplay between various parameters and being open to unexpected results, we can create spirograph animations that are visually stunning and utterly captivating
 
 ## Conclusion
 Spirograph animations are a captivating blend of art, mathematics, and creativity. The `animate` method provides a powerful tool for users to explore the fascinating world of spirograph patterns and bring them to life through mesmerizing animations. By starting with simple patterns, experimenting with different parameters, and learning from the community, we can hone your skills and develop a unique style that sets our spirograph animations apart
