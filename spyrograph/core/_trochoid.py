@@ -273,7 +273,7 @@ class _Trochoid(ABC):
         >>> screen = shape.trace(show_circles=True, exit_on_click=True)
         """
         # pylint: disable=no-member,too-many-locals
-        screen = self._init_screen(screen, screen_size, screen_color)
+        screen = self._init_screen(screen, screen_size, screen_color, screen_coords)
         turtle.tracer(False)
         turtles = self._init_turtles(color, circle_color, full_path_color, hide_turtle, width)
 
