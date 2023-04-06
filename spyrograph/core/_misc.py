@@ -54,7 +54,8 @@ def _draw_animation(
         shapes_arr, screen_size: Tuple[Number, Number] = (1000, 1000),
         screen_color: str = "white", exit_on_click: bool = False,
         color: str = "black", width: Number = 1,
-        frame_pause: Number = 0.1, screen: "turtle.Screen" = None
+        frame_pause: Number = 0.1, screen: "turtle.Screen" = None,
+        screen_coords = (0, 0)
     ) -> None:
     for shape in shapes_arr:
         if screen is not None:
@@ -64,7 +65,7 @@ def _draw_animation(
         screen = shape.trace(
             screen = screen, screen_size = screen_size,
             screen_color = screen_color,
-            color = color, width=width
+            color = color, width=width, screen_coords=screen_coords
         )
         time.sleep(frame_pause)
     if exit_on_click:
