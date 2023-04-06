@@ -223,8 +223,6 @@ class _Trochoid(ABC):
             screen_color: str = "white", color: str = "black", width: Number = 1,
             screen: "turtle.Screen" = None, screen_coords = (0, 0), padding = 100
         ) -> None:
-        if screen_size is None:
-            screen_size = (self.max_x - self.min_x + padding, self.max_y - self.min_y + padding)
         screen, turtles = self.trace(
             screen_size=screen_size, screen_color=screen_color, color=color,
             width=width, screen=screen, screen_coords=screen_coords
@@ -232,7 +230,7 @@ class _Trochoid(ABC):
         _save_trace(screen, fpath)
 
     def trace(
-            self, screen_size: Tuple[Number, Number] = (1000, 1000),
+            self, screen_size: Tuple[Number, Number] = None,
             screen_color: str = "white", exit_on_click: bool = False,
             color: str = "black", width: Number = 1, hide_turtle: bool = True,
             show_circles: bool = False, frame_pause: Number = 0,
@@ -550,6 +548,11 @@ class _Trochoid(ABC):
         """Initializes the turtle screen with the given size and color"""
         if screen is None:
             screen = turtle.Screen()
+            if screen_size is None:
+                screen_size = (
+                    self.max_x - self.min_x + padding,
+                    self.max_y - self.min_y + padding
+                )
             screen.setup(*screen_size)
             screen.bgcolor(screen_color)
             canvas = screen.getcanvas()
