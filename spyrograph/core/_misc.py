@@ -50,6 +50,18 @@ def _set_int_to_list(input_val: Union[Number, List[Number]]) -> List[Number]:
         input_val = [input_val]
     return input_val
 
+def _save_trace(screen, fpath):
+    canvas = screen.getcanvas()
+    root = canvas.winfo_toplevel()
+    root.update()
+    image = ImageGrab.grab((
+        root.winfo_rootx(),
+        root.winfo_rooty(),
+        x0 + root.winfo_width(),
+        y0 + root.winfo_height()
+    ))
+    image.save(fpath)
+
 def _draw_animation(
         shapes_arr, screen_size: Tuple[Number, Number] = (1000, 1000),
         screen_color: str = "white", exit_on_click: bool = False,
