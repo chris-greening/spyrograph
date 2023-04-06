@@ -290,7 +290,7 @@ class _Trochoid(ABC):
         >>> screen = shape.trace(show_circles=True, exit_on_click=True)
         """
         # pylint: disable=no-member,too-many-locals
-        screen = self._init_screen(screen, screen_size, screen_color, screen_coords)
+        screen = self._init_screen(screen, screen_size, screen_color, screen_coords, padding)
         turtle.tracer(False)
         turtles = self._init_turtles(color, circle_color, full_path_color, hide_turtle, width)
 
@@ -543,7 +543,7 @@ class _Trochoid(ABC):
 
     def _init_screen(
             self, screen: "turtle.Screen", screen_size: Tuple[Number, Number],
-            screen_color: str, screen_coords: Tuple[Number, Number]
+            screen_color: str, screen_coords: Tuple[Number, Number], padding: Number
         ) -> "turtle.Screen":
         """Initializes the turtle screen with the given size and color"""
         if screen is None:
