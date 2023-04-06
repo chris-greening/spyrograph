@@ -137,6 +137,10 @@ Hypotrochoid.animate(
 )
 {% endhighlight %}
 
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/large_theta.gif" alt="An animation of lines rotating creating beautiful geometric patterns with angular shapes">
+</p>
+
 ### Background and screen customization
 The animate method enables us to customize the background color and screen size of your animations through the screen_color and screen_size parameters. By adjusting these settings, we can create a visual environment that complements our spirograph design and enhances the overall aesthetic appeal of our animations
 
