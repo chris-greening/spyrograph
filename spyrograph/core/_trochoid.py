@@ -225,7 +225,7 @@ class _Trochoid(ABC):
         ) -> None:
         screen, turtles = self.trace(
             screen_size=screen_size, screen_color=screen_color, color=color,
-            width=width, screen=screen, screen_coords=screen_coords
+            width=width, screen=screen, screen_coords=screen_coords, padding=padding
         )
         _save_trace(screen, fpath)
 
@@ -236,7 +236,7 @@ class _Trochoid(ABC):
             show_circles: bool = False, frame_pause: Number = 0,
             screen: "turtle.Screen" = None, circle_color: str = "black",
             show_full_path: bool = False, full_path_color: str = "grey",
-            repeat: bool = False, screen_coords = (0, 0)
+            repeat: bool = False, screen_coords = (0, 0), padding: Number = 100
         ) -> "turtle.Screen":
         """
         Trace the shape using the turtle graphics library and return the turtle.Screen object.
