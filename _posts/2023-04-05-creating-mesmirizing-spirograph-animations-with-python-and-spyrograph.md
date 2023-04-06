@@ -206,14 +206,14 @@ Python offers a wealth of libraries and tools that can help enhance our spirogra
 When creating spirograph animations, small changes in parameters can lead to significant differences in the final design. Pay close attention to the details of our patterns and make adjustments as needed. Experimenting with **colors, line widths, and background colors** can have a substantial impact on the overall appearance of our animation
 
 ### Practice, practice, practice
-Like any art form, mastering spirograph animation takes **time and dedication**. The more we practice, the better we'll become at recognizing patterns, combining parameters, and creating captivating designs. Let's keep experimenting, pushing our boundaries, and refining our skills to become true spirograph animation masters
+Like any art form, mastering spirograph animation takes **time and dedication**. The more we practice, the better we'll become at recognizing patterns, combining parameters, and creating captivating designs. Let's keep experimenting, pushing our boundaries, and refining our skills to become true **spirograph animation masters**
 
 ### Embracing serendipity
-While planning and experimentation are essential, part of the beauty of spirograph art lies in the unexpected. As we experiment with different parameter combinations, we may stumble upon captivating designs purely by chance. Embrace these serendipitous moments, as they can lead to truly unique and memorable spirograph animations
+While planning and experimentation are essential, part of the beauty of spirograph art lies in the **unexpected**. As we experiment with different parameter combinations, we may stumble upon captivating designs purely by chance. Embrace these serendipitous moments, as they can lead to truly **unique and memorable** spirograph animations
 
 ## Conclusion
-Spirograph animations are a captivating blend of art, mathematics, and creativity. The `animate` method provides a powerful tool for users to explore the fascinating world of spirograph patterns and bring them to life through mesmerizing animations. By starting with simple patterns, experimenting with different parameters, and learning from the community, we can hone your skills and develop a unique style that sets our spirograph animations apart
+Spirograph animations are a captivating blend of art, mathematics, and creativity. The `animate` method provides a powerful tool for users to explore the fascinating world of spirograph patterns and bring them to life through mesmerizing animations
 
-As we continue our journey, don't forget to leverage the power of Python and its extensive ecosystem to enhance our animations and unlock new possibilities. The more we practice and experiment, the more confident you'll become in creating captivating spirograph animations that showcase your creativity and artistic vision.
+As we continue our journey, don't forget to leverage the power of Python and its extensive ecosystem to enhance our animations and unlock new possibilities. The more we **practice and experiment**, the more confident we'll become in creating captivating spirograph animations that showcase our creativity and artistic vision
 
-In the end, the key to success lies in our dedication to continuous learning and improvement. Embrace the challenges, celebrate your achievements, and let our imaginations run wild as we explore the captivating world of spirograph animations!
+In the end, the key to success lies in our dedication to continuous learning and improvement. Embrace the challenges, celebrate your achievements, and let our **imaginations run wild** as we explore the captivating world of spirograph animations!
