@@ -56,6 +56,7 @@ def _set_int_to_list(input_val: Union[Number, List[Number]]) -> List[Number]:
     return input_val
 
 def _save_trace(screen: "turtle.Turtle", fpath: str):
+    """Save trace to PNG using PIL"""
     if ImageGrab is None:
         raise ImportError((
             "PIL is required but is not installed on your machine, "
