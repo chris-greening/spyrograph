@@ -327,7 +327,7 @@ class _Trochoid(ABC):
             screen_size: Tuple[Number, Number] = (1000, 1000),
             screen_color: str = "white", exit_on_click: bool = False,
             color: str = "black", width: Number = 1,
-            frame_pause: Number = 0.1, screen: "turtle.Screen" = None
+            frame_pause: Number = 0.1, screen: "turtle.Screen" = None, screen_coords = (0, 0)
         ) -> List["_Trochoid"]:
         """
         Animate a sequence of _Trochoid shapes with varying input parameters,
@@ -395,7 +395,8 @@ class _Trochoid(ABC):
         _draw_animation(
             shapes_arr=shapes_arr, screen_size=screen_size,
             screen_color=screen_color, exit_on_click=exit_on_click, color=color,
-            width=width, frame_pause=frame_pause, screen=screen
+            width=width, frame_pause=frame_pause, screen=screen,
+            screen_coords=screen_coords
         )
         return shapes_arr
 
