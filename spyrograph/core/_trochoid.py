@@ -213,6 +213,14 @@ class _Trochoid(ABC):
         plt.show()
         return fig, ax
 
+    def save_png(
+            self, screen_size: Tuple[Number, Number] = (1000, 1000),
+            screen_color: str = "white", color: str = "black", width: Number = 1,
+            hide_turtle: bool = True, show_circles: bool = False, frame_pause: Number = 0,
+            screen: "turtle.Screen" = None, screen_coords = (0, 0)
+        ) -> None:
+
+
     def trace(
             self, screen_size: Tuple[Number, Number] = (1000, 1000),
             screen_color: str = "white", exit_on_click: bool = False,
