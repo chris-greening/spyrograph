@@ -11,6 +11,10 @@ Spirograph animations can be both mesmerizing and captivating, providing endless
 
 In this section, we'll provide an overview of spirograph animations and discuss how the animate method in the Spyrograph library can help us create stunning visual displays with ease
 
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/large_theta_black_and_white.gif" alt="An animation of lines rotating creating beautiful geometric patterns with angular shapes with a black background and white color">
+</p>
+
 A spirograph is a geometric shape formed by tracing a point on the circumference of a circle as it rolls along the inside or outside of a fixed circle
 
 The combination of these two circles creates a unique path, resulting in a captivating and intricate pattern. With the help of the Spyrograph library, we can create a wide variety of these patterns using just a few simple parameters
