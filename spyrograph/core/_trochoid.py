@@ -303,6 +303,8 @@ class _Trochoid(ABC):
             beginning, default is False.
         screen_coords : Tuple[int, int] = (0, 0)
             Location of the screen coordinates
+        padding : Number
+            Padding on the outside of the image
 
         Returns
         -------
