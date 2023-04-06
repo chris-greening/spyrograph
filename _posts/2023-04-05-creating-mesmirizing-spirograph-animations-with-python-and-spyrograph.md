@@ -111,6 +111,32 @@ Hypotrochoid.animate(
 ### Control over theta tange and step
 Another powerful customization option is the ability to define the range of theta values and the incremental step between them. By modifying either the thetas argument or the theta_start, theta_stop, and theta_step parameters, we can control the precision and smoothness of the traced lines. Smaller theta steps lead to smoother curves, while larger steps create more segmented patterns, offering yet another avenue for personalizations
 
+#### Small theta step
+{% highlight python %}
+Hypotrochoid.animate(
+    R=307,
+    r=np.arange(57, 60, .025),
+    d=33,
+    thetas=np.arange(0,100, .1),
+    frame_pause=.08
+)
+{% endhighlight %}
+
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/animation_circle_rolling_circle_modify.gif" alt="An animation of lines rotating creating beautiful geometric patterns">
+</p>
+
+#### Large theta step
+{% highlight python %}
+Hypotrochoid.animate(
+    R=307,
+    r=np.arange(57, 60, .025),
+    d=33,
+    thetas=np.arange(0,100, 1),
+    frame_pause=.08
+)
+{% endhighlight %}
+
 ### Background and screen customization
 The animate method enables us to customize the background color and screen size of your animations through the screen_color and screen_size parameters. By adjusting these settings, we can create a visual environment that complements our spirograph design and enhances the overall aesthetic appeal of our animations
 
