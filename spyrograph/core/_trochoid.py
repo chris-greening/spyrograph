@@ -214,15 +214,15 @@ class _Trochoid(ABC):
         return fig, ax
 
     def save_png(
-            self, screen_size: Tuple[Number, Number] = (1000, 1000),
+            self, fpath: str, screen_size: Tuple[Number, Number] = (1000, 1000),
             screen_color: str = "white", color: str = "black", width: Number = 1,
             screen: "turtle.Screen" = None, screen_coords = (0, 0)
         ) -> None:
-        screen = self.trace(
+        screen, turtles = self.trace(
             screen_size=screen_size, screen_color=screen_color, color=color,
-            width=width, hide_turtle, screen=screen, screen_coords=screen_coords
+            width=width, screen=screen, screen_coords=screen_coords
         )
-        
+        _save_trace(screen, fpath)
 
     def trace(
             self, screen_size: Tuple[Number, Number] = (1000, 1000),
