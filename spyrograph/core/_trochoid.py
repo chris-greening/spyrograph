@@ -258,6 +258,7 @@ class _Trochoid(ABC):
             If True, infinitely repeat the animation so it starts over from the
             beginning, default is False.
         screen_coords : Tuple[int, int] = (0, 0)
+            Location of the screen coordinates
 
         Returns
         -------
