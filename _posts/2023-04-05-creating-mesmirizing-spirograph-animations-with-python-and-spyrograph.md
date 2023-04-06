@@ -92,6 +92,18 @@ Hypotrochoid.animate(
 ### Color and line width customization
 The animate method also allows us to customize the color and width of the traced lines. By changing the color and width parameters, we can achieve different visual effects and styles. Whether we want a subtle, delicate design or a bold, striking pattern, adjusting these parameters gives us the creative freedom to bring our vision to life
 
+{% highlight python %}
+Hypotrochoid.animate(
+    R=307,
+    r=np.arange(57, 60, .025),
+    d=33,
+    thetas=np.arange(0,100, .1),
+    frame_pause=.08,
+    color="red",
+    width=4
+)
+{% endhighlight %}
+
 ### Control over theta tange and step
 Another powerful customization option is the ability to define the range of theta values and the incremental step between them. By modifying either the thetas argument or the theta_start, theta_stop, and theta_step parameters, we can control the precision and smoothness of the traced lines. Smaller theta steps lead to smoother curves, while larger steps create more segmented patterns, offering yet another avenue for personalizations
 
