@@ -54,7 +54,10 @@ Hypotrochoid.animate(R=np.arange(201*3, 215*3, .1*3), r=179*3, d=79*3, thetas=np
 Hypotrochoid.animate(R=307, r=np.arange(57, 60, .025), d=33, thetas=np.arange(0,100, .1), frame_pause=.08)
 {% endhighlight %}
 
-
+**Varying the distance from the rolling circle:**
+{% highlight python %}
+Hypotrochoid.animate(R=300, r=113, d=np.arange(113, 140, .5), thetas=np.arange(0,50, .1), frame_pause=.08)
+{% endhighlight %}
 
 ### Color and line width customization
 The animate method also allows us to customize the color and width of the traced lines. By changing the color and width parameters, we can achieve different visual effects and styles. Whether we want a subtle, delicate design or a bold, striking pattern, adjusting these parameters gives us the creative freedom to bring our vision to life
