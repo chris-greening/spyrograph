@@ -104,7 +104,9 @@ Hypotrochoid.animate(
 )
 {% endhighlight %}
 
-
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/animation_modify_color_width.gif" alt="An animation of lines rotating creating beautiful geometric patterns colored in red with a thicker width">
+</p>
 
 ### Control over theta tange and step
 Another powerful customization option is the ability to define the range of theta values and the incremental step between them. By modifying either the thetas argument or the theta_start, theta_stop, and theta_step parameters, we can control the precision and smoothness of the traced lines. Smaller theta steps lead to smoother curves, while larger steps create more segmented patterns, offering yet another avenue for personalizations
