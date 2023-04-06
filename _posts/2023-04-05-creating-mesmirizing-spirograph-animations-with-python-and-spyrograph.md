@@ -44,6 +44,11 @@ One of the most exciting aspects of using the animate method is the ability to c
 ### Varying the circle radii and tracing point distance
 The primary driving factors behind the generated patterns are the radii of the fixed and rolling circles (R and r, respectively) and the distance of the tracing point from the rolling circle (d). By altering these parameters, we can create a wide array of stunning spirograph designs. For example, we can experiment with different combinations of R, r, and d to find the perfect balance that produces intricate and mesmerizing patterns
 
+Varying the rolling circle:
+{% highlight python %}
+Hypotrochoid.animate(R=307, r=np.arange(57, 60, .025), d=33, thetas=np.arange(0,100, .1), frame_pause=.08)
+{% endhighlight %}
+
 ### Color and line width customization
 The animate method also allows us to customize the color and width of the traced lines. By changing the color and width parameters, we can achieve different visual effects and styles. Whether we want a subtle, delicate design or a bold, striking pattern, adjusting these parameters gives us the creative freedom to bring our vision to life
 
