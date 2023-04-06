@@ -1,7 +1,7 @@
 ---
 title: "Scaling trochoid's and cycloid's input parameters with the spyrograph `scale` method"
 date: 2023-04-01 01:18:00 -0500
-categories: Python, tutorial
+categories: Python
 header:
   overlay_image: /images/rgb.gif
 ---

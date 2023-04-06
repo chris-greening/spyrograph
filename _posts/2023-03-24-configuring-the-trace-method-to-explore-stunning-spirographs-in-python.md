@@ -1,7 +1,7 @@
 ---
 title: "Configuring the trace method to explore stunning spirographs in Python"
 date: 2023-03-24 20:51:00 -0500
-categories: Python, tutorial
+categories: Python
 header:
   overlay_image: /images/header_image.PNG
 ---

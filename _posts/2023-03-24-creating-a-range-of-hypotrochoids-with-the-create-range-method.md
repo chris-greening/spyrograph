@@ -1,7 +1,7 @@
 ---
 title: "Creating a range of hypotrochoids with the `create_range` method"
 date: 2023-03-24 23:35:00 -0500
-categories: Python, tutorial
+categories: Python
 header:
   overlay_image: /images/rgb.gif
 ---

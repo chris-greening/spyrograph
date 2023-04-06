@@ -1,7 +1,7 @@
 ---
 title: "Drawing cycloids with a specific number of cusps using spyrograph"
 date: 2023-03-28 12:38:00 -0500
-categories: Python, tutorial
+categories: Python
 header:
   overlay_image: /images/rgb.gif
 ---
