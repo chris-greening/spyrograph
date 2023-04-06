@@ -55,6 +55,10 @@ Hypotrochoid.animate(
 )
 {% endhighlight %}
 
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/animation_circle_fixed_circle_modify.gif" alt="An animation of lines rotating creating beautiful geometric patterns">
+</p>
+
 **Varying the radius of the rolling circle:**
 {% highlight python %}
 Hypotrochoid.animate(
@@ -66,6 +70,10 @@ Hypotrochoid.animate(
 )
 {% endhighlight %}
 
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/animation_circle_rolling_circle_modify.gif" alt="An animation of lines rotating creating beautiful geometric patterns">
+</p>
+
 **Varying the distance from the rolling circle:**
 {% highlight python %}
 Hypotrochoid.animate(
@@ -76,6 +84,10 @@ Hypotrochoid.animate(
     frame_pause=.08
 )
 {% endhighlight %}
+
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/animation_circle_distance_modify.gif" alt="An animation of lines rotating creating beautiful geometric patterns">
+</p>
 
 ### Color and line width customization
 The animate method also allows us to customize the color and width of the traced lines. By changing the color and width parameters, we can achieve different visual effects and styles. Whether we want a subtle, delicate design or a bold, striking pattern, adjusting these parameters gives us the creative freedom to bring our vision to life
