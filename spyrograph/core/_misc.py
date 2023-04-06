@@ -9,7 +9,10 @@ import time
 
 import numpy as np
 
-from PIL import ImageGrab
+try:
+    from PIL import ImageGrab
+except ImportError:
+    ImageGrab = None
 
 def _validate_theta(
         thetas: List[Number], theta_start: Number, theta_stop: Number,
@@ -53,6 +56,8 @@ def _set_int_to_list(input_val: Union[Number, List[Number]]) -> List[Number]:
     return input_val
 
 def _save_trace(screen, fpath):
+    if ImageGrab is None:
+        raise ImportError("PIL is required but is not installed on your machine, please install and try again")
     canvas = screen.getcanvas()
     root = canvas.winfo_toplevel()
     root.update()
