@@ -144,6 +144,22 @@ Hypotrochoid.animate(
 ### Background and screen customization
 The animate method enables us to customize the background color and screen size of your animations through the screen_color and screen_size parameters. By adjusting these settings, we can create a visual environment that complements our spirograph design and enhances the overall aesthetic appeal of our animations
 
+{% highlight python %}
+Hypotrochoid.animate(
+    R=307,
+    r=np.arange(57, 60, .025),
+    d=33,
+    thetas=np.arange(0,100, 1),
+    frame_pause=.08,
+    color="white",
+    screen_color="black"
+)
+{% endhighlight %}
+
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/large_theta_black_and_white.gif" alt="An animation of lines rotating creating beautiful geometric patterns with angular shapes with a black background and white color">
+</p>
+
 In summary, the animate method in the Spyrograph library provides a wealth of customization options for us to explore. By playing with different configurations and settings, we can create captivating spirograph animations that are uniquely yours. So, let's unleash our creativity and dive into the world of personalized spirograph animations using the powerful animate method
 
 ## Mastering spirograph animation techniques: tips and tricks
