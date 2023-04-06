@@ -223,6 +223,33 @@ class _Trochoid(ABC):
             screen_color: str = "white", color: str = "black", width: Number = 1,
             screen: "turtle.Screen" = None, screen_coords = (0, 0), padding = 100
         ) -> None:
+        """
+        Save the shape as a PNG file.
+
+        Parameters
+        ----------
+        fpath : str
+            The file path where the PNG file will be saved.
+        screen_size : Tuple[Number, Number], optional
+            The width and height of the turtle screen. Default is None.
+        screen_color : str, optional
+            The background color of the turtle screen. Default is "white".
+        color : str, optional
+            The color of the shape. Default is "black".
+        width : Number, optional
+            The width of the shape lines. Default is 1.
+        screen : "turtle.Screen", optional
+            The turtle screen object to draw the shape on. Default is None.
+        screen_coords : Tuple[Number, Number], optional
+            The x and y coordinates of the top-left corner of the turtle screen. Default is (0, 0).
+        padding : int, optional
+            The padding around the shape in the final PNG image. Default is 100.
+
+        Examples
+        --------
+        >>> shape = Trochoid(R=250, r=179, d=233, thetas=np.arange(0, 60, .01))
+        >>> shape.save_png("spirograph.png", width=2)
+        """
         screen, turtles = self.trace(
             screen_size=screen_size, screen_color=screen_color, color=color,
             width=width, screen=screen, screen_coords=screen_coords, padding=padding
