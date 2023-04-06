@@ -106,7 +106,7 @@ Check out the [official website](https://chris-greening.github.io/spyrograph/) f
 - [Drawing cycloids with a specific number of cusps using spyrograph](https://chris-greening.github.io/spyrograph/python,/tutorial/2023/03/28/drawing-cycloids-with-a-specific-number-of-cusps-using-spyrograph.html)
 - [Scaling trochoid’s and cycloid’s input parameters with the spyrograph scale method](https://chris-greening.github.io/spyrograph/python,/tutorial/2023/04/01/scaling-trochoids-and-cycloids-input-parameters-with-the-spyrograph-scale-method.html)
 - [Spyrograph is looking for beginners to open source to contribute!](https://dev.to/chrisgreening/spyrograph-is-looking-for-beginners-to-open-source-to-contribute-1nbe)
-
+- [Creating mesmerizing spirograph animations with Python and Spyrograph](https://chris-greening.github.io/spyrograph/python,/tutorial/2023/04/05/creating-mesmirizing-spirograph-animations-with-python-and-spyrograph.html)
 ---
 
 ## :books: Documentation <a name="documentation"></a>
