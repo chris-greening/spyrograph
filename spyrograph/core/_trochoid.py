@@ -303,6 +303,8 @@ class _Trochoid(ABC):
             beginning, default is False.
         screen_coords : Tuple[int, int] = (0, 0)
             Location of the screen coordinates
+        padding : Number
+            Padding on the outside of the image
 
         Returns
         -------
@@ -363,10 +365,11 @@ class _Trochoid(ABC):
             d: Union[Number, List[Number]], thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
             theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0),
-            screen_size: Tuple[Number, Number] = (1000, 1000),
+            screen_size: Tuple[Number, Number] = None,
             screen_color: str = "white", exit_on_click: bool = False,
             color: str = "black", width: Number = 1,
-            frame_pause: Number = 0.1, screen: "turtle.Screen" = None, screen_coords = (0, 0)
+            frame_pause: Number = 0.1, screen: "turtle.Screen" = None, screen_coords = (0, 0),
+            padding: Number = 100
         ) -> List["_Trochoid"]:
         """
         Animate a sequence of _Trochoid shapes with varying input parameters,
@@ -399,8 +402,10 @@ class _Trochoid(ABC):
             cannot be set at the same time as thetas argument.
         origin : Tuple[Number, Number], optional, default (0, 0)
             Custom origin to center the shapes at. Default is (0,0).
-        screen_size : Tuple[Number, Number], optional, default (1000, 1000)
-            Length and width of the output screen.
+        screen_size : Tuple[Number, Number], optional, default None
+            Length and width of the output screen. Default behavior builds
+            screen just large enough to fit the shape and any extra padding deined
+            by the padding argument
         screen_color : str, optional, default "white"
             Color of the background screen.
         exit_on_click : bool, optional, default False
@@ -413,6 +418,8 @@ class _Trochoid(ABC):
             Time in seconds to pause between each shape in the animation.
         screen : turtle.Screen, optional
             Existing turtle screen.
+        padding : Number
+            Padding on the outside of the image
 
         Returns
         -------
@@ -435,7 +442,7 @@ class _Trochoid(ABC):
             shapes_arr=shapes_arr, screen_size=screen_size,
             screen_color=screen_color, exit_on_click=exit_on_click, color=color,
             width=width, frame_pause=frame_pause, screen=screen,
-            screen_coords=screen_coords
+            screen_coords=screen_coords, padding=padding
         )
         return shapes_arr
 
