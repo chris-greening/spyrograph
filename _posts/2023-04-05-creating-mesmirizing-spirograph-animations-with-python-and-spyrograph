@@ -6,5 +6,26 @@ header:
   overlay_image: /images/rgb.gif
 ---
 
+## Captivating spirograph animations: an overview
+Spirograph animations can be both mesmerizing and captivating, providing endless hours of entertainment as well as a visual exploration of mathematical patterns. In this section, we'll provide an overview of spirograph animations and discuss how the animate method in the Spyrograph library can help you create stunning visual displays with ease.
+
+A spirograph is a geometric shape formed by tracing a point on the circumference of a circle as it rolls along the inside or outside of a fixed circle. The combination of these two circles creates a unique path, resulting in a captivating and intricate pattern. With the help of the Spyrograph library, you can create a wide variety of these patterns using just a few simple parameters.
+
+The animate method in the Spyrograph library is a powerful tool for generating and visualizing spirograph patterns. By providing a range of values for the input parameters, you can create a sequence of spirographs that smoothly transition from one to another, giving the illusion of a continuous animation. This method takes care of all the drawing and updating, allowing you to focus on the creative aspect of designing your spirograph animations.
+
+Let's look at a simple example of how to use the animate method to create a spirograph animation:
+
+{% highlight python %}
+from spyrograph import Hypotrochoid
+import numpy as np
+
+Hypotrochoid.animate(R=307, r=np.arange(57, 233, .05), d=33, thetas=np.arange(0,100, .1), frame_pause=.02)
+{% endhighlight %}
+
+In this example, we import the Hypotrochoid class from the Spyrograph library and create an array of thetas using NumPy's linspace function. We then call the animate method on the Hypotrochoid class with our chosen parameter values. This will generate a sequence of three spirograph animations, each with a different radius r (4, 5, and 6), while keeping the other parameters constant.
+
+The animate method is highly versatile, allowing you to customize the appearance of your animations by adjusting various parameters such as the color, width, and screen size. This flexibility enables you to create a wide range of visually appealing spirograph animations that cater to your artistic preferences.
+
+In the following sections, we'll dive deeper into the animate method, exploring its various customization options and providing tips and tricks to help you master the art of spirograph animation.
 
 
