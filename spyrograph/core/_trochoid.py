@@ -311,7 +311,7 @@ class _Trochoid(ABC):
             turtles.shape_turtle.clear()
         if exit_on_click:
             turtle.exitonclick()
-        return screen
+        return screen, turtles
 
     @classmethod
     def animate(

@@ -59,10 +59,10 @@ def _draw_animation(
     ) -> None:
     for shape in shapes_arr:
         if screen is not None:
-            screen.clear()
-            screen.setup(*screen_size)
-            screen.bgcolor(screen_color)
-        screen = shape.trace(
+            turtles.shape_turtle.clear()
+            # screen.setup(*screen_size)
+            # screen.bgcolor(screen_color)
+        screen, turtles = shape.trace(
             screen = screen, screen_size = screen_size,
             screen_color = screen_color,
             color = color, width=width, screen_coords=screen_coords
