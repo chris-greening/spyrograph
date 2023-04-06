@@ -19,12 +19,18 @@ Let's look at a simple example of how to use the animate method to create a spir
 from spyrograph import Hypotrochoid
 import numpy as np
 
-Hypotrochoid.animate(R=307, r=np.arange(57, 233, .05), d=33, thetas=np.arange(0,100, .1), frame_pause=.02)
+Hypotrochoid.animate(
+    R=307,
+    r=np.arange(57, 233, .05),
+    d=33,
+    thetas=np.arange(0,100, .1),
+    frame_pause=.02
+)
 {% endhighlight %}
 
-In this example, we import the Hypotrochoid class from the Spyrograph library and create an array of thetas using NumPy's linspace function. We then call the animate method on the Hypotrochoid class with our chosen parameter values. This will generate a sequence of three spirograph animations, each with a different radius r (4, 5, and 6), while keeping the other parameters constant.
+In this example, we call the animate method on the Hypotrochoid class with our chosen parameter values. This will generate a sequence of spirograph animations, each with a different radius r while keeping the other parameters constant.
 
-The animate method is highly versatile, allowing you to customize the appearance of your animations by adjusting various parameters such as the color, width, and screen size. This flexibility enables you to create a wide range of visually appealing spirograph animations that cater to your artistic preferences.
+The animate method is highly versatile, allowing you to customize the appearance of your animations by adjusting various parameters such as the color, width, and screen size. This flexibility enables you to create a wide range of visually appealing spirograph animations that cater to your artistic preferences
 
 In the following sections, we'll dive deeper into the animate method, exploring its various customization options and providing tips and tricks to help you master the art of spirograph animation.
 
