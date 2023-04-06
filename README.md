@@ -100,13 +100,13 @@ Beginners to open source are highly encouraged to participate and ask questions 
 Check out the [official website](https://chris-greening.github.io/spyrograph/) for the latest blog posts on the project!
 
 - [Draw beautiful geometric visualizations with Python and spyrograph](https://chris-greening.github.io/spyrograph/python/2023/03/11/draw-beautiful-geometric-visualizations-and-animations-with-python-and-spyrograph.html)
-- [Configuring the trace method to explore stunning spirographs in Python](https://chris-greening.github.io/spyrograph/tutorial/2023/03/24/configuring-the-trace-method-to-explore-stunning-spirographs-in-python.html)
-- [Creating a range of hypotrochoids with the create_range method](https://chris-greening.github.io/spyrograph/tutorial/2023/03/25/creating-a-range-of-hypotrochoids-with-the-create-range-method.html)
-- [Plotting beautiful spirographs with matplotlib and spyrograph](https://chris-greening.github.io/spyrograph/tutorial/2023/03/27/plotting-beautiful-spirographs-with-matplotlib-and-spyrograph.html)
-- [Drawing cycloids with a specific number of cusps using spyrograph](https://chris-greening.github.io/spyrograph/tutorial/2023/03/28/drawing-cycloids-with-a-specific-number-of-cusps-using-spyrograph.html)
-- [Scaling trochoid’s and cycloid’s input parameters with the spyrograph scale method](https://chris-greening.github.io/spyrograph/tutorial/2023/04/01/scaling-trochoids-and-cycloids-input-parameters-with-the-spyrograph-scale-method.html)
+- [Configuring the trace method to explore stunning spirographs in Python](https://chris-greening.github.io/spyrograph/python/2023/03/24/configuring-the-trace-method-to-explore-stunning-spirographs-in-python.html)
+- [Creating a range of hypotrochoids with the create_range method](https://chris-greening.github.io/spyrograph/python/2023/03/25/creating-a-range-of-hypotrochoids-with-the-create-range-method.html)
+- [Plotting beautiful spirographs with matplotlib and spyrograph](https://chris-greening.github.io/spyrograph/python/2023/03/27/plotting-beautiful-spirographs-with-matplotlib-and-spyrograph.html)
+- [Drawing cycloids with a specific number of cusps using spyrograph](https://chris-greening.github.io/spyrograph/python/2023/03/28/drawing-cycloids-with-a-specific-number-of-cusps-using-spyrograph.html)
+- [Scaling trochoid’s and cycloid’s input parameters with the spyrograph scale method](https://chris-greening.github.io/spyrograph/python/2023/04/01/scaling-trochoids-and-cycloids-input-parameters-with-the-spyrograph-scale-method.html)
 - [Spyrograph is looking for beginners to open source to contribute!](https://dev.to/chrisgreening/spyrograph-is-looking-for-beginners-to-open-source-to-contribute-1nbe)
-- [Creating mesmerizing spirograph animations with Python and Spyrograph](https://chris-greening.github.io/spyrograph/tutorial/2023/04/05/creating-mesmirizing-spirograph-animations-with-python-and-spyrograph.html)
+- [Creating mesmerizing spirograph animations with Python and Spyrograph](https://chris-greening.github.io/spyrograph/python/2023/04/05/creating-mesmirizing-spirograph-animations-with-python-and-spyrograph.html)
 ---
 
 ## :books: Documentation <a name="documentation"></a>
