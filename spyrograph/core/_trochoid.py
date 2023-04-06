@@ -250,7 +250,7 @@ class _Trochoid(ABC):
         >>> shape = Trochoid(R=250, r=179, d=233, thetas=np.arange(0, 60, .01))
         >>> shape.save_png("spirograph.png", width=2)
         """
-        screen, turtles = self.trace(
+        screen, _ = self.trace(
             screen_size=screen_size, screen_color=screen_color, color=color,
             width=width, screen=screen, screen_coords=screen_coords, padding=padding
         )
