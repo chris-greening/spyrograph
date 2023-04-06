@@ -83,6 +83,11 @@ class _Trochoid(ABC):
         self.y = np.array([self._calculate_y(theta) for theta in self.thetas])
         self.x += self.origin[0]
         self.y += self.origin[1]
+        self.min_x = min(self.x)
+        self.max_x = max(self.x)
+        self.min_y = min(self.y)
+        self.max_y = max(self.y)
+
         self.coords = list(zip(self.x, self.y, self.thetas))
 
     def transform(self, x: Number = 0, y: Number = 0) -> "_Trochoid":
@@ -320,7 +325,7 @@ class _Trochoid(ABC):
             turtle.update()
             if not repeat:
                 break
-            turtles.shape_turtle.clear()
+            # turtles.shape_turtle.clear()
         if exit_on_click:
             turtle.exitonclick()
         return screen, turtles

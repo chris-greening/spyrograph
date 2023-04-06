@@ -58,11 +58,12 @@ def _save_trace(screen, fpath):
     root.update()
     x0 = root.winfo_rootx()
     y0 = root.winfo_rooty()
+    time.sleep(1)
     image = ImageGrab.grab((
-        x0,
-        y0,
-        x0 + root.winfo_width(),
-        y0 + root.winfo_height()
+        x0+8,
+        y0+8,
+        x0 + root.winfo_width()-8,
+        y0 + root.winfo_height()-8
     ))
     image.save(fpath)
 
