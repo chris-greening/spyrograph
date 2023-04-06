@@ -9,6 +9,11 @@ import time
 
 import numpy as np
 
+try:
+    from PIL import ImageGrab
+except ImportError:
+    ImageGrab = None
+
 def _validate_theta(
         thetas: List[Number], theta_start: Number, theta_stop: Number,
         theta_step: Number
@@ -49,6 +54,28 @@ def _set_int_to_list(input_val: Union[Number, List[Number]]) -> List[Number]:
     if isinstance(input_val, Number):
         input_val = [input_val]
     return input_val
+
+def _save_trace(screen: "turtle.Turtle", fpath: str):
+    """Save trace to PNG using PIL"""
+    # pylint: disable=invalid-name
+    if ImageGrab is None:
+        raise ImportError((
+            "PIL is required but is not installed on your machine, "
+            "please install and try again"
+        ))
+    canvas = screen.getcanvas()
+    root = canvas.winfo_toplevel()
+    root.update()
+    x0 = root.winfo_rootx()
+    y0 = root.winfo_rooty()
+    time.sleep(1)
+    image = ImageGrab.grab((
+        x0+8,
+        y0+8,
+        x0 + root.winfo_width()-8,
+        y0 + root.winfo_height()-8
+    ))
+    image.save(fpath)
 
 def _draw_animation(
         shapes_arr, screen_size: Tuple[Number, Number] = (1000, 1000),

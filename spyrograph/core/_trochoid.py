@@ -14,7 +14,8 @@ import collections
 import numpy as np
 
 from spyrograph.core._misc import (
-    _get_products_of_inputs, _validate_only_one_iterable, _draw_animation, _validate_theta
+    _get_products_of_inputs, _validate_only_one_iterable, _draw_animation,
+    _validate_theta, _save_trace
 )
 
 try:
@@ -82,6 +83,11 @@ class _Trochoid(ABC):
         self.y = np.array([self._calculate_y(theta) for theta in self.thetas])
         self.x += self.origin[0]
         self.y += self.origin[1]
+        self.min_x = min(self.x)
+        self.max_x = max(self.x)
+        self.min_y = min(self.y)
+        self.max_y = max(self.y)
+
         self.coords = list(zip(self.x, self.y, self.thetas))
 
     def transform(self, x: Number = 0, y: Number = 0) -> "_Trochoid":
@@ -212,14 +218,52 @@ class _Trochoid(ABC):
         plt.show()
         return fig, ax
 
+    def save_png(
+            self, fpath: str, screen_size: Tuple[Number, Number] = None,
+            screen_color: str = "white", color: str = "black", width: Number = 1,
+            screen: "turtle.Screen" = None, screen_coords = (0, 0), padding = 100
+        ) -> None:
+        """
+        Save the shape as a PNG file.
+
+        Parameters
+        ----------
+        fpath : str
+            The file path where the PNG file will be saved.
+        screen_size : Tuple[Number, Number], optional
+            The width and height of the turtle screen. Default is None.
+        screen_color : str, optional
+            The background color of the turtle screen. Default is "white".
+        color : str, optional
+            The color of the shape. Default is "black".
+        width : Number, optional
+            The width of the shape lines. Default is 1.
+        screen : "turtle.Screen", optional
+            The turtle screen object to draw the shape on. Default is None.
+        screen_coords : Tuple[Number, Number], optional
+            The x and y coordinates of the top-left corner of the turtle screen. Default is (0, 0).
+        padding : int, optional
+            The padding around the shape in the final PNG image. Default is 100.
+
+        Examples
+        --------
+        >>> shape = Trochoid(R=250, r=179, d=233, thetas=np.arange(0, 60, .01))
+        >>> shape.save_png("spirograph.png", width=2)
+        """
+        screen, _ = self.trace(
+            screen_size=screen_size, screen_color=screen_color, color=color,
+            width=width, screen=screen, screen_coords=screen_coords, padding=padding
+        )
+        _save_trace(screen, fpath)
+
     def trace(
-            self, screen_size: Tuple[Number, Number] = (1000, 1000),
+            self, screen_size: Tuple[Number, Number] = None,
             screen_color: str = "white", exit_on_click: bool = False,
             color: str = "black", width: Number = 1, hide_turtle: bool = True,
             show_circles: bool = False, frame_pause: Number = 0,
             screen: "turtle.Screen" = None, circle_color: str = "black",
             show_full_path: bool = False, full_path_color: str = "grey",
-            repeat: bool = False, screen_coords = (0, 0)
+            repeat: bool = False, screen_coords = (0, 0), padding: Number = 100
         ) -> "turtle.Screen":
         """
         Trace the shape using the turtle graphics library and return the turtle.Screen object.
@@ -273,7 +317,7 @@ class _Trochoid(ABC):
         >>> screen = shape.trace(show_circles=True, exit_on_click=True)
         """
         # pylint: disable=no-member,too-many-locals
-        screen = self._init_screen(screen, screen_size, screen_color, screen_coords)
+        screen = self._init_screen(screen, screen_size, screen_color, screen_coords, padding)
         turtle.tracer(False)
         turtles = self._init_turtles(color, circle_color, full_path_color, hide_turtle, width)
 
@@ -308,7 +352,7 @@ class _Trochoid(ABC):
             turtle.update()
             if not repeat:
                 break
-            turtles.shape_turtle.clear()
+            # turtles.shape_turtle.clear()
         if exit_on_click:
             turtle.exitonclick()
         return screen, turtles
@@ -526,11 +570,16 @@ class _Trochoid(ABC):
 
     def _init_screen(
             self, screen: "turtle.Screen", screen_size: Tuple[Number, Number],
-            screen_color: str, screen_coords: Tuple[Number, Number]
+            screen_color: str, screen_coords: Tuple[Number, Number], padding: Number
         ) -> "turtle.Screen":
         """Initializes the turtle screen with the given size and color"""
         if screen is None:
             screen = turtle.Screen()
+            if screen_size is None:
+                screen_size = (
+                    self.max_x - self.min_x + padding,
+                    self.max_y - self.min_y + padding
+                )
             screen.setup(*screen_size)
             screen.bgcolor(screen_color)
             canvas = screen.getcanvas()
