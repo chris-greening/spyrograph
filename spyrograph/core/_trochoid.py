@@ -274,12 +274,7 @@ class _Trochoid(ABC):
         """
         # pylint: disable=no-member,too-many-locals
         screen = self._init_screen(screen, screen_size, screen_color)
-        canvas = screen.getcanvas()
-        root = canvas.winfo_toplevel()
-        root.geometry(f"+{screen_coords[0]}+{screen_coords[1]}")
-
         turtle.tracer(False)
-
         turtles = self._init_turtles(color, circle_color, full_path_color, hide_turtle, width)
 
         if show_full_path:
@@ -531,13 +526,16 @@ class _Trochoid(ABC):
 
     def _init_screen(
             self, screen: "turtle.Screen", screen_size: Tuple[Number, Number],
-            screen_color: str
+            screen_color: str, screen_coords: Tuple[Number, Number]
         ) -> "turtle.Screen":
         """Initializes the turtle screen with the given size and color"""
         if screen is None:
             screen = turtle.Screen()
             screen.setup(*screen_size)
             screen.bgcolor(screen_color)
+            canvas = screen.getcanvas()
+            root = canvas.winfo_toplevel()
+            root.geometry(f"+{screen_coords[0]}+{screen_coords[1]}")
         return screen
 
     def _init_turtles(
