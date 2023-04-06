@@ -54,9 +54,11 @@ def _save_trace(screen, fpath):
     canvas = screen.getcanvas()
     root = canvas.winfo_toplevel()
     root.update()
+    x0 = root.winfo_rootx()
+    y0 = root.winfo_rooty()
     image = ImageGrab.grab((
-        root.winfo_rootx(),
-        root.winfo_rooty(),
+        x0,
+        y0,
         x0 + root.winfo_width(),
         y0 + root.winfo_height()
     ))
