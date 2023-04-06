@@ -55,7 +55,7 @@ def _set_int_to_list(input_val: Union[Number, List[Number]]) -> List[Number]:
         input_val = [input_val]
     return input_val
 
-def _save_trace(screen, fpath):
+def _save_trace(screen: "turtle.Turtle", fpath: str):
     if ImageGrab is None:
         raise ImportError("PIL is required but is not installed on your machine, please install and try again")
     canvas = screen.getcanvas()
