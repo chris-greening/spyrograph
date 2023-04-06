@@ -3,7 +3,7 @@ title: "Creating mesmerizing spirograph animations with Python and Spyrograph"
 date: 2023-04-05 01:18:00 -0500
 categories: Python, tutorial
 header:
-  overlay_image: /images/rgb.gif
+  overlay_image: /images/large_theta_black_and_white.gif
 ---
 
 ## Captivating spirograph animations: an overview
