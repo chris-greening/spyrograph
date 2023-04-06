@@ -219,7 +219,7 @@ class _Trochoid(ABC):
             show_circles: bool = False, frame_pause: Number = 0,
             screen: "turtle.Screen" = None, circle_color: str = "black",
             show_full_path: bool = False, full_path_color: str = "grey",
-            repeat: bool = False
+            repeat: bool = False, screen_coords = (0, 0)
         ) -> "turtle.Screen":
         """
         Trace the shape using the turtle graphics library and return the turtle.Screen object.
@@ -234,7 +234,7 @@ class _Trochoid(ABC):
         screen_color : str, optional
             The color of the background screen, default is "white".
         exit_on_click : bool, optional
-            If True, pause the final animation until the user clicks to exit 
+            If True, pause the final animation until the user clicks to exit
             the window, default is False.
         color : str, optional
             The color of the primary tracing, default is "black".
@@ -255,8 +255,10 @@ class _Trochoid(ABC):
         full_path_color : str, optional
             The color of the full path drawing, default is "grey".
         repeat : bool, optional
-            If True, infinitely repeat the animation so it starts over from the 
+            If True, infinitely repeat the animation so it starts over from the
             beginning, default is False.
+        screen_coords : Tuple[int, int] = (0, 0)
+            Location of the screen coordinates
 
         Returns
         -------
@@ -271,9 +273,8 @@ class _Trochoid(ABC):
         >>> screen = shape.trace(show_circles=True, exit_on_click=True)
         """
         # pylint: disable=no-member,too-many-locals
-        screen = self._init_screen(screen, screen_size, screen_color)
+        screen = self._init_screen(screen, screen_size, screen_color, screen_coords)
         turtle.tracer(False)
-
         turtles = self._init_turtles(color, circle_color, full_path_color, hide_turtle, width)
 
         if show_full_path:
@@ -310,7 +311,7 @@ class _Trochoid(ABC):
             turtles.shape_turtle.clear()
         if exit_on_click:
             turtle.exitonclick()
-        return screen
+        return screen, turtles
 
     @classmethod
     def animate(
@@ -321,7 +322,7 @@ class _Trochoid(ABC):
             screen_size: Tuple[Number, Number] = (1000, 1000),
             screen_color: str = "white", exit_on_click: bool = False,
             color: str = "black", width: Number = 1,
-            frame_pause: Number = 0.1, screen: "turtle.Screen" = None
+            frame_pause: Number = 0.1, screen: "turtle.Screen" = None, screen_coords = (0, 0)
         ) -> List["_Trochoid"]:
         """
         Animate a sequence of _Trochoid shapes with varying input parameters,
@@ -389,7 +390,8 @@ class _Trochoid(ABC):
         _draw_animation(
             shapes_arr=shapes_arr, screen_size=screen_size,
             screen_color=screen_color, exit_on_click=exit_on_click, color=color,
-            width=width, frame_pause=frame_pause, screen=screen
+            width=width, frame_pause=frame_pause, screen=screen,
+            screen_coords=screen_coords
         )
         return shapes_arr
 
@@ -524,13 +526,16 @@ class _Trochoid(ABC):
 
     def _init_screen(
             self, screen: "turtle.Screen", screen_size: Tuple[Number, Number],
-            screen_color: str
+            screen_color: str, screen_coords: Tuple[Number, Number]
         ) -> "turtle.Screen":
         """Initializes the turtle screen with the given size and color"""
         if screen is None:
             screen = turtle.Screen()
             screen.setup(*screen_size)
             screen.bgcolor(screen_color)
+            canvas = screen.getcanvas()
+            root = canvas.winfo_toplevel()
+            root.geometry(f"+{screen_coords[0]}+{screen_coords[1]}")
         return screen
 
     def _init_turtles(
