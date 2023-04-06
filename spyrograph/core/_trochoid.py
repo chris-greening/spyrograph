@@ -219,7 +219,7 @@ class _Trochoid(ABC):
             show_circles: bool = False, frame_pause: Number = 0,
             screen: "turtle.Screen" = None, circle_color: str = "black",
             show_full_path: bool = False, full_path_color: str = "grey",
-            repeat: bool = False
+            repeat: bool = False, screen_coords = (0, 0)
         ) -> "turtle.Screen":
         """
         Trace the shape using the turtle graphics library and return the turtle.Screen object.
@@ -234,7 +234,7 @@ class _Trochoid(ABC):
         screen_color : str, optional
             The color of the background screen, default is "white".
         exit_on_click : bool, optional
-            If True, pause the final animation until the user clicks to exit 
+            If True, pause the final animation until the user clicks to exit
             the window, default is False.
         color : str, optional
             The color of the primary tracing, default is "black".
@@ -255,8 +255,9 @@ class _Trochoid(ABC):
         full_path_color : str, optional
             The color of the full path drawing, default is "grey".
         repeat : bool, optional
-            If True, infinitely repeat the animation so it starts over from the 
+            If True, infinitely repeat the animation so it starts over from the
             beginning, default is False.
+        screen_coords : Tuple[int, int] = (0, 0)
 
         Returns
         -------
@@ -272,6 +273,10 @@ class _Trochoid(ABC):
         """
         # pylint: disable=no-member,too-many-locals
         screen = self._init_screen(screen, screen_size, screen_color)
+        canvas = screen.getcanvas()
+        root = canvas.winfo_toplevel()
+        root.geometry(f"+{screen_coords[0]}+{screen_coords[1]}")
+
         turtle.tracer(False)
 
         turtles = self._init_turtles(color, circle_color, full_path_color, hide_turtle, width)
