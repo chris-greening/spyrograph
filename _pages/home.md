@@ -3,7 +3,7 @@ layout: splash
 permalink: /
 title: spyrograph
 header:
-  overlay_image: images/header_image.PNG
+  overlay_image: /images/spirograph_boomerang_header.gif
   cta_label: "<i class='fa fa-download'></i> pip install spyrograph"
   cta_url: "https://pypi.org/project/spyrograph/"
 excerpt: Elegant mathematics and beautiful geometries with easy-to-use, expressive Python code
