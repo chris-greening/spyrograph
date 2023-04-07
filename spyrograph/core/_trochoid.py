@@ -448,7 +448,8 @@ class _Trochoid(ABC):
             shapes_arr=shapes_arr, screen_size=screen_size,
             screen_color=screen_color, exit_on_click=exit_on_click, color=color,
             width=width, frame_pause=frame_pause, screen=screen,
-            screen_coords=screen_coords, padding=padding, repeat=repeat
+            screen_coords=screen_coords, padding=padding, repeat=repeat,
+            reverse=reverse
         )
         return shapes_arr
 
