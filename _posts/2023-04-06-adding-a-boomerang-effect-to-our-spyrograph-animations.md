@@ -23,7 +23,8 @@ In this example, we will create a simple spirograph animation with the boomerang
 from spyrograph import Hypotrochoid
 import numpy as np
 
-# Animate a hypotrochoid by incrementally changing the rolling radius r
+# Animate a hypotrochoid by incrementally
+# changing the rolling radius r
 Hypotrochoid.animate(
     R=200,
     r=np.arange(113.75, 114.25, .01),
@@ -47,7 +48,8 @@ The boomerang effect can also be combined with looping, allowing the animation t
 from spyrograph import Hypotrochoid
 import numpy as np
 
-# Repeating animation of a hypotrochoid by incrementally changing the rolling radius r
+# Repeating animation of a hypotrochoid by
+# incrementally changing the rolling radius r
 Hypotrochoid.animate(
     R=200,
     r=np.arange(113.75, 114.25, .01),
@@ -67,7 +69,8 @@ The boomerang effect can be combined with other custom configurations, such as c
 from spyrograph import Hypotrochoid
 import numpy as np
 
-# Neon green hypotrochoid boomerang animation on black background
+# Neon green hypotrochoid boomerang
+# animation on black background
 Hypotrochoid.animate(
     R=200,
     r=np.arange(113.75, 114.25, .01),
