@@ -100,7 +100,7 @@ Hypotrochoid.animate(
 
 This animation will feature a **striking contrast** between the neon green spirograph patterns and the black background. The boomerang effect adds another layer of visual interest to this already captivating animation
 
-# Conclusion
+## Conclusion
 The boomerang effect is a **powerful addition** to the `spyrograph` library, allowing us to create **captivating spirograph animations** that play forwards and in reverse. By combining this feature with various parameter configurations and customization options, we can create a **wide array of mesmerizing** spirograph animations
 
 With a basic understanding of the boomerang effect and the examples provided in this blog post, we are **well-equipped** to explore the **endless possibilities** of spirograph animations. Whether you are an artist, mathematician, or a spirograph enthusiast, the boomerang effect is sure to add a unique touch to your spirograph creations
