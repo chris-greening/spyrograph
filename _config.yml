@@ -46,6 +46,7 @@ author:
   avatar           : "images/chris-greening.jpg"
   bio              : "Software engineer particularly fond of Python and R"
   location         : "New York metro area"
+  uri              : "https://www.christophergreening.com/"
   email            : "chris@christophergreening.com"
   github           : "chris-greening"
   linkedin         : "chris-greening-dev"
