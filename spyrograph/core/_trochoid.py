@@ -15,7 +15,7 @@ import numpy as np
 
 from spyrograph.core._misc import (
     _get_products_of_inputs, _validate_only_one_iterable, _draw_animation,
-    _validate_theta, _save_trace
+    _validate_theta, _save_trace, _get_animate_screen_size
 )
 
 try:
