@@ -82,7 +82,7 @@ def _draw_animation(
         screen_color: str = "white", exit_on_click: bool = False,
         color: str = "black", width: Number = 1,
         frame_pause: Number = 0.1, screen: "turtle.Screen" = None,
-        screen_coords = (0, 0), padding: Number = 100
+        screen_coords = (0, 0), padding: Number = 100, repeat: bool = False
     ) -> None:
     for shape in shapes_arr:
         if screen is not None:
