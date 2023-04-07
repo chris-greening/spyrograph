@@ -59,7 +59,7 @@ class _Cycloid(_Trochoid):
             thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
             theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0),
-            screen_size: Tuple[Number, Number] = (1000, 1000),
+            screen_size: Tuple[Number, Number] = None,
             screen_color: str = "white", exit_on_click: bool = False,
             color: str = "black", width: Number = 1,
             frame_pause: Number = 0.1, screen: "turtle.Screen" = None,
