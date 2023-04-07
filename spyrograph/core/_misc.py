@@ -109,13 +109,13 @@ def _draw_animation(
         reverse_arr = shapes_arr[::-1]
     while True:
         _trace_loop(
-            shapes_arr=shapes_arr, screen=screen, screen_size,
+            shapes_arr=shapes_arr, screen=screen, screen_size=screen_size,
             screen_color=screen_color, color=color, width=width,
             screen_coords=screen_coords, padding=padding, frame_pause=frame_pause
         )
         if boomerang:
             _trace_loop(
-                shapes_arr=reverse_arr, screen=screen, screen_size,
+                shapes_arr=reverse_arr, screen=screen, screen_size=screen_size,
                 screen_color=screen_color, color=color, width=width,
                 screen_coords=screen_coords, padding=padding, frame_pause=frame_pause
             )
