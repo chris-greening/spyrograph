@@ -447,7 +447,7 @@ class _Trochoid(ABC):
             R, r, d, thetas, theta_start,
             theta_stop, theta_step, origin
         )
-        screen_size = _get_animate_screen_size(shapes_arr)
+        screen_size = _get_animate_screen_size(shapes_arr, padding)
         _draw_animation(
             shapes_arr=shapes_arr, screen_size=screen_size,
             screen_color=screen_color, exit_on_click=exit_on_click, color=color,

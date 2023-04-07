@@ -77,7 +77,7 @@ def _save_trace(screen: "turtle.Turtle", fpath: str):
     ))
     image.save(fpath)
 
-def _get_animate_screen_size(shapes_arr) -> Tuple[Number, Number]:
+def _get_animate_screen_size(shapes_arr, padding) -> Tuple[Number, Number]:
     """Return screen size calculated from the largest x and y values"""
     min_x = min(shapes_arr, key=lambda x: x.min_x).min_x
     max_x = max(shapes_arr, key=lambda x: x.max_x).max_x
@@ -96,7 +96,6 @@ def _trace_loop(
         frame_pause: Number
     ) -> None:
     """Loop over a given array of shapes and draw them"""
-    print(screen is None)
     for shape in shapes_arr:
         if screen is not None:
             turtles.shape_turtle.clear()
