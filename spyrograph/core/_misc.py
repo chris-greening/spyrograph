@@ -107,21 +107,17 @@ def _draw_animation(
     if boomerang:
         reverse_arr = shapes_arr[::-1]
     while True:
-        _trace_loop(shapes_arr=shapes_arr, screen=screen, screen_size,
+        _trace_loop(
+            shapes_arr=shapes_arr, screen=screen, screen_size,
             screen_color=screen_color, color=color, width=width,
             screen_coords=screen_coords, padding=padding, frame_pause=frame_pause
         )
         if boomerang:
-            for shape in reverse_arr:
-                if screen is not None:
-                    turtles.shape_turtle.clear()
-                screen, turtles = shape.trace(
-                    screen = screen, screen_size = screen_size,
-                    screen_color = screen_color,
-                    color = color, width=width, screen_coords=screen_coords,
-                    padding=padding
-                )
-                time.sleep(frame_pause)
+            _trace_loop(
+                shapes_arr=reverse_arr, screen=screen, screen_size,
+                screen_color=screen_color, color=color, width=width,
+                screen_coords=screen_coords, padding=padding, frame_pause=frame_pause
+            )
         if not repeat:
             break
     if exit_on_click:
