@@ -102,6 +102,7 @@ def _draw_animation(
         screen_coords = (0, 0), padding: Number = 100, repeat: bool = False,
         reverse: bool = False, boomerang: bool = False
     ) -> None:
+    """Draw the animation from a given set of shapes"""
     if reverse:
         shapes_arr = shapes_arr[::-1]
     if boomerang:
