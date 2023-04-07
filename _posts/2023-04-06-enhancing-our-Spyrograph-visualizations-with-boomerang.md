@@ -14,7 +14,7 @@ In this blog post, we will explore the `boomerang` effect, a newly introduced fe
 ## The boomerang effect
 The boomerang effect is achieved by playing the animation sequence in reverse after it reaches the end, creating a back-and-forth effect. This feature is particularly useful when you want to visualize the evolution of a spirograph pattern with changing parameters and then observe how it returns to its initial state
 
-To enable the `boomerang` effect, we need to set the `boomerang` argument to True when calling the `animate` method of the `spyrograph` library. In the following sections, we will demonstrate how to use this feature with various examples.
+To enable the `boomerang` effect, we need to set `boomerang=True` when calling the `animate` method of the `spyrograph` library. In the following sections, we will demonstrate how to use this feature with various examples.
 
 ## Example 1: basic boomerang animation
 In this example, we will create a simple spirograph animation with the boomerang effect. We will use the `Hypotrochoid` class from the `spyrograph` library to generate our animation
@@ -37,3 +37,23 @@ Hypotrochoid.animate(
 <p align="center">
   <img src="{{ site.url }}{{ site.baseurl }}/images/spirograph_boomerang_example_1.gif" alt="An animation of a tracing of a star that is rotating back and forth">
 </p>
+
+This example generates a `Hypotrochoid` animation with varying `r` values while keeping `R` and `d` the same. After reaching the end of the sequence, the animation plays in reverse, creating a boomerang effect.
+
+## Example 2: combining boomerang with looping
+The boomerang effect can also be combined with looping, allowing the animation to play continuously. To achieve this, set both the `boomerang` and `repeat` arguments to `True` in the `animate` method
+
+{% highlight python %}
+
+# Repeating animation of a hypotrochoid by incrementally changing the rolling radius r
+Hypotrochoid.animate(
+    R=200,
+    r=np.arange(113.75, 114.25, .01),
+    d=133,
+    thetas=np.arange(0,100, .05),
+    boomerang=True,
+    repeat=True
+)
+{% endhighlight %}
+
+With these settings, the animation will loop indefinitely, playing forwards and then in reverse, creating an entrancing visual experience
