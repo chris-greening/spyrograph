@@ -1,9 +1,9 @@
 ---
-title: "Enhancing our Spyrograph animations with boomerang"
+title: "Adding a boomerang effect to our Spyrograph animations"
 date: 2023-04-06 01:18:00 -0500
 categories: Python
 header:
-  overlay_image: /images/spirograph_boomerang_example_3.gif
+  overlay_image: /images/spirograph_boomerang_header.gif
 ---
 
 ## Introduction
