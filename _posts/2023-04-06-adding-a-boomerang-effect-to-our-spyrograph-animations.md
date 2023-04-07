@@ -14,6 +14,10 @@ In this blog post, we will explore the `boomerang` effect, a newly introduced fe
 ## The boomerang effect
 The boomerang effect is achieved by playing the animation sequence in **reverse** after it reaches the end, creating a **back-and-forth effect**. This feature is particularly useful when you want to visualize the **evolution of a spirograph** pattern with changing parameters and then observe how it returns to its **initial state**
 
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/spirograph_boomerang_example.gif" alt="An animation of a white tracing of a star that is rotating back and forth on a black background">
+</p>
+
 To enable the `boomerang` effect, we need to set `boomerang=True` when calling the `animate` method of the `spyrograph` library. In the following sections, we will demonstrate how to use this feature with various examples.
 
 ## Example 1: Basic boomerang animation
