@@ -77,6 +77,18 @@ def _save_trace(screen: "turtle.Turtle", fpath: str):
     ))
     image.save(fpath)
 
+def _get_animate_screen_size(shapes_arr) -> Tuple[Number, Number]:
+    """Return screen size calculated from the largest x and y values"""
+    min_x = min(shapes_arr, key=lambda x: x.min_x).min_x
+    max_x = max(shapes_arr, key=lambda x: x.max_x).max_x
+    min_y = min(shapes_arr, key=lambda x: x.min_y).min_y
+    max_y = max(shapes_arr, key=lambda x: x.max_y).max_y
+    screen_size = (
+        max_x - min_x + padding,
+        max_y - min_y + padding
+    )
+    return screen_size
+
 def _trace_loop(
         shapes_arr, screen: "turtle.Screen", turtles: "namedtuple",
         screen_size: Tuple[Number, Number], screen_color: str, color: str,
