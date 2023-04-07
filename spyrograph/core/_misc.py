@@ -85,6 +85,8 @@ def _draw_animation(
         screen_coords = (0, 0), padding: Number = 100, repeat: bool = False,
         reverse: bool = False
     ) -> None:
+    if reverse:
+        shapes_arr = shapes_arr[::-1]
     while True:
         for shape in shapes_arr:
             if screen is not None:
