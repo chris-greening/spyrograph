@@ -101,7 +101,7 @@ def _draw_animation(
             )
             time.sleep(frame_pause)
         if boomerang:
-            for shape in shapes_arr:
+            for shape in reverse_arr:
                 if screen is not None:
                     turtles.shape_turtle.clear()
                 screen, turtles = shape.trace(
