@@ -62,7 +62,9 @@ class _Cycloid(_Trochoid):
             screen_size: Tuple[Number, Number] = (1000, 1000),
             screen_color: str = "white", exit_on_click: bool = False,
             color: str = "black", width: Number = 1,
-            frame_pause: Number = 0.1, screen: "turtle.Screen" = None
+            frame_pause: Number = 0.1, screen: "turtle.Screen" = None,
+            screen_coords = (0, 0), padding: Number = 100, repeat: bool = False,
+            reverse: bool = False, boomerang: bool = False
         ) -> List["_Trochoid"]:
         """
         Animate a sequence of _Trochoid shapes with varying input parameters,
@@ -107,6 +109,16 @@ class _Cycloid(_Trochoid):
             Time in seconds to pause between each shape in the animation.
         screen : turtle.Screen, optional
             Existing turtle screen.
+        padding : Number
+            Padding on the outside of the image
+        repeat : bool, optional
+            If True, infinitely repeat the animation so it starts over from the
+            beginning, default is False.
+        reverse : bool, optional, default False
+            If True, run the animation from the end to the beginning, default
+            is False
+        boomerang : bool, optional, default False
+            If True, repeat the animation at the end in reverse, default is False
 
         Returns
         -------
@@ -128,7 +140,9 @@ class _Cycloid(_Trochoid):
         _draw_animation(
             shapes_arr=shapes_arr, screen_size=screen_size,
             screen_color=screen_color, exit_on_click=exit_on_click, color=color,
-            width=width, frame_pause=frame_pause, screen=screen
+            width=width, frame_pause=frame_pause, screen=screen,
+            screen_coords=screen_coords, padding=padding, repeat=repeat,
+            reverse=reverse, boomerang=boomerang
         )
 
     @classmethod

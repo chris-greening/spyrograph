@@ -369,7 +369,8 @@ class _Trochoid(ABC):
             screen_color: str = "white", exit_on_click: bool = False,
             color: str = "black", width: Number = 1,
             frame_pause: Number = 0.1, screen: "turtle.Screen" = None, screen_coords = (0, 0),
-            padding: Number = 100, repeat: bool = False, reverse: bool = False
+            padding: Number = 100, repeat: bool = False, reverse: bool = False,
+            boomerang: bool = False
         ) -> List["_Trochoid"]:
         """
         Animate a sequence of _Trochoid shapes with varying input parameters,
@@ -423,9 +424,11 @@ class _Trochoid(ABC):
         repeat : bool, optional
             If True, infinitely repeat the animation so it starts over from the
             beginning, default is False.
-        reverse : bool
-            If True, run the animation from the end to the beginning, default 
+        reverse : bool, optional, default False
+            If True, run the animation from the end to the beginning, default
             is False
+        boomerang : bool, optional, default False
+            If True, repeat the animation at the end in reverse, default is False
 
         Returns
         -------
@@ -449,7 +452,7 @@ class _Trochoid(ABC):
             screen_color=screen_color, exit_on_click=exit_on_click, color=color,
             width=width, frame_pause=frame_pause, screen=screen,
             screen_coords=screen_coords, padding=padding, repeat=repeat,
-            reverse=reverse
+            reverse=reverse, boomerang=boomerang
         )
         return shapes_arr
 
