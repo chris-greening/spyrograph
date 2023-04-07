@@ -424,10 +424,10 @@ class _Trochoid(ABC):
         repeat : bool, optional
             If True, infinitely repeat the animation so it starts over from the
             beginning, default is False.
-        reverse : bool
+        reverse : bool, optional, default False
             If True, run the animation from the end to the beginning, default
             is False
-        boomerang : bool
+        boomerang : bool, optional, default False
             If True, repeat the animation at the end in reverse, default is False
 
         Returns
