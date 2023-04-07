@@ -84,15 +84,18 @@ def _draw_animation(
         frame_pause: Number = 0.1, screen: "turtle.Screen" = None,
         screen_coords = (0, 0), padding: Number = 100, repeat: bool = False
     ) -> None:
-    for shape in shapes_arr:
-        if screen is not None:
-            turtles.shape_turtle.clear()
-        screen, turtles = shape.trace(
-            screen = screen, screen_size = screen_size,
-            screen_color = screen_color,
-            color = color, width=width, screen_coords=screen_coords,
-            padding=padding
-        )
-        time.sleep(frame_pause)
+    while True:
+        for shape in shapes_arr:
+            if screen is not None:
+                turtles.shape_turtle.clear()
+            screen, turtles = shape.trace(
+                screen = screen, screen_size = screen_size,
+                screen_color = screen_color,
+                color = color, width=width, screen_coords=screen_coords,
+                padding=padding
+            )
+            time.sleep(frame_pause)
+        if not repeat:
+            break
     if exit_on_click:
         turtle.Screen().exitonclick()
