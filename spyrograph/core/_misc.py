@@ -78,11 +78,13 @@ def _save_trace(screen: "turtle.Turtle", fpath: str):
     image.save(fpath)
 
 def _trace_loop(
-        shapes_arr, screen: "turtle.Screen", screen_size: Tuple[Number, Number],
-        screen_color: str, color: str, width: Number, screen_coords: Tuple[Number, Number],
-        padding: Number, frame_pause: Number
+        shapes_arr, screen: "turtle.Screen", turtles: "namedtuple",
+        screen_size: Tuple[Number, Number], screen_color: str, color: str,
+        width: Number, screen_coords: Tuple[Number, Number], padding: Number,
+        frame_pause: Number
     ) -> None:
     """Loop over a given array of shapes and draw them"""
+    print(screen is None)
     for shape in shapes_arr:
         if screen is not None:
             turtles.shape_turtle.clear()
@@ -93,6 +95,9 @@ def _trace_loop(
             padding=padding
         )
         time.sleep(frame_pause)
+    if screen is not None:
+        turtles.shape_turtle.clear()
+    return screen, turtles
 
 def _draw_animation(
         shapes_arr, screen_size: Tuple[Number, Number] = (1000, 1000),
@@ -107,17 +112,19 @@ def _draw_animation(
         shapes_arr = shapes_arr[::-1]
     if boomerang:
         reverse_arr = shapes_arr[::-1]
+    turtles = None
     while True:
-        _trace_loop(
-            shapes_arr=shapes_arr, screen=screen, screen_size=screen_size,
-            screen_color=screen_color, color=color, width=width,
+        screen, turtles = _trace_loop(
+            shapes_arr=shapes_arr, screen=screen, turtles=turtles,
+            screen_size=screen_size, screen_color=screen_color, color=color, width=width,
             screen_coords=screen_coords, padding=padding, frame_pause=frame_pause
         )
         if boomerang:
-            _trace_loop(
-                shapes_arr=reverse_arr, screen=screen, screen_size=screen_size,
-                screen_color=screen_color, color=color, width=width,
-                screen_coords=screen_coords, padding=padding, frame_pause=frame_pause
+            screen, turtles = _trace_loop(
+                shapes_arr=reverse_arr, screen=screen, turtles=turtles,
+                screen_size=screen_size, screen_color=screen_color, color=color,
+                width=width, screen_coords=screen_coords, padding=padding,
+                frame_pause=frame_pause
             )
         if not repeat:
             break
