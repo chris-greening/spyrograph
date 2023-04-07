@@ -83,7 +83,7 @@ def _draw_animation(
         color: str = "black", width: Number = 1,
         frame_pause: Number = 0.1, screen: "turtle.Screen" = None,
         screen_coords = (0, 0), padding: Number = 100, repeat: bool = False,
-        reverse: bool = False
+        reverse: bool = False, boomerang=boomerang
     ) -> None:
     if reverse:
         shapes_arr = shapes_arr[::-1]
