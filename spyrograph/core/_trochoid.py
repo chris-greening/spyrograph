@@ -369,7 +369,7 @@ class _Trochoid(ABC):
             screen_color: str = "white", exit_on_click: bool = False,
             color: str = "black", width: Number = 1,
             frame_pause: Number = 0.1, screen: "turtle.Screen" = None, screen_coords = (0, 0),
-            padding: Number = 100
+            padding: Number = 100, repeat: bool = False
         ) -> List["_Trochoid"]:
         """
         Animate a sequence of _Trochoid shapes with varying input parameters,
@@ -420,6 +420,9 @@ class _Trochoid(ABC):
             Existing turtle screen.
         padding : Number
             Padding on the outside of the image
+        repeat : bool, optional
+            If True, infinitely repeat the animation so it starts over from the
+            beginning, default is False.
 
         Returns
         -------
