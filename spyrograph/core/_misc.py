@@ -18,7 +18,8 @@ def _validate_theta(
         thetas: List[Number], theta_start: Number, theta_stop: Number,
         theta_step: Number
     ) -> np.ndarray:
-    """Return a numpy array of theta values after validating & standartising the input list of theta values"""
+    """Return a numpy array of theta values after validating & standartising
+        the input list of theta values"""
     theta_values = (theta_start, theta_stop, theta_step)
     multiple_thetas = thetas is not None and any(theta_values)
     if multiple_thetas:
