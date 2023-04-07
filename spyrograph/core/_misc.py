@@ -83,10 +83,12 @@ def _draw_animation(
         color: str = "black", width: Number = 1,
         frame_pause: Number = 0.1, screen: "turtle.Screen" = None,
         screen_coords = (0, 0), padding: Number = 100, repeat: bool = False,
-        reverse: bool = False, boomerang=boomerang
+        reverse: bool = False, boomerang: bool = False
     ) -> None:
     if reverse:
         shapes_arr = shapes_arr[::-1]
+    if boomerang:
+        reverse_arr = shapes_arr[::-1]
     while True:
         for shape in shapes_arr:
             if screen is not None:
@@ -98,6 +100,17 @@ def _draw_animation(
                 padding=padding
             )
             time.sleep(frame_pause)
+        if boomerang:
+            for shape in shapes_arr:
+                if screen is not None:
+                    turtles.shape_turtle.clear()
+                screen, turtles = shape.trace(
+                    screen = screen, screen_size = screen_size,
+                    screen_color = screen_color,
+                    color = color, width=width, screen_coords=screen_coords,
+                    padding=padding
+                )
+                time.sleep(frame_pause)
         if not repeat:
             break
     if exit_on_click:
