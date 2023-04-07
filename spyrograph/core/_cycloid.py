@@ -59,7 +59,7 @@ class _Cycloid(_Trochoid):
             thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
             theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0),
-            screen_size: Tuple[Number, Number] = (1000, 1000),
+            screen_size: Tuple[Number, Number] = None,
             screen_color: str = "white", exit_on_click: bool = False,
             color: str = "black", width: Number = 1,
             frame_pause: Number = 0.1, screen: "turtle.Screen" = None,
@@ -136,6 +136,14 @@ class _Cycloid(_Trochoid):
         shapes_arr = cls.create_range(
             R, r, thetas, theta_start,
             theta_stop, theta_step, origin
+        )
+        min_x = min(shapes_arr, key=lambda x: x.min_x).min_x
+        max_x = max(shapes_arr, key=lambda x: x.max_x).max_x
+        min_y = min(shapes_arr, key=lambda x: x.min_y).min_y
+        max_y = max(shapes_arr, key=lambda x: x.max_y).max_y
+        screen_size = (
+            max_x - min_x + padding,
+            max_y - min_y + padding
         )
         _draw_animation(
             shapes_arr=shapes_arr, screen_size=screen_size,

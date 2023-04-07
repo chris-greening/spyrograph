@@ -447,6 +447,14 @@ class _Trochoid(ABC):
             R, r, d, thetas, theta_start,
             theta_stop, theta_step, origin
         )
+        min_x = min(shapes_arr, key=lambda x: x.min_x).min_x
+        max_x = max(shapes_arr, key=lambda x: x.max_x).max_x
+        min_y = min(shapes_arr, key=lambda x: x.min_y).min_y
+        max_y = max(shapes_arr, key=lambda x: x.max_y).max_y
+        screen_size = (
+            max_x - min_x + padding,
+            max_y - min_y + padding
+        )
         _draw_animation(
             shapes_arr=shapes_arr, screen_size=screen_size,
             screen_color=screen_color, exit_on_click=exit_on_click, color=color,
