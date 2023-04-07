@@ -44,6 +44,8 @@ This example generates a `Hypotrochoid` animation with varying `r` values while 
 The boomerang effect can also be combined with looping, allowing the animation to play continuously. To achieve this, set both the `boomerang` and `repeat` arguments to `True` in the `animate` method
 
 {% highlight python %}
+from spyrograph import Hypotrochoid
+import numpy as np
 
 # Repeating animation of a hypotrochoid by incrementally changing the rolling radius r
 Hypotrochoid.animate(
@@ -57,3 +59,31 @@ Hypotrochoid.animate(
 {% endhighlight %}
 
 With these settings, the animation will loop indefinitely, playing forwards and then in reverse, creating an entrancing visual experience
+
+## Example 3: boomerang effect with custom configurations
+The boomerang effect can be combined with other custom configurations, such as changing the background color, line color, or line width. In this example, we will create an animation with a black background, a neon green tracing line, and a thicker line width
+
+{% highlight python %}
+from spyrograph import Hypotrochoid
+import numpy as np
+
+# Neon green hypotrochoid boomerang animation on black background
+Hypotrochoid.animate(
+    R=200,
+    r=np.arange(113.75, 114.25, .01),
+    d=133,
+    thetas=np.arange(0,100, .05),
+    frame_pause=.01,
+    repeat=True,
+    boomerang=True,
+    screen_color="black",
+    color="#39FF14",
+    width=3
+)
+{% endhighlight %}
+
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/spirograph_boomerang_example_3.gif" alt="An animation of a neon green tracing of a star that is rotating back and forth on a black background">
+</p>
+
+This animation will feature a striking contrast between the neon green spirograph patterns and the black background. The boomerang effect adds another layer of visual interest to this already captivating animation
