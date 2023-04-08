@@ -7,9 +7,9 @@ header:
 ---
 
 ## Introduction
-Unleash your inner artist by creating beautiful geometric designs with Spyrograph. In this tutorial, we'll demonstrate how to chain screens for multiple traces, allowing us to create captivating artwork by layering different spirograph shapes on the same canvas
+In this tutorial, we'll demonstrate how to chain screens for multiple traces, allowing us to create captivating artwork by layering different spirograph shapes on the same canvas with Spyrograph!
 
-Follow along as we use a custom code snippet to showcase this technique in action.
+Follow along as we use a custom code snippet to showcase this technique in action
 
 ## Creating our first spirograph
 To begin, let's create our first spirograph shape using the `Hypotrochoid` class. Import the necessary libraries and define the required parameters for the shape
