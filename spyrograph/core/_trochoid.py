@@ -573,7 +573,7 @@ class _Trochoid(ABC):
             ))
         return shapes
 
-    def _show_full_path(self, pre_draw_turtle: "turtle.Turtle") -> None:
+    def _show_full_path(self, pre_draw_turtle: "turtle.Turtle") -> turtle.Turtle:
         """Draw the full path prior to tracing"""
         # pylint: disable=no-member, unused-variable
         first = True
@@ -710,8 +710,8 @@ class _Trochoid(ABC):
         t.down()
         t.circle(radius, steps=200)
 
-    def _draw_rolling_circle(self, t: "turtle.Turtle", theta: Number) -> None:
-        """Draw the rolling circle on the screen"""
+    def _draw_rolling_circle(self, t: "turtle.Turtle", theta: Number) -> Tuple[Number, Number]:
+        """Returns x and y coordinates for a rolling circle"""
         x=self._circle_offset()*math.cos(theta) + self.origin[0]
         y=self._circle_offset()*math.sin(theta) - self.r + self.origin[1]
         self._draw_circle(
