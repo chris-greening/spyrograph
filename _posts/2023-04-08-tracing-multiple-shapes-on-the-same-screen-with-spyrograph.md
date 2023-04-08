@@ -3,7 +3,7 @@ title: "Tracing multiple shapes on the same screen with Spyrograph"
 date: 2023-04-08 01:18:00 -0500
 categories: Python
 header:
-  overlay_image: /images/multiple_tracing_same_screen.gif
+  overlay_image: /images/multiple_tracing_same_screen_black.gif
 ---
 
 ## Introduction
