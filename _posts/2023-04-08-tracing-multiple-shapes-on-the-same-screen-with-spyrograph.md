@@ -34,7 +34,7 @@ screen, turtles = first_shape.trace()
 {% endhighlight %}
 
 <p align="center">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/second_shape_multiple_tracing.PNG" alt="A copy of the first shape is traced on the same screen but slightly smaller and in red">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/first_shape_multiple_tracing.PNG" alt="A black tracing is drawn on white background">
 </p>
 
 ## Creating a second shape
@@ -56,7 +56,7 @@ second_shape.trace(
 {% endhighlight %}
 
 <p align="center">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/spirograph_boomerang_example.gif" alt="An animation of a white tracing of a star that is rotating back and forth on a black background">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/second_shape_multiple_tracing.PNG" alt="A copy of the first shape is traced on the same screen but slightly smaller and in red">
 </p>
 
 ## Experiment with different shapes and colors
