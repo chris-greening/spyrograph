@@ -108,8 +108,8 @@ Check out the [official website](https://chris-greening.github.io/spyrograph/) f
 - [Spyrograph is looking for beginners to open source to contribute!](https://dev.to/chrisgreening/spyrograph-is-looking-for-beginners-to-open-source-to-contribute-1nbe)
 - [Creating mesmerizing spirograph animations with Python and Spyrograph](https://chris-greening.github.io/spyrograph/python/2023/04/05/creating-mesmirizing-spirograph-animations-with-python-and-spyrograph.html)
 - [Adding a boomerang effect to our spirograph animations](https://chris-greening.github.io/spyrograph/python/2023/04/06/adding-a-boomerang-effect-to-our-spyrograph-animations.html)
-- [Tracing multiple shapes on the same screen with Spyrograph](https://chris-greening.github.io/spyrograph/python/2023/04/08/
-tracing-multiple-shapes-on-the-same-screen-with-spyrograph.html)
+- [Tracing multiple shapes on the same screen with Spyrograph](https://chris-greening.github.io/spyrograph/python/2023/04/08/tracing-multiple-shapes-on-the-same-screen-with-spyrograph.html)
+
 ---
 
 ## :books: Documentation <a name="documentation"></a>

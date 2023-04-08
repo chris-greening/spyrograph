@@ -96,7 +96,7 @@ def _trace_loop(
         screen_size: Tuple[Number, Number], screen_color: str, color: str,
         width: Number, screen_coords: Tuple[Number, Number], padding: Number,
         frame_pause: Number
-    ) -> Tuple[turtle.Screen, namedtuple]:
+    ) -> Tuple["turtle.Screen", "namedtuple"]:
     """Returns a turtle screen and namedtuple containing turtles..."""
     for shape in shapes_arr:
         if screen is not None:
