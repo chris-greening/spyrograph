@@ -3,7 +3,7 @@ title: "Tracing multiple shapes on the same screen with Spyrograph"
 date: 2023-04-08 01:18:00 -0500
 categories: Python
 header:
-  overlay_image: /images/spirograph_boomerang_header.gif
+  overlay_image: /images/multiple_tracing_same_screen.gif
 ---
 
 ## Introduction
@@ -33,6 +33,10 @@ Next, trace the first shape and keep the screen open by calling the `trace` meth
 screen, turtles = first_shape.trace()
 {% endhighlight %}
 
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/second_shape_multiple_tracing.PNG" alt="A copy of the first shape is traced on the same screen but slightly smaller and in red">
+</p>
+
 ## Creating a second shape
 Now, let's create a second shape by using the `scale` method to adjust the size of the first shape into a  slightly smaller copy
 
@@ -50,6 +54,10 @@ second_shape.trace(
     screen=screen
 )
 {% endhighlight %}
+
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/spirograph_boomerang_example.gif" alt="An animation of a white tracing of a star that is rotating back and forth on a black background">
+</p>
 
 ## Experiment with different shapes and colors
 Feel free to experiment with different shapes, sizes, and colors to create your unique spirograph artwork. You can create and layer multiple shapes on the same screen by following the steps outlined above
