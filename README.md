@@ -107,6 +107,7 @@ Check out the [official website](https://chris-greening.github.io/spyrograph/) f
 - [Scaling trochoid’s and cycloid’s input parameters with the spyrograph scale method](https://chris-greening.github.io/spyrograph/python/2023/04/01/scaling-trochoids-and-cycloids-input-parameters-with-the-spyrograph-scale-method.html)
 - [Spyrograph is looking for beginners to open source to contribute!](https://dev.to/chrisgreening/spyrograph-is-looking-for-beginners-to-open-source-to-contribute-1nbe)
 - [Creating mesmerizing spirograph animations with Python and Spyrograph](https://chris-greening.github.io/spyrograph/python/2023/04/05/creating-mesmirizing-spirograph-animations-with-python-and-spyrograph.html)
+- [Tracing multiple shapes on the same screen with Spyrograph](https://chris-greening.github.io/spyrograph/python/2023/04/08/tracing-multiple-shapes-on-the-same-screen-with-spyrograph.html)
 ---
 
 ## :books: Documentation <a name="documentation"></a>
