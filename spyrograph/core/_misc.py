@@ -42,8 +42,8 @@ def _get_products_of_inputs(*args) -> Tuple[Number]:
     product = list(itertools.product(*list_of_lists))
     return product
 
-def _validate_only_one_iterable(*args) -> bool:
-    """Return validation check that only one argument passed to create_range is an iterable"""
+def _validate_only_one_iterable(*args) -> None:
+    """Validation check that only one argument passed to create_range is an iterable"""
     inputs = collections.Counter([isinstance(el, collections.abc.Iterable) for el in args])
     if inputs[True] > 1:
         raise ValueError((
@@ -96,8 +96,8 @@ def _trace_loop(
         screen_size: Tuple[Number, Number], screen_color: str, color: str,
         width: Number, screen_coords: Tuple[Number, Number], padding: Number,
         frame_pause: Number
-    ) -> None:
-    """Loop over a given array of shapes and draw them"""
+    ) -> Tuple[turtle.Screen, namedtuple]:
+    """Returns a turtle screen and namedtuple containing turtles..."""
     for shape in shapes_arr:
         if screen is not None:
             turtles.shape_turtle.clear()
