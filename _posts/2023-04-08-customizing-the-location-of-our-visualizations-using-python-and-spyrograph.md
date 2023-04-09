@@ -24,7 +24,7 @@ Keep in mind that changing the origin only affects the position of the pattern, 
 Now that you have a clear understanding of the role of the origin in spirographs, let's walk through the steps to customize it. The process is quite straightforward, as you only need to modify the `origin` parameter when creating your shape (i.e. `Hypotrochoid`, `Epicycloid`, etc.)
 
 ### Choose the new origin
-First, decide on the new origin coordinates you want to use for your trochoid curve. These coordinates should be a tuple of two numbers representing the x and y values, e.g., (x, y).
+First, decide on the new origin coordinates you want to use for your trochoid curve. These coordinates should be a tuple of two numbers representing the x and y values, e.g., (x, y)
 
 ### Create a trochoid curve with the custom origin
 When creating a new shape, pass the chosen origin coordinates as the `origin` parameter. For example:
@@ -57,7 +57,7 @@ Start by creating each trochoid shape with its unique parameters (R, r, d, and t
 {% highlight python %}
 shape1 = Hypotrochoid(R=200, r=100, d=50, thetas=np.arange(0, 2*np.pi, 0.01), origin=(0, 0))
 shape2 = Hypotrochoid(R=150, r=75, d=35, thetas=np.arange(0, 2*np.pi, 0.01), origin=(300, 0))
-{% endhiglight %}
+{% endhighlight %}
 
 ### Set up the drawing environment
 Before drawing the shapes, set up the drawing environment using the turtle library. Make sure to configure the screen size, background color, and other settings as desired.
