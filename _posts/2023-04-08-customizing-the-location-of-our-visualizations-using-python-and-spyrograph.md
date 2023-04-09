@@ -28,14 +28,44 @@ Now that you have a clear understanding of the role of the origin in spirographs
 **Create a trochoid curve with the custom origin:** When creating a new shape, pass the chosen origin coordinates as the `origin` parameter. For example:
 
 {% highlight python %}
-custom_origin = (20, 30)
-shape = Hypotrochoid(R=200, r=150, d=100, thetas=np.arange(0, 2*np.pi, .01), origin=custom_origin)
+shape = Hypotrochoid(
+    R=200,
+    r=150,
+    d=100,
+    thetas=np.arange(0, 2*np.pi, .01),
+    origin=(20, 30))
 {% endhighlight %}
 
-This code snippet creates a Hypotrochoid with a custom origin at the point (20, 30) instead of the default (0, 0).
+This code snippet creates a Hypotrochoid with a custom origin at the point (20, 30) instead of the default (0, 0)
 
 **Visualize the curve:** After creating the trochoid curve with the custom origin, you can visualize it using the trace method or create an animation using the animate method. The custom origin will be taken into account when drawing the pattern, and the fixed circle's center will be placed at the specified origin.
 
 **Combine multiple shapes with different origins:** To create more complex designs or to position multiple trochoid curves relative to each other, you can customize the origins of each shape independently. This approach enables you to control the position of each pattern within the broader composition effectively.
 
-Remember that customizing the origin can be a powerful tool when designing intricate patterns or aligning multiple shapes within a composition. Experimenting with different origin coordinates can lead to a wide variety of unique and visually appealing results.
+Remember that customizing the origin can be a powerful tool when designing intricate patterns or aligning multiple shapes within a composition. Experimenting with different origin coordinates can lead to a wide variety of unique and visually appealing results
+
+## Combining multiple trochoid shapes with different origins
+Incorporating multiple trochoid shapes with different origins into a single design can create stunning, complex patterns. Here's a step-by-step guide on how to combine multiple trochoid shapes with different origins:
+
+### Create individual trochoid shapes
+Start by creating each trochoid shape with its unique parameters (R, r, d, and thetas). Make sure to also set the origin for each shape, as this will determine its position relative to the other shapes.
+
+{% higlight python %}
+shape1 = Hypotrochoid(R=200, r=100, d=50, thetas=np.arange(0, 2*np.pi, 0.01), origin=(0, 0))
+shape2 = Hypotrochoid(R=150, r=75, d=35, thetas=np.arange(0, 2*np.pi, 0.01), origin=(300, 0))
+{% endhiglight %}
+
+### Set up the drawing environment
+Before drawing the shapes, set up the drawing environment using the turtle library. Make sure to configure the screen size, background color, and other settings as desired.
+
+### Trace each shape on the same screen
+To draw the shapes on the same screen, use the `trace` method for each shape, making sure to pass the same `turtle.Screen` object to each call. This will ensure that each shape is drawn on the same canvas.
+
+{% highlight python %}
+screen = shape1.trace(color='blue', exit_on_click=False)
+shape2.trace(color='red', screen=screen, exit_on_click=True)
+{% endhighlight %}
+
+### Customize and experiment
+Feel free to modify the parameters, colors, and origins of each shape to create unique and interesting patterns. By changing the origins, you can position the shapes in various ways, such as stacking them, creating a grid, or designing a mosaic.
+By following these steps, you can create intricate designs that combine multiple trochoid shapes with different origins. This technique offers endless possibilities for creativity and customization, allowing you to produce stunning visual displays.
