@@ -19,3 +19,23 @@ Before diving into the process of customizing the origin, it's essential to unde
 By default, the origin is set at the coordinate (0, 0), placing the fixed circle's center at this location. However, by customizing the origin, we can shift the entire pattern to a different point in the Cartesian plane, thus altering the overall appearance and position of the trochoid curve. This customization can be useful when creating intricate designs, combining multiple shapes, or positioning the curve relative to other elements in a broader composition.
 
 Keep in mind that changing the origin only affects the position of the pattern, not its shape or size. To modify the trochoid curve's actual geometry, you would need to adjust other parameters such as the radii of the fixed and rolling circles or the distance of the trace point from the rolling circle.
+
+## Customizing the origin
+Now that you have a clear understanding of the role of the origin in spirographs, let's walk through the steps to customize it. The process is quite straightforward, as you only need to modify the `origin` parameter when creating your shape (i.e. `Hypotrochoid`, `Epicycloid`, etc.)
+
+**Choose the new origin:** First, decide on the new origin coordinates you want to use for your trochoid curve. These coordinates should be a tuple of two numbers representing the x and y values, e.g., (x, y).
+
+**Create a trochoid curve with the custom origin:** When creating a new shape, pass the chosen origin coordinates as the `origin` parameter. For example:
+
+{% highlight python %}
+custom_origin = (20, 30)
+shape = Hypotrochoid(R=200, r=150, d=100, thetas=np.arange(0, 2*np.pi, .01), origin=custom_origin)
+{% endhighlight %}
+
+This code snippet creates a Hypotrochoid with a custom origin at the point (20, 30) instead of the default (0, 0).
+
+**Visualize the curve:** After creating the trochoid curve with the custom origin, you can visualize it using the trace method or create an animation using the animate method. The custom origin will be taken into account when drawing the pattern, and the fixed circle's center will be placed at the specified origin.
+
+**Combine multiple shapes with different origins:** To create more complex designs or to position multiple trochoid curves relative to each other, you can customize the origins of each shape independently. This approach enables you to control the position of each pattern within the broader composition effectively.
+
+Remember that customizing the origin can be a powerful tool when designing intricate patterns or aligning multiple shapes within a composition. Experimenting with different origin coordinates can lead to a wide variety of unique and visually appealing results.
