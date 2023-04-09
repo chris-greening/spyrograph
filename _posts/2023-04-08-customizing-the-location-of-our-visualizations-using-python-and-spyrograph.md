@@ -155,3 +155,29 @@ shape3.trace(
 By adjusting the origins of each shape, you can control their positions and create a wide variety of patterns. Try stacking shapes, arranging them in grids or circles, or overlapping them to create intricate designs
 
 Experimenting with various origins for multiple trochoid shapes allows you to create complex spirograph designs that are both visually appealing and unique. By combining shapes with different parameters and positions, you can unleash your creativity and produce stunning artwork.
+
+## Tips and tricks for choosing the right origin
+Selecting the right origin for your trochoid shapes can make all the difference in creating captivating spirograph designs. Here are some tips and tricks to help you choose the perfect origin for your creations:
+
+### Consider symmetry
+Symmetry is often visually pleasing and can create a sense of balance in your designs. When choosing the origin for multiple shapes, try to create symmetrical patterns by aligning the shapes relative to one another.
+
+### Offset shapes for contrast
+By setting the origin of different shapes with an offset, you can create striking contrasts that make each shape stand out. This technique can be particularly effective when you're working with shapes that have similar parameters but different colors.
+
+### Think about screen size and aspect ratio
+Keep in mind the size and aspect ratio of the screen or canvas on which you plan to display your design. Choose origins that fit comfortably within the available space and avoid placing shapes too close to the edges to prevent clipping or distortion.
+
+### Trial and error
+Don't be afraid to experiment with different origins. Sometimes, the best designs emerge from unexpected combinations. Adjust the origin of your shapes, observe the results, and fine-tune your choices until you achieve the desired effect.
+
+### Opt for automation
+If you're working with a large number of shapes or seeking a more randomized design, consider writing a script to automate the process of selecting origins. For example, you can use a loop or a random number generator to create a grid or a circular arrangement of shapes.
+
+### Use existing artwork for inspiration
+Look at existing spirograph designs, mandalas, or geometric patterns for inspiration when choosing the origins for your shapes. You can replicate or modify these designs, or use them as a starting point to develop your own unique creations.
+
+### Keep it simple
+Sometimes, simplicity is key. You don't always need to choose complex origins or create intricate patterns to make a visually appealing design. Experiment with a single shape or a small number of shapes and see how changing the origin affects the overall appearance.
+
+By keeping these tips and tricks in mind when choosing the origin for your trochoid shapes, you can create visually captivating spirograph designs that showcase your creativity and artistic flair.
