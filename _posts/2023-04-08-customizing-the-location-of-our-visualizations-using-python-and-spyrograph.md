@@ -54,7 +54,7 @@ Incorporating multiple trochoid shapes with different origins into a single desi
 ### Create individual trochoid shapes
 Start by creating each trochoid shape with its unique parameters (R, r, d, and thetas). Make sure to also set the origin for each shape, as this will determine its position relative to the other shapes.
 
-{% higlight python %}
+{% highlight python %}
 shape1 = Hypotrochoid(R=200, r=100, d=50, thetas=np.arange(0, 2*np.pi, 0.01), origin=(0, 0))
 shape2 = Hypotrochoid(R=150, r=75, d=35, thetas=np.arange(0, 2*np.pi, 0.01), origin=(300, 0))
 {% endhiglight %}
