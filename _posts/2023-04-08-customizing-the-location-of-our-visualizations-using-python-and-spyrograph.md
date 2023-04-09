@@ -99,9 +99,27 @@ Manipulating the origin of trochoid shapes can produce intricate and fascinating
 First, create several trochoid shapes using different combinations of R, r, d, and thetas. For each shape, set a unique origin to position it relative to the other shapes in the design
 
 {% highlight python %}
-shape1 = Hypotrochoid(R=200, r=100, d=50, thetas=np.arange(0, 2*np.pi, 0.01), origin=(0, 0))
-shape2 = Hypotrochoid(R=150, r=75, d=35, thetas=np.arange(0, 2*np.pi, 0.01), origin=(300, 0))
-shape3 = Hypotrochoid(R=250, r=120, d=60, thetas=np.arange(0, 2*np.pi, 0.01), origin=(600, 0))
+shape1 = Hypotrochoid(
+    R=200,
+    r=100,
+    d=50,
+    thetas=np.arange(0, 2*np.pi, 0.01),
+    origin=(0, 0)
+)
+shape2 = Hypotrochoid(
+    R=150,
+    r=75,
+    d=35,
+    thetas=np.arange(0, 2*np.pi, 0.01),
+    origin=(300, 0)
+)
+shape3 = Hypotrochoid(
+    R=250,
+    r=120,
+    d=60,
+    thetas=np.arange(0, 2*np.pi, 0.01),
+    origin=(600, 0)
+)
 {% endhighlight %}
 
 ### Prepare the drawing environment
@@ -111,9 +129,20 @@ Before tracing the shapes, configure the drawing environment using the turtle li
 To create a complex design, trace each shape on the same screen by passing the same turtle.Screen object to each shape's trace() method.
 
 {% highlight python %}
-screen = shape1.trace(color='blue', exit_on_click=False)
-shape2.trace(color='red', screen=screen, exit_on_click=False)
-shape3.trace(color='green', screen=screen, exit_on_click=True)
+screen = shape1.trace(
+    color='blue',
+    exit_on_click=False
+)
+shape2.trace(
+    color='red',
+    screen=screen,
+    exit_on_click=False
+)
+shape3.trace(
+    color='green',
+    screen=screen,
+    exit_on_click=True
+)
 {% endhighlight %}
 
 ### Experiment with different origins
