@@ -41,7 +41,11 @@ shape = Hypotrochoid(
 )
 {% endhighlight %}
 
-This code snippet creates a Hypotrochoid with a custom origin at the point (20, 30) instead of the default (0, 0)
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/origin_first_example.PNG" alt="Two identical shapes. One is black at the center of the screen and the other is red and translated up and over.">
+</p>
+
+This code snippet creates a Hypotrochoid with a custom origin at the point (100, 100) instead of the default (0, 0)
 
 ### Visualize the curve
 After creating the trochoid curve with the custom origin, you can visualize it using the trace method or create an animation using the animate method. The custom origin will be taken into account when drawing the pattern, and the fixed circle's center will be placed at the specified origin.
@@ -60,18 +64,19 @@ Incorporating multiple trochoid shapes with different origins into a single desi
 Start by creating each trochoid shape with its unique parameters (R, r, d, and thetas). Make sure to also set the origin for each shape, as this will determine its position relative to the other shapes.
 
 {% highlight python %}
-shape1 = Hypotrochoid(
-    R=200,
-    r=100,
-    d=50,
-    thetas=np.arange(0, 2*np.pi, 0.01)
+shape = Hypotrochoid(
+    R=211,
+    r=151,
+    d=137,
+    thetas=np.arange(0, 40*np.pi, .1),
+    origin=(-50, 0)
 )
 shape2 = Hypotrochoid(
-    R=150,
-    r=75,
-    d=35,
-    thetas=np.arange(0, 2*np.pi, 0.01),
-    origin=(300, 0)
+    R=211,
+    r=151,
+    d=137,
+    thetas=np.arange(0, 40*np.pi, .1),
+    origin=(50, 0)
 )
 {% endhighlight %}
 
@@ -82,12 +87,8 @@ Before drawing the shapes, set up the drawing environment using the turtle libra
 To draw the shapes on the same screen, use the `trace` method for each shape, making sure to pass the same `turtle.Screen` object to each call. This will ensure that each shape is drawn on the same canvas.
 
 {% highlight python %}
-screen = shape1.trace(
-    color='blue',
-    exit_on_click=False
-)
+screen = shape1.trace()
 shape2.trace(
-    color='red',
     screen=screen,
     exit_on_click=True
 )
