@@ -91,3 +91,32 @@ shape2.trace(
 ### Customize and experiment
 Feel free to modify the parameters, colors, and origins of each shape to create unique and interesting patterns. By changing the origins, you can position the shapes in various ways, such as stacking them, creating a grid, or designing a mosaic.
 By following these steps, you can create intricate designs that combine multiple trochoid shapes with different origins. This technique offers endless possibilities for creativity and customization, allowing you to produce stunning visual displays.
+
+## Creating complex spirograph designs by varying the origin
+Manipulating the origin of trochoid shapes can produce intricate and fascinating spirograph patterns. This section will guide you through the process of creating complex designs by varying the origin of multiple shapes:
+
+### Generate multiple trochoid shapes
+First, create several trochoid shapes using different combinations of R, r, d, and thetas. For each shape, set a unique origin to position it relative to the other shapes in the design
+
+{% highlight python %}
+shape1 = Hypotrochoid(R=200, r=100, d=50, thetas=np.arange(0, 2*np.pi, 0.01), origin=(0, 0))
+shape2 = Hypotrochoid(R=150, r=75, d=35, thetas=np.arange(0, 2*np.pi, 0.01), origin=(300, 0))
+shape3 = Hypotrochoid(R=250, r=120, d=60, thetas=np.arange(0, 2*np.pi, 0.01), origin=(600, 0))
+{% endhighlight %}
+
+### Prepare the drawing environment
+Before tracing the shapes, configure the drawing environment using the turtle library. Set the screen size, background color, and any other desired settings.
+
+### Draw shapes with varied origins
+To create a complex design, trace each shape on the same screen by passing the same turtle.Screen object to each shape's trace() method.
+
+{% highlight python %}
+screen = shape1.trace(color='blue', exit_on_click=False)
+shape2.trace(color='red', screen=screen, exit_on_click=False)
+shape3.trace(color='green', screen=screen, exit_on_click=True)
+{% endhighlight %}
+
+### Experiment with different origins
+By adjusting the origins of each shape, you can control their positions and create a wide variety of patterns. Try stacking shapes, arranging them in grids or circles, or overlapping them to create intricate designs
+
+Experimenting with various origins for multiple trochoid shapes allows you to create complex spirograph designs that are both visually appealing and unique. By combining shapes with different parameters and positions, you can unleash your creativity and produce stunning artwork.
