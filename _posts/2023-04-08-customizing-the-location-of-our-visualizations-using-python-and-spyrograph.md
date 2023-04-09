@@ -20,6 +20,8 @@ By default, the origin is set at the coordinate (0, 0), placing the fixed circle
 
 Keep in mind that changing the origin only affects the position of the pattern, not its shape or size. To modify the trochoid curve's actual geometry, you would need to adjust other parameters such as the radii of the fixed and rolling circles or the distance of the trace point from the rolling circle.
 
+---
+
 ## Customizing the origin
 Now that you have a clear understanding of the role of the origin in spirographs, let's walk through the steps to customize it. The process is quite straightforward, as you only need to modify the `origin` parameter when creating your shape (i.e. `Hypotrochoid`, `Epicycloid`, etc.)
 
@@ -47,6 +49,8 @@ After creating the trochoid curve with the custom origin, you can visualize it u
 To create more complex designs or to position multiple trochoid curves relative to each other, you can customize the origins of each shape independently. This approach enables you to control the position of each pattern within the broader composition effectively.
 
 Remember that customizing the origin can be a powerful tool when designing intricate patterns or aligning multiple shapes within a composition. Experimenting with different origin coordinates can lead to a wide variety of unique and visually appealing results
+
+---
 
 ## Combining multiple trochoid shapes with different origins
 Incorporating multiple trochoid shapes with different origins into a single design can create stunning, complex patterns. Here's a step-by-step guide on how to combine multiple trochoid shapes with different origins:
