@@ -36,8 +36,9 @@ shape = Hypotrochoid(
     R=200,
     r=150,
     d=100,
-    thetas=np.arange(0, 2*np.pi, .01),
-    origin=(20, 30))
+    thetas=np.arange(0, 10*np.pi, .01),
+    origin=(100, 100)
+)
 {% endhighlight %}
 
 This code snippet creates a Hypotrochoid with a custom origin at the point (20, 30) instead of the default (0, 0)
