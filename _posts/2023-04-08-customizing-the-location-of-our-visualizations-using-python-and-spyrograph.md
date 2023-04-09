@@ -55,8 +55,19 @@ Incorporating multiple trochoid shapes with different origins into a single desi
 Start by creating each trochoid shape with its unique parameters (R, r, d, and thetas). Make sure to also set the origin for each shape, as this will determine its position relative to the other shapes.
 
 {% highlight python %}
-shape1 = Hypotrochoid(R=200, r=100, d=50, thetas=np.arange(0, 2*np.pi, 0.01), origin=(0, 0))
-shape2 = Hypotrochoid(R=150, r=75, d=35, thetas=np.arange(0, 2*np.pi, 0.01), origin=(300, 0))
+shape1 = Hypotrochoid(
+    R=200,
+    r=100,
+    d=50,
+    thetas=np.arange(0, 2*np.pi, 0.01)
+)
+shape2 = Hypotrochoid(
+    R=150,
+    r=75,
+    d=35,
+    thetas=np.arange(0, 2*np.pi, 0.01),
+    origin=(300, 0)
+)
 {% endhighlight %}
 
 ### Set up the drawing environment
@@ -66,8 +77,15 @@ Before drawing the shapes, set up the drawing environment using the turtle libra
 To draw the shapes on the same screen, use the `trace` method for each shape, making sure to pass the same `turtle.Screen` object to each call. This will ensure that each shape is drawn on the same canvas.
 
 {% highlight python %}
-screen = shape1.trace(color='blue', exit_on_click=False)
-shape2.trace(color='red', screen=screen, exit_on_click=True)
+screen = shape1.trace(
+    color='blue',
+    exit_on_click=False
+)
+shape2.trace(
+    color='red',
+    screen=screen,
+    exit_on_click=True
+)
 {% endhighlight %}
 
 ### Customize and experiment
