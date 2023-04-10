@@ -111,10 +111,10 @@ shape2.trace(
 
 ### Customize and experiment
 Feel free to modify the parameters, colors, and origins of each shape to create unique and interesting patterns. By changing the origins, you can position the shapes in various ways, such as stacking them, creating a grid, or designing a mosaic.
-By following these steps, you can create intricate designs that combine multiple trochoid shapes with different origins. This technique offers endless possibilities for creativity and customization, allowing you to produce stunning visual displays.
+By following these steps, you can create intricate designs that combine multiple shapes with different origins. This technique offers endless possibilities for creativity and customization, allowing you to produce stunning visual displays
 
-## Creating complex spirograph designs by varying the origin
-Manipulating the origin of trochoid shapes can produce intricate and fascinating spirograph patterns. This section will guide you through the process of creating complex designs by varying the origin of multiple shapes:
+## Example: Creating a complex spirograph design by varying the origin
+Manipulating the origin of trochoid shapes can produce intricate and fascinating spirograph patterns. In this section we will use a `for` loop to draw 25 `Hypotrochoid`'s, each shifted slightly to the right compared to the previous iteration of the loop. We will also modify the color
 
 {% highlight python %}
 from spyrograph import Hypotrochoid
@@ -125,7 +125,7 @@ import time
 screen = None
 for i in range(0, 26, 1):
     origin = (i*15-200, 0)
-    color = "#{:02x}0000".format(i*10)
+    color = "#{:02x}{:02x}{:02x}".format(i*10, i*10, i*10)
     shape = Hypotrochoid(
         R=211,
         r=100,
