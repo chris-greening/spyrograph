@@ -113,6 +113,7 @@ Manipulating the origin of trochoid shapes can produce intricate and fascinating
 from spyrograph import Hypotrochoid
 import turtle
 import numpy as np
+import time
 
 screen = None
 for i in range(0, 26, 1):
@@ -156,6 +157,36 @@ Don't be afraid to experiment with different origins. Sometimes, the best design
 
 ### Opt for automation
 If you're working with a large number of shapes or seeking a more randomized design, consider writing a script to automate the process of selecting origins. For example, you can use a loop or a random number generator to create a grid or a circular arrangement of shapes.
+
+{% highlight python %}
+from spyrograph import Hypotrochoid
+import numpy as np
+import turtle
+
+screen = None
+for x in range(-500, 500, 100):
+    for y in range(-500, 500, 100):
+        origin = (x, y)
+        shape = Hypotrochoid(
+            R=52,
+            r=25,
+            d=12.5,
+            thetas=np.arange(-np.pi, 20*np.pi, 0.15),
+            origin=origin
+        )
+        screen, turtles = shape.trace(
+            screen_color="black",
+            color="white",
+            screen_size=(1000,1000),
+            screen=screen,
+            width=2
+        )
+turtle.exitonclick()
+{% endhighlight %}
+
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/loop_origin_shape.gif" alt="Grid of tracings being drawn one after the other">
+</p>
 
 ### Use existing artwork for inspiration
 Look at existing spirograph designs, mandalas, or geometric patterns for inspiration when choosing the origins for your shapes. You can replicate or modify these designs, or use them as a starting point to develop your own unique creations.
