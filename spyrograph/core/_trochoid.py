@@ -90,7 +90,7 @@ class _Trochoid(ABC):
 
         self.coords = list(zip(self.x, self.y, self.thetas))
 
-    def transform(self, x: Number = 0, y: Number = 0) -> "_Trochoid":
+    def translate(self, x: Number = 0, y: Number = 0) -> "_Trochoid":
         """
         Return a new shape translated by the given x and y offsets.
 
@@ -113,7 +113,7 @@ class _Trochoid(ABC):
         """
         # pylint: disable=no-value-for-parameter
         try:
-            transformed_shape = self.__class__(
+            translated_shape = self.__class__(
                 R=self.R,
                 r=self.r,
                 d=self.d,
@@ -121,13 +121,13 @@ class _Trochoid(ABC):
                 origin=(self.origin[0]+x, self.origin[1]+y)
             )
         except TypeError:
-            transformed_shape = self.__class__(
+            translated_shape = self.__class__(
                 R=self.R,
                 r=self.r,
                 thetas=self.thetas,
                 origin=(self.origin[0]+x, self.origin[1]+y)
             )
-        return transformed_shape
+        return translated_shape
 
     def scale(self, factor: Number) -> Union["_Trochoid", "_Cycloid"]:
         """Return shape with input parameters scaled by a given input factor.

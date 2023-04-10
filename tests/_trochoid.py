@@ -45,28 +45,28 @@ class _TestGeneral:
         repr_val = repr(instance)
         assert isinstance(repr_val, str)
 
-    def test_transform_float_offset(self, instance):
-        up_and_left_transform_instance = instance.transform(x=100.33, y=-100.69)
-        assert instance.origin[0] + 100.33 == up_and_left_transform_instance.origin[0]
-        assert instance.origin[1] - 100.69 == up_and_left_transform_instance.origin[1]
+    def test_translate_float_offset(self, instance):
+        up_and_left_translate_instance = instance.translate(x=100.33, y=-100.69)
+        assert instance.origin[0] + 100.33 == up_and_left_translate_instance.origin[0]
+        assert instance.origin[1] - 100.69 == up_and_left_translate_instance.origin[1]
 
-    def test_transform_zero_offset(self, instance):
-        zero_transformed_instance = instance.transform(x=0, y=0)
-        assert instance.origin[0] == zero_transformed_instance.origin[0]
-        assert instance.origin[1] == zero_transformed_instance.origin[1]
+    def test_translate_zero_offset(self, instance):
+        zero_translateed_instance = instance.translate(x=0, y=0)
+        assert instance.origin[0] == zero_translateed_instance.origin[0]
+        assert instance.origin[1] == zero_translateed_instance.origin[1]
 
-    def test_transform_shape_x_direction(self, instance):
-        left_transformed_instance = instance.transform(x=-100)
-        assert instance.origin[0] - 100 == left_transformed_instance.origin[0]
+    def test_translate_shape_x_direction(self, instance):
+        left_translateed_instance = instance.translate(x=-100)
+        assert instance.origin[0] - 100 == left_translateed_instance.origin[0]
 
-    def test_transform_shape_y_direction(self, instance):
-        up_transformed_instance = instance.transform(y=100)
-        assert instance.origin[1] + 100 == up_transformed_instance.origin[1]
+    def test_translate_shape_y_direction(self, instance):
+        up_translateed_instance = instance.translate(y=100)
+        assert instance.origin[1] + 100 == up_translateed_instance.origin[1]
 
-    def test_transform_shape_x_and_y_same_transform_call(self, instance):
-        up_and_left_transform_instance = instance.transform(x=100, y=-100)
-        assert instance.origin[0] + 100 == up_and_left_transform_instance.origin[0]
-        assert instance.origin[1] - 100 == up_and_left_transform_instance.origin[1]
+    def test_translate_shape_x_and_y_same_translate_call(self, instance):
+        up_and_left_translate_instance = instance.translate(x=100, y=-100)
+        assert instance.origin[0] + 100 == up_and_left_translate_instance.origin[0]
+        assert instance.origin[1] - 100 == up_and_left_translate_instance.origin[1]
 
     def test_dunder_repr_values(self, instance):
         repr_val = repr(instance)
