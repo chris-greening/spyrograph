@@ -60,12 +60,11 @@ This results in the tracing being translated to the right 100 pixels and then up
 </p>
 
 ### Visualize the curve
-After creating the trochoid curve with the custom origin, you can visualize it using the trace method or create an animation using the animate method. The custom origin will be taken into account when drawing the pattern, and the fixed circle's center will be placed at the specified origin.
+After creating the trochoid curve with the custom origin, you can visualize it using the `trace` method. The custom `origin` will be taken into account when drawing the pattern, and the fixed circle's center will be placed at the specified origin.
 
-### Combine multiple shapes with different origins
-To create more complex designs or to position multiple trochoid curves relative to each other, you can customize the origins of each shape independently. This approach enables you to control the position of each pattern within the broader composition effectively.
-
-Remember that customizing the origin can be a powerful tool when designing intricate patterns or aligning multiple shapes within a composition. Experimenting with different origin coordinates can lead to a wide variety of unique and visually appealing results
+{% highlight python %}
+shape.trace(exit_on_click=True)
+{% endhighlight %}
 
 ---
 
