@@ -18,13 +18,13 @@ These mesmerizing patterns, often seen in spirograph designs, offer endless poss
 In this blog post, we will delve into the concept of customizing the origin in our designs uncovering its role in the shape's geometry and its impact on the final design. We will explore various techniques to shift and manipulate the origin, as well as demonstrate how combining multiple trochoid shapes with different origins can result in intricate and visually stunning patterns
 
 ## Understanding the role of the origin in trochoid curves
-Before diving into the process of customizing the origin, it's essential to understand its role in trochoid curves. The origin serves as the central point around which the entire pattern revolves. It determines the position of the fixed circle and, consequently, influences the trajectory of the rolling circle and the trace point
+Before diving into the process of customizing the origin, it's essential to understand its role in trochoid curves. The origin serves as the central point around which the entire pattern revolves. It determines the position of the fixed circle and, consequently, influences the trajectory of the rolling circle and the trace point (see animation below as an example where the bright green dot is the origin)
 
 <p align="center">
   <img src="{{ site.url }}{{ site.baseurl }}/images/example_with_origin.gif" alt="A fixed circle with a bright green dot at its center is tracing a shape">
 </p>
 
-By default, the origin is set at the coordinate (0, 0), placing the fixed circle's center at this location (for example the bright green dot in the animation above). However, by customizing the origin, we can shift the entire pattern to a different point in the Cartesian plane, thus altering the overall appearance and position of the trochoid curve. This customization can be useful when creating intricate designs, combining multiple shapes, or positioning the curve relative to other elements in a broader composition
+By default, the origin is set at the coordinate (0, 0), placing the fixed circle's center at this location. However, by customizing the origin, we can shift the entire pattern to a different point in the Cartesian plane, thus altering the overall appearance and position of the trochoid curve. This customization can be useful when creating intricate designs, combining multiple shapes, or positioning the curve relative to other elements in a broader composition
 
 Keep in mind that changing the origin only affects the position of the pattern, not its shape or size. To modify the trochoid curve's actual geometry, you would need to adjust other parameters such as the radii of the fixed and rolling circles or the distance of the trace point from the rolling circle
 
