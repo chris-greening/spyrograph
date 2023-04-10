@@ -3,7 +3,7 @@ title: "Customizing the location of our visualizations using Python and Spyrogra
 date: 2023-04-08 20:23:00 -0500
 categories: Python
 header:
-  overlay_image: /images/spirograph_boomerang_header.gif
+  overlay_image: /images/shape_fading_in.gif
 ---
 
 ## Introduction
@@ -131,6 +131,10 @@ shape3 = Hypotrochoid(
     origin=(600, 0)
 )
 {% endhighlight %}
+
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/shape_fading_in.gif" alt="A shape traced from lines fading in from a dark background">
+</p>
 
 ### Prepare the drawing environment
 Before tracing the shapes, configure the drawing environment using the turtle library. Set the screen size, background color, and any other desired settings.
