@@ -3,7 +3,7 @@ title: "Customizing the location of our visualizations using Python and Spyrogra
 date: 2023-04-08 20:23:00 -0500
 categories: Python
 header:
-  overlay_image: /images/shape_fading_in.gif
+  overlay_image: /images/header_origin_trace.gif
 ---
 
 ## Introduction
@@ -116,7 +116,7 @@ import numpy as np
 screen = None
 for i in range(0, 26, 1):
     origin = (i*15-200, 0)
-    color = "#{:02x}{:02x}{:02x}".format(i*10, i*10, i*10)
+    color = "#{:02x}0000".format(i*10)
     shape = Hypotrochoid(
         R=211,
         r=100,
