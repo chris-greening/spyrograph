@@ -1,5 +1,5 @@
 ---
-title: "Customizing the location of our visualizations using Python and Spyrograph"
+title: "Customizing the origin of our geometric visualizations using Python and Spyrograph"
 date: 2023-04-08 20:23:00 -0500
 categories: Python
 header:
