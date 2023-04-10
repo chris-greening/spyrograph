@@ -91,14 +91,14 @@ shape2 = Hypotrochoid(
 )
 {% endhighlight %}
 
-### Set up the drawing environment
-Before drawing the shapes, set up the drawing environment using the turtle library. Make sure to configure the screen size, background color, and other settings as desired.
-
 ### Trace each shape on the same screen
-To draw the shapes on the same screen, use the `trace` method for each shape, making sure to pass the same `turtle.Screen` object to each call. This will ensure that each shape is drawn on the same canvas.
+To draw the shapes on the same screen, use the `trace` method for each shape and capture the returned `turtle.Screen` to weave into the next `trace` call to persist the designs onto the same screen. Note that the screen configurations defined in your first `trace` will determine how the screen looks for subsequent `trace`'s
 
 {% highlight python %}
-screen = shape1.trace()
+screen = shape1.trace(
+    screen_color="white",
+    color="black"
+)
 shape2.trace(
     screen=screen,
     exit_on_click=True
