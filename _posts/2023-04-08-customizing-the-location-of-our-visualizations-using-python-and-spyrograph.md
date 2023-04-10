@@ -92,7 +92,7 @@ shape2 = Hypotrochoid(
 {% endhighlight %}
 
 ### Trace each shape on the same screen
-To draw the shapes on the same screen, use the `trace` method for each shape and capture the returned `turtle.Screen` to weave into the next `trace` call to persist the designs onto the same screen. Note that the screen configurations defined in your first `trace` will determine how the screen looks for subsequent `trace`'s
+To draw the shapes on the same screen, use the `trace` method for each shape and capture the returned `turtle.Screen` to weave into the next `trace` call to persist the designs onto the same screen. Note that the screen configurations defined in your first `trace` will determine how the screen looks for subsequent `trace`'s (see [this](https://chris-greening.github.io/spyrograph/python/2023/04/08/tracing-multiple-shapes-on-the-same-screen-with-spyrograph.html) post for more info)
 
 {% highlight python %}
 screen = shape1.trace(
