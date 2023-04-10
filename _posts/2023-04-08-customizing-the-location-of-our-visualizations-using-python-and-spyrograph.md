@@ -114,7 +114,7 @@ Feel free to modify the parameters, colors, and origins of each shape to create 
 By following these steps, you can create intricate designs that combine multiple shapes with different origins. This technique offers endless possibilities for creativity and customization, allowing you to produce stunning visual displays
 
 ## Example: Creating a complex spirograph design by varying the origin
-Manipulating the origin of trochoid shapes can produce intricate and fascinating spirograph patterns. In this section we will use a `for` loop to draw 25 `Hypotrochoid`'s, each shifted slightly to the right compared to the previous iteration of the loop. We will also modify the color
+Manipulating the origin of trochoid shapes can produce intricate and fascinating spirograph patterns. In this section we will use a `for` loop to draw 25 `Hypotrochoid`'s, each shifted slightly to the right compared to the previous iteration of the loop. We will also modify the color starting from black and slightly lighten the hex towards white to give an interesting fade effect:
 
 {% highlight python %}
 from spyrograph import Hypotrochoid
@@ -155,6 +155,10 @@ Symmetry is often visually pleasing and can create a sense of balance in your de
 
 ### Offset shapes for contrast
 By setting the origin of different shapes with an offset, you can create striking contrasts that make each shape stand out. This technique can be particularly effective when you're working with shapes that have similar parameters but different colors.
+
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/rgb.gif" alt="Three shapes drawn next to one another in varying colors">
+</p>
 
 ### Think about screen size and aspect ratio
 Keep in mind the size and aspect ratio of the screen or canvas on which you plan to display your design. Choose origins that fit comfortably within the available space and avoid placing shapes too close to the edges to prevent clipping or distortion.
