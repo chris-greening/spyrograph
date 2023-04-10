@@ -109,27 +109,29 @@ Manipulating the origin of trochoid shapes can produce intricate and fascinating
 First, create several trochoid shapes using different combinations of R, r, d, and thetas. For each shape, set a unique origin to position it relative to the other shapes in the design
 
 {% highlight python %}
-shape1 = Hypotrochoid(
-    R=200,
-    r=100,
-    d=50,
-    thetas=np.arange(0, 2*np.pi, 0.01),
-    origin=(0, 0)
-)
-shape2 = Hypotrochoid(
-    R=150,
-    r=75,
-    d=35,
-    thetas=np.arange(0, 2*np.pi, 0.01),
-    origin=(300, 0)
-)
-shape3 = Hypotrochoid(
-    R=250,
-    r=120,
-    d=60,
-    thetas=np.arange(0, 2*np.pi, 0.01),
-    origin=(600, 0)
-)
+from spyrograph import Hypotrochoid
+import turtle
+import numpy as np
+
+screen = None
+for i in range(0, 26, 1):
+    origin = (i*15-200, 0)
+    color = "#{:02x}{:02x}{:02x}".format(i*10, i*10, i*10)
+    shape = Hypotrochoid(
+        R=211,
+        r=100,
+        d=50,
+        thetas=np.arange(-np.pi, 18*np.pi, 0.15),
+        origin=origin
+    )
+    screen, turtles = shape.trace(
+        screen_color="black",
+        color=color,
+        screen_size=(1000,1000),
+        screen=screen
+    )
+    time.sleep(.1)
+turtle.exitonclick()
 {% endhighlight %}
 
 <p align="center">
