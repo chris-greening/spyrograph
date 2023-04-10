@@ -109,9 +109,6 @@ By following these steps, you can create intricate designs that combine multiple
 ## Creating complex spirograph designs by varying the origin
 Manipulating the origin of trochoid shapes can produce intricate and fascinating spirograph patterns. This section will guide you through the process of creating complex designs by varying the origin of multiple shapes:
 
-### Generate multiple trochoid shapes
-First, create several trochoid shapes using different combinations of R, r, d, and thetas. For each shape, set a unique origin to position it relative to the other shapes in the design
-
 {% highlight python %}
 from spyrograph import Hypotrochoid
 import turtle
@@ -141,30 +138,6 @@ turtle.exitonclick()
 <p align="center">
   <img src="{{ site.url }}{{ site.baseurl }}/images/shape_fading_in.gif" alt="A shape traced from lines fading in from a dark background">
 </p>
-
-### Prepare the drawing environment
-Before tracing the shapes, configure the drawing environment using the turtle library. Set the screen size, background color, and any other desired settings.
-
-### Draw shapes with varied origins
-To create a complex design, trace each shape on the same screen by passing the same `turtle.Screen` object to each shape's `trace` method.
-
-{% highlight python %}
-screen = shape1.trace(color='red')
-shape2.trace(
-    color='blue',
-    screen=screen,
-)
-shape3.trace(
-    color='green',
-    screen=screen,
-    exit_on_click=True
-)
-{% endhighlight %}
-
-### Experiment with different origins
-By adjusting the origins of each shape, you can control their positions and create a wide variety of patterns. Try stacking shapes, arranging them in grids or circles, or overlapping them to create intricate designs
-
-Experimenting with various origins for multiple trochoid shapes allows you to create complex spirograph designs that are both visually appealing and unique. By combining shapes with different parameters and positions, you can unleash your creativity and produce stunning artwork.
 
 ## Tips and tricks for choosing the right origin
 Selecting the right origin for your trochoid shapes can make all the difference in creating captivating spirograph designs. Here are some tips and tricks to help you choose the perfect origin for your creations:
