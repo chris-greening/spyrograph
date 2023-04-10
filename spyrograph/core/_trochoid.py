@@ -703,7 +703,7 @@ class _Trochoid(ABC):
     def _draw_circle(
             self, t: "turtle.Turtle", x: float, y: float, radius: float
         ) -> None:
-        """Draw circle"""
+        """Draws a circle with a given center point and radius on the current turtle canvas"""
         t.up()
         t.seth(0)
         t.goto(x, y)
