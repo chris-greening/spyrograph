@@ -135,14 +135,10 @@ Before tracing the shapes, configure the drawing environment using the turtle li
 To create a complex design, trace each shape on the same screen by passing the same turtle.Screen object to each shape's trace() method.
 
 {% highlight python %}
-screen = shape1.trace(
-    color='blue',
-    exit_on_click=False
-)
+screen = shape1.trace(color='red')
 shape2.trace(
-    color='red',
+    color='blue',
     screen=screen,
-    exit_on_click=False
 )
 shape3.trace(
     color='green',
