@@ -39,7 +39,9 @@ Now that you have a clear understanding of the role of the origin in spirographs
 First, decide on the new origin coordinates you want to use for your trochoid curve. These coordinates should be a tuple of two numbers representing the x and y values, e.g., (x, y)
 
 ### Create a trochoid curve with the custom origin
-When creating a new shape, pass the chosen origin coordinates as the `origin` parameter. For example:
+When creating a new shape, pass the chosen origin coordinates as the `origin` parameter
+
+For example the following code snippet creates a Hypotrochoid with a custom origin at the point (100, 100) instead of the default (0, 0):
 
 {% highlight python %}
 shape = Hypotrochoid(
@@ -51,11 +53,11 @@ shape = Hypotrochoid(
 )
 {% endhighlight %}
 
+This results in the tracing being translated to the right 100 pixels and then up 100 pixels as shown below where the black tracing is at the default (0, 0) and the red tracing is at (100, 100)
+
 <p align="center">
   <img src="{{ site.url }}{{ site.baseurl }}/images/origin_first_example.PNG" alt="Two identical shapes. One is black at the center of the screen and the other is red and translated up and over.">
 </p>
-
-This code snippet creates a Hypotrochoid with a custom origin at the point (100, 100) instead of the default (0, 0)
 
 ### Visualize the curve
 After creating the trochoid curve with the custom origin, you can visualize it using the trace method or create an animation using the animate method. The custom origin will be taken into account when drawing the pattern, and the fixed circle's center will be placed at the specified origin.
