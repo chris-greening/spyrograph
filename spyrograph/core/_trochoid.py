@@ -175,6 +175,9 @@ class _Trochoid(ABC):
             )
         return scaled_shape
 
+    def rotate(self, theta: Number) -> Union["_Trochoid", "_Cycloid"]:
+        """Return shape with thetas rotated by a given input angle"""
+
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
         """
         Plot the shape and return the associated matplotlib Figure and Axes objects.
