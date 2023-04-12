@@ -276,3 +276,8 @@ class _TestGeneral:
         assert all(instance.df["x"].to_numpy() == instance.x)
         assert all(instance.df["y"].to_numpy() == instance.y)
         assert all(instance.df["theta"].to_numpy() == instance.thetas)
+
+    def test_rotate_orientation(self, instance) -> None:
+        rotated_shape = instance.rotate(.1)
+        assert instance.orientation == 0
+        assert rotated_shape.orientation == .1
