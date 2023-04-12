@@ -249,5 +249,6 @@ class _Cycloid(_Trochoid):
             theta_start=theta_start,
             theta_stop=theta_stop,
             theta_step=theta_step,
-            origin=origin
+            origin=origin,
+            orientation=orientation
         )
