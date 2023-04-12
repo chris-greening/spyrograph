@@ -108,14 +108,16 @@ class _Trochoid(ABC):
                 r=self.r,
                 d=self.d,
                 thetas=self.thetas,
-                origin=(self.origin[0]+x, self.origin[1]+y)
+                origin=(self.origin[0]+x, self.origin[1]+y),
+                orientation=self.orientation
             )
         except TypeError:
             translated_shape = self.__class__(
                 R=self.R,
                 r=self.r,
                 thetas=self.thetas,
-                origin=(self.origin[0]+x, self.origin[1]+y)
+                origin=(self.origin[0]+x, self.origin[1]+y),
+                orientation=self.orientation
             )
         return translated_shape
 
@@ -154,14 +156,16 @@ class _Trochoid(ABC):
                 r=self.r*factor,
                 d=self.d*factor,
                 thetas=self.thetas,
-                origin=self.origin
+                origin=self.origin,
+                orientation=self.orientation
             )
         except TypeError:
             scaled_shape = self.__class__(
                 R=self.R*factor,
                 r=self.r*factor,
                 thetas=self.thetas,
-                origin=self.origin
+                origin=self.origin,
+                orientation=self.orientation
             )
         return scaled_shape
 
