@@ -15,7 +15,7 @@ import numpy as np
 
 from spyrograph.core._misc import (
     _get_products_of_inputs, _validate_only_one_iterable, _draw_animation,
-    _validate_theta, _save_trace, _get_animate_screen_size
+    _validate_theta, _save_trace, _get_animate_screen_size, _apply_rotation
 )
 
 try:
@@ -33,7 +33,8 @@ class _Trochoid(ABC):
     def __init__(
             self, R: Number, r: Number, d: Number, thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
-            theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
+            theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0),
+            orientation: Number = 0
         ) -> None:
         """Model of a trochoid curve from given input parameters. A trochoid is
         a curve drawn by tracing a point from a circle as it rolls around the
@@ -66,29 +67,18 @@ class _Trochoid(ABC):
             cannot be set at the same time as thetas argument
         origin : Tuple[Number, Number] = (0, 0)
             Custom origin to center the shapes at. Default is (0,0)
+        orientation : Number = 0
+            Angle of rotation for the shape
         """
         self.R = R
         self.r = r
         self.d = d
         self.thetas = _validate_theta(thetas, theta_start, theta_stop, theta_step)
         self.origin = origin
+        self.orientation = orientation
 
-        if self.R <= 0 or self.r <= 0 or self.d <= 0:
-            raise ValueError((
-                "Negative and/or zero input parameters were passed. "
-                "Please only pass positive values"
-            ))
-
-        self.x = np.array([self._calculate_x(theta) for theta in self.thetas])
-        self.y = np.array([self._calculate_y(theta) for theta in self.thetas])
-        self.x += self.origin[0]
-        self.y += self.origin[1]
-        self.min_x = min(self.x)
-        self.max_x = max(self.x)
-        self.min_y = min(self.y)
-        self.max_y = max(self.y)
-
-        self.coords = list(zip(self.x, self.y, self.thetas))
+        self._validate_inputs()
+        self._calculate_path()
 
     def translate(self, x: Number = 0, y: Number = 0) -> "_Trochoid":
         """
@@ -118,14 +108,16 @@ class _Trochoid(ABC):
                 r=self.r,
                 d=self.d,
                 thetas=self.thetas,
-                origin=(self.origin[0]+x, self.origin[1]+y)
+                origin=(self.origin[0]+x, self.origin[1]+y),
+                orientation=self.orientation
             )
         except TypeError:
             translated_shape = self.__class__(
                 R=self.R,
                 r=self.r,
                 thetas=self.thetas,
-                origin=(self.origin[0]+x, self.origin[1]+y)
+                origin=(self.origin[0]+x, self.origin[1]+y),
+                orientation=self.orientation
             )
         return translated_shape
 
@@ -164,14 +156,64 @@ class _Trochoid(ABC):
                 r=self.r*factor,
                 d=self.d*factor,
                 thetas=self.thetas,
-                origin=self.origin
+                origin=self.origin,
+                orientation=self.orientation
             )
         except TypeError:
             scaled_shape = self.__class__(
                 R=self.R*factor,
                 r=self.r*factor,
                 thetas=self.thetas,
-                origin=self.origin
+                origin=self.origin,
+                orientation=self.orientation
+            )
+        return scaled_shape
+
+    def rotate(self, angle: float, degrees: bool = False):
+        """
+        Rotate the shape by the given angle (in radians).
+
+        This method creates a new instance of the shape with the updated orientation attribute,
+        keeping the original shape unchanged.
+
+        Parameters
+        ----------
+        angle : float
+            The angle to rotate the shape by, in radians
+        degrees : bool
+            Rotate in degrees
+
+        Returns
+        -------
+        rotated_shape : instance of the shape's class
+            A new instance of the shape with the updated orientation.
+
+        Examples
+        --------
+        >>> from spyrograph import Hypotrochoid
+        >>> import numpy as np
+        >>> shape = Hypotrochoid(R=233, r=200, d=233, thetas=np.arange(0, 100*np.pi, .5))
+        >>> rotated_shape = shape.rotate(np.pi / 4)  # Rotate the shape by 45 degrees
+        """
+        # pylint: disable=no-value-for-parameter
+        if degrees:
+            angle = np.deg2rad(angle)
+        try:
+            scaled_shape = self.__class__(
+                R=self.R,
+                r=self.r,
+                d=self.d,
+                thetas=self.thetas,
+                origin=self.origin,
+                orientation=self.orientation + angle
+            )
+        except TypeError:
+            scaled_shape = self.__class__(
+                R=self.R,
+                r=self.r,
+                thetas=self.thetas,
+                origin=self.origin,
+                orientation=self.orientation + angle
             )
         return scaled_shape
 
@@ -572,6 +614,28 @@ class _Trochoid(ABC):
                 R, r, d, thetas, theta_start, theta_stop, theta_step, origin
             ))
         return shapes
+
+    def _calculate_path(self) -> None:
+        """Calculate the parametrized path"""
+        self.x = np.array([self._calculate_x(theta) for theta in self.thetas])
+        self.y = np.array([self._calculate_y(theta) for theta in self.thetas])
+        self.x += self.origin[0]
+        self.y += self.origin[1]
+        self.x, self.y = _apply_rotation(self.x, self.y, self.orientation)
+        self.min_x = min(self.x)
+        self.max_x = max(self.x)
+        self.min_y = min(self.y)
+        self.max_y = max(self.y)
+
+        self.coords = list(zip(self.x, self.y, self.thetas))
+
+    def _validate_inputs(self) -> None:
+        """Validate input parameters"""
+        if self.R <= 0 or self.r <= 0 or self.d <= 0:
+            raise ValueError((
+                "Negative and/or zero input parameters were passed. "
+                "Please only pass positive values"
+            ))
 
     def _show_full_path(self, pre_draw_turtle: "turtle.Turtle") -> turtle.Turtle:
         """Draw the full path prior to tracing"""

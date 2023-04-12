@@ -14,6 +14,13 @@ try:
 except ImportError:
     ImageGrab = None
 
+def _apply_rotation(x: "np.array", y: "np.array", angle: Number):
+    """Return rotated parametrized values"""
+    cos_angle, sin_angle = np.cos(angle), np.sin(angle)
+    rotation_matrix = np.array([[cos_angle, -sin_angle], [sin_angle, cos_angle]])
+    rotated_coords = np.dot(rotation_matrix, np.array([x, y]))
+    return rotated_coords[0], rotated_coords[1]
+
 def _validate_theta(
         thetas: List[Number], theta_start: Number, theta_stop: Number,
         theta_step: Number

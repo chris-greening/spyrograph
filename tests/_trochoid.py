@@ -101,6 +101,44 @@ class _TestGeneral:
         assert smaller_scaled_instance.d == instance.d*.5
         assert (smaller_scaled_instance.thetas == instance.thetas).all()
 
+    def test_scale_origin_is_preserved(self, thetas):
+        if issubclass(self.class_name, _Cycloid):
+            translated_shape = self.class_name(
+                R=100,
+                r=200,
+                thetas=thetas,
+                origin=(100,100)
+            )
+        elif issubclass(self.class_name, _Trochoid):
+            translated_shape = self.class_name(
+                R=100,
+                r=200,
+                d=300,
+                thetas=thetas,
+                origin=(100, 100)
+            )
+        scaled_shape = translated_shape.scale(2)
+        assert scaled_shape.origin == translated_shape.origin
+
+    def test_rotate_origin_is_preserved(self, thetas):
+        if issubclass(self.class_name, _Cycloid):
+            translated_shape = self.class_name(
+                R=100,
+                r=200,
+                thetas=thetas,
+                origin=(100, 100)
+            )
+        elif issubclass(self.class_name, _Trochoid):
+            translated_shape = self.class_name(
+                R=100,
+                r=200,
+                d=300,
+                thetas=thetas,
+                origin=(100, 100)
+            )
+        rotated_shape = translated_shape.rotate(2)
+        assert rotated_shape.origin == rotated_shape.origin
+
     def test_create_range_theta_inputs(self, thetas):
         R = 5
         r = 3
@@ -276,3 +314,13 @@ class _TestGeneral:
         assert all(instance.df["x"].to_numpy() == instance.x)
         assert all(instance.df["y"].to_numpy() == instance.y)
         assert all(instance.df["theta"].to_numpy() == instance.thetas)
+
+    def test_rotate_orientation(self, instance) -> None:
+        rotated_shape = instance.rotate(.1)
+        assert instance.orientation == 0
+        assert rotated_shape.orientation == .1
+
+    def test_parameters_are_preserved(self, instance) -> None:
+        rotated_shape = instance.rotate(1)
+        assert instance.R == rotated_shape.R
+        assert instance.r == rotated_shape.r

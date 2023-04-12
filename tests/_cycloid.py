@@ -63,3 +63,12 @@ class _TestSpecial:
         )
         assert ((custom_origin_obj.x - base_obj.x).round() == 54.0).all()
         assert ((custom_origin_obj.y - base_obj.y).round() == -233.0).all()
+
+    def test_n_cusps_custom_orientation(self, thetas) -> None:
+        custom_orientation_obj = self.class_name.n_cusps(
+            R = 300,
+            n = 2,
+            thetas=thetas,
+            orientation = 1
+        )
+        assert custom_orientation_obj.orientation == 1
