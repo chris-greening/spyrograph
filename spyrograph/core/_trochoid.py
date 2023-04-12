@@ -418,10 +418,8 @@ class _Trochoid(ABC):
         """
         if tolerance is None:
             tolerance = np.diff(self.thetas).mean()
-
         start_point = np.array([self.x[0], self.y[0]])
         end_point = np.array([self.x[-1], self.y[-1]])
-
         distance = np.linalg.norm(start_point - end_point)
         return distance < tolerance
 
