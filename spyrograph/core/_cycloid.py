@@ -16,9 +16,10 @@ class _Cycloid(_Trochoid):
     def __init__(
             self, R: Number, r: Number, thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
-            theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
+            theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0),
+            orientation: Number = None
         ) -> None:
-        super().__init__(R, r, r, thetas, theta_start, theta_stop, theta_step, origin)
+        super().__init__(R, r, r, thetas, theta_start, theta_stop, theta_step, origin, orientation)
         # pylint: disable=pointless-string-statement
         """Instantiate a cycloid curve from given input parameters. A
         hypocycloid is a curve drawn by tracing a point from a circle as it
@@ -51,6 +52,8 @@ class _Cycloid(_Trochoid):
             cannot be set at the same time as thetas argument
         origin : Tuple[Number, Number] = (0, 0)
             Custom origin to center the shapes at. Default is (0,0)
+        orientation : Number = 0
+            Angle of rotation for the shape
         """
 
     @classmethod
