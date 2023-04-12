@@ -165,8 +165,34 @@ class _Trochoid(ABC):
             )
         return scaled_shape
 
-    def rotate(self, theta: Number) -> Union["_Trochoid", "_Cycloid"]:
-        """Return shape with thetas rotated by a given input angle"""
+    def rotate(self, angle: float):
+        """
+        Rotate the shape by the given angle (in radians).
+
+        Parameters
+        ----------
+        angle : float
+            The angle to rotate the shape by, in radians.
+        """
+        try:
+            scaled_shape = self.__class__(
+                R=self.R,
+                r=self.r,
+                d=self.d,
+                thetas=self.thetas,
+                origin=self.origin,
+                orientation=self.orientation + angle
+            )
+        except TypeError:
+            scaled_shape = self.__class__(
+                R=self.R,
+                r=self.r,
+                thetas=self.thetas,
+                origin=self.origin,
+                orientation=self.orientation + angle
+            )
+        return scaled_shape
+        self.orientation += angle
 
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
         """
@@ -566,12 +592,19 @@ class _Trochoid(ABC):
             ))
         return shapes
 
+    def _apply_rotation(self, x, y, angle):
+        c, s = np.cos(angle), np.sin(angle)
+        rotation_matrix = np.array([[c, -s], [s, c]])
+        rotated_coords = np.dot(rotation_matrix, np.array([x, y]))
+        return rotated_coords[0], rotated_coords[1]
+
     def _calculate_path(self) -> None:
         """Calculate the parametrized path"""
         self.x = np.array([self._calculate_x(theta) for theta in self.thetas])
         self.y = np.array([self._calculate_y(theta) for theta in self.thetas])
         self.x += self.origin[0]
         self.y += self.origin[1]
+        self.x, self.y = self._apply_rotation(self.x, self.y, self.orientation)
         self.min_x = min(self.x)
         self.max_x = max(self.x)
         self.min_y = min(self.y)
