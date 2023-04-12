@@ -169,7 +169,7 @@ class _Trochoid(ABC):
             )
         return scaled_shape
 
-    def rotate(self, angle: float):
+    def rotate(self, angle: float, degrees: bool = False):
         """
         Rotate the shape by the given angle (in radians).
 
@@ -179,7 +179,9 @@ class _Trochoid(ABC):
         Parameters
         ----------
         angle : float
-            The angle to rotate the shape by, in radians.
+            The angle to rotate the shape by, in radians
+        degrees : bool
+            Rotate in degrees
 
         Returns
         -------
@@ -194,6 +196,8 @@ class _Trochoid(ABC):
         >>> rotated_shape = shape.rotate(np.pi / 4)  # Rotate the shape by 45 degrees
         """
         # pylint: disable=no-value-for-parameter
+        if degrees:
+            angle = np.deg2rad(angle)
         try:
             scaled_shape = self.__class__(
                 R=self.R,
