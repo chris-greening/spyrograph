@@ -33,7 +33,8 @@ class _Trochoid(ABC):
     def __init__(
             self, R: Number, r: Number, d: Number, thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
-            theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0)
+            theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0),
+            orientation: Number = 0
         ) -> None:
         """Model of a trochoid curve from given input parameters. A trochoid is
         a curve drawn by tracing a point from a circle as it rolls around the
@@ -66,6 +67,8 @@ class _Trochoid(ABC):
             cannot be set at the same time as thetas argument
         origin : Tuple[Number, Number] = (0, 0)
             Custom origin to center the shapes at. Default is (0,0)
+        orientation : Number = 0
+            Angle of rotation for the shape
         """
         self.R = R
         self.r = r
