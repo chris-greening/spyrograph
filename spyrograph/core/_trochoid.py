@@ -401,6 +401,26 @@ class _Trochoid(ABC):
             turtle.exitonclick()
         return screen, turtles
 
+    def is_closed(self, tolerance = 5) -> bool:
+        """
+        Return True if the shape is closed else False i.e., if it returns to
+        its starting point after a certain number of loops
+
+        Parameters
+        ----------
+        tolerance : float, optional
+            The tolerance to consider the shape as closed, by default 5.
+
+        Returns
+        -------
+        bool
+            True if the shape is closed, False otherwise.
+        """
+        start_point = np.array([self.x[0], self.y[0]])
+        end_point = np.array([self.x[-1], self.y[-1]])
+        distance = np.linalg.norm(start_point - end_point)
+        return distance < tolerance
+
     @classmethod
     def animate(
             cls, R: Union[Number, List[Number]], r: Union[Number, List[Number]],

@@ -324,3 +324,39 @@ class _TestGeneral:
         rotated_shape = instance.rotate(1)
         assert instance.R == rotated_shape.R
         assert instance.r == rotated_shape.r
+
+    def test_is_closed(self) -> None:
+        if issubclass(self.class_name, _Cycloid):
+            open_shape = self.class_name(
+                R=312,
+                r=150,
+                theta_start=0,
+                theta_stop=80,
+                theta_step=.1
+            )
+            closed_shape = self.class_name(
+                R=312,
+                r=150,
+                theta_start=0,
+                theta_stop=157.1,
+                theta_step=.1
+            )
+        elif issubclass(self.class_name, _Trochoid):
+            open_shape = self.class_name(
+                R=312,
+                r=150,
+                d=75,
+                theta_start = 0,
+                theta_stop = 90,
+                theta_step = .1
+            )
+            closed_shape = self.class_name(
+                R=312,
+                r=150,
+                d=75,
+                theta_start = 0,
+                theta_stop = 157.2,
+                theta_step = .1
+            )
+        assert not open_shape.is_closed()
+        assert closed_shape.is_closed()
