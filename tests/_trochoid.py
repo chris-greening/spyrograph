@@ -319,3 +319,8 @@ class _TestGeneral:
         rotated_shape = instance.rotate(.1)
         assert instance.orientation == 0
         assert rotated_shape.orientation == .1
+
+    def test_parameters_are_preserved(self, instance) -> None:
+        rotated_shape = instance.rotate(1)
+        assert instance.R == rotated_shape.R
+        assert instance.r == rotated_shape.r
