@@ -15,7 +15,7 @@ import numpy as np
 
 from spyrograph.core._misc import (
     _get_products_of_inputs, _validate_only_one_iterable, _draw_animation,
-    _validate_theta, _save_trace, _get_animate_screen_size
+    _validate_theta, _save_trace, _get_animate_screen_size, _apply_rotation
 )
 
 try:
@@ -592,19 +592,13 @@ class _Trochoid(ABC):
             ))
         return shapes
 
-    def _apply_rotation(self, x, y, angle):
-        c, s = np.cos(angle), np.sin(angle)
-        rotation_matrix = np.array([[c, -s], [s, c]])
-        rotated_coords = np.dot(rotation_matrix, np.array([x, y]))
-        return rotated_coords[0], rotated_coords[1]
-
     def _calculate_path(self) -> None:
         """Calculate the parametrized path"""
         self.x = np.array([self._calculate_x(theta) for theta in self.thetas])
         self.y = np.array([self._calculate_y(theta) for theta in self.thetas])
         self.x += self.origin[0]
         self.y += self.origin[1]
-        self.x, self.y = self._apply_rotation(self.x, self.y, self.orientation)
+        self.x, self.y = _apply_rotation(self.x, self.y, self.orientation)
         self.min_x = min(self.x)
         self.max_x = max(self.x)
         self.min_y = min(self.y)
