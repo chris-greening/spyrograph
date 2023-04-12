@@ -14,7 +14,8 @@ try:
 except ImportError:
     ImageGrab = None
 
-def _apply_rotation(x, y, angle):
+def _apply_rotation(x: "np.array", y: "np.array", angle: Number):
+    """Return rotated parametrized values"""
     c, s = np.cos(angle), np.sin(angle)
     rotation_matrix = np.array([[c, -s], [s, c]])
     rotated_coords = np.dot(rotation_matrix, np.array([x, y]))
