@@ -14,7 +14,7 @@ try:
 except ImportError:
     ImageGrab = None
 
-def _apply_rotation(self, x, y, angle):
+def _apply_rotation(x, y, angle):
     c, s = np.cos(angle), np.sin(angle)
     rotation_matrix = np.array([[c, -s], [s, c]])
     rotated_coords = np.dot(rotation_matrix, np.array([x, y]))
