@@ -75,6 +75,7 @@ class _Trochoid(ABC):
         self.d = d
         self.thetas = _validate_theta(thetas, theta_start, theta_stop, theta_step)
         self.origin = origin
+        self.orientation = orientation
 
         if self.R <= 0 or self.r <= 0 or self.d <= 0:
             raise ValueError((
