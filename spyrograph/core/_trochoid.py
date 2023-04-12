@@ -169,10 +169,25 @@ class _Trochoid(ABC):
         """
         Rotate the shape by the given angle (in radians).
 
+        This method creates a new instance of the shape with the updated orientation attribute,
+        keeping the original shape unchanged.
+
         Parameters
         ----------
         angle : float
             The angle to rotate the shape by, in radians.
+
+        Returns
+        -------
+        rotated_shape : instance of the shape's class
+            A new instance of the shape with the updated orientation.
+
+        Examples
+        --------
+        >>> from spyrograph import Hypotrochoid
+        >>> import numpy as np
+        >>> shape = Hypotrochoid(R=233, r=200, d=233, thetas=np.arange(0, 100*np.pi, .5))
+        >>> rotated_shape = shape.rotate(np.pi / 4)  # Rotate the shape by 45 degrees
         """
         try:
             scaled_shape = self.__class__(
@@ -192,7 +207,6 @@ class _Trochoid(ABC):
                 orientation=self.orientation + angle
             )
         return scaled_shape
-        self.orientation += angle
 
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
         """
