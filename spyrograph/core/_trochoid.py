@@ -83,16 +83,7 @@ class _Trochoid(ABC):
                 "Please only pass positive values"
             ))
 
-        self.x = np.array([self._calculate_x(theta) for theta in self.thetas])
-        self.y = np.array([self._calculate_y(theta) for theta in self.thetas])
-        self.x += self.origin[0]
-        self.y += self.origin[1]
-        self.min_x = min(self.x)
-        self.max_x = max(self.x)
-        self.min_y = min(self.y)
-        self.max_y = max(self.y)
-
-        self.coords = list(zip(self.x, self.y, self.thetas))
+        
 
     def translate(self, x: Number = 0, y: Number = 0) -> "_Trochoid":
         """
@@ -579,6 +570,19 @@ class _Trochoid(ABC):
                 R, r, d, thetas, theta_start, theta_stop, theta_step, origin
             ))
         return shapes
+
+    def _calculate_path(self) -> None:
+        """Calculate the parametrized path"""
+        self.x = np.array([self._calculate_x(theta) for theta in self.thetas])
+        self.y = np.array([self._calculate_y(theta) for theta in self.thetas])
+        self.x += self.origin[0]
+        self.y += self.origin[1]
+        self.min_x = min(self.x)
+        self.max_x = max(self.x)
+        self.min_y = min(self.y)
+        self.max_y = max(self.y)
+
+        self.coords = list(zip(self.x, self.y, self.thetas))
 
     def _show_full_path(self, pre_draw_turtle: "turtle.Turtle") -> turtle.Turtle:
         """Draw the full path prior to tracing"""
