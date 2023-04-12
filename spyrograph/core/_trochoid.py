@@ -77,12 +77,7 @@ class _Trochoid(ABC):
         self.origin = origin
         self.orientation = orientation
 
-        if self.R <= 0 or self.r <= 0 or self.d <= 0:
-            raise ValueError((
-                "Negative and/or zero input parameters were passed. "
-                "Please only pass positive values"
-            ))
-
+        self._validate_inputs()
         self._calculate_path()
 
     def translate(self, x: Number = 0, y: Number = 0) -> "_Trochoid":
@@ -583,6 +578,14 @@ class _Trochoid(ABC):
         self.max_y = max(self.y)
 
         self.coords = list(zip(self.x, self.y, self.thetas))
+
+    def _validate_inputs(self) -> None:
+        """Validate input parameters"""
+        if self.R <= 0 or self.r <= 0 or self.d <= 0:
+            raise ValueError((
+                "Negative and/or zero input parameters were passed. "
+                "Please only pass positive values"
+            ))
 
     def _show_full_path(self, pre_draw_turtle: "turtle.Turtle") -> turtle.Turtle:
         """Draw the full path prior to tracing"""
