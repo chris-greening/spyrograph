@@ -83,7 +83,7 @@ class _Trochoid(ABC):
                 "Please only pass positive values"
             ))
 
-        
+        self._calculate_path()
 
     def translate(self, x: Number = 0, y: Number = 0) -> "_Trochoid":
         """
