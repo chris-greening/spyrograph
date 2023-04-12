@@ -193,6 +193,7 @@ class _Trochoid(ABC):
         >>> shape = Hypotrochoid(R=233, r=200, d=233, thetas=np.arange(0, 100*np.pi, .5))
         >>> rotated_shape = shape.rotate(np.pi / 4)  # Rotate the shape by 45 degrees
         """
+        # pylint: disable=no-value-for-parameter
         try:
             scaled_shape = self.__class__(
                 R=self.R,
