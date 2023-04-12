@@ -403,13 +403,13 @@ class _Trochoid(ABC):
 
     def is_closed(self, tolerance = 5) -> bool:
         """
-        Check if the shape is closed, i.e., if it returns to its starting point
-        after a certain number of loops.
+        Return True if the shape is closed else False i.e., if it returns to
+        its starting point after a certain number of loops
 
         Parameters
         ----------
         tolerance : float, optional
-            The tolerance to consider the shape as closed, by default 1e-6.
+            The tolerance to consider the shape as closed, by default 5.
 
         Returns
         -------
