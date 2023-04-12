@@ -324,3 +324,5 @@ class _TestGeneral:
         rotated_shape = instance.rotate(1)
         assert instance.R == rotated_shape.R
         assert instance.r == rotated_shape.r
+
+    def test_is_closed(self)

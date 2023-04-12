@@ -401,7 +401,7 @@ class _Trochoid(ABC):
             turtle.exitonclick()
         return screen, turtles
 
-    def is_closed(self, tolerance = None) -> bool:
+    def is_closed(self, tolerance = 5) -> bool:
         """
         Check if the shape is closed, i.e., if it returns to its starting point
         after a certain number of loops.
@@ -416,8 +416,6 @@ class _Trochoid(ABC):
         bool
             True if the shape is closed, False otherwise.
         """
-        if tolerance is None:
-            tolerance = np.diff(self.thetas).mean()
         start_point = np.array([self.x[0], self.y[0]])
         end_point = np.array([self.x[-1], self.y[-1]])
         distance = np.linalg.norm(start_point - end_point)
