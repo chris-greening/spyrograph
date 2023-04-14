@@ -403,8 +403,8 @@ class _Trochoid(ABC):
 
     def is_closed(self, tolerance = 5) -> bool:
         """
-        Return True if the shape is closed else False i.e., if it returns to
-        its starting point after a certain number of loops
+        Return True if the shape is closed (i.e. if it returns to its starting
+        point after a certain number of loops) else False
 
         Parameters
         ----------
