@@ -401,7 +401,7 @@ class _Trochoid(ABC):
             turtle.exitonclick()
         return screen, turtles
 
-    def is_closed(self, tolerance = 5) -> bool:
+    def is_closed(self, tolerance: Number = 5) -> bool:
         """
         Return True if the shape is closed (i.e. if it returns to its starting
         point after a certain number of loops) else False
