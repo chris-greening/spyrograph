@@ -206,7 +206,7 @@ class _Cycloid(_Trochoid):
             orientation: Number = 0
         ) -> "Cycloid":
         """
-        Create and return a cycloid with a specified number of cusps.
+        Create and return a cycloid with a specified number of cusps
 
         Parameters
         ----------
