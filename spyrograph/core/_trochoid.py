@@ -787,7 +787,17 @@ class _Trochoid(ABC):
     def _draw_circle(
             self, t: "turtle.Turtle", x: float, y: float, radius: float
         ) -> None:
-        """Draws a circle with a given center point and radius on the current turtle canvas"""
+        """
+            Draws a circle with a given radius, centered at point(x, y) on the current turtle canvas
+
+            The method takes in following parameters:
+            t: A turtle object used for drawing.
+            x: The x-coordinate of the center of the circle.
+            y: The y-coordinate of the center of the circle.
+            radius: The radius of the circle to be drawn.
+
+            The circle drawn, uses steps = 200 that defines the smoothness of the circle. 
+        """
         t.up()
         t.seth(0)
         t.goto(x, y)
