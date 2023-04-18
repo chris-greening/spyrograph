@@ -26,17 +26,16 @@ In the upcoming sections, we will dive deeper into the world of method chaining 
 
 Before diving into the world of method chaining and applying various transformations to our shapes, we first need to create a base shape to work with. This shape will serve as the foundation for all the transformations we will apply later
 
-In this section, we will discuss how to create a basic spirograph shape using Spyrograph. To do this, we will be using the Hypotrochoid class
+In this section, we will discuss how to create a basic spirograph shape using Spyrograph. To do this, we will be using the Hypocycloid class
 
 {% highlight python %}
-from spyrograph import Hypotrochoid
+from spyrograph import Hypocycloid
 import numpy as np
 
-base_obj = Hypotrochoid(
+base_obj = Hypocycloid(
     R=147,
-    r=199,
-    d=37,
-    thetas=np.arange(0, 19*np.pi, .1)
+    n=5
+    thetas=np.arange(0, 2*np.pi, .1)
 )
 base_obj.trace(exit_on_click=True)
 {% endhighlight %}
