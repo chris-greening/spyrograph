@@ -41,7 +41,7 @@ base_obj.trace(exit_on_click=True)
 {% endhighlight %}
 
 <p align="center">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/first_shape_multiple_tracing.PNG" alt="A black tracing is drawn on white background">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/base_shape_drawing_5_cusps.gif" alt="A tracing with 5 cusps is traced by a rolling circle on a fixed circle">
 </p>
 
 With the base shape created, we are now ready to explore the various transformations and method chaining techniques that the Spyrograph library has to offer. In the upcoming sections, we will discuss different transformations, such as translation, scaling, and rotation, and how to chain these methods together for a smooth, streamlined coding experience.
