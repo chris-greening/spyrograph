@@ -639,9 +639,9 @@ class _Trochoid(ABC):
         """Calculate the parametrized path"""
         self.x = np.array([self._calculate_x(theta) for theta in self.thetas])
         self.y = np.array([self._calculate_y(theta) for theta in self.thetas])
+        self.x, self.y = _apply_rotation(self.x, self.y, self.orientation)
         self.x += self.origin[0]
         self.y += self.origin[1]
-        self.x, self.y = _apply_rotation(self.x, self.y, self.orientation)
         self.min_x = min(self.x)
         self.max_x = max(self.x)
         self.min_y = min(self.y)
