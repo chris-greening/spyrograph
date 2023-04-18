@@ -3,7 +3,7 @@ title: ""
 date: 2023-04-08 01:18:00 -0500
 categories: Python
 header:
-  overlay_image: /images/
+  overlay_image: /images/translate_and_rotate.gif
 ---
 
 # Unlock the power of method chaining for elegant and efficient Spyrograph transformations
