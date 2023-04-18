@@ -14,6 +14,10 @@ Creating captivating geometric art using Spyrograph is an engaging way to explor
 
 Method chaining is a programming technique that enables us to call multiple methods on an object in a single line of code. Each method returns a new instance of the object with the applied transformation, allowing us to call subsequent methods on the returned object. This approach not only improves code readability but also eliminates the need for excessive intermediary variables, making our code cleaner and more concise
 
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/translate_and_rotate_example.gif" alt="A translating, rotating, and scaling shape fading into darkness">
+</p>
+
 In the context of Spyrograph, method chaining allows us to create and manipulate geometric shapes seamlessly. We can easily chain together various transformation methods such as translation, scaling, and rotation to achieve the desired shape and appearance. By mastering method chaining, we can unlock the full potential of the Spyrograph library and create intricate geometric art with minimal effort
 
 In the upcoming sections, we will dive deeper into the world of method chaining in Spyrograph, demonstrating its power and flexibility through examples and explanations of the core transformation methods. Stay tuned to explore the fascinating world of geometric art and method chaining in Spyrograph!
