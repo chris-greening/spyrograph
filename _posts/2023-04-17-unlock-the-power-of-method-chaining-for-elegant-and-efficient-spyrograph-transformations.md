@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Unlock the power of method chaining for elegant and efficient Spyrograph transformations"
 date: 2023-04-08 01:18:00 -0500
 categories: Python
 header:
