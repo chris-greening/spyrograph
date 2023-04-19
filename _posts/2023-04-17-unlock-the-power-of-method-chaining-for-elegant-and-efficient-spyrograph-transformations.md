@@ -88,8 +88,8 @@ screen = shape.trace(screen_color="black", color="red", screen_size=(1000, 1000)
 
 # Iterate and chain transformations
 i = 1
-while i < 150:
-    shape = shape.translate(x=3).rotate(angle=2, degrees=True).scale(factor=1/1.01)
+while i < 110:
+    shape = shape.translate(x=4).rotate(angle=2, degrees=True).scale(factor=1/1.01)
     screen = shape.trace(color="red", screen=screen, width=2)
     i += 1
     time.sleep(.01)
