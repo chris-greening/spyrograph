@@ -54,7 +54,7 @@ Let's start with our base shape from the last section and apply multiple transfo
 
 {% highlight python %}
 # Translate, scale, and rotate the shape in a single line of code
-final_shape = (
+transformed_obj = (
     base_obj
     .translate(x=200, y=200)
     .scale(2)
