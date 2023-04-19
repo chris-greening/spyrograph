@@ -95,3 +95,7 @@ while i < 110:
     time.sleep(.01)
 turtle.exitonclick()
 {% endhighlight %}
+
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/complicated_chain_example.gif" alt="A star translates, scales, and rotates creating a complex geometric visualization">
+</p>
