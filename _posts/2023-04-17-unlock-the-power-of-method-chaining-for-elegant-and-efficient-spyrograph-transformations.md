@@ -72,6 +72,8 @@ With method chaining, we can quickly and easily apply a series of transformation
 
 ## Chaining transformations together for a complex visualization
 
+In this section, we will explore a more complicated example of creating dynamic and mesmerizing art chaining Spyrograph's transformations
+
 {% highlight python %}
 from spyrograph import Hypocycloid
 import numpy as np
@@ -112,3 +114,17 @@ turtle.exitonclick()
 <p align="center">
   <img src="{{ site.url }}{{ site.baseurl }}/images/complicated_chain_example.gif" alt="A star translates, scales, and rotates creating a complex geometric visualization">
 </p>
+
+This code snippet starts by creating an initial `Hypocycloid` shape with 5 cusps and sets up the turtle graphics screen with a black background and a screen size of 1000x1000 pixels
+
+The code then enters a loop that iterates 110 times. In each iteration, the shape is transformed by chaining three operations:
+
+1. Translate the shape 4 units in the x-direction
+2. Rotate the shape by 2 degrees
+3. Scale the shape down by a factor of 1/1.01
+
+After applying these transformations, the shape is traced on the turtle graphics screen with a red color and a line width of 2 pixels. The loop adds a short pause of 0.01 seconds in each iteration to allow the turtle graphics to update smoothly
+
+Once all iterations are complete, the `turtle.exitonclick()` function is called which keeps the turtle graphics window open until the user clicks on it
+
+This example demonstrates the power of combining Spyrograph transformations with loops to create captivating, dynamic art. By adjusting the transformation parameters and the number of iterations, we can generate a wide variety of mesmerizing designs
