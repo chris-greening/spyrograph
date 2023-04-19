@@ -110,6 +110,7 @@ Check out the [official website](https://chris-greening.github.io/spyrograph/) f
 - [Adding a boomerang effect to our spirograph animations](https://chris-greening.github.io/spyrograph/python/2023/04/06/adding-a-boomerang-effect-to-our-spyrograph-animations.html)
 - [Tracing multiple shapes on the same screen with Spyrograph](https://chris-greening.github.io/spyrograph/python/2023/04/08/tracing-multiple-shapes-on-the-same-screen-with-spyrograph.html)
 - [Customizing the origin of our geometric visualizations using Python and Spyrograph](https://chris-greening.github.io/spyrograph/python/2023/04/08/customizing-the-origin-of-our-geometric-visualizations-using-python-and-spyrograph.html)
+- [Unlock the power of method chaining for elegant and efficient Spyrograph transformations](https://chris-greening.github.io/spyrograph/python/2023/04/18/unlock-the-power-of-method-chaining-for-elegant-and-efficient-spyrograph-transformations.html)
 
 ---
 
