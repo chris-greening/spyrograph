@@ -69,3 +69,30 @@ In this example, we first translate the base shape by 200 units in the x-directi
 </p>
 
 With method chaining, we can quickly and easily apply a series of transformations to our Spyrograph shapes, creating intricate designs in just a few lines of code
+
+## Chaining transformations together for a complex visualization
+
+{% highlight python %}
+from spyrograph import Hypocycloid
+import numpy as np
+import time
+import turtle
+
+# Trace an initial shape and set the screen conditions
+shape = Hypocycloid.n_cusps(
+    R=147,
+    n=5,
+    thetas=np.arange(0, 2*np.pi+.1, .1),
+)
+screen = shape.trace(screen_color="black", color="red", screen_size=(1000, 1000))
+
+# Iterate and chain transformations
+i = 1
+screen = None
+while i < 150:
+    shape = shape.translate(x=3).rotate(angle=2, degrees=True).scale(factor=1/1.01)
+    screen = shape.trace(color="red", screen=screen, width=2)
+    i += 1
+    time.sleep(.01)
+turtle.exitonclick()
+{% endhighlight %}
