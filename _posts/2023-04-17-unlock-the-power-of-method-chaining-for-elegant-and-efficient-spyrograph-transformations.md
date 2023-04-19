@@ -47,3 +47,21 @@ base_obj.trace(exit_on_click=True)
 With the base shape created, we are now ready to explore the various transformations and method chaining techniques that the Spyrograph library has to offer. In the upcoming sections, we will discuss different transformations, such as translation, scaling, and rotation, and how to chain these methods together for a smooth, streamlined coding experience
 
 ## Chaining multiple transformations together
+
+With method chaining, we can apply several transformations to our base shape in a concise and readable manner. When we call a transformation method, it returns a new instance of the shape with the applied transformation. We can then immediately call another transformation method on this new instance, and so on.
+
+Let's start with our base shape from the last section and apply multiple transformations to our shape using method chaining:
+
+{% highlight python %}
+# Translate, scale, and rotate the shape in a single line of code
+final_shape = (
+    base_obj
+    .translate(x=200, y=200)
+    .scale(2)
+    .rotate(np.pi/4)
+)
+{% endhighlight %}
+
+In this example, we first translate the base shape by 200 units in the x-direction and 200 units in the y-direction. Next, we scale the translated shape by a factor of 2. Finally, we rotate the scaled shape by 45 degrees (pi/4 radians) around its origin.
+
+With method chaining, we can quickly and easily apply a series of transformations to our Spyrograph shapes, creating intricate designs in just a few lines of code
