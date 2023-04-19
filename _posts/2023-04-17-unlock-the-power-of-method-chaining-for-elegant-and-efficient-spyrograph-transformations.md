@@ -64,4 +64,8 @@ transformed_obj = (
 
 In this example, we first translate the base shape by 200 units in the x-direction and 200 units in the y-direction. Next, we scale the translated shape by a factor of 2. Finally, we rotate the scaled shape by 45 degrees (pi/4 radians) around its origin.
 
+<p align="center">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/showing_chained_methods1.gif" alt="A tracing with 5 cusps shifted, scaled, and then rotated">
+</p>
+
 With method chaining, we can quickly and easily apply a series of transformations to our Spyrograph shapes, creating intricate designs in just a few lines of code
