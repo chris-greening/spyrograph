@@ -84,13 +84,26 @@ shape = Hypocycloid.n_cusps(
     n=5,
     thetas=np.arange(0, 2*np.pi+.1, .1),
 )
-screen = shape.trace(screen_color="black", color="red", screen_size=(1000, 1000))
+screen = shape.trace(
+    screen_color="black",
+    color="red",
+    screen_size=(1000, 1000)
+)
 
 # Iterate and chain transformations
 i = 1
 while i < 110:
-    shape = shape.translate(x=4).rotate(angle=2, degrees=True).scale(factor=1/1.01)
-    screen = shape.trace(color="red", screen=screen, width=2)
+    shape = (
+        shape
+        .translate(x=4)
+        .rotate(angle=2, degrees=True)
+        .scale(factor=1/1.01)
+    )
+    screen = shape.trace(
+        color="red",
+        screen=screen,
+        width=2
+    )
     i += 1
     time.sleep(.01)
 turtle.exitonclick()
