@@ -14,10 +14,18 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest pandas numpy
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install pytest
     - name: Unit testing the code with pytest
       run: |
         pytest tests
