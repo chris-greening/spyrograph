@@ -199,7 +199,7 @@ class _Trochoid(ABC):
         if degrees:
             angle = np.deg2rad(angle)
         try:
-            scaled_shape = self.__class__(
+            rotated_shape = self.__class__(
                 R=self.R,
                 r=self.r,
                 d=self.d,
@@ -208,14 +208,14 @@ class _Trochoid(ABC):
                 orientation=self.orientation + angle
             )
         except TypeError:
-            scaled_shape = self.__class__(
+            rotated_shape = self.__class__(
                 R=self.R,
                 r=self.r,
                 thetas=self.thetas,
                 origin=self.origin,
                 orientation=self.orientation + angle
             )
-        return scaled_shape
+        return rotated_shape
 
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
         """
