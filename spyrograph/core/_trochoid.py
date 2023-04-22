@@ -199,7 +199,7 @@ class _Trochoid(ABC):
         if degrees:
             angle = np.deg2rad(angle)
         try:
-            scaled_shape = self.__class__(
+            rotated_shape = self.__class__(
                 R=self.R,
                 r=self.r,
                 d=self.d,
@@ -208,7 +208,7 @@ class _Trochoid(ABC):
                 orientation=self.orientation + angle
             )
         except TypeError:
-            scaled_shape = self.__class__(
+            rotated_shape = self.__class__(
                 R=self.R,
                 r=self.r,
                 thetas=self.thetas,
@@ -420,6 +420,8 @@ class _Trochoid(ABC):
         end_point = np.array([self.x[-1], self.y[-1]])
         distance = np.linalg.norm(start_point - end_point)
         return distance < tolerance
+
+    def add_noise(self, )
 
     @classmethod
     def animate(
