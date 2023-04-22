@@ -215,7 +215,7 @@ class _Trochoid(ABC):
                 origin=self.origin,
                 orientation=self.orientation + angle
             )
-        return scaled_shape
+        return rotated_shape
 
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
         """
