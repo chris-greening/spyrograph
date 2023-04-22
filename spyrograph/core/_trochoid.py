@@ -421,8 +421,6 @@ class _Trochoid(ABC):
         distance = np.linalg.norm(start_point - end_point)
         return distance < tolerance
 
-    def add_noise(self, )
-
     @classmethod
     def animate(
             cls, R: Union[Number, List[Number]], r: Union[Number, List[Number]],
