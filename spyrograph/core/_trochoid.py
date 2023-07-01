@@ -241,6 +241,7 @@ class _Trochoid(ABC):
                 orientation=self.orientation,
                 noise=noise
             )
+        return rotated_shape
 
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
         """
