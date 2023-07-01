@@ -223,7 +223,7 @@ class _Trochoid(ABC):
         y_noise = np.random.normal(0, y_scale, size=len(self.y))
         noise = [x_noise, y_noise]
         try:
-            rotated_shape = self.__class__(
+            noisy_shape = self.__class__(
                 R=self.R,
                 r=self.r,
                 d=self.d,
@@ -233,7 +233,7 @@ class _Trochoid(ABC):
                 noise=noise
             )
         except TypeError:
-            rotated_shape = self.__class__(
+            noisy_shape = self.__class__(
                 R=self.R,
                 r=self.r,
                 thetas=self.thetas,
@@ -241,7 +241,7 @@ class _Trochoid(ABC):
                 orientation=self.orientation,
                 noise=noise
             )
-        return rotated_shape
+        return noisy_shape
 
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
         """
