@@ -218,7 +218,7 @@ class _Trochoid(ABC):
             )
         return rotated_shape
 
-    def add_noise(self, x_scale, y_scale) -> Union["_Trochoid", "_Cycloid"]:
+    def add_noise(self, x_scale: Number = 0, y_scale: Number = 0) -> Union["_Trochoid", "_Cycloid"]:
         x_noise = np.random.normal(0, x_scale, size=len(self.x))
         y_noise = np.random.normal(0, y_scale, size=len(self.y))
         noise = [x_noise, y_noise]
@@ -667,6 +667,8 @@ class _Trochoid(ABC):
         self.x, self.y = _apply_rotation(self.x, self.y, self.orientation)
         self.x += self.origin[0]
         self.y += self.origin[1]
+        self.x += self.noise[0]
+        self.y += self.noise[1]
         self.min_x = min(self.x)
         self.max_x = max(self.x)
         self.min_y = min(self.y)
