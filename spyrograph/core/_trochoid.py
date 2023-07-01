@@ -217,8 +217,9 @@ class _Trochoid(ABC):
             )
         return rotated_shape
 
-    def add_noise(self) -> Union["_Trochoid", "_Cycloid"]:
-        pass
+    def add_noise(self, x_scale, y_scale) -> Union["_Trochoid", "_Cycloid"]:
+        x_noise = np.random.normal(0, x_scale, size=len(self.x))
+        y_noise = np.random.normal(0, y_scale, size=len(self.y))
 
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
         """
