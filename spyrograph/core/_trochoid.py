@@ -34,7 +34,7 @@ class _Trochoid(ABC):
             self, R: Number, r: Number, d: Number, thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
             theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0),
-            orientation: Number = 0, noise: List["np.array", "np.array"] = None
+            orientation: Number = 0, noise: List["np.array"] = None
         ) -> None:
         """Model of a trochoid curve from given input parameters. A trochoid is
         a curve drawn by tracing a point from a circle as it rolls around the
