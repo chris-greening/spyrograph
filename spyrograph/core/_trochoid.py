@@ -111,7 +111,7 @@ class _Trochoid(ABC):
                 thetas=self.thetas,
                 origin=(self.origin[0]+x, self.origin[1]+y),
                 orientation=self.orientation,
-                noise=[self.noise[0]+x, self.noise[1]+y]
+                noise=self.noise
             )
         except TypeError:
             translated_shape = self.__class__(
@@ -120,7 +120,7 @@ class _Trochoid(ABC):
                 thetas=self.thetas,
                 origin=(self.origin[0]+x, self.origin[1]+y),
                 orientation=self.orientation,
-                noise=[self.noise[0]+x, self.noise[1]+y]
+                noise=self.noise
             )
         return translated_shape
 
@@ -687,8 +687,7 @@ class _Trochoid(ABC):
         self.max_x = max(self.x)
         self.min_y = min(self.y)
         self.max_y = max(self.y)
-
-        self.coords = list(zip(self.x, self.y, self.thetas))
+        self.coords = list(zip(self.x + self.noise[0], self.y+self.noise[1], self.thetas))
 
     def _validate_inputs(self) -> None:
         """Validate input parameters"""
