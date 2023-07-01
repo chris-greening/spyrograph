@@ -211,7 +211,8 @@ class _Trochoid(ABC):
                 d=self.d,
                 thetas=self.thetas,
                 origin=self.origin,
-                orientation=self.orientation + angle
+                orientation=self.orientation + angle,
+                noise=self.noise
             )
         except TypeError:
             rotated_shape = self.__class__(
@@ -219,7 +220,8 @@ class _Trochoid(ABC):
                 r=self.r,
                 thetas=self.thetas,
                 origin=self.origin,
-                orientation=self.orientation + angle
+                orientation=self.orientation + angle,
+                noise=self.noise
             )
         return rotated_shape
 
@@ -678,6 +680,7 @@ class _Trochoid(ABC):
                 np.zeros(len(self.x)),
                 np.zeros(len(self.y))
             ]
+        self.noise = _apply_rotation(self.noise[0], self.noise[1], self.orientation)
         self.x += self.noise[0]
         self.y += self.noise[1]
         self.min_x = min(self.x)
