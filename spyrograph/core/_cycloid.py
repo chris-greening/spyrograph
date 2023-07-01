@@ -17,9 +17,9 @@ class _Cycloid(_Trochoid):
             self, R: Number, r: Number, thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
             theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0),
-            orientation: Number = 0
+            orientation: Number = 0, noise: Number = None
         ) -> None:
-        super().__init__(R, r, r, thetas, theta_start, theta_stop, theta_step, origin, orientation)
+        super().__init__(R, r, r, thetas, theta_start, theta_stop, theta_step, origin, orientation, noise)
         # pylint: disable=pointless-string-statement
         """Instantiate a cycloid curve from given input parameters. A
         hypocycloid is a curve drawn by tracing a point from a circle as it
