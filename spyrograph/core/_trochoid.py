@@ -836,7 +836,7 @@ class _Trochoid(ABC):
             y: The y-coordinate of the center of the circle.
             radius: The radius of the circle to be drawn.
 
-            The circle drawn, uses steps = 200 that defines the smoothness of the circle. 
+            The circle drawn, uses steps = 200 that defines the smoothness of the circle.
         """
         t.up()
         t.seth(0)
