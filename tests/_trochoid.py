@@ -127,41 +127,41 @@ class _TestGeneral:
 
     def test_scale_origin_is_preserved(self, thetas):
         if issubclass(self.class_name, _Cycloid):
-            translated_shape = self.class_name(
+            shape = self.class_name(
                 R=100,
                 r=200,
                 thetas=thetas,
                 origin=(100,100)
             )
         elif issubclass(self.class_name, _Trochoid):
-            translated_shape = self.class_name(
+            shape = self.class_name(
                 R=100,
                 r=200,
                 d=300,
                 thetas=thetas,
                 origin=(100, 100)
             )
-        scaled_shape = translated_shape.scale(2)
-        assert scaled_shape.origin == translated_shape.origin
+        scaled_shape = shape.scale(2)
+        assert scaled_shape.origin == shape.origin
 
     def test_rotate_origin_is_preserved(self, thetas):
         if issubclass(self.class_name, _Cycloid):
-            translated_shape = self.class_name(
+            shape = self.class_name(
                 R=100,
                 r=200,
                 thetas=thetas,
                 origin=(100, 100)
             )
         elif issubclass(self.class_name, _Trochoid):
-            translated_shape = self.class_name(
+            shape = self.class_name(
                 R=100,
                 r=200,
                 d=300,
                 thetas=thetas,
                 origin=(100, 100)
             )
-        rotated_shape = translated_shape.rotate(2)
-        assert rotated_shape.origin == rotated_shape.origin
+        rotated_shape = shape.rotate(2)
+        assert rotated_shape.origin == shape.origin
 
     def test_create_range_theta_inputs(self, thetas):
         R = 5
