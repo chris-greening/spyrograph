@@ -74,6 +74,11 @@ class _TestGeneral:
         assert f"r={instance.r}" in repr_val
         assert f"d={instance.d}" in repr_val
 
+    def test_add_noise_return_instance_is_same_class(self, instance):
+        """Test that the return instance is from the same class"""
+        noisy_instance = instance.add_noise(x_scale=2, y_scale=2)
+        assert noisy_instance.__class__ is instance.__class__
+
     def test_scale_return_instance_is_same_class(self, instance):
         """Test that the return instance is from the same class"""
         scaled_instance = instance.scale(factor=2)
