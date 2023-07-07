@@ -101,6 +101,25 @@ class _TestGeneral:
         assert smaller_scaled_instance.d == instance.d*.5
         assert (smaller_scaled_instance.thetas == instance.thetas).all()
 
+    def test_add_noise_origin_is_preserved(self, thetas):
+        if issubclass(self.class_name, _Cycloid):
+            shape = self.class_name(
+                R=100,
+                r=200,
+                thetas=thetas,
+                origin=(100,100)
+            )
+        elif issubclass(self.class_name, _Trochoid):
+            shape = self.class_name(
+                R=100,
+                r=200,
+                d=300,
+                thetas=thetas,
+                origin=(100, 100)
+            )
+        noisy_shape = shape.add_noise(x_scale=10, y_scale=10)
+        assert noisy_shape.origin == shape.origin
+
     def test_scale_origin_is_preserved(self, thetas):
         if issubclass(self.class_name, _Cycloid):
             translated_shape = self.class_name(
