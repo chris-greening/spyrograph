@@ -34,7 +34,7 @@ class _Trochoid(ABC):
             self, R: Number, r: Number, d: Number, thetas: List[Number] = None,
             theta_start: Number = None, theta_stop: Number = None,
             theta_step: Number = None, origin: Tuple[Number, Number] = (0, 0),
-            orientation: Number = 0
+            orientation: Number = 0, noise: List["np.array"] = None
         ) -> None:
         """Model of a trochoid curve from given input parameters. A trochoid is
         a curve drawn by tracing a point from a circle as it rolls around the
@@ -76,6 +76,7 @@ class _Trochoid(ABC):
         self.thetas = _validate_theta(thetas, theta_start, theta_stop, theta_step)
         self.origin = origin
         self.orientation = orientation
+        self.noise = noise
 
         self._validate_inputs()
         self._calculate_path()
@@ -109,7 +110,8 @@ class _Trochoid(ABC):
                 d=self.d,
                 thetas=self.thetas,
                 origin=(self.origin[0]+x, self.origin[1]+y),
-                orientation=self.orientation
+                orientation=self.orientation,
+                noise=self.noise
             )
         except TypeError:
             translated_shape = self.__class__(
@@ -117,7 +119,8 @@ class _Trochoid(ABC):
                 r=self.r,
                 thetas=self.thetas,
                 origin=(self.origin[0]+x, self.origin[1]+y),
-                orientation=self.orientation
+                orientation=self.orientation,
+                noise=self.noise
             )
         return translated_shape
 
@@ -157,7 +160,8 @@ class _Trochoid(ABC):
                 d=self.d*factor,
                 thetas=self.thetas,
                 origin=self.origin,
-                orientation=self.orientation
+                orientation=self.orientation,
+                noise=[self.noise[0]*factor, self.noise[1]*factor]
             )
         except TypeError:
             scaled_shape = self.__class__(
@@ -165,7 +169,9 @@ class _Trochoid(ABC):
                 r=self.r*factor,
                 thetas=self.thetas,
                 origin=self.origin,
-                orientation=self.orientation
+                orientation=self.orientation,
+                noise=[self.noise[0]*factor, self.noise[1]*factor]
+
             )
         return scaled_shape
 
@@ -205,7 +211,8 @@ class _Trochoid(ABC):
                 d=self.d,
                 thetas=self.thetas,
                 origin=self.origin,
-                orientation=self.orientation + angle
+                orientation=self.orientation + angle,
+                noise=self.noise
             )
         except TypeError:
             rotated_shape = self.__class__(
@@ -213,9 +220,35 @@ class _Trochoid(ABC):
                 r=self.r,
                 thetas=self.thetas,
                 origin=self.origin,
-                orientation=self.orientation + angle
+                orientation=self.orientation + angle,
+                noise=self.noise
             )
         return rotated_shape
+
+    def add_noise(self, x_scale: Number = 0, y_scale: Number = 0) -> Union["_Trochoid", "_Cycloid"]:
+        x_noise = np.random.normal(0, x_scale, size=len(self.x))
+        y_noise = np.random.normal(0, y_scale, size=len(self.y))
+        noise = [x_noise, y_noise]
+        try:
+            noisy_shape = self.__class__(
+                R=self.R,
+                r=self.r,
+                d=self.d,
+                thetas=self.thetas,
+                origin=self.origin,
+                orientation=self.orientation,
+                noise=noise
+            )
+        except TypeError:
+            noisy_shape = self.__class__(
+                R=self.R,
+                r=self.r,
+                thetas=self.thetas,
+                origin=self.origin,
+                orientation=self.orientation,
+                noise=noise
+            )
+        return noisy_shape
 
     def plot(self, **kwargs) -> Tuple["matplotlib.matplotlib.Figure", "matplotlib.axes._axes.Axes"]:
         """
@@ -642,12 +675,19 @@ class _Trochoid(ABC):
         self.x, self.y = _apply_rotation(self.x, self.y, self.orientation)
         self.x += self.origin[0]
         self.y += self.origin[1]
+        if self.noise is None:
+            self.noise = [
+                np.zeros(len(self.x)),
+                np.zeros(len(self.y))
+            ]
+        # self.noise = _apply_rotation(self.noise[0], self.noise[1], self.orientation)
+        self.x += self.noise[0]
+        self.y += self.noise[1]
         self.min_x = min(self.x)
         self.max_x = max(self.x)
         self.min_y = min(self.y)
         self.max_y = max(self.y)
-
-        self.coords = list(zip(self.x, self.y, self.thetas))
+        self.coords = list(zip(self.x + self.noise[0], self.y+self.noise[1], self.thetas))
 
     def _validate_inputs(self) -> None:
         """Validate input parameters"""
@@ -796,7 +836,7 @@ class _Trochoid(ABC):
             y: The y-coordinate of the center of the circle.
             radius: The radius of the circle to be drawn.
 
-            The circle drawn, uses steps = 200 that defines the smoothness of the circle. 
+            The circle drawn, uses steps = 200 that defines the smoothness of the circle.
         """
         t.up()
         t.seth(0)
