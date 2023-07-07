@@ -680,7 +680,7 @@ class _Trochoid(ABC):
                 np.zeros(len(self.x)),
                 np.zeros(len(self.y))
             ]
-        self.noise = _apply_rotation(self.noise[0], self.noise[1], self.orientation)
+        # self.noise = _apply_rotation(self.noise[0], self.noise[1], self.orientation)
         self.x += self.noise[0]
         self.y += self.noise[1]
         self.min_x = min(self.x)
